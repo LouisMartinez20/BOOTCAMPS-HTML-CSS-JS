@@ -1,0 +1,285 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+input {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+input:invalid:not(:placeholder-shown) {
+  border-color: #ff5630;
+}
+
+.error-message {
+  color: #ff5630;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+input:invalid:not(:placeholder-shown) + .error-message {
+  display: block;
+}
+
+/* Estilos adicionales para validación mejorada */
+.success-message {
+  color: #28a745;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: none;
+}
+
+input.valid,
+select.valid {
+  border-color: #28a745;
+  background-color: #f8fff9;
+}
+
+input.invalid,
+select.invalid {
+  border-color: #ff5630;
+  background-color: #fffbfb;
+}
+
+select {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: white;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 4 5'><path fill='%23666' d='M2 0L0 2h4zm0 5L0 3h4z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.75rem center;
+  background-size: 12px;
+}
+
+select:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+button {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  background-color: #4a90e2;
+  color: white;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+
+button:hover:not(:disabled) {
+  background-color: #357abd;
+}
+
+button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.form-status {
+  margin-top: 1.5rem;
+  padding: 1rem;
+  border-radius: 4px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form-status .loading {
+  color: #4a90e2;
+  background-color: #e3f2fd;
+  border: 1px solid #4a90e2;
+}
+
+.form-status .success {
+  color: #28a745;
+  background-color: #f8fff9;
+  border: 1px solid #28a745;
+}
+
+.form-status .error {
+  color: #ff5630;
+  background-color: #fffbfb;
+  border: 1px solid #ff5630;
+}
+
+/* Mejoras para el grupo de checkbox */
+.checkbox-group {
+  display: flex;
+  align-items: flex-start;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.checkbox-group input[type="checkbox"] {
+  width: auto;
+  margin-right: 0.75rem;
+  margin-top: 0.25rem;
+  flex-shrink: 0;
+}
+
+.checkbox-group label {
+  line-height: 1.4;
+  flex: 1;
+}
+
+.checkbox-group .error-message {
+  width: 100%;
+  margin-top: 0.5rem;
+  margin-left: 2rem;
+}
+
+/* Animaciones suaves */
+.success-message,
+.error-message {
+  transition: opacity 0.3s ease;
+}
+
+input,
+select {
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+
+button {
+  transition: all 0.3s ease;
+}
+
+/* Sección de Términos y Condiciones */
+#terminos-y-condiciones {
+  margin-top: 3rem;
+  padding: 2rem;
+  max-width: 120ch;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+#terminos-y-condiciones:target {
+  background-color: #deebff;
+}
+
+#terminos-y-condiciones h2 {
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+#terminos-y-condiciones p:first-of-type {
+  color: #0747a6;
+}
+
+#terminos-y-condiciones ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: left;
+  display: inline-block;
+  margin: 1.5rem auto;
+}
+
+#terminos-y-condiciones li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.5rem;
+  position: relative;
+}
+
+#terminos-y-condiciones li::before {
+  content: "•";
+  color: #4a90e2;
+  font-size: 1.5rem;
+  position: absolute;
+  left: 0;
+}
+
+#terminos-y-condiciones li:nth-child(odd)::before {
+  color: #5e6c84;
+}
+
+/* Estilos para campos requeridos no seleccionados/vacíos */
+input:required:invalid,
+select:required:invalid {
+  border-color: #ff5630;
+  background-color: #fffbfb;
+}
+
+/* Cuando el campo está vacío y es requerido */
+input:required:placeholder-shown {
+  border-color: #ff5630;
+}
+
+select:required:invalid {
+  border-color: #ff5630;
+}
+
+/* Estados específicos para mostrar/ocultar mensajes */
+.form-group.show-error .error-message {
+  display: block;
+}
+
+.form-group.show-success .success-message {
+  display: block;
+}
+
+.form-group.show-error .success-message {
+  display: none;
+}
+
+.form-group.show-success .error-message {
+  display: none;
+}
+
+/* Estilos específicos para checkboxes requeridos */
+.checkbox-group input[type="checkbox"]:required:not(:checked) {
+  outline: 2px solid #ff5630;
+  outline-offset: 2px;
+}
+
+.checkbox-group.show-error .error-message {
+  display: block;
+}
+
+/* Estilos para el enlace de términos */
+.terms-link {
+  color: #4a90e2;
+  text-decoration: none;
+}
+
+.terms-link:hover {
+  text-decoration: underline;
+}

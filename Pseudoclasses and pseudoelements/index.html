@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suscripción a Boletín Informativo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Suscríbete a nuestro boletín</h1>
+
+      <form id="subscription-form" novalidate>
+        <div class="form-group">
+          <input
+            type="text"
+            id="nombre"
+            name="nombre"
+            placeholder="Nombre completo (obligatorio)"
+            required
+            minlength="2"
+            maxlength="50"
+          />
+          <div class="error-message" id="error-nombre">
+            Por favor ingresa tu nombre completo (mínimo 2 caracteres)
+          </div>
+          <div class="success-message" id="success-nombre">✓ Nombre válido</div>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Correo electrónico (obligatorio)"
+            required
+          />
+          <div class="error-message" id="error-email">
+            Por favor ingresa un correo electrónico válido
+          </div>
+          <div class="success-message" id="success-email">✓ Email válido</div>
+        </div>
+
+        <div class="form-group">
+          <input
+            type="tel"
+            id="telefono"
+            name="telefono"
+            placeholder="Número de teléfono (opcional)"
+            pattern="[\+]?[0-9\s\-\(\)]{10,15}"
+          />
+          <div class="error-message" id="error-telefono">
+            Por favor ingresa un número de teléfono válido (10-15 dígitos)
+          </div>
+          <div class="success-message" id="success-telefono">
+            ✓ Teléfono válido
+          </div>
+        </div>
+
+        <div class="form-group">
+          <select id="pais" name="pais" required>
+            <option value="">Selecciona tu país</option>
+            <option value="es">España</option>
+            <option value="mx">México</option>
+            <option value="ar">Argentina</option>
+            <option value="co">Colombia</option>
+            <option value="pe">Perú</option>
+            <option value="cl">Chile</option>
+            <option value="ve">Venezuela</option>
+            <option value="ec">Ecuador</option>
+            <option value="uy">Uruguay</option>
+            <option value="py">Paraguay</option>
+            <option value="bo">Bolivia</option>
+            <option value="otro">Otro</option>
+          </select>
+          <div class="error-message" id="error-pais">
+            Por favor selecciona tu país
+          </div>
+          <div class="success-message" id="success-pais">
+            ✓ País seleccionado
+          </div>
+        </div>
+
+        <div class="checkbox-group">
+          <input type="checkbox" id="terminos" name="terminos" required />
+          <label for="terminos"
+            >Acepto los
+            <a href="terminos.html" target="_blank" class="terms-link"
+              >Términos y Condiciones</a
+            ></label
+          >
+          <div class="error-message" id="error-terminos">
+            Debes aceptar los términos y condiciones
+          </div>
+        </div>
+
+        
+        </div>
+
+        <button type="submit" id="submit-btn" >Suscribirse</button>
+
+        <div class="form-status" id="form-status"></div>
+      </form>
+    </div>
+  </body>
+</html>
