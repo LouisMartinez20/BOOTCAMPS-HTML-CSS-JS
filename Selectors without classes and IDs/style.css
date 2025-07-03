@@ -1,0 +1,306 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+picture {
+  height: 610px;
+
+  width: 100%;
+  display: flex;
+  align-items: end;
+  background-size: cover;
+  background-position: center;
+
+  & h1 {
+    font-family: sans-serif;
+    font-weight: 700;
+    font-size: 3rem;
+    color: #fff;
+    margin: 68px;
+
+    width: calc(67%);
+  }
+}
+
+article {
+  display: flex;
+  padding-left: 68px;
+  padding-right: 68px;
+  margin-top: 30px;
+
+  font-family:'Times New Roman', Times, serif;
+
+  .barra-lateral {
+    width: auto;
+    font-family: Tahoma;
+
+    & figure {
+      & img {
+        width: 90px;
+        height: 90px;
+        margin-bottom: 10px;
+        border-radius: 50%;
+        object-fit: cover;
+      }
+    }
+
+    a::before {
+      content: "Por ";
+      font-weight: 300;
+      color: black;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    & a {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: 700;
+      line-height: 1.5rem;
+
+      text-decoration: none;
+    }
+
+    & p {
+      font-size: 0.875rem;
+      font-weight: 300;
+      line-height: 1.5rem;
+      padding-bottom: 30px;
+      border-bottom: 1px solid #c4c4cd;
+    }
+
+    & p {
+      padding-top: 0px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid #c4c4cd;
+      margin-bottom: 20px;
+
+      & span {
+        font-size: 1rem;
+        font-family: Tahoma;
+        display: block;
+      }
+    }
+  }
+
+  & main {
+    width: 100%;
+    margin-left: 200px;
+
+    & div:nth-of-type(1) {
+      padding-top: 45px;
+      padding-bottom: 45px;
+      border-bottom: 1px solid #c4c4cd;
+
+      & p {
+        margin-bottom: 40px;
+        font-size: 1.3rem;
+        font-weight: 400;
+      }
+    }
+
+    & div:nth-child(3) {
+      & p:first-child::first-letter {
+        float: left;
+        font-size: 6.875rem;
+        font-weight: 400;
+        line-height: 5rem;
+        margin-inline-end: 1.3rem;
+      }
+
+      & p {
+        font-size: 1.25rem;
+        font-weight: 300;
+        line-height: 1.7rem;
+        margin-bottom: 40px;
+        margin-top: 40px;
+
+        display: flow-root;
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+
+    & div:nth-of-type(3),
+    div:nth-of-type(5) {
+      border-top: 1px solid #c4c4cd;
+      padding-top: 35px;
+      padding-bottom: 50px;
+      border-bottom: 1px solid #c4c4cd;
+
+      & span {
+        font-family: sans-serif;
+        font-size: 1rem;
+        font-weight: 300;
+      }
+
+      & .estadisticas-numero {
+        padding-top: 30px;
+        & span {
+          font-family: sans-serif;
+          font-size: 7.5rem;
+          font-weight: 300;
+          line-height: 8.25rem;
+        }
+      }
+    }
+
+    & div:nth-of-type(4),
+    div:nth-of-type(6),
+    div:nth-of-type(7),
+    div:nth-of-type(8) {
+      padding-top: 30px;
+      padding-bottom: 50px;
+
+      & p {
+        font-size: 1.25rem;
+        font-weight: 300;
+        line-height: 1.7rem;
+      }
+
+      & .tarjeta {
+        height: 550px;
+        margin-top: 30px;
+        margin-bottom: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #c4c4cd;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        gap: 80px;
+
+        & div {
+          padding: 0;
+          width: 25rem;
+          display: grid;
+          place-items: center;
+
+          & div {
+            border: solid 20px;
+            border-color: #747480;
+            border-top-color: #ffe600;
+            border-radius: 50%;
+            padding: 0;
+            transform: rotate(50deg);
+
+            height: 190px;
+            width: 190px;
+
+            & span {
+              height: 100%;
+              width: 100%;
+              transform: rotate(-50deg);
+
+              display: grid;
+              place-items: center;
+              justify-content: center;
+
+              font-size: 3rem;
+            }
+          }
+        }
+
+        & h3 {
+          line-height: 2rem;
+
+          height: 139px;
+
+          text-align: center;
+          font-size: 1.7rem;
+          font-weight: bold;
+          margin-top: 32px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+
+    & ul {
+      margin-top: 16px;
+      margin-bottom: 16px;
+    }
+
+    & h3 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      font-weight: 300;
+
+      margin-bottom: 24px;
+    }
+
+    & .contenedor-estadisticas {
+      display: flex;
+      gap: 16px;
+
+      & div:nth-of-type(1),
+      div:nth-of-type(2) {
+        width: 100%;
+        border-top: 1px solid #c4c4cd;
+        padding-top: 35px;
+        padding-bottom: 50px;
+        border-bottom: 1px solid #c4c4cd;
+
+        & span {
+          font-family: sans-serif;
+          font-size: 1rem;
+          font-weight: 300;
+        }
+
+        & .estadistica-numero {
+          padding-top: 30px;
+          & span {
+            font-family: sans-serif;
+            font-size: 7.5rem;
+            font-weight: 300;
+            line-height: 8.25rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+h2 {
+  font-weight: normal;
+  font-size: 1.5rem;
+  line-height: 2rem;
+  padding-bottom: 45px;
+  border-bottom: 1px solid #c4c4cd;
+}
+
+h3 {
+  margin-top: 24px;
+  margin-bottom: 24px;
+
+  font-family: sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+h6 {
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-weight: 300;
+  font-size: 2rem;
+  line-height: 2.5rem;
+
+  margin-bottom: 24px;
+}
+
+ul {
+  padding-left: 40px;
+
+  & ::marker {
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
+
+  & li {
+    font-size: 1.25rem;
+    font-weight: 300;
+    line-height: 2rem;
+  }
+}
