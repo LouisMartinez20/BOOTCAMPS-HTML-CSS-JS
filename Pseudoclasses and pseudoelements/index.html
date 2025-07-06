@@ -6,101 +6,197 @@
     <title>Suscripción a Boletín Informativo</title>
     <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <div class="container">
-      <h1>Suscríbete a nuestro boletín</h1>
+      <header>
+        <h1>Suscríbete a nuestro boletín</h1>
+      </header>
 
-      <form id="subscription-form" novalidate>
-        <div class="form-group">
-          <input
-            type="text"
-            id="nombre"
-            name="nombre"
-            placeholder="Nombre completo (obligatorio)"
-            required
-            minlength="2"
-            maxlength="50"
-          />
-          <div class="error-message" id="error-nombre">
-            Por favor ingresa tu nombre completo (mínimo 2 caracteres)
+      <main>
+        <form id="subscription-form" novalidate>
+          <div class="form-group">
+            <label for="nombre">Nombre completo *</label>
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Ingresa tu nombre completo"
+              required
+              minlength="2"
+              maxlength="50"
+              aria-describedby="nombre-error"
+            />
+            <span
+              id="nombre-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
           </div>
-          <div class="success-message" id="success-nombre">✓ Nombre válido</div>
-        </div>
 
-        <div class="form-group">
-          <input
-            type="email"
-            id="email"
-            name="email"
-            placeholder="Correo electrónico (obligatorio)"
-            required
-          />
-          <div class="error-message" id="error-email">
-            Por favor ingresa un correo electrónico válido
+          <div class="form-group">
+            <label for="email">Correo electrónico *</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="tu@email.com"
+              required
+              aria-describedby="email-error"
+            />
+            <span
+              id="email-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
           </div>
-          <div class="success-message" id="success-email">✓ Email válido</div>
-        </div>
 
-        <div class="form-group">
-          <input
-            type="tel"
-            id="telefono"
-            name="telefono"
-            placeholder="Número de teléfono (opcional)"
-            pattern="[\+]?[0-9\s\-\(\)]{10,15}"
-          />
-          <div class="error-message" id="error-telefono">
-            Por favor ingresa un número de teléfono válido (10-15 dígitos)
+          <div class="form-group">
+            <label for="telefono">Número de teléfono (opcional)</label>
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              placeholder="+34 123 456 789"
+              pattern="[\+]?[0-9\s\-\(\)]{10,15}"
+              aria-describedby="telefono-help"
+            />
           </div>
-          <div class="success-message" id="success-telefono">
-            ✓ Teléfono válido
-          </div>
-        </div>
 
-        <div class="form-group">
-          <select id="pais" name="pais" required>
-            <option value="">Selecciona tu país</option>
-            <option value="es">España</option>
-            <option value="mx">México</option>
-            <option value="ar">Argentina</option>
-            <option value="co">Colombia</option>
-            <option value="pe">Perú</option>
-            <option value="cl">Chile</option>
-            <option value="ve">Venezuela</option>
-            <option value="ec">Ecuador</option>
-            <option value="uy">Uruguay</option>
-            <option value="py">Paraguay</option>
-            <option value="bo">Bolivia</option>
-            <option value="otro">Otro</option>
-          </select>
-          <div class="error-message" id="error-pais">
-            Por favor selecciona tu país
+          <div class="form-group checkbox-group">
+            <input
+              type="checkbox"
+              id="terminos"
+              name="terminos"
+              required
+              aria-describedby="terminos-error"
+            />
+            <label for="terminos" class="checkbox-label">
+              Acepto los
+              <a
+                href="#terminos-y-condiciones"
+                class="terms-link"
+                aria-label="Abrir términos y condiciones"
+              >
+                Términos y Condiciones
+              </a>
+            </label>
+            <span
+              id="terminos-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
           </div>
-          <div class="success-message" id="success-pais">
-            ✓ País seleccionado
-          </div>
-        </div>
 
-        <div class="checkbox-group">
-          <input type="checkbox" id="terminos" name="terminos" required />
-          <label for="terminos"
-            >Acepto los
-            <a href="terminos.html" target="_blank" class="terms-link"
-              >Términos y Condiciones</a
-            ></label
+          <a
+            href="about:blank"
+            target="_blank"
+            id="submit-btn"
+            class="button-link"
+            aria-describedby="submit-help"
+            role="button"
           >
-          <div class="error-message" id="error-terminos">
-            Debes aceptar los términos y condiciones
-          </div>
+            Suscribirse al boletín
+          </a>
+        </form>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Boletín Informativo. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+
+    <!-- Modal de Términos y Condiciones -->
+    <div
+      id="terminos-y-condiciones"
+      class="modal"
+      role="dialog"
+      aria-labelledby="modal-title"
+      aria-hidden="true"
+    >
+      <div class="modal-content">
+        <a href="#" class="close-btn" aria-label="Cerrar términos y condiciones"
+          >&times;</a
+        >
+        <h2 id="modal-title">Términos y Condiciones del Boletín Informativo</h2>
+
+        <div class="terms-section">
+          <h3>1. Aceptación de Términos</h3>
+          <p>
+            Al suscribirte a nuestro boletín informativo, aceptas estar
+            legalmente vinculado por estos términos y condiciones.
+          </p>
         </div>
 
-        
+        <div class="terms-section">
+          <h3>2. Uso de Información Personal</h3>
+          <ul class="terms-list">
+            <li>
+              Utilizaremos tu información únicamente para enviar el boletín
+              solicitado
+            </li>
+            <li>
+              No compartiremos tu información con terceros sin tu consentimiento
+              expreso
+            </li>
+            <li>
+              Implementamos medidas de seguridad para proteger tus datos
+              personales
+            </li>
+            <li>
+              Tienes derecho a solicitar la eliminación de tus datos en
+              cualquier momento
+            </li>
+          </ul>
         </div>
 
-        <button type="submit" id="submit-btn" >Suscribirse</button>
+        <div class="terms-section">
+          <h3>3. Contenido del Boletín</h3>
+          <ul class="terms-list">
+            <li>
+              El contenido se proporciona únicamente con fines informativos
+            </li>
+            <li>
+              Nos reservamos el derecho de modificar el contenido sin previo
+              aviso
+            </li>
+            <li>
+              No garantizamos la exactitud absoluta de toda la información
+              proporcionada
+            </li>
+            <li>El boletín puede contener enlaces a sitios web externos</li>
+          </ul>
+        </div>
 
-        <div class="form-status" id="form-status"></div>
-      </form>
+        <div class="terms-section">
+          <h3>4. Cancelación de Suscripción</h3>
+          <ul class="terms-list">
+            <li>Puedes cancelar tu suscripción en cualquier momento</li>
+            <li>Cada boletín incluye un enlace para darse de baja</li>
+            <li>La cancelación será efectiva inmediatamente</li>
+            <li>
+              Conservaremos un registro mínimo por razones legales y de
+              seguridad
+            </li>
+          </ul>
+        </div>
+
+        <div class="highlight">
+          <strong>Importante:</strong> Estos términos pueden ser actualizados
+          periódicamente. Te notificaremos sobre cambios significativos a través
+          del boletín.
+        </div>
+
+        <div class="terms-section">
+          <h3>5. Contacto</h3>
+          <p>
+            Si tienes preguntas sobre estos términos, puedes contactarnos en:
+            <strong>privacidad@ejemplo.com</strong>
+          </p>
+        </div>
+
+        <p class="last-update">Última actualización: 6 de julio de 2025</p>
+      </div>
     </div>
   </body>
 </html>
