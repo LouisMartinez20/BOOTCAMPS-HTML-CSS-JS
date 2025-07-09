@@ -1,53 +1,59 @@
+:root {
+  --georgia: Georgia, "Times New Roman", serif;
+  --border-color: #c4c4cd;
+  --margin-standard: 68px;
+  --padding-section: 30px 0 50px;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-bold: 700;
+  --font-large: 1.25rem;
+  --line-height-normal: 1.7rem;
+}
+
 * {
   margin: 0;
   padding: 0;
 }
 
-picture {
+header {
   height: 610px;
-
   width: 100%;
   display: flex;
   align-items: end;
   background-size: cover;
   background-position: center;
 
-  & h1 {
-    font-family: sans-serif;
-    font-weight: 700;
+  h1 {
+    font-family: var(--georgia);
+    font-weight: var(--font-bold);
     font-size: 3rem;
     color: #fff;
-    margin: 68px;
-
+    margin: var(--margin-standard);
     width: calc(67%);
   }
 }
 
 article {
   display: flex;
-  padding-left: 68px;
-  padding-right: 68px;
+  padding: 0 var(--margin-standard);
   margin-top: 30px;
+  font-family: var(--georgia);
 
-  font-family:'Times New Roman', Times, serif;
-
-  .barra-lateral {
+  aside {
     width: auto;
-    font-family: Tahoma;
+    font-family: var(--georgia);
 
-    & figure {
-      & img {
-        width: 90px;
-        height: 90px;
-        margin-bottom: 10px;
-        border-radius: 50%;
-        object-fit: cover;
-      }
+    figure img {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      object-fit: cover;
     }
 
     a::before {
       content: "Por ";
-      font-weight: 300;
+      font-weight: var(--font-light);
       color: black;
     }
 
@@ -55,252 +61,265 @@ article {
       text-decoration: underline;
     }
 
-    & a {
+    a {
       display: block;
       font-size: 0.95rem;
-      font-weight: 700;
+      font-weight: var(--font-bold);
       line-height: 1.5rem;
-
       text-decoration: none;
     }
 
-    & p {
+    p {
       font-size: 0.875rem;
-      font-weight: 300;
+      font-weight: var(--font-light);
       line-height: 1.5rem;
       padding-bottom: 30px;
-      border-bottom: 1px solid #c4c4cd;
+      border-bottom: 1px solid var(--border-color);
     }
 
-    & p {
-      padding-top: 0px;
+    time {
       padding-bottom: 20px;
-      border-bottom: 1px solid #c4c4cd;
+      border-bottom: 1px solid var(--border-color);
       margin-bottom: 20px;
+      display: block;
 
-      & span {
+      span {
         font-size: 1rem;
-        font-family: Tahoma;
+        font-family: var(--georgia);
         display: block;
       }
     }
   }
 
-  & main {
+  main {
     width: 100%;
     margin-left: 200px;
 
-    & div:nth-of-type(1) {
-      padding-top: 45px;
-      padding-bottom: 45px;
-      border-bottom: 1px solid #c4c4cd;
+    section:first-child div {
+      padding: 45px 0;
+      border-bottom: 1px solid var(--border-color);
 
-      & p {
+      p {
         margin-bottom: 40px;
         font-size: 1.3rem;
-        font-weight: 400;
+        font-weight: var(--font-normal);
       }
     }
 
-    & div:nth-child(3) {
-      & p:first-child::first-letter {
+    section:nth-child(2) {
+      p:first-child::first-letter {
         float: left;
         font-size: 6.875rem;
-        font-weight: 400;
+        font-weight: var(--font-normal);
         line-height: 5rem;
         margin-inline-end: 1.3rem;
       }
 
-      & p {
-        font-size: 1.25rem;
-        font-weight: 300;
-        line-height: 1.7rem;
-        margin-bottom: 40px;
-        margin-top: 40px;
-
+      p {
+        font-size: var(--font-large);
+        font-weight: var(--font-light);
+        line-height: var(--line-height-normal);
+        margin: 40px 0;
         display: flow-root;
         overflow: hidden;
         width: 100%;
       }
     }
 
-    & div:nth-of-type(3),
-    div:nth-of-type(5) {
-      border-top: 1px solid #c4c4cd;
-      padding-top: 35px;
-      padding-bottom: 50px;
-      border-bottom: 1px solid #c4c4cd;
+    /* Estilos comunes para figuras */
+    figure {
+      border: 1px solid var(--border-color);
+      border-left: none;
+      border-right: none;
+      padding: 35px 0 50px;
 
-      & span {
-        font-family: sans-serif;
+      span {
+        font-family: var(--georgia);
         font-size: 1rem;
-        font-weight: 300;
+        font-weight: var(--font-light);
       }
 
-      & .estadisticas-numero {
+      mark {
         padding-top: 30px;
-        & span {
-          font-family: sans-serif;
+        display: block;
+        background: transparent;
+
+        span {
+          font-family: var(--georgia);
           font-size: 7.5rem;
-          font-weight: 300;
+          font-weight: var(--font-light);
           line-height: 8.25rem;
         }
       }
     }
 
-    & div:nth-of-type(4),
-    div:nth-of-type(6),
-    div:nth-of-type(7),
-    div:nth-of-type(8) {
-      padding-top: 30px;
-      padding-bottom: 50px;
+    /* Sección especial con círculos */
+    section:nth-child(6) {
+      padding: var(--padding-section);
 
-      & p {
-        font-size: 1.25rem;
-        font-weight: 300;
-        line-height: 1.7rem;
+      p {
+        font-size: var(--font-large);
+        font-weight: var(--font-light);
+        line-height: var(--line-height-normal);
       }
 
-      & .tarjeta {
+      section {
         height: 550px;
-        margin-top: 30px;
-        margin-bottom: 30px;
-        margin-left: auto;
-        margin-right: auto;
-        background-color: #c4c4cd;
+        margin: 30px auto;
+        background-color: var(--border-color);
         display: flex;
         place-items: center;
         justify-content: center;
         gap: 80px;
 
-        & div {
+        article {
           padding: 0;
           width: 25rem;
           display: grid;
           place-items: center;
 
-          & div {
-            border: solid 20px;
-            border-color: #747480;
+          header {
+            border: 20px solid #747480;
             border-top-color: #ffe600;
             border-radius: 50%;
             padding: 0;
             transform: rotate(50deg);
-
             height: 190px;
             width: 190px;
 
-            & span {
+            span {
               height: 100%;
               width: 100%;
               transform: rotate(-50deg);
-
               display: grid;
               place-items: center;
-              justify-content: center;
-
               font-size: 3rem;
+              font-family: var(--georgia);
             }
           }
         }
 
-        & h3 {
+        h3 {
           line-height: 2rem;
-
           height: 139px;
-
           text-align: center;
           font-size: 1.7rem;
           font-weight: bold;
-          margin-top: 32px;
-          margin-bottom: 24px;
+          margin: 32px 0 24px;
         }
       }
     }
 
-    & ul {
-      margin-top: 16px;
-      margin-bottom: 16px;
-    }
-
-    & h3 {
-      font-size: 2rem;
-      line-height: 2.5rem;
-      font-weight: 300;
-
-      margin-bottom: 24px;
-    }
-
-    & .contenedor-estadisticas {
+    /* Secciones con figuras en flexbox */
+    section:nth-child(7),
+    section:nth-child(9),
+    section:nth-child(11) {
       display: flex;
       gap: 16px;
 
-      & div:nth-of-type(1),
-      div:nth-of-type(2) {
+      figure {
         width: 100%;
-        border-top: 1px solid #c4c4cd;
-        padding-top: 35px;
-        padding-bottom: 50px;
-        border-bottom: 1px solid #c4c4cd;
-
-        & span {
-          font-family: sans-serif;
-          font-size: 1rem;
-          font-weight: 300;
-        }
-
-        & .estadistica-numero {
-          padding-top: 30px;
-          & span {
-            font-family: sans-serif;
-            font-size: 7.5rem;
-            font-weight: 300;
-            line-height: 8.25rem;
-          }
-        }
       }
+    }
+
+    /* Secciones con párrafos estándar */
+    section:nth-child(4),
+    section:nth-child(8),
+    section:nth-child(10) {
+      padding: var(--padding-section);
+
+      p {
+        font-size: var(--font-large);
+        font-weight: var(--font-light);
+        line-height: var(--line-height-normal);
+      }
+    }
+
+    ul {
+      margin: 16px 0;
+    }
+
+    h3 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      font-weight: var(--font-light);
+      margin-bottom: 24px;
     }
   }
 }
 
+/* Estilos globales para encabezados */
 h2 {
   font-weight: normal;
-  font-size: 1.5rem;
+  font-size: 34px;
   line-height: 2rem;
   padding-bottom: 45px;
-  border-bottom: 1px solid #c4c4cd;
+  border-bottom: 1px solid var(--border-color);
 }
 
 h3 {
-  margin-top: 24px;
-  margin-bottom: 24px;
-
-  font-family: sans-serif;
-  font-weight: 300;
+  margin: 24px 0;
+  font-family: var(--georgia);
+  font-weight: var(--font-light);
   font-size: 2rem;
   line-height: 3rem;
 }
 
 h6 {
-  font-family: Georgia, "Times New Roman", Times, serif;
-  font-weight: 300;
+  font-family: var(--georgia);
+  font-weight: var(--font-light);
   font-size: 2rem;
   line-height: 2.5rem;
-
   margin-bottom: 24px;
 }
 
+/* Listas */
 ul {
   padding-left: 40px;
 
-  & ::marker {
-    font-size: 1.25rem;
-    font-weight: 300;
+  ::marker {
+    font-size: var(--font-large);
+    font-weight: var(--font-light);
   }
 
-  & li {
-    font-size: 1.25rem;
-    font-weight: 300;
+  li {
+    font-size: var(--font-large);
+    font-weight: var(--font-light);
     line-height: 2rem;
   }
+}
+
+/* Elementos de detalles */
+summary p {
+  margin-bottom: 40px;
+  font-size: 1.3rem;
+  font-weight: var(--font-normal);
+}
+
+details {
+  padding: 45px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Elementos de tiempo */
+time {
+  font-size: 0.875rem;
+  font-weight: var(--font-light);
+  line-height: 1.5rem;
+}
+
+/* Footer */
+footer {
+  padding: var(--padding-section);
+
+  p {
+    font-size: var(--font-large);
+    font-weight: var(--font-light);
+    line-height: var(--line-height-normal);
+  }
+}
+
+/* Marca sin fondo */
+mark {
+  background: transparent;
 }
