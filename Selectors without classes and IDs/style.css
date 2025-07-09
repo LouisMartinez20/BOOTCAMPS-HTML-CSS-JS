@@ -1,0 +1,325 @@
+:root {
+  --georgia: Georgia, "Times New Roman", serif;
+  --border-color: #c4c4cd;
+  --margin-standard: 68px;
+  --padding-section: 30px 0 50px;
+  --font-light: 300;
+  --font-normal: 400;
+  --font-bold: 700;
+  --font-large: 1.25rem;
+  --line-height-normal: 1.7rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  height: 610px;
+  width: 100%;
+  display: flex;
+  align-items: end;
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    font-family: var(--georgia);
+    font-weight: var(--font-bold);
+    font-size: 3rem;
+    color: #fff;
+    margin: var(--margin-standard);
+    width: calc(67%);
+  }
+}
+
+article {
+  display: flex;
+  padding: 0 var(--margin-standard);
+  margin-top: 30px;
+  font-family: var(--georgia);
+
+  aside {
+    width: auto;
+    font-family: var(--georgia);
+
+    figure img {
+      width: 90px;
+      height: 90px;
+      margin-bottom: 10px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    a::before {
+      content: "Por ";
+      font-weight: var(--font-light);
+      color: black;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    a {
+      display: block;
+      font-size: 0.95rem;
+      font-weight: var(--font-bold);
+      line-height: 1.5rem;
+      text-decoration: none;
+    }
+
+    p {
+      font-size: 0.875rem;
+      font-weight: var(--font-light);
+      line-height: 1.5rem;
+      padding-bottom: 30px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    time {
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 20px;
+      display: block;
+
+      span {
+        font-size: 1rem;
+        font-family: var(--georgia);
+        display: block;
+      }
+    }
+  }
+
+  main {
+    width: 100%;
+    margin-left: 200px;
+
+    section:first-child div {
+      padding: 45px 0;
+      border-bottom: 1px solid var(--border-color);
+
+      p {
+        margin-bottom: 40px;
+        font-size: 1.3rem;
+        font-weight: var(--font-normal);
+      }
+    }
+
+    section:nth-child(2) {
+      p:first-child::first-letter {
+        float: left;
+        font-size: 6.875rem;
+        font-weight: var(--font-normal);
+        line-height: 5rem;
+        margin-inline-end: 1.3rem;
+      }
+
+      p {
+        font-size: var(--font-large);
+        font-weight: var(--font-light);
+        line-height: var(--line-height-normal);
+        margin: 40px 0;
+        display: flow-root;
+        overflow: hidden;
+        width: 100%;
+      }
+    }
+
+    /* Estilos comunes para figuras */
+    figure {
+      border: 1px solid var(--border-color);
+      border-left: none;
+      border-right: none;
+      padding: 35px 0 50px;
+
+      span {
+        font-family: var(--georgia);
+        font-size: 1rem;
+        font-weight: var(--font-light);
+      }
+
+      mark {
+        padding-top: 30px;
+        display: block;
+        background: transparent;
+
+        span {
+          font-family: var(--georgia);
+          font-size: 7.5rem;
+          font-weight: var(--font-light);
+          line-height: 8.25rem;
+        }
+      }
+    }
+
+    /* Sección especial con círculos */
+    section:nth-child(6) {
+      padding: var(--padding-section);
+
+      p {
+        font-size: var(--font-large);
+        font-weight: var(--font-light);
+        line-height: var(--line-height-normal);
+      }
+
+      section {
+        height: 550px;
+        margin: 30px auto;
+        background-color: var(--border-color);
+        display: flex;
+        place-items: center;
+        justify-content: center;
+        gap: 80px;
+
+        article {
+          padding: 0;
+          width: 25rem;
+          display: grid;
+          place-items: center;
+
+          header {
+            border: 20px solid #747480;
+            border-top-color: #ffe600;
+            border-radius: 50%;
+            padding: 0;
+            transform: rotate(50deg);
+            height: 190px;
+            width: 190px;
+
+            span {
+              height: 100%;
+              width: 100%;
+              transform: rotate(-50deg);
+              display: grid;
+              place-items: center;
+              font-size: 3rem;
+              font-family: var(--georgia);
+            }
+          }
+        }
+
+        h3 {
+          line-height: 2rem;
+          height: 139px;
+          text-align: center;
+          font-size: 1.7rem;
+          font-weight: bold;
+          margin: 32px 0 24px;
+        }
+      }
+    }
+
+    /* Secciones con figuras en flexbox */
+    section:nth-child(7),
+    section:nth-child(9),
+    section:nth-child(11) {
+      display: flex;
+      gap: 16px;
+
+      figure {
+        width: 100%;
+      }
+    }
+
+    /* Secciones con párrafos estándar */
+    section:nth-child(4),
+    section:nth-child(8),
+    section:nth-child(10) {
+      padding: var(--padding-section);
+
+      p {
+        font-size: var(--font-large);
+        font-weight: var(--font-light);
+        line-height: var(--line-height-normal);
+      }
+    }
+
+    ul {
+      margin: 16px 0;
+    }
+
+    h3 {
+      font-size: 2rem;
+      line-height: 2.5rem;
+      font-weight: var(--font-light);
+      margin-bottom: 24px;
+    }
+  }
+}
+
+/* Estilos globales para encabezados */
+h2 {
+  font-weight: normal;
+  font-size: 34px;
+  line-height: 2rem;
+  padding-bottom: 45px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+h3 {
+  margin: 24px 0;
+  font-family: var(--georgia);
+  font-weight: var(--font-light);
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+h6 {
+  font-family: var(--georgia);
+  font-weight: var(--font-light);
+  font-size: 2rem;
+  line-height: 2.5rem;
+  margin-bottom: 24px;
+}
+
+/* Listas */
+ul {
+  padding-left: 40px;
+
+  ::marker {
+    font-size: var(--font-large);
+    font-weight: var(--font-light);
+  }
+
+  li {
+    font-size: var(--font-large);
+    font-weight: var(--font-light);
+    line-height: 2rem;
+  }
+}
+
+/* Elementos de detalles */
+summary p {
+  margin-bottom: 40px;
+  font-size: 1.3rem;
+  font-weight: var(--font-normal);
+}
+
+details {
+  padding: 45px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Elementos de tiempo */
+time {
+  font-size: 0.875rem;
+  font-weight: var(--font-light);
+  line-height: 1.5rem;
+}
+
+/* Footer */
+footer {
+  padding: var(--padding-section);
+
+  p {
+    font-size: var(--font-large);
+    font-weight: var(--font-light);
+    line-height: var(--line-height-normal);
+  }
+}
+
+/* Marca sin fondo */
+mark {
+  background: transparent;
+}
