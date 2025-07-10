@@ -16,12 +16,11 @@
       <main>
         <form id="subscription-form" novalidate>
           <div class="form-group">
-            <label for="nombre">Nombre completo *</label>
             <input
               type="text"
               id="nombre"
               name="nombre"
-              placeholder="Ingresa tu nombre completo"
+              placeholder="Nombre completo *"
               required
               minlength="2"
               maxlength="50"
@@ -35,12 +34,11 @@
           </div>
 
           <div class="form-group">
-            <label for="email">Correo electrónico *</label>
             <input
               type="email"
               id="email"
               name="email"
-              placeholder="tu@email.com"
+              placeholder="Correo electrónico *"
               required
               aria-describedby="email-error"
             />
@@ -52,12 +50,11 @@
           </div>
 
           <div class="form-group">
-            <label for="telefono">Número de teléfono (opcional)</label>
             <input
               type="tel"
               id="telefono"
               name="telefono"
-              placeholder="+34 123 456 789"
+              placeholder="Número de teléfono (opcional)"
               pattern="[\+]?[0-9\s\-\(\)]{10,15}"
               aria-describedby="telefono-help"
             />
@@ -71,7 +68,7 @@
               required
               aria-describedby="terminos-error"
             />
-            <label for="terminos" class="checkbox-label">
+            <span class="checkbox-label">
               Acepto los
               <a
                 href="#terminos-y-condiciones"
@@ -80,7 +77,7 @@
               >
                 Términos y Condiciones
               </a>
-            </label>
+            </span>
             <span
               id="terminos-error"
               class="error-message"
@@ -99,104 +96,74 @@
             Suscribirse al boletín
           </a>
         </form>
+
+        <section id="terminos-y-condiciones" class="terms-section-content">
+          <h2>Términos y Condiciones del Boletín Informativo</h2>
+
+          <p class="first-paragraph">
+            Al suscribirte a nuestro boletín informativo, aceptas estar
+            legalmente vinculado por estos términos y condiciones. Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <ul class="terms-list">
+            <li>
+              Utilizaremos tu información únicamente para enviar el boletín
+              solicitado y no la compartiremos con terceros sin tu
+              consentimiento.
+            </li>
+            <li>
+              Implementamos medidas de seguridad robustas para proteger tus
+              datos personales en todo momento según estándares internacionales.
+            </li>
+            <li>
+              Tienes derecho a solicitar la eliminación de tus datos en
+              cualquier momento sin costo alguno a través de nuestro sistema.
+            </li>
+            <li>
+              El contenido del boletín se proporciona únicamente con fines
+              informativos y educativos para nuestros suscriptores.
+            </li>
+            <li>
+              Nos reservamos el derecho de modificar el contenido del boletín
+              sin previo aviso según las necesidades del negocio.
+            </li>
+            <li>
+              No garantizamos la exactitud absoluta de toda la información
+              proporcionada en el boletín pero nos esforzamos por ser precisos.
+            </li>
+            <li>
+              Puedes cancelar tu suscripción en cualquier momento utilizando el
+              enlace incluido en cada boletín que recibas.
+            </li>
+            <li>
+              La cancelación será efectiva inmediatamente y no recibirás más
+              comunicaciones de nuestra parte una vez procesada.
+            </li>
+            <li>
+              Estos términos pueden ser actualizados periódicamente y te
+              notificaremos sobre cambios significativos a través del boletín.
+            </li>
+            <li>
+              Para cualquier consulta sobre estos términos, puedes contactarnos
+              en privacidad@ejemplo.com y te responderemos pronto.
+            </li>
+          </ul>
+
+          <div class="highlight">
+            <strong>Importante:</strong> Este sitio es ficticio y el contenido
+            es solo para fines demostrativos. Lorem ipsum dolor sit amet
+            consectetur.
+          </div>
+
+          <p class="last-update">Última actualización: 6 de julio de 2025</p>
+        </section>
       </main>
 
       <footer>
         <p>&copy; 2025 Boletín Informativo. Todos los derechos reservados.</p>
       </footer>
-    </div>
-
-    <!-- Modal de Términos y Condiciones -->
-    <div
-      id="terminos-y-condiciones"
-      class="modal"
-      role="dialog"
-      aria-labelledby="modal-title"
-      aria-hidden="true"
-    >
-      <div class="modal-content">
-        <a href="#" class="close-btn" aria-label="Cerrar términos y condiciones"
-          >&times;</a
-        >
-        <h2 id="modal-title">Términos y Condiciones del Boletín Informativo</h2>
-
-        <div class="terms-section">
-          <h3>1. Aceptación de Términos</h3>
-          <p>
-            Al suscribirte a nuestro boletín informativo, aceptas estar
-            legalmente vinculado por estos términos y condiciones.
-          </p>
-        </div>
-
-        <div class="terms-section">
-          <h3>2. Uso de Información Personal</h3>
-          <ul class="terms-list">
-            <li>
-              Utilizaremos tu información únicamente para enviar el boletín
-              solicitado
-            </li>
-            <li>
-              No compartiremos tu información con terceros sin tu consentimiento
-              expreso
-            </li>
-            <li>
-              Implementamos medidas de seguridad para proteger tus datos
-              personales
-            </li>
-            <li>
-              Tienes derecho a solicitar la eliminación de tus datos en
-              cualquier momento
-            </li>
-          </ul>
-        </div>
-
-        <div class="terms-section">
-          <h3>3. Contenido del Boletín</h3>
-          <ul class="terms-list">
-            <li>
-              El contenido se proporciona únicamente con fines informativos
-            </li>
-            <li>
-              Nos reservamos el derecho de modificar el contenido sin previo
-              aviso
-            </li>
-            <li>
-              No garantizamos la exactitud absoluta de toda la información
-              proporcionada
-            </li>
-            <li>El boletín puede contener enlaces a sitios web externos</li>
-          </ul>
-        </div>
-
-        <div class="terms-section">
-          <h3>4. Cancelación de Suscripción</h3>
-          <ul class="terms-list">
-            <li>Puedes cancelar tu suscripción en cualquier momento</li>
-            <li>Cada boletín incluye un enlace para darse de baja</li>
-            <li>La cancelación será efectiva inmediatamente</li>
-            <li>
-              Conservaremos un registro mínimo por razones legales y de
-              seguridad
-            </li>
-          </ul>
-        </div>
-
-        <div class="highlight">
-          <strong>Importante:</strong> Estos términos pueden ser actualizados
-          periódicamente. Te notificaremos sobre cambios significativos a través
-          del boletín.
-        </div>
-
-        <div class="terms-section">
-          <h3>5. Contacto</h3>
-          <p>
-            Si tienes preguntas sobre estos términos, puedes contactarnos en:
-            <strong>privacidad@ejemplo.com</strong>
-          </p>
-        </div>
-
-        <p class="last-update">Última actualización: 6 de julio de 2025</p>
-      </div>
     </div>
   </body>
 </html>
