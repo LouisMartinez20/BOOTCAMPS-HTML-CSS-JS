@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Suscripción a Boletín Informativo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header>
+        <h1>Suscríbete a nuestro boletín</h1>
+      </header>
+
+      <main>
+        <form id="subscription-form" novalidate>
+          <div class="form-group">
+            <input
+              type="text"
+              id="nombre"
+              name="nombre"
+              placeholder="Nombre completo *"
+              required
+              minlength="2"
+              maxlength="50"
+              aria-describedby="nombre-error"
+            />
+            <span
+              id="nombre-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="Correo electrónico *"
+              required
+              aria-describedby="email-error"
+            />
+            <span
+              id="email-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <div class="form-group">
+            <input
+              type="tel"
+              id="telefono"
+              name="telefono"
+              placeholder="Número de teléfono (opcional)"
+              pattern="[\+]?[0-9\s\-\(\)]{10,15}"
+              aria-describedby="telefono-help"
+            />
+          </div>
+
+          <div class="form-group checkbox-group">
+            <input
+              type="checkbox"
+              id="terminos"
+              name="terminos"
+              required
+              aria-describedby="terminos-error"
+            />
+            <span class="checkbox-label">
+              Acepto los
+              <a
+                href="#terminos-y-condiciones"
+                class="terms-link"
+                aria-label="Abrir términos y condiciones"
+              >
+                Términos y Condiciones
+              </a>
+            </span>
+            <span
+              id="terminos-error"
+              class="error-message"
+              aria-live="polite"
+            ></span>
+          </div>
+
+          <a
+            href="about:blank"
+            target="_blank"
+            id="submit-btn"
+            class="button-link"
+            aria-describedby="submit-help"
+            role="button"
+          >
+            Suscribirse al boletín
+          </a>
+        </form>
+
+        <section id="terminos-y-condiciones" class="terms-section-content">
+          <h2>Términos y Condiciones del Boletín Informativo</h2>
+
+          <p class="first-paragraph">
+            Al suscribirte a nuestro boletín informativo, aceptas estar
+            legalmente vinculado por estos términos y condiciones. Lorem ipsum
+            dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            incididunt ut labore et dolore magna aliqua.
+          </p>
+
+          <ul class="terms-list">
+            <li>
+              Utilizaremos tu información únicamente para enviar el boletín
+              solicitado y no la compartiremos con terceros sin tu
+              consentimiento.
+            </li>
+            <li>
+              Implementamos medidas de seguridad robustas para proteger tus
+              datos personales en todo momento según estándares internacionales.
+            </li>
+            <li>
+              Tienes derecho a solicitar la eliminación de tus datos en
+              cualquier momento sin costo alguno a través de nuestro sistema.
+            </li>
+            <li>
+              El contenido del boletín se proporciona únicamente con fines
+              informativos y educativos para nuestros suscriptores.
+            </li>
+            <li>
+              Nos reservamos el derecho de modificar el contenido del boletín
+              sin previo aviso según las necesidades del negocio.
+            </li>
+            <li>
+              No garantizamos la exactitud absoluta de toda la información
+              proporcionada en el boletín pero nos esforzamos por ser precisos.
+            </li>
+            <li>
+              Puedes cancelar tu suscripción en cualquier momento utilizando el
+              enlace incluido en cada boletín que recibas.
+            </li>
+            <li>
+              La cancelación será efectiva inmediatamente y no recibirás más
+              comunicaciones de nuestra parte una vez procesada.
+            </li>
+            <li>
+              Estos términos pueden ser actualizados periódicamente y te
+              notificaremos sobre cambios significativos a través del boletín.
+            </li>
+            <li>
+              Para cualquier consulta sobre estos términos, puedes contactarnos
+              en privacidad@ejemplo.com y te responderemos pronto.
+            </li>
+          </ul>
+
+          <div class="highlight">
+            <strong>Importante:</strong> Este sitio es ficticio y el contenido
+            es solo para fines demostrativos. Lorem ipsum dolor sit amet
+            consectetur.
+          </div>
+
+          <p class="last-update">Última actualización: 6 de julio de 2025</p>
+        </section>
+      </main>
+
+      <footer>
+        <p>&copy; 2025 Boletín Informativo. Todos los derechos reservados.</p>
+      </footer>
+    </div>
+  </body>
+</html>
