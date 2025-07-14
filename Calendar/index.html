@@ -15,7 +15,6 @@
             <h1>Calendar</h1>
             <select class="meeting-filter">
               <option>All Meeting</option>
-              <!-- Puedes agregar más opciones aquí -->
             </select>
           </div>
           <button class="create-meeting-btn">Create a meeting</button>
@@ -23,118 +22,143 @@
         <table class="calendar-table">
           <thead>
             <tr>
-              <th></th>
+              <th class="anterior">
+                <button
+                  class="calendar-nav-btn calendar-nav-prev"
+                  aria-label="Anterior"
+                >
+                  &#60;
+                </button>
+              </th>
               <th scope="col">
                 <div class="day-header">
-                  <div class="month-name">June</div>
+                  <div class="month-name">Sep</div>
+                  <div class="day-number">19</div>
+                  <div class="day-name">MON</div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="day-header">
+                  <div class="month-name">Sep</div>
+                  <div class="day-number">20</div>
+                  <div class="day-name">TUE</div>
+                </div>
+              </th>
+              <th scope="col">
+                <div class="day-header">
+                  <div class="month-name">Sep</div>
                   <div class="day-number">21</div>
-                  <div class="day-name">Tuesday</div>
+                  <div class="day-name">WED</div>
                 </div>
               </th>
               <th scope="col">
                 <div class="day-header">
-                  <div class="month-name">June</div>
+                  <div class="month-name">Sep</div>
                   <div class="day-number">22</div>
-                  <div class="day-name">Wednesday</div>
+                  <div class="day-name">THU</div>
                 </div>
               </th>
               <th scope="col">
                 <div class="day-header">
-                  <div class="month-name">June</div>
+                  <div class="month-name">Sep</div>
                   <div class="day-number">23</div>
-                  <div class="day-name">Thursday</div>
+                  <div class="day-name">FRI</div>
                 </div>
               </th>
               <th scope="col">
                 <div class="day-header">
-                  <div class="month-name">June</div>
+                  <div class="month-name">Sep</div>
                   <div class="day-number">24</div>
-                  <div class="day-name">Friday</div>
+                  <div class="day-name">SAT</div>
                 </div>
               </th>
-              <th scope="col">
+              <th>
                 <div class="day-header">
-                  <div class="month-name">June</div>
+                  <div class="month-name">Sep</div>
                   <div class="day-number">25</div>
-                  <div class="day-name">Saturday</div>
+                  <div class="day-name">SUN</div>
                 </div>
               </th>
-              <th scope="col">
-                <div class="day-header">
-                  <div class="month-name">June</div>
-                  <div class="day-number">26</div>
-                  <div class="day-name">Sunday</div>
-                </div>
+              <th class="siguiente">
+                <button
+                  class="calendar-nav-btn calendar-nav-next"
+                  aria-label="Siguiente"
+                >
+                  &#62;
+                </button>
               </th>
-              <th></th>
             </tr>
           </thead>
           <tbody>
-            <!-- 7 AM -->
             <tr>
               <th class="time-slot" scope="row">7:00</th>
               <td>
-                <div
-                  class="event-card"
-                  style="--event-color: rgba(102, 102, 102, 0.25)"
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/men/1.jpg"
-                    alt="Persona 1"
-                    class="event-avatar"
-                  />
+                <div class="event-card" style="--event-color: rgba(102, 102, 102, 0.25)">
+                  <div class="event-card-header">
+                    <img
+                      src="https://randomuser.me/api/portraits/men/1.jpg"
+                      alt="Persona 1"
+                      class="event-avatar"
+                    />
+                    <span class="event-card-action chulito">&#10003;</span>
+                  </div>
                   <div class="event-time">7:00 AM</div>
                   <div class="event-title">Meeting with sam</div>
                 </div>
               </td>
               <td>
-                <div
-                  class="event-card"
-                  style="--event-color: rgba(102, 102, 102, 0.25)"
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/women/2.jpg"
-                    alt="Persona 2"
-                    class="event-avatar"
-                  />
+                <div class="event-card" style="--event-color: rgba(102, 102, 102, 0.25)">
+                  <div class="event-card-header">
+                    <img
+                      src="https://randomuser.me/api/portraits/women/2.jpg"
+                      alt="Persona 2"
+                      class="event-avatar"
+                    />
+                    <span class="event-card-action chulito">&#10003;</span>
+                  </div>
                   <div class="event-time">7:00 AM</div>
                   <div class="event-title">Meeting with sam</div>
                 </div>
               </td>
               <td></td>
               <td>
-                <div
-                  class="event-card"
-                  style="--event-color: rgba(79, 140, 255, 0.25)"
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/men/3.jpg"
-                    alt="Persona 3"
-                    class="event-avatar"
-                  />
-                  <div class="event-time">7:00 AM</div>
-                  <div class="event-title">Meeting with sam</div>
-                </div>
-              </td>
-              <td>
-                <div
-                  class="event-card"
-                  style="--event-color: rgba(168, 224, 99, 0.25)"
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/women/1.jpg"
-                    alt="Persona 1"
-                    class="event-avatar"
-                  />
+                <div class="event-card" style="--event-color: rgba(79, 140, 255, 0.25)">
+                  <div class="event-card-header">
+                    <img
+                      src="https://randomuser.me/api/portraits/men/3.jpg"
+                      alt="Persona 3"
+                      class="event-avatar"
+                    />
+                    <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
+                  </div>
                   <div class="event-time">7:00 AM</div>
                   <div class="event-title">Meeting with sam</div>
                 </div>
               </td>
               <td></td>
+              <td></td>
+              <td>
+                <div class="event-card" style="--event-color: rgba(168, 224, 99, 0.25)">
+                  <div class="event-card-header">
+                    <img
+                      src="https://randomuser.me/api/portraits/women/1.jpg"
+                      alt="Persona 1"
+                      class="event-avatar"
+                    />
+                    <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
+                  </div>
+                  <div class="event-time">7:00 AM</div>
+                  <div class="event-title">Meeting with sam</div>
+                </div>
+              </td>
+              <td></td>
+              
             </tr>
             <!-- 8 AM -->
             <tr>
               <th class="time-slot">8:00</th>
+              <td></td>
+              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -151,39 +175,43 @@
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <!-- 10 AM -->
             <tr>
               <th class="time-slot">10:00</th>
               <td></td>
               <td>
-                <div
-                  class="event-card"
-                  style="--event-color: rgba(255, 165, 0, 0.25)"
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/men/2.jpg"
-                    alt="Persona 2"
-                    class="event-avatar"
-                  />
+                <div class="event-card" style="--event-color: rgba(255, 165, 0, 0.25)">
+                  <div class="event-card-header">
+                    <img
+                      src="https://randomuser.me/api/portraits/men/2.jpg"
+                      alt="Persona 2"
+                      class="event-avatar"
+                    />
+                    <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
+                  </div>
                   <div class="event-time">10:00 AM</div>
                   <div class="event-title">Meeting with sam</div>
                 </div>
               </td>
               <td>
-                <div
-                  class="event-card"
-                  style="--event-color: rgba(76, 175, 80, 0.25)"
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/women/3.jpg"
-                    alt="Persona 3"
-                    class="event-avatar"
-                  />
+                <div class="event-card" style="--event-color: rgba(76, 175, 80, 0.25)">
+                  <div class="event-card-header">
+                    <img
+                      src="https://randomuser.me/api/portraits/women/3.jpg"
+                      alt="Persona 3"
+                      class="event-avatar"
+                    />
+                    <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
+                  </div>
                   <div class="event-time">10:00 AM</div>
                   <div class="event-title">Meeting with sam</div>
                 </div>
               </td>
+              <td></td>
+              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -197,20 +225,22 @@
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <!-- 12 PM -->
             <tr>
               <th class="time-slot">12:00</th>
               <td>
-                <div
-                  class="event-card"
-                  style="--event-color: rgba(255, 213, 158, 0.25)"
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/men/4.jpg"
-                    alt="Persona 4"
-                    class="event-avatar"
-                  />
+                <div class="event-card" style="--event-color: rgba(255, 213, 158, 0.25)">
+                  <div class="event-card-header">
+                    <img
+                      src="https://randomuser.me/api/portraits/men/4.jpg"
+                      alt="Persona 4"
+                      class="event-avatar"
+                    />
+                    <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
+                  </div>
                   <div class="event-time">12:30 PM</div>
                   <div class="event-title">Lunch with Carla</div>
                 </div>
@@ -220,10 +250,14 @@
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <!-- 1 PM -->
             <tr>
               <th class="time-slot">13:00</th>
+              <td></td>
+              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -240,10 +274,14 @@
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
+              <td></td>
             </tr>
             <!-- 3 PM -->
             <tr>
               <th class="time-slot">15:00</th>
+              <td></td>
+              <td></td>
               <td></td>
               <td></td>
               <td></td>
@@ -258,25 +296,32 @@
               <td></td>
               <td></td>
               <td></td>
+              <td></td>
               <td>
-                <div
-                  class="event-card"
-                  style="--event-color: rgba(255, 79, 79, 0.25)"
-                >
-                  <img
-                    src="https://randomuser.me/api/portraits/women/4.jpg"
-                    alt="Persona 5"
-                    class="event-avatar"
-                  />
+                <div class="event-card" style="--event-color: rgba(255, 79, 79, 0.25)">
+                  <div class="event-card-header">
+                    <img
+                      src="https://randomuser.me/api/portraits/women/4.jpg"
+                      alt="Persona 5"
+                      class="event-avatar"
+                    />
+                    <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
+                  </div>
                   <div class="event-time">4:00 PM</div>
                   <div class="event-title">Meeting with sam</div>
                 </div>
               </td>
               <td></td>
+              <td></td>
+              <td></td>
             </tr>
           </tbody>
         </table>
       </div>
+    </main>
+  </body>
+</html>
+               
     </main>
   </body>
 </html>
