@@ -1,335 +1,122 @@
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #f5f5f5;
-  color: #333;
-}
+/* ...existing code... */
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-height: 100vh;
-  padding: 32px 0;
-  background: inherit;
-}
-
-/* Header styles */
-.calendar-header,
-.header-title-actions,
-.header-actions {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-
-.calendar-header {
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  padding: 18px 20px;
-  background: #faf8ff;
-  border-radius: 8px;
-  box-shadow: 0 1px 6px rgba(124, 58, 237, 0.06);
-}
-
-.header-actions {
-  gap: 12px;
-}
-
-.calendar-header h1 {
-  margin: 0;
-  font-size: 24px;
-  font-weight: 600;
-  color: black;
-  letter-spacing: 0.5px;
-}
-
-/* Button and input styles */
-.meeting-filter,
-.create-meeting-btn,
-.nav-button {
-  border-radius: 30px;
-  font-weight: 500;
-}
-
-.meeting-filter {
-  padding: 7px 12px;
-  border: 1px solid #ddd;
-  font-size: 15px;
-  background: #faf8ff;
-  color: #333;
-  outline: none;
-}
-
-.create-meeting-btn {
-  background: #7c3aed;
-  color: #fff;
-  border: 2px solid #7c3aed;
-  padding: 7px 18px;
-  font-size: 15px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background 0.2s, color 0.2s;
-}
-
-.create-meeting-btn:hover {
+.calendar-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(8, 1fr); 
+  grid-auto-rows: 60px;
+  border: 1px solid #e0e0e0;
   background: #fff;
-  color: #7c3aed;
 }
 
-.nav-button {
-  background: none;
-  border: 1px solid #ddd;
-  padding: 5px 10px;
-  cursor: pointer;
-  font-size: 16px;
-  height: 32px;
-  width: 32px;
+.grid-header {
+  background: #f5f5f5;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 0 auto;
-}
-
-/* Navigation button styles */
-.calendar-nav-btn {
-  background: #faf8ff;
-  border: 1.5px solid #e5e7eb;
-  color: black;
-  border-radius: 50%;
-  width: 44px;
-  height: 44px;
-  font-size: 28px;
   font-weight: bold;
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+}
+
+.grid-header.anterior,
+.grid-header.siguiente {
+  background: #fff;
+  border: none;
+}
+
+.grid-time {
+  background: #fafafa;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
-  transition: background 0.18s, border 0.18s, color 0.18s, box-shadow 0.18s;
-  margin: 0 auto;
-  outline: none;
-  box-shadow: 0 1px 6px rgba(124, 58, 237, 0.08);
+  font-weight: bold;
+  border-right: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.calendar-nav-btn:hover {
-  background: #ede9fe;
-  border-color: #7c3aed;
-  color: #4f46e5;
-  box-shadow: 0 4px 16px rgba(124, 58, 237, 0.13);
-}
-
-/* Table styles */
-.calendar-table {
-  width: 100%;
-  border-collapse: collapse;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+.grid-cell {
+  border-bottom: 1px solid #e0e0e0;
+  border-right: 1px solid #e0e0e0;
+  position: relative;
   background: #fff;
 }
 
-.calendar-table th,
-.calendar-table td {
-  border-right: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-  position: relative;
-  width: 80px;
-  height: 100px;
-  vertical-align: top;
-  box-sizing: border-box;
-  padding: 0;
-}
-
-.calendar-table thead th {
-  background: #fafafa;
-  font-weight: 600;
-  text-align: center;
-  height: 120px;
-  border-right: none;
-  border-bottom: none;
-  vertical-align: middle;
-  padding: 0;
-}
-
-.calendar-table th.time-slot {
-  font-weight: 400;
-  text-align: right;
-  padding-right: 10px;
-  font-size: 13px; /* Cambia el tamaño del texto aquí */
-  color: #666;
-}
-
-.calendar-table th:first-child,
-.calendar-table th:last-child {
-  width: 90px;
-  min-width: 40px;
-}
-
-.calendar-table tr:last-child th,
-.calendar-table tr:last-child td,
-.time-slot:first-child,
-.time-cell:last-child {
-  border-bottom: none;
-}
-
-.calendar-table tr th:last-child,
-.calendar-table tr td:last-child {
-  border-right: none;
-}
-
-/* Asegura que la última columna (domingo) tenga borde derecho excepto en thead */
-.calendar-table th:not(:last-child),
-.calendar-table td:not(:last-child) {
-  border-right: 1px solid #eee;
-}
-
-.calendar-table th:last-child,
-.calendar-table td:last-child {
-  border-right: 1px solid #eee;
-}
-
-/* Quita el borde solo en thead para el último th */
-.calendar-table thead th:last-child {
-  border-right: none;
-}
-
-th.anterior,
-th.siguiente {
-  text-align: center;
-  vertical-align: middle;
-}
-
-/* Asegura borde derecho en la última columna del body */
-.calendar-table tbody td:last-child,
-.calendar-table tbody th.siguiente {
-  border-right: 1px solid #eee;
-}
-
-/* Day header styles */
-.day-header {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  padding: 0;
-  gap: 2px;
-}
-
-.month-name {
-  font-size: 12px;
-  color: #333;
-  font-weight: 600;
-  letter-spacing: 0.5px;
-  margin-bottom: 2px;
-  text-transform: uppercase;
-}
-
-.day-number {
-  font-size: 28px;
-  font-weight: 700;
-  color: #333;
-  margin: 0;
-  line-height: 1;
-}
-
-.day-name {
-  font-size: 13px;
-  color: #666;
-  margin-top: 2px;
-  text-transform: capitalize;
-  font-weight: 500;
-}
-
-/* Time slot styles */
-.time-slot {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 12px;
-  color: #666;
-  background: #fafafa;
-}
-
-/* Event card styles */
 .event-card {
+  background: var(--event-color, #eee);
+  border-radius: 8px;
+  padding: 8px;
+  margin: 4px 0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
   display: flex;
   flex-direction: column;
-  align-items: stretch;
-  background-color: var(--event-color);
-  border-radius: 18px;
-  padding: 18px 18px 16px 18px;
-  position: relative;
-  /* Puedes cambiar el tamaño de las cards aquí */
-  min-width: 0;
-  max-width: 80px; /* Cambia este valor para el ancho máximo */
-  min-height: 40px; /* Cambia este valor para el alto mínimo */
-  transition: box-shadow 0.22s cubic-bezier(0.4, 2, 0.6, 1), border 0.18s,
-    transform 0.22s cubic-bezier(0.4, 2, 0.6, 1), background 0.18s;
-  border: 2px solid transparent;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
-  z-index: 1;
-}
-
-.event-card:hover {
-  box-shadow: 0 8px 32px rgba(79, 140, 255, 0.18), 0 2px 8px rgba(0, 0, 0, 0.13);
-  border: 2px solid #4f8cff;
-  background: rgba(79, 140, 255, 0.13);
-  transform: translate(-8px, -8px) scale(1.06);
-  z-index: 10;
+  gap: 4px;
 }
 
 .event-card-header {
   display: flex;
-  flex-direction: row;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
-  width: 100%;
-  margin-bottom: 6px;
 }
 
 .event-avatar {
-  width: 40px;
-  height: 40px;
+  width: 28px;
+  height: 28px;
   border-radius: 50%;
-  object-fit: cover;
-  margin: 0;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
-  display: block;
+  margin-right: 8px;
 }
 
 .event-card-action {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 40px;
-  min-width: 24px;
-  margin-left: 8px;
-  font-size: 22px;
+  font-size: 18px;
+  cursor: pointer;
 }
 
-.event-card-action.chulito {
-  color: #22c55e;
+.event-time {
+  font-size: 12px;
+  color: #888;
 }
 
-.event-card-action.dots {
-  color: #bbb;
-  font-size: 22px;
-  letter-spacing: 2px;
-}
-
-.event-time,
 .event-title {
-  margin: 0;
   font-size: 14px;
-  color: #333;
-  text-align: left;
-  padding-left: 2px;
+  font-weight: 500;
 }
 
-.event-title {
-  font-weight: 600;
-  margin-top: 2px;
+.day-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.month-name {
+  font-size: 11px;
+  color: #888;
+}
+
+.day-number {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.day-name {
+  font-size: 12px;
+  color: #555;
+}
+
+.calendar-nav-btn {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.calendar-nav-btn:hover {
+  background: #f0f0f0;
+}
+
+.meeting-filter {
+  border-radius: 16px;
 }
