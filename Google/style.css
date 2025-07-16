@@ -19,13 +19,20 @@ header {
 
 .nav-links {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 18px;
+  height: 64px;
+  padding: 0 24px;
 }
 
 .nav-links a {
+  font-size: 1rem;
+  color: #222;
   text-decoration: none;
-  color: rgba(0, 0, 0, 0.87);
-  font-size: 13px;
+  line-height: 32px;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a:hover {
@@ -52,36 +59,10 @@ main {
   letter-spacing: -10px;
 }
 
-.logo h1 .g-blue {
-  color: #4285f4;
-  font-size: 100px;
-}
-
-.logo h1 .o-red {
-  color: #ea4335;
-}
-
-.logo h1 .o-yellow {
-  color: #fbbc05;
-}
-
-.logo h1 .g-blue2 {
-  color: #4285f4;
-}
-
-.logo h1 .l-green {
-  color: #34a853;
-  font-size: 90px;
-}
-
-.logo h1 .e-red {
-  color: #ea4335;
-}
-
 .search-container {
   width: 100%;
   max-width: 580px;
-  margin-bottom: 30px;
+  margin-bottom: 60px;
 }
 
 .search-box {
@@ -89,7 +70,7 @@ main {
   align-items: center;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
-  padding: 0 15px;
+  padding: 0; 
   margin-bottom: 20px;
   background: #fff;
   position: relative;
@@ -99,7 +80,11 @@ main {
   display: inline-block;
   width: 20px;
   height: 20px;
-  margin-right: 8px;
+  margin-right: 0;
+  padding-left: 18px;
+  padding-right: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   background: url('data:image/svg+xml;utf8,<svg fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" stroke="gray" stroke-width="2" fill="none"/><line x1="16.5" y1="16.5" x2="21" y2="21" stroke="gray" stroke-width="2" stroke-linecap="round"/></svg>')
     no-repeat center/contain;
 }
@@ -108,12 +93,17 @@ main {
   display: inline-block;
   width: 22px;
   height: 22px;
-  margin-left: 8px;
+  margin-left: 0;
+  padding-right: 18px;
+  padding-left: 8px;
+  padding-top: 8px;
+  padding-bottom: 8px;
   background: url('data:image/svg+xml;utf8,<svg fill="gray" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="12" rx="2" stroke="gray" stroke-width="2" fill="none"/><circle cx="12" cy="13" r="3" stroke="gray" stroke-width="2" fill="none"/><rect x="9" y="3" width="6" height="4" rx="1" stroke="gray" stroke-width="2" fill="none"/></svg>')
     no-repeat center/contain;
 }
 
 .search-input {
+  container: flex;
   flex-grow: 1;
   border: none;
   outline: none;
@@ -126,6 +116,7 @@ main {
   display: flex;
   justify-content: center;
   gap: 15px;
+  margin-top: 60px;
 }
 
 .search-btn,
@@ -151,7 +142,7 @@ footer {
 }
 
 .footer-top {
-  padding: 15px 0;
+  padding: 5px 0;
   border-bottom: 1px solid #dadce0;
   font-size: 15px;
   color: #70757a;
@@ -181,24 +172,21 @@ footer {
 }
 
 .menu-icon {
-  display: inline-grid;
-  grid-template-columns: repeat(3, 6px);
-  grid-template-rows: repeat(3, 6px);
-  gap: 3px;
-  width: 24px;
-  height: 24px;
+  display: inline-flex;
+  flex-wrap: wrap;
+  width: 18px;
+  height: 18px;
   align-items: center;
-  justify-items: center;
-  margin-left: 10px;
-  margin-right: 10px;
-  cursor: pointer;
+  justify-content: center;
+  vertical-align: middle;
 }
 
 .menu-icon .dot {
-  width: 5px;
-  height: 5px;
+  width: 4px;
+  height: 4px;
   background: #5f6368;
   border-radius: 50%;
+  margin: 1px;
   display: inline-block;
 }
 
@@ -212,6 +200,8 @@ footer {
   margin-left: 5px;
   cursor: pointer;
   border: 1px solid #e0e0e0;
+  display: flex;
+  align-items: center;
 }
 
 .nav-links a,
@@ -230,17 +220,24 @@ footer {
   background: #e0e0e0;
 }
 
+.icon-search,
+.icon-camera {
+  container: flex;
+  cursor: pointer;
+  border-radius: 50%;
+  padding: 12px;
+  width: 20px;
+  height: 20px;
+  background-size: 20px 20px;
+  box-sizing: content-box;
+}
+
 @media (max-width: 600px) {
   .logo h1 {
     font-size: 36px;
     letter-spacing: -4px;
   }
-  .logo h1 .g-blue {
-    font-size: 48px;
-  }
-  .logo h1 .l-green {
-    font-size: 44px;
-  }
+
   .search-container {
     width: 100%;
     max-width: 100%;
