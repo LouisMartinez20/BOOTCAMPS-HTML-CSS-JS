@@ -6,125 +6,164 @@
     <title>VanillaHR Calendar</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <main>
       <div class="calendar-container">
         <header class="calendar-header">
-          <div class="header-title-actions">
-            <h1>Calendar</h1>
-            <select class="meeting-filter">
-              <option>All Meeting</option>
-            </select>
+          <div class="calendar-header-bar">
+            <div style="display: flex; align-items: center; gap: 12px">
+              <span style="font-size: 28px; font-weight: bold">Calendar</span>
+              <select class="meeting-filter">
+                <option>All Meeting</option>
+              </select>
+            </div>
+            <button class="create-meeting-btn">Create Meeting</button>
           </div>
-          <button class="create-meeting-btn">Create a meeting</button>
         </header>
         <div class="calendar-grid">
-          <!-- Fila de cabecera -->
           <div class="grid-header anterior">
-            <button class="calendar-nav-btn calendar-nav-prev" aria-label="Anterior">&#60;</button>
+            <button class="calendar-nav-btn">&lt;</button>
           </div>
           <div class="grid-header">
             <div class="day-header">
-              <div class="month-name">Sep</div>
-              <div class="day-number">19</div>
-              <div class="day-name">MON</div>
+              <span class="month-name">Sep</span>
+              <span class="day-number">19</span>
+              <span class="day-name">MON</span>
             </div>
           </div>
           <div class="grid-header">
             <div class="day-header">
-              <div class="month-name">Sep</div>
-              <div class="day-number">20</div>
-              <div class="day-name">TUE</div>
+              <span class="month-name">Sep</span>
+              <span class="day-number">20</span>
+              <span class="day-name">TUE</span>
             </div>
           </div>
           <div class="grid-header">
             <div class="day-header">
-              <div class="month-name">Sep</div>
-              <div class="day-number">21</div>
-              <div class="day-name">WED</div>
+              <span class="month-name">Sep</span>
+              <span class="day-number">21</span>
+              <span class="day-name">WED</span>
             </div>
           </div>
           <div class="grid-header">
             <div class="day-header">
-              <div class="month-name">Sep</div>
-              <div class="day-number">22</div>
-              <div class="day-name">THU</div>
+              <span class="month-name">Sep</span>
+              <span class="day-number">22</span>
+              <span class="day-name">THU</span>
             </div>
           </div>
           <div class="grid-header">
             <div class="day-header">
-              <div class="month-name">Sep</div>
-              <div class="day-number">23</div>
-              <div class="day-name">FRI</div>
+              <span class="month-name">Sep</span>
+              <span class="day-number">23</span>
+              <span class="day-name">FRI</span>
             </div>
           </div>
           <div class="grid-header">
             <div class="day-header">
-              <div class="month-name">Sep</div>
-              <div class="day-number">24</div>
-              <div class="day-name">SAT</div>
+              <span class="month-name">Sep</span>
+              <span class="day-number">24</span>
+              <span class="day-name">SAT</span>
             </div>
           </div>
           <div class="grid-header">
             <div class="day-header">
-              <div class="month-name">Sep</div>
-              <div class="day-number">25</div>
-              <div class="day-name">SUN</div>
+              <span class="month-name">Sep</span>
+              <span class="day-number">25</span>
+              <span class="day-name">SUN</span>
             </div>
           </div>
           <div class="grid-header siguiente">
-            <button class="calendar-nav-btn calendar-nav-next" aria-label="Siguiente">&#62;</button>
+            <button class="calendar-nav-btn">&gt;</button>
           </div>
-
+        </div>
+        <div class="calendar-grid">
           <!-- Fila 7:00 -->
           <div class="grid-time">7:00</div>
           <div class="grid-cell">
-            <div class="event-card" style="--event-color: rgba(102, 102, 102, 0.25)">
+            <div
+              class="event-card"
+              style="
+                --event-color: rgba(102, 102, 102, 0.25);
+                --event-color-text: #333;
+              "
+            >
               <div class="event-card-header">
-                <img src="https://randomuser.me/api/portraits/men/1.jpg" alt="Persona 1" class="event-avatar" />
+                <img
+                  src="https://randomuser.me/api/portraits/men/1.jpg"
+                  alt="Persona 1"
+                  class="event-avatar"
+                />
                 <span class="event-card-action chulito">&#10003;</span>
               </div>
-              <div class="event-time">7:00 AM</div>
-              <div class="event-title">Meeting with sam</div>
+              <span class="event-time">7:00 AM</span>
+              <span class="event-title">Meeting with sam</span>
             </div>
           </div>
           <div class="grid-cell">
-            <div class="event-card" style="--event-color: rgba(102, 102, 102, 0.25)">
+            <div
+              class="event-card"
+              style="
+                --event-color: rgba(102, 102, 102, 0.25);
+                --event-color-text: #333;
+              "
+            >
               <div class="event-card-header">
-                <img src="https://randomuser.me/api/portraits/women/2.jpg" alt="Persona 2" class="event-avatar" />
+                <img
+                  src="https://randomuser.me/api/portraits/women/2.jpg"
+                  alt="Persona 2"
+                  class="event-avatar"
+                />
                 <span class="event-card-action chulito">&#10003;</span>
               </div>
-              <div class="event-time">7:00 AM</div>
-              <div class="event-title">Meeting with sam</div>
+              <span class="event-time">7:00 AM</span>
+              <span class="event-title">Meeting with sam</span>
             </div>
           </div>
           <div class="grid-cell"></div>
           <div class="grid-cell">
-            <div class="event-card" style="--event-color: rgba(79, 140, 255, 0.25)">
+            <div
+              class="event-card"
+              style="
+                --event-color: rgba(79, 140, 255, 0.25);
+                --event-color-text: #1a3a7c;
+              "
+            >
               <div class="event-card-header">
-                <img src="https://randomuser.me/api/portraits/men/3.jpg" alt="Persona 3" class="event-avatar" />
+                <img
+                  src="https://randomuser.me/api/portraits/men/3.jpg"
+                  alt="Persona 3"
+                  class="event-avatar"
+                />
                 <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
               </div>
-              <div class="event-time">7:00 AM</div>
-              <div class="event-title">Meeting with sam</div>
+              <span class="event-time">7:00 AM</span>
+              <span class="event-title">Meeting with sam</span>
             </div>
           </div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell">
-            <div class="event-card" style="--event-color: rgba(168, 224, 99, 0.25)">
+            <div
+              class="event-card"
+              style="
+                --event-color: rgba(168, 224, 99, 0.25);
+                --event-color-text: #4a7c1a;
+              "
+            >
               <div class="event-card-header">
-                <img src="https://randomuser.me/api/portraits/women/1.jpg" alt="Persona 1" class="event-avatar" />
+                <img
+                  src="https://randomuser.me/api/portraits/women/1.jpg"
+                  alt="Persona 1"
+                  class="event-avatar"
+                />
                 <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
               </div>
-              <div class="event-time">7:00 AM</div>
-              <div class="event-title">Meeting with sam</div>
+              <span class="event-time">7:00 AM</span>
+              <span class="event-title">Meeting with sam</span>
             </div>
           </div>
-          
           <div class="grid-cell"></div>
-
           <!-- Fila 8:00 -->
           <div class="grid-time">8:00</div>
           <div class="grid-cell"></div>
@@ -135,7 +174,6 @@
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
-
           <!-- Fila 9:00 -->
           <div class="grid-time">9:00</div>
           <div class="grid-cell"></div>
@@ -146,28 +184,47 @@
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
-
           <!-- Fila 10:00 -->
           <div class="grid-time">10:00</div>
           <div class="grid-cell"></div>
           <div class="grid-cell">
-            <div class="event-card" style="--event-color: rgba(255, 165, 0, 0.25)">
+            <div
+              class="event-card"
+              style="
+                --event-color: rgba(255, 165, 0, 0.25);
+                --event-color-text: #b36b00;
+              "
+            >
               <div class="event-card-header">
-                <img src="https://randomuser.me/api/portraits/men/2.jpg" alt="Persona 2" class="event-avatar" />
+                <img
+                  src="https://randomuser.me/api/portraits/men/2.jpg"
+                  alt="Persona 2"
+                  class="event-avatar"
+                />
                 <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
               </div>
-              <div class="event-time">10:00 AM</div>
-              <div class="event-title">Meeting with sam</div>
+              <span class="event-time">10:00 AM</span>
+              <span class="event-title">Meeting with sam</span>
             </div>
           </div>
           <div class="grid-cell">
-            <div class="event-card" style="--event-color: rgba(76, 175, 80, 0.25)">
+            <div
+              class="event-card"
+              style="
+                --event-color: rgba(76, 175, 80, 0.25);
+                --event-color-text: #217a2b;
+              "
+            >
               <div class="event-card-header">
-                <img src="https://randomuser.me/api/portraits/women/3.jpg" alt="Persona 3" class="event-avatar" />
+                <img
+                  src="https://randomuser.me/api/portraits/women/3.jpg"
+                  alt="Persona 3"
+                  class="event-avatar"
+                />
                 <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
               </div>
-              <div class="event-time">10:00 AM</div>
-              <div class="event-title">Meeting with sam</div>
+              <span class="event-time">10:00 AM</span>
+              <span class="event-title">Meeting with sam</span>
             </div>
           </div>
           <div class="grid-cell"></div>
@@ -175,7 +232,6 @@
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
-
           <!-- Fila 11:00 -->
           <div class="grid-time">11:00</div>
           <div class="grid-cell"></div>
@@ -186,17 +242,26 @@
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
-
           <!-- Fila 12:00 -->
           <div class="grid-time">12:00</div>
           <div class="grid-cell">
-            <div class="event-card" style="--event-color: rgba(255, 213, 158, 0.25)">
+            <div
+              class="event-card"
+              style="
+                --event-color: rgba(255, 213, 158, 0.25);
+                --event-color-text: #b38b4a;
+              "
+            >
               <div class="event-card-header">
-                <img src="https://randomuser.me/api/portraits/men/4.jpg" alt="Persona 4" class="event-avatar" />
+                <img
+                  src="https://randomuser.me/api/portraits/men/4.jpg"
+                  alt="Persona 4"
+                  class="event-avatar"
+                />
                 <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
               </div>
-              <div class="event-time">12:30 PM</div>
-              <div class="event-title">Lunch with Carla</div>
+              <span class="event-time">12:30 PM</span>
+              <span class="event-title">Lunch with Carla</span>
             </div>
           </div>
           <div class="grid-cell"></div>
@@ -206,9 +271,8 @@
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
-
           <!-- Fila 13:00 -->
-          <div class="grid-time">13:00</div>
+          <div class="grid-time">01:00</div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
@@ -217,9 +281,8 @@
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
-
           <!-- Fila 14:00 -->
-          <div class="grid-time">14:00</div>
+          <div class="grid-time">02:00</div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
@@ -228,9 +291,8 @@
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
-
           <!-- Fila 15:00 -->
-          <div class="grid-time">15:00</div>
+          <div class="grid-time">03:00</div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
@@ -241,23 +303,31 @@
           <div class="grid-cell"></div>
 
           <!-- Fila 16:00 -->
-          <div class="grid-time">16:00</div>
-          <div class="grid-cell"></div>
+          <div class="grid-time">04:00</div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell">
-            <div class="event-card" style="--event-color: rgba(255, 79, 79, 0.25)">
+            <div
+              class="event-card"
+              style="
+                --event-color: rgba(255, 79, 79, 0.25);
+                --event-color-text: #b32a2a;
+              "
+            >
               <div class="event-card-header">
-                <img src="https://randomuser.me/api/portraits/women/4.jpg" alt="Persona 5" class="event-avatar" />
+                <img
+                  src="https://randomuser.me/api/portraits/women/4.jpg"
+                  alt="Persona 5"
+                  class="event-avatar"
+                />
                 <span class="event-card-action dots">&#8226;&#8226;&#8226;</span>
               </div>
-              <div class="event-time">4:00 PM</div>
-              <div class="event-title">Meeting with sam</div>
+              <span class="event-time">4:00 PM</span>
+              <span class="event-title">Meeting with sam</span>
             </div>
           </div>
-          <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
         </div>
@@ -265,4 +335,4 @@
     </main>
   </body>
 </html>
-           
+
