@@ -5,11 +5,12 @@ body {
 .sidebar {
   position: fixed;
   width: 72px;
-  height: 100vh;
+  height: 98%;
   flex-direction: column;
   align-items: center;
-  border: #181c25 2px solid;
+  border: #bfc7d5 2px solid;
   border-radius: 16px;
+  margin-bottom: -10px;
 }
 .logo-container {
   width: 100%;
@@ -17,13 +18,14 @@ body {
   flex-direction: column;
   align-items: center;
   margin-top: 24px;
+  padding-right: 30px;
 }
 .main-logo {
-  width: 48px;
-  height: 48px;
-  background: #fff;
-  color: #181c25;
-  font-size: 2rem;
+  width: 36px;
+  height: 36px;
+  background: #6f09cf;
+  color: #fdfeff;
+  font-size: 1.3rem;
   font-weight: bold;
   border-radius: 12px;
   display: flex;
@@ -35,49 +37,63 @@ body {
 .logo-dropdown {
   display: none;
   position: absolute;
-  left: calc(100% + 16px); 
+  left: calc(100% + 16px);
   top: 0;
   background: #fff;
   color: #181c25;
-  width: 220px;
-  border: #181c25 2px solid;
+  width: 300px;
+  border: #bfc7d5 2px solid;
   border-radius: 16px;
-  box-shadow: 4px 0 16px rgba(0, 0, 0, 0.08);
 }
 .logo-container:hover .logo-dropdown {
   display: block;
 }
+
 .logo-item {
   display: flex;
   align-items: center;
   padding: 10px 20px;
   cursor: pointer;
 }
+.logo-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+  color: #bfc7d5;
+  font-size: 1.1rem;
+  min-width: 18px;
+}
 .logo-item:hover {
   background: #f4f6fa;
 }
 .logo-icon {
-  width: 36px;
-  height: 36px;
-  border-radius: 8px;
+  width: 32px;
+  height: 32px;
+  font-size: 1.4rem;
+  margin-right: 14px;
+  border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-weight: bold;
-  font-size: 1.2rem;
-  margin-right: 12px;
+  font-size: 0.95rem;
+  margin-right: 8px;
+}
+.logo-meta {
+  color: #888;
 }
 .logo-icon.mercedes {
   background: #e3e3e3;
   color: #222;
 }
 .logo-icon.personal {
-  background: #f9e6e6;
-  color: #e57373;
+  background: #888;
+  color: #bfc7d5;
 }
 .logo-icon.widelab {
-  background: #e6f0fa;
-  color: #1976d2;
+  background: #6f09cf;
+  color: #ffffff;
 }
 .logo-icon.figma {
   background: #e6f7f0;
@@ -93,9 +109,10 @@ nav[aria-label] {
   flex-direction: column;
   align-items: center;
 }
+
 .nav-item {
-  width: 48px;
-  height: 48px;
+  width: 38px;
+  height: 38px;
   margin: 6px 0;
   display: flex;
   align-items: center;
@@ -112,7 +129,7 @@ nav[aria-label] {
   color: #fff;
 }
 .nav-icon {
-  font-size: 1.4rem;
+  font-size: 1rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -143,12 +160,7 @@ nav[aria-label] {
 .nav-search-input {
   display: none;
 }
-.divider {
-  width: 70px;
-  border: none;
-  border-top: 1px solid #23283a;
-  margin: 16px 0;
-}
+
 .section-title,
 .section-title-row {
   display: none;
@@ -164,9 +176,9 @@ nav[aria-label] {
 .nav-item.travel .nav-icon::before {
   content: "";
   display: block;
-  width: 24px;
-  height: 24px;
-  border-radius: 6px;
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -183,41 +195,79 @@ nav[aria-label] {
 }
 .profile-container {
   width: 100%;
-  position: absolute;
+
   bottom: 24px;
   left: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  padding-right: 30px;
 }
 .profile-toggle-label {
   width: 48px;
   height: 48px;
-  border-radius: 12px;
+  margin-top: 1px solid;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
 }
 .profile-avatar img {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
+  width: 28px;
+  height: 28px;
+  border-radius: 20%;
   object-fit: cover;
+  margin-top: 30px;
+  margin: 1px solid #bfc7d5;
 }
 .profile-info {
-  display: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px 20px 8px 20px;
+  gap: 12px;
+  border-bottom: 1px solid #bfc7d5;
+}
+.profile-info .profile-avatar {
+  margin-left: auto;
+}
+.profile-info .profile-avatar img {
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  object-fit: cover;
+  margin: 0;
+  box-shadow: 0 0 2px #bfc7d5;
+}
+.profile-info .profile-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 2px;
+}
+.profile-info .profile-email {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0;
+}
+.profile-info .profile-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 .profile-dropdown {
   display: none;
   position: absolute;
-  left: calc(100% + 16px); 
+  left: calc(100% + 16px);
+  bottom: auto;
   bottom: 0;
   background: #fff;
   color: #181c25;
   border-radius: 12px;
-  border: #181c25 2px solid;
-  
+  border: #bfc7d5 2px solid;
+  overflow: hidden;
 }
 .profile-container:hover .profile-dropdown,
 .profile-container:focus-within .profile-dropdown,
@@ -243,6 +293,31 @@ nav[aria-label] {
   font-size: 0.85rem;
   color: #888;
   margin: 10px auto;
-  border-top: 1px solid black;
-  margin-top: 8px;
+
+  margin-top: 30px;
+  margin-left: 30px;
+}
+
+.nav-item.plus {
+  border: #bfc7d5 1px solid;
+}
+.nav-item.personal {
+  margin-top: 40px;
+}
+
+.nav-item.Boosts {
+  margin-top: 40px;
+}
+
+.nav-item.settings {
+  margin-top: 120px;
+}
+.profile-toggle-label {
+  border-top: 1px solid #888;
+}
+
+.profile-item.Update {
+  color: #26a69a;
+  background-color: rgba(38, 166, 154, 0.2);
+  border-radius: 15px;
 }
