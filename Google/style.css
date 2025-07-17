@@ -14,7 +14,6 @@ body {
 header {
   display: flex;
   justify-content: flex-end;
-  padding: 20px;
 }
 
 .nav-links {
@@ -43,20 +42,14 @@ main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: start ;
   flex-grow: 1;
-  padding: 20px;
-  margin-top: -100px;
+  padding: 80px 0;
+  margin-top: 0;
 }
 
 .logo {
   margin-bottom: 30px;
-}
-
-.logo h1 {
-  font-size: 80px;
-  font-weight: 500;
-  letter-spacing: -10px;
 }
 
 .search-container {
@@ -70,7 +63,7 @@ main {
   align-items: center;
   border: 1px solid #dfe1e5;
   border-radius: 24px;
-  padding: 0; 
+  padding: 0;
   margin-bottom: 20px;
   background: #fff;
   position: relative;
@@ -103,7 +96,6 @@ main {
 }
 
 .search-input {
-  container: flex;
   flex-grow: 1;
   border: none;
   outline: none;
@@ -195,7 +187,6 @@ footer {
   height: 32px;
   background: #bdbdbd;
   border-radius: 50%;
-  display: inline-block;
   vertical-align: middle;
   margin-left: 5px;
   cursor: pointer;
@@ -210,19 +201,8 @@ footer {
   cursor: pointer;
 }
 
-.nav-links .menu-icon:hover {
-  background: rgba(60, 64, 67, 0.08);
-  border-radius: 50%;
-}
-
-.nav-links .profile-icon:hover {
-  box-shadow: 0 1px 4px rgba(60, 64, 67, 0.15);
-  background: #e0e0e0;
-}
-
 .icon-search,
 .icon-camera {
-  container: flex;
   cursor: pointer;
   border-radius: 50%;
   padding: 12px;
@@ -230,6 +210,13 @@ footer {
   height: 20px;
   background-size: 20px 20px;
   box-sizing: content-box;
+}
+
+.nav-hover:hover,
+.nav-hover:focus {
+  background: #e8eaed;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 @media (max-width: 600px) {
