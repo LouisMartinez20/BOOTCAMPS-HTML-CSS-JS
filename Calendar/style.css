@@ -6,6 +6,11 @@ body {
 main {
   padding: 20px;
 }
+
+main span{
+  font-size: 28px; 
+  font-weight: bold
+}
 .calendar-container {
   background-color: white;
   border-radius: 12px;
@@ -20,6 +25,11 @@ main {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+.calendar-header-flex{
+  display: flex; 
+  align-items: center; 
+  gap: 12px
 }
 .meeting-filter {
   background-color: #fff;
@@ -172,4 +182,32 @@ main {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+#event1, #event2 {
+  --event-color: rgba(102, 102, 102, 0.25);
+  --event-color-text: #333;
+}
+#event3 {
+  --event-color: rgba(79, 140, 255, 0.25);
+  --event-color-text: #1a3a7c;
+}
+#event4 {
+  --event-color: rgba(168, 224, 99, 0.25);
+  --event-color-text: #4a7c1a;
+}
+#event5 {
+  --event-color: rgba(255, 165, 0, 0.25);
+  --event-color-text: #b36b00;
+}
+#event6 {
+  --event-color: rgba(76, 175, 80, 0.25);
+  --event-color-text: #217a2b;
+}
+#event7 {
+  --event-color: rgba(255, 213, 158, 0.25);
+  --event-color-text: #b38b4a;
+}
+#event8 {
+  --event-color: rgba(255, 79, 79, 0.25);
+  --event-color-text: #b32a2a;
 }

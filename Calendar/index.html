@@ -11,8 +11,8 @@
       <div class="calendar-container">
         <header class="calendar-header">
           <div class="calendar-header-bar">
-            <div style="display: flex; align-items: center; gap: 12px">
-              <span style="font-size: 28px; font-weight: bold">Calendar</span>
+            <div class="calendar-header-flex" >
+              <span >Calendar</span>
               <select class="meeting-filter">
                 <option>All Meeting</option>
               </select>
@@ -81,13 +81,7 @@
           <!-- Fila 7:00 -->
           <div class="grid-time">7:00</div>
           <div class="grid-cell">
-            <div
-              class="event-card"
-              style="
-                --event-color: rgba(102, 102, 102, 0.25);
-                --event-color-text: #333;
-              "
-            >
+            <div class="event-card" id="event1">
               <div class="event-card-header">
                 <img
                   src="https://randomuser.me/api/portraits/men/1.jpg"
@@ -101,13 +95,7 @@
             </div>
           </div>
           <div class="grid-cell">
-            <div
-              class="event-card"
-              style="
-                --event-color: rgba(102, 102, 102, 0.25);
-                --event-color-text: #333;
-              "
-            >
+            <div class="event-card" id="event2">
               <div class="event-card-header">
                 <img
                   src="https://randomuser.me/api/portraits/women/2.jpg"
@@ -122,13 +110,7 @@
           </div>
           <div class="grid-cell"></div>
           <div class="grid-cell">
-            <div
-              class="event-card"
-              style="
-                --event-color: rgba(79, 140, 255, 0.25);
-                --event-color-text: #1a3a7c;
-              "
-            >
+            <div class="event-card" id="event3">
               <div class="event-card-header">
                 <img
                   src="https://randomuser.me/api/portraits/men/3.jpg"
@@ -144,13 +126,7 @@
           <div class="grid-cell"></div>
           <div class="grid-cell"></div>
           <div class="grid-cell">
-            <div
-              class="event-card"
-              style="
-                --event-color: rgba(168, 224, 99, 0.25);
-                --event-color-text: #4a7c1a;
-              "
-            >
+            <div class="event-card" id="event4">
               <div class="event-card-header">
                 <img
                   src="https://randomuser.me/api/portraits/women/1.jpg"
@@ -188,13 +164,7 @@
           <div class="grid-time">10:00</div>
           <div class="grid-cell"></div>
           <div class="grid-cell">
-            <div
-              class="event-card"
-              style="
-                --event-color: rgba(255, 165, 0, 0.25);
-                --event-color-text: #b36b00;
-              "
-            >
+            <div class="event-card" id="event5">
               <div class="event-card-header">
                 <img
                   src="https://randomuser.me/api/portraits/men/2.jpg"
@@ -208,13 +178,7 @@
             </div>
           </div>
           <div class="grid-cell">
-            <div
-              class="event-card"
-              style="
-                --event-color: rgba(76, 175, 80, 0.25);
-                --event-color-text: #217a2b;
-              "
-            >
+            <div class="event-card" id="event6">
               <div class="event-card-header">
                 <img
                   src="https://randomuser.me/api/portraits/women/3.jpg"
@@ -245,13 +209,7 @@
           <!-- Fila 12:00 -->
           <div class="grid-time">12:00</div>
           <div class="grid-cell">
-            <div
-              class="event-card"
-              style="
-                --event-color: rgba(255, 213, 158, 0.25);
-                --event-color-text: #b38b4a;
-              "
-            >
+            <div class="event-card" id="event7">
               <div class="event-card-header">
                 <img
                   src="https://randomuser.me/api/portraits/men/4.jpg"
@@ -310,11 +268,7 @@
           <div class="grid-cell"></div>
           <div class="grid-cell">
             <div
-              class="event-card"
-              style="
-                --event-color: rgba(255, 79, 79, 0.25);
-                --event-color-text: #b32a2a;
-              "
+              class="event-card" id="event8"
             >
               <div class="event-card-header">
                 <img
