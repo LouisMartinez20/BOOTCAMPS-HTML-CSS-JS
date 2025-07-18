@@ -16,6 +16,12 @@ header {
   justify-content: flex-end;
 }
 
+header img{
+  width: 32px; 
+  height: 32px; 
+  border-radius: 50%"
+}
+
 .nav-links {
   display: flex;
   align-items: center;
@@ -99,33 +105,33 @@ main {
   flex-grow: 1;
   border: none;
   outline: none;
-  font-size: 16px;
+  font-size: 1rem; 
   background: transparent;
-  padding: 10px 0;
+  padding: 0.625em 0; 
 }
 
 .buttons {
   display: flex;
   justify-content: center;
-  gap: 15px;
-  margin-top: 60px;
+  gap: 1em; 
+  margin-top: 2.5vw; 
 }
 
 .search-btn,
 .lucky-btn {
   background-color: #f8f9fa;
-  border: 1px solid #f8f9fa;
-  border-radius: 4px;
+  border: 0.07em solid #f8f9fa; 
+  border-radius: 0.25em; 
   color: #3c4043;
-  padding: 10px 16px;
-  font-size: 14px;
+  padding: 0.625em 1em; 
+  font-size: 0.875rem; 
   cursor: pointer;
 }
 
 .search-btn:hover,
 .lucky-btn:hover {
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border: 1px solid #dadce0;
+  box-shadow: 0 0.07em 0.07em rgba(0, 0, 0, 0.1); 
+  border: 0.07em solid #dadce0; 
 }
 
 footer {
@@ -219,53 +225,53 @@ footer {
   cursor: pointer;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 37.5em) {
   .logo h1 {
-    font-size: 36px;
-    letter-spacing: -4px;
+    font-size: 2.25rem;
+    letter-spacing: -0.25em;
   }
 
   .search-container {
     width: 100%;
     max-width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 1.25em;
   }
   .search-box {
-    padding: 0 8px;
-    margin-bottom: 15px;
+    padding: 0 0.5em;
+    margin-bottom: 0.94em;
   }
   .search-input {
-    font-size: 14px;
-    padding: 8px 0;
+    font-size: 0.875rem;
+    padding: 0.5em 0;
   }
   .buttons {
-    flex-direction: column;
-    gap: 10px;
+    flex-direction: row; 
+    gap: 0.625em;
+    margin-top: 1em;
   }
   .search-btn,
   .lucky-btn {
-    width: 100%;
-    font-size: 13px;
-    padding: 10px 0;
+    font-size: 0.875rem;
+    padding: 0.5em 0;
   }
   header {
-    padding: 10px;
+    padding: 0.625em;
   }
   .nav-links {
-    gap: 8px;
+    gap: 0.5em;
   }
   .footer-bottom {
     justify-content: center;
     flex-direction: column;
     align-items: center;
-    padding-top: 10px;
+    padding-top: 0.625em;
   }
   .footer-links {
     justify-content: center;
-    gap: 10px;
+    gap: 0.625em;
   }
   .footer-top {
-    font-size: 13px;
-    padding: 10px 0;
+    font-size: 0.813rem;
+    padding: 0.625em 0;
   }
 }
