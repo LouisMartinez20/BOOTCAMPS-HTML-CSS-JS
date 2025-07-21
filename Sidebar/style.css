@@ -1,11 +1,14 @@
 body {
   font-family: "Segoe UI", Arial, sans-serif;
   background: #f4f6fa;
+  height: 200vh;
 }
 .sidebar {
-  position: relative;
-  width: 6vw;
-  height: 99vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
   align-items: center;
   border: #bfc7d5 0.15em solid;
   border-radius: 1em;
@@ -48,7 +51,6 @@ body {
 .logo-container:hover .logo-dropdown {
   display: block;
 }
-
 .logo-item {
   display: flex;
   align-items: center;
@@ -115,7 +117,6 @@ nav[aria-label] {
   flex-direction: column;
   align-items: center;
 }
-
 .nav-item {
   width: 2.5em;
   height: 2.5em;
@@ -166,7 +167,6 @@ nav[aria-label] {
 .nav-search-input {
   display: none;
 }
-
 .section-title,
 .section-title-row {
   display: none;
@@ -265,8 +265,8 @@ nav[aria-label] {
 .profile-dropdown {
   display: none;
   position: absolute;
-  left: calc(100% + 0.1em);
-  bottom: auto;
+  left: calc(100% - 1em);
+  bottom: 0;
   bottom: -1em;
   background: #fff;
   color: #181c25;
@@ -300,25 +300,21 @@ nav[aria-label] {
   margin-top: 1.3em;
   margin-left: 1.3em;
 }
-
 .nav-item.plus {
   border: #bfc7d5 0.07em solid;
 }
 .nav-item.personal {
   margin-top: 1.5em;
 }
-
 .nav-item.Boosts {
   margin-top: 1.5em;
 }
-
 .nav-item.settings {
   margin-top: 4.5em;
 }
 .profile-toggle-label {
   border-top: 0.07em solid #888;
 }
-
 .profile-item.Update {
   color: #26a69a;
   background-color: rgba(38, 166, 154, 0.2);
@@ -331,7 +327,6 @@ nav[aria-label] {
   width: 1.8em;
   height: 1.8em;
 }
-
 .logo-icon.mercedes {
   width: 1.8em;
   height: 1.8em;
