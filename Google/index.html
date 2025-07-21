@@ -6,7 +6,6 @@
     <title>Google</title>
     <link rel="stylesheet" href="style.css" />
   </head>
-
   <body>
     <header>
       <nav class="nav-links">
@@ -24,14 +23,10 @@
           ><span class="dot"></span>
         </span>
         <span class="profile-icon" tabindex="0" aria-label="Perfil">
-          <img
-            src="https://www.gravatar.com/avatar/?d=mp"
-            alt="Perfil"
-          />
+          <img src="https://www.gravatar.com/avatar/?d=mp" alt="Perfil" />
         </span>
       </nav>
     </header>
-
     <main>
       <div class="logo">
         <img
@@ -40,21 +35,31 @@
           class="google-logo"
         />
       </div>
-
       <div class="search-container">
         <div class="search-box">
-          <span class="icon-search" aria-label="Buscar"></span>
-          <input type="text" class="search-input" aria-label="Buscar" />
-          <span class="icon-camera" aria-label="Buscar por imagen"></span>
+          <label
+            for="main-search"
+            class="icon-search"
+            aria-label="Buscar"
+          ></label>
+          <input
+            type="text"
+            class="search-input"
+            id="main-search"
+            aria-label="Buscar"
+          />
+          <label
+            for="main-search"
+            class="icon-camera"
+            aria-label="Buscar por imagen"
+          ></label>
         </div>
-
         <div class="buttons">
           <button class="search-btn">Buscar con Google</button>
           <button class="lucky-btn">Voy a tener suerte</button>
         </div>
       </div>
     </main>
-
     <footer>
       <div class="footer-top"><span>Colombia</span></div>
       <div class="footer-bottom">
@@ -63,7 +68,6 @@
           <a href="#">Publicidad</a>
           <a href="#">Negocios</a>
           <a href="#">Cómo funciona la Búsqueda</a>
-
           <a href="#">Privacidad</a>
           <a href="#">Condiciones</a>
           <a href="#">Preferencias</a>
