@@ -1,42 +1,37 @@
 body {
   min-height: 100vh;
+  margin: 0;
   display: flex;
   flex-direction: column;
-  margin: 0;
+  font-family: "Inter", "Segoe UI", sans-serif;
 }
-
 header {
-  max-width: 100%;
-  border: none;
-  padding: 16px;
   height: 10vh;
+  padding: 16px;
   box-sizing: border-box;
+  max-width: 100%;
 }
-
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 100%;
   width: 70%;
+  height: 100%;
   margin: 0 auto;
 }
-
-header .logo {
+.logo {
   font-size: 2rem;
   font-weight: bold;
   color: #222;
   margin-right: 32px;
 }
-
-header .main-nav {
+.main-nav {
   flex: 1;
   display: flex;
   justify-content: center;
   gap: 32px;
 }
-
-header .main-nav a {
+.main-nav a {
   color: #888;
   text-decoration: none;
   font-size: 1.1rem;
@@ -44,17 +39,14 @@ header .main-nav a {
   padding: 4px 12px;
   transition: color 0.2s;
 }
-
-header .main-nav a:first-child {
+.main-nav a:first-child {
   color: #222;
   font-weight: bold;
 }
-
-header .main-nav a:hover {
+.main-nav a:hover {
   color: #00bcd4;
 }
-
-header .menu-btn {
+.menu-btn {
   background: none;
   border: none;
   cursor: pointer;
@@ -63,63 +55,41 @@ header .menu-btn {
   display: flex;
   align-items: center;
 }
-
+.menu-btn span {
+  font-size: 2rem;
+}
 main {
-  border: none;
-  background: none;
   flex: 1 0 auto;
   height: 60vh;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 0;
 }
-
-footer {
-  border: none;
-  background: none;
-  height: 10vh;
-  box-sizing: border-box;
-  flex-shrink: 0;
-}
-
 .white-section,
 .black-section {
   flex: 1 1 0;
-  height: 50%;
   width: 70%;
   margin: 0 auto;
   background: none;
 }
-
 .white-section {
-  background: none;
-  border: none;
-  padding: 16px;
-  margin-bottom: 0;
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
 }
-
 .white-section h1 {
-  font-size: 3rem;
-  font-weight: 900;
-  line-height: 3.1;
-  margin-bottom: 32px;
+  font-size: 5rem;
+  font-weight: 700;
+  line-height: 1;
+  margin: 0 0 32px 0;
+  padding-right: 5em;
   text-align: left;
-  letter-spacing: -1px;
 }
-
 .black-section {
   position: relative;
   color: #fff;
   padding: 16px;
-  background: none;
-  width: 70%;
-  margin: 0 auto;
-  overflow: visible;
 }
-
 .black-section::before {
   content: "";
   position: absolute;
@@ -130,85 +100,68 @@ footer {
   height: 100%;
   background-color: #0a2342;
   z-index: 0;
-  pointer-events: none;
 }
-
 .black-section > * {
   position: relative;
   z-index: 1;
 }
-
-.black-section .info {
+.info {
   display: flex;
-  flex-direction: row;
   height: 100%;
-  gap: 0;
 }
-
+.info-content {
+  flex: 1 1 0;
+  padding: 16px;
+}
+.info-content h2 {
+  font-size: 3em;
+  margin: 0 0 30px 0;
+}
+.info-content p {
+  margin-bottom: 35px;
+  font-size: 15px;
+  color: rgba(245, 245, 245, 0.747);
+}
 .profile {
   flex: 1 1 0;
-  background: none;
-  border: none;
-  margin-bottom: 0;
-  padding: 0;
-  color: inherit;
   display: flex;
   flex-direction: column;
   height: 100%;
   position: relative;
 }
-
 .profile-content {
   flex: 0 1 20%;
-  background: none;
-  border-bottom: none;
   padding: 16px;
-  color: inherit;
   display: flex;
   align-items: center;
   gap: 16px;
-  justify-content: flex-start;
 }
-
 .image-content {
   flex: 1 1 80%;
-  background: none;
   padding: 16px;
-  color: inherit;
-  display: flex;
-  align-items: start;
-  justify-content: start;
-  min-height: 0;
-  height: 100%;
   position: absolute;
-  left: 0;
-  right: 0;
   top: 20%;
   bottom: -100px;
+  left: 0;
+  right: 0;
   z-index: 2;
   height: auto;
 }
-
-.black-section .info .info-content {
-  flex: 1 1 0;
-  background: none;
-  border: none;
-  padding: 16px;
-  color: inherit;
+.image-content img {
+  margin-top: 40px;
+  height: 290px;
+  width: 60%;
 }
-
 .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: auto;
+  margin-top: 10px;
 }
-
 .buttons {
   display: flex;
   gap: 16px;
 }
-
 .btn {
   border: none;
   border-radius: 24px;
@@ -217,38 +170,27 @@ footer {
   cursor: pointer;
   transition: background 0.2s, color 0.2s;
 }
-
 .btn-primary {
   background-color: #0a2342;
   color: #fff;
 }
-
-.btn-primary a {
-  color: #fff;
-  text-decoration: none;
-}
-
 .btn-secondary {
   background-color: #bebcbc;
 }
-
-.btn-secondary a {
-  color: black;
+.btn a {
   text-decoration: none;
+  color: inherit;
 }
-
 .references {
   display: flex;
   gap: 16px;
 }
-
 .references a {
   color: #888;
   text-decoration: none;
   font-size: 1rem;
   transition: color 0.2s;
 }
-
 .references a:hover {
   color: #0a2342;
 }
@@ -257,93 +199,83 @@ footer {
   align-items: center;
   gap: 16px;
   padding-bottom: 0;
-  justify-content: flex-start;
 }
-
 .profile-img {
   border-radius: 50%;
   width: 56px;
   height: 56px;
   object-fit: cover;
-
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
-
 .profile-details {
   display: flex;
   flex-direction: column;
   gap: 4px;
-  align-items: flex-start;
 }
-
 .profile-name {
   font-weight: 700;
   color: #fff;
   font-size: 1.1em;
   margin: 0;
 }
-
 .profile-role {
   color: #888;
   font-size: 1em;
   margin: 0;
 }
-
-img {
-  margin-top: 40px;
-  height: 290px;
-  width: 60%;
+footer {
+  height: 10vh;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
-
+span {
+  font-size: 0.8em;
+}
 @media (max-width: 700px) {
-  .image-content img {
+  .image-content img,
+  header .main-nav,
+  .profile,
+  footer {
     display: none;
   }
-
-  header .main-nav {
-    display: none;
-  }
-
   .header-container {
     width: 90%;
   }
-
   .white-section h1 {
-    font-size: 2rem;
+    font-size: 2.53rem;
     line-height: 1.2;
     margin-bottom: 16px;
-    text-align: center;
+    text-align: left;
+    padding-right: 0;
   }
-
   .row {
     flex-direction: column;
-    align-items: stretch;
     gap: 12px;
+    margin-bottom: 10px;
+    align-items: stretch;
   }
-
-  .buttons {
-    justify-content: center;
-    margin-bottom: 8px;
-  }
-
+  .buttons,
   .references {
     justify-content: center;
-    margin-top: 0;
   }
-
-  .profile {
-    display: none;
+  .buttons {
+    margin-bottom: 8px;
+  }
+  .references {
+    margin-top: 0;
   }
   .black-section .info .info-content {
     flex: 1 1 100%;
     width: 100%;
     padding: 16px 0;
   }
-
-  footer {
-    display: none;
+  .info-content h2 {
+    margin: 0 0 10px 0;
   }
-
+  .info-content p {
+    color: rgba(245, 245, 245, 0.747);
+    font-size: 14px;
+  }
   .btn-details {
     width: 100%;
     box-sizing: border-box;
