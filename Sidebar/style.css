@@ -1,0 +1,333 @@
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #f4f6fa;
+  height: 200vh;
+}
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 80px;
+  height: 100vh;
+  align-items: center;
+  border: #bfc7d5 0.15em solid;
+  border-radius: 1em;
+  margin-bottom: -0.7em;
+}
+.logo-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 2em;
+  padding-right: 2em;
+}
+.main-logo {
+  width: 2.5em;
+  height: 2.5em;
+  background: #6f09cf;
+  color: #fdfeff;
+  font-size: 1.3rem;
+  font-weight: bold;
+  border-radius: 0.8em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  border: 0.13em solid #eaeaea;
+}
+.logo-dropdown {
+  display: none;
+  position: absolute;
+  left: calc(100% + 1em);
+  top: 0;
+  background: #fff;
+  color: #181c25;
+  width: 20em;
+  border: #bfc7d5 0.15em solid;
+  border-radius: 1em;
+  overflow: hidden;
+}
+.logo-container:hover .logo-dropdown {
+  display: block;
+}
+.logo-item {
+  display: flex;
+  align-items: center;
+  padding: 0.7em 1.4em;
+  cursor: pointer;
+  border-radius: 0.7em;
+}
+.logo-dots {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 0.7em;
+  color: #bfc7d5;
+  font-size: 1.1rem;
+  min-width: 1.2em;
+}
+.logo-item:hover {
+  background: #f4f6fa;
+}
+.logo-icon {
+  width: 2em;
+  height: 2em;
+  font-size: 1.4rem;
+  margin-right: 1em;
+  border-radius: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 0.95rem;
+  margin-right: 0.5em;
+}
+.logo-icon img {
+  width: 80%;
+  height: 80%;
+  object-fit: contain;
+}
+.logo-meta {
+  color: #888;
+}
+.logo-icon.mercedes {
+  background: #e3e3e3;
+  color: #222;
+}
+.logo-icon.personal {
+  background: #888;
+  color: #bfc7d5;
+}
+.logo-icon.widelab {
+  background: #6f09cf;
+  color: #ffffff;
+}
+.logo-icon.figma {
+  background: #e6f7f0;
+  color: #26a69a;
+}
+.logo-text {
+  font-weight: 600;
+  font-size: 1rem;
+}
+nav[aria-label] {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.nav-item {
+  width: 2.5em;
+  height: 2.5em;
+  margin: 0.4em 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #bfc7d5;
+  border-radius: 0.8em;
+  position: relative;
+  text-decoration: none;
+  cursor: pointer;
+}
+.nav-item:hover,
+.nav-item:focus {
+  background: #23283a;
+  color: #fff;
+}
+.nav-icon {
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.nav-text {
+  display: none;
+  position: absolute;
+  left: 3.5em;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #23283a;
+  color: #fff;
+  padding: 0.3em 1em;
+  border-radius: 0.6em;
+  font-size: 1rem;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.nav-item:hover .nav-text,
+.nav-item:focus .nav-text {
+  display: block;
+  left: 4em;
+}
+.search-item {
+  margin-bottom: 1.2em;
+  margin-top: 0.5em;
+}
+.nav-search-input {
+  display: none;
+}
+.section-title,
+.section-title-row {
+  display: none;
+}
+.nav-item.personal .nav-icon,
+.nav-item.business .nav-icon,
+.nav-item.travel .nav-icon {
+  position: relative;
+  color: transparent;
+}
+.nav-item.personal .nav-icon::before,
+.nav-item.business .nav-icon::before,
+.nav-item.travel .nav-icon::before {
+  content: "";
+  display: block;
+  width: 1em;
+  height: 1em;
+  border-radius: 0.25em;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.nav-item.personal .nav-icon::before {
+  background: rgba(67, 211, 158, 0.35);
+}
+.nav-item.business .nav-icon::before {
+  background: rgba(25, 118, 210, 0.35);
+}
+.nav-item.travel .nav-icon::before {
+  background: rgba(162, 89, 230, 0.35);
+}
+.profile-container {
+  width: 100%;
+  position: absolute;
+  bottom: 1em;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 2em;
+}
+.profile-toggle-label {
+  width: 3em;
+  height: 3em;
+  margin-top: 0.7em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+.profile-avatar img {
+  width: 2em;
+  height: 2em;
+  border-radius: 20%;
+  object-fit: cover;
+  margin-top: 0.7em;
+  margin: 0.07em solid #bfc7d5;
+}
+.profile-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1em 1.4em 0.5em 1.4em;
+  gap: 0.8em;
+  border-bottom: 0.07em solid #bfc7d5;
+}
+.profile-info .profile-avatar {
+  margin-left: auto;
+}
+.profile-info .profile-avatar img {
+  width: 2.5em;
+  height: 2.5em;
+  border-radius: 0.5em;
+  object-fit: cover;
+  margin: 0;
+  box-shadow: 0 0 0.13em #bfc7d5;
+}
+.profile-info .profile-name {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-bottom: 0.13em;
+}
+.profile-info .profile-email {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 0;
+}
+.profile-info .profile-texts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.profile-dropdown {
+  display: none;
+  position: absolute;
+  left: calc(100% - 1em);
+  bottom: 0;
+  bottom: -1em;
+  background: #fff;
+  color: #181c25;
+  border-radius: 0.8em;
+  border: #bfc7d5 0.15em solid;
+  overflow: hidden;
+}
+.profile-container:hover .profile-dropdown,
+.profile-container:focus-within .profile-dropdown,
+.profile-dropdown:hover {
+  display: block;
+}
+.profile-item {
+  padding: 0.7em 1.4em;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  cursor: pointer;
+  color: #181c25;
+}
+.profile-item i {
+  margin-right: 0.7em;
+  font-size: 1.1rem;
+}
+.profile-item:hover {
+  background: #f4f6fa;
+}
+.profile-footer {
+  font-size: 0.85rem;
+  color: #888;
+  margin-top: 1.3em;
+  margin-left: 1.3em;
+}
+.nav-item.plus {
+  border: #bfc7d5 0.07em solid;
+}
+.nav-item.personal {
+  margin-top: 1.5em;
+}
+.nav-item.Boosts {
+  margin-top: 1.5em;
+}
+.nav-item.settings {
+  margin-top: 4.5em;
+}
+.profile-toggle-label {
+  border-top: 0.07em solid #888;
+}
+.profile-item.Update {
+  color: #26a69a;
+  background-color: rgba(38, 166, 154, 0.2);
+  border-radius: 1em;
+}
+.fas.fa-star {
+  color: #ffd700;
+}
+.logo-icon.figma {
+  width: 1.8em;
+  height: 1.8em;
+}
+.logo-icon.mercedes {
+  width: 1.8em;
+  height: 1.8em;
+}
