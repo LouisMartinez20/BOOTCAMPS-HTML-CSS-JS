@@ -22,7 +22,7 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 5rem;
   box-sizing: border-box;
 }
 .nav-superior h1 {
@@ -133,7 +133,7 @@ main {
 .section-three {
   flex: 1;
   min-width: 220px;
-  padding: 1em;
+  padding: 2em;
   box-sizing: border-box;
 }
 .image-container {
@@ -165,7 +165,7 @@ p {
 a {
   color: grey;
   text-decoration: none;
-  padding-bottom: 10px;
+  padding-bottom: 14px;
   border-bottom: 1px solid grey;
 }
 header a {
@@ -212,20 +212,43 @@ header a {
 .section-one {
   border-right: 2px solid #e0e0e0;
 }
+.section-one p {
+  margin-bottom: 5em;
+}
 .section-two {
   border-right: 2px solid #e0e0e0;
 }
 .notice-one {
   padding-bottom: 40px;
 }
-footer {
-  width: 100%;
-  height: 5em;
-  color: white;
+.nav-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto auto 1fr auto auto;
+  gap: 1rem;
 }
 
-footer {
-  width: 100%;
-  height: 5em;
-  color: white;
+.nav-inferior-ul-grid {
+  display: grid;
+  grid-template-columns: repeat(15, auto);
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.notices-row-grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: center;
+  gap: 1rem;
+}
+
+.notices-ul-grid {
+  display: grid;
+  grid-template-columns: repeat(5, auto);
+  gap: 0.5rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
