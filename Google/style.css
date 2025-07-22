@@ -63,6 +63,8 @@ main {
   width: 100%;
   max-width: 580px;
   margin-bottom: 60px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .search-box {
@@ -231,14 +233,19 @@ footer {
   }
 
   .search-container {
-    width: 100%;
-    max-width: 100%;
+    width: 85%;
+    max-width: 98vw;
     margin-bottom: 1.25em;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .search-box {
-    padding: 0 0.5em;
-    margin-bottom: 0.94em;
+    width: 100%;
+    min-width: 0;
+    max-width: 100vw;
+    margin-left: auto;
+    margin-right: auto;
   }
 
   .search-input {
