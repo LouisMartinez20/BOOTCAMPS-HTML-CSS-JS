@@ -65,12 +65,12 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.5rem 0;
+  padding: 0;
 }
 .nav-inferior ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 4.6rem;
+  gap: 4.4rem;
   list-style: none;
   flex: 1;
   margin-left: 0;
@@ -91,11 +91,12 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 32px;
-  height: 32px;
+  min-width: 32px;
+  height: auto;
   background: #000;
-  border-radius: 4px;
   margin-left: auto;
+  
+  padding: 2em;
 }
 main {
   width: 100%;
