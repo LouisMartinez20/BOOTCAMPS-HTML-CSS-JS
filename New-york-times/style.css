@@ -14,14 +14,13 @@ li {
 }
 h1,
 h2,
-h3,
-.headline {
+h3 {
   font-family: "Cheltenham", "Times New Roman", serif;
   font-weight: bold;
 }
 header {
   width: 100%;
-  height: 10em;
+  height: 8em;
   padding: 0 4em;
 }
 .nav-container {
@@ -48,52 +47,42 @@ header {
   background: transparent;
 }
 .nav-superior .button-subscribe {
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid #ccc;
 }
-
 .nav-superior .icon-search,
 .nav-superior .icon-notification,
 .nav-superior .button-signin,
 .nav-superior .button-subscribe {
   margin: 0;
-  font-size: 15px;
-}
-.icon-search .material-symbols-outlined {
-  color: #000;
+  font-size: 12px;
 }
 .nav-superior .icon-search .material-symbols-outlined,
 .nav-superior .icon-notification .fa-regular {
   color: #000;
 }
-
 .nav-inferior {
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.5rem 3rem;
-}
-.nav-grid {
-  align-items: center;
-  justify-content: center;
+  padding: 0.5rem 0;
 }
 .nav-inferior ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 4.6rem;
   list-style: none;
   flex: 1;
   margin-left: 0;
-  justify-content: flex-end;
+  justify-content: flex-start;
   color: grey;
 }
 .material-symbols-outlined {
   color: #fff;
 }
 .nav-inferior p {
-  margin-left: 26px;
+  margin-left: 0;
 }
-.section-highlight,
 .nav-inferior ul li:first-child {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
   font-weight: bold;
@@ -106,21 +95,7 @@ header {
   height: 32px;
   background: #000;
   border-radius: 4px;
-  margin-left: 0.5rem;
-}
-.dots-icon a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-  height: 100%;
-}
-.dots-icon i {
-  color: #fff;
-  align-items: center;
-  justify-content: center;
-  font-size: 1.2rem;
-  border-radius: 20px;
+  margin-left: auto;
 }
 main {
   width: 100%;
@@ -130,7 +105,7 @@ main {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0.1rem 4em;
+  padding: 0 4em;
   margin-left: 0;
   color: grey;
 }
@@ -142,7 +117,7 @@ main {
 .notices-row h2 {
   margin-right: 2rem;
   color: black;
-  padding-left: 26px;
+  padding-left: 0;
 }
 .notices-ul {
   display: flex;
@@ -162,15 +137,14 @@ main {
   height: auto;
   min-height: 400px;
   gap: 3em;
-  padding: 0 1em 30px 4em;
+  padding: 0 4em 30px 4em;
 }
-
 .section-one,
 .section-two,
 .section-three {
   flex: 1;
   min-width: 220px;
-  padding: 2em 4% 0 4em;
+  padding: 2em 4% 0 0;
   padding-bottom: 4em;
 }
 .image-container {
@@ -192,13 +166,11 @@ img {
 .date {
   color: rgb(0, 0, 0);
 }
-
 .dots {
   display: flex;
   gap: 20px;
   margin-top: 2.9em;
 }
-
 .dots button {
   background-color: #ccc;
   border-radius: 50%;
@@ -207,7 +179,6 @@ img {
   height: 16px;
   width: 16px;
 }
-
 .dots button:first-child {
   background-color: white;
   border: 2px solid black;
@@ -237,8 +208,9 @@ header a {
 .notices-three {
   display: flex;
   width: 100%;
-  gap: 5em;
+  gap: 0;
   padding-bottom: 20px;
+  justify-content: space-between;
 }
 .notices-one .text,
 .notices-two .text,
@@ -268,7 +240,7 @@ header a {
   max-height: 120px;
   object-fit: cover;
   align-self: center;
-  margin-left: 2%;
+  margin-left: auto;
 }
 .section-one {
   border-right: 2px dashed #e0e0e0;
@@ -282,14 +254,12 @@ header a {
 .notice-one {
   padding-bottom: 40px;
 }
-
 .notices-row-grid {
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 1rem;
 }
-
 .notices-ul-grid {
   display: grid;
   grid-template-columns: repeat(5, auto);
@@ -298,7 +268,6 @@ header a {
   padding: 0;
   margin: 0;
 }
-
 .notices-ul-grid a {
   text-decoration: none;
   color: inherit;
@@ -308,7 +277,6 @@ header a {
   padding: 0;
   border-bottom: none;
 }
-
 footer {
   width: 100%;
   border-top: 1px dashed #bbb;
@@ -324,7 +292,4 @@ footer {
 .section-three,
 .nav-inferior {
   padding-right: 0;
-}
-.sections {
-  padding-right: 36px;
 }
