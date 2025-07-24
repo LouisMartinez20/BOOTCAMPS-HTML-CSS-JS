@@ -268,3 +268,17 @@ span {
     text-align: center;
   }
 }
+
+@media (min-width: 700px) {
+  .white-section h1 {
+    padding-right: 0;
+  }
+  .row{
+    margin-top: 40px;
+
+  }
+  .black-section{
+    margin-top: 40px;
+  }
+
+}
