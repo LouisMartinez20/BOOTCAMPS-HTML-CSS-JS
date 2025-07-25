@@ -5,7 +5,7 @@ body {
   color: #fff;
 }
 .header {
-  background: #222;
+  background: #111;
   color: #fff;
   padding: 1.5rem 0;
   margin-bottom: #666 1px solid;
@@ -24,15 +24,22 @@ body {
   display: flex;
   align-items: center;
 }
+.material-icons {
+  color: #fff;
+  font-size: 28px;
+  user-select: none;
+}
+.material-icons.settings {
+  color: #2051f5;
+}
 nav,
 #sign-up {
   display: none;
 }
 main {
-
-  padding: 2rem 1rem 1.5rem 1rem;
-  background: #222;
-  color: #222;
+  padding: 2rem 1rem 3.5rem 1rem;
+  background: #111;
+  color: #111;
 }
 .content {
   max-width: 480px;
@@ -51,7 +58,7 @@ main {
 }
 .content-group-one h1 {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 400;
   margin: 0;
   color: #fff;
   line-height: 1.2;
@@ -66,8 +73,8 @@ main {
   flex-direction: row;
   gap: 1rem;
 }
-.buttons .one,
-.buttons .two {
+.buttons .button.one,
+.buttons .button.two {
   width: 100%;
   padding: 0.8rem 0;
   font-size: 1rem;
@@ -76,31 +83,27 @@ main {
   font-weight: 600;
   cursor: pointer;
   transition: background 0.2s;
+  text-decoration: none;
+  color: inherit;
+  display: inline-block;
+  text-align: center;
 }
-.buttons .one {
+.buttons .button.one {
   flex: 1.5;
   background: #2051f5;
   color: #fff;
 }
-.buttons .one:hover {
+.buttons .button.one:hover {
   background: #163bb8;
 }
-.buttons .two {
+.buttons .button.two {
   flex: 1;
   background: #f5f5f5;
   color: #2051f5;
   border: 1px solid #2051f5;
 }
-.buttons .two:hover {
+.buttons .button.two:hover {
   background: #e6e6e6;
-}
-.buttons .one a,
-.buttons .two a {
-  text-decoration: none;
-  color: inherit;
-  display: inline-block;
-  width: 100%;
-  height: 100%;
 }
 .plus-icon {
   display: inline-flex;
@@ -122,7 +125,8 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 2rem;
+  border-top: 1px solid #000000;
+  background: linear-gradient(to bottom, #111 50%, #ffffff 50%);
 }
 .image-container img {
   max-width: 85%;
@@ -138,22 +142,21 @@ footer {
   position: fixed;
   left: 0;
   right: 0;
-  bottom: 0;
+
   width: 100vw;
   z-index: 100;
- 
 }
-.brands  {
+.brands {
   max-width: 900px;
   margin: 0 auto;
   text-align: center;
 }
-.brands img{
+.brands img {
   filter: grayscale(1);
-  opacity: 0.7
+  opacity: 0.7;
 }
 .brands p {
-  color: #888;
+  color: #000000;
   font-size: 1rem;
   margin-bottom: 1.2rem;
 }
@@ -161,7 +164,7 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
   flex-wrap: wrap;
 }
 .logos img {
@@ -182,6 +185,10 @@ footer {
     grid-template-columns: auto 1fr auto;
     align-items: center;
     margin-bottom: #666 1px solid;
+    margin: 0 350px;
+  }
+  main {
+    padding: 100px 0 140px 0;
   }
   .icon-left {
     display: flex;
@@ -230,7 +237,7 @@ footer {
   }
   .content {
     flex-direction: row;
-    gap: 3rem;
+    gap: 8rem;
     max-width: 900px;
   }
   .content-group-one,
@@ -249,14 +256,22 @@ footer {
     justify-content: center;
   }
   .image-container {
-    max-width: 700px;
-    margin: 2.5rem auto 0 auto;
-    width: 100%;
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    background: linear-gradient(to bottom, #111 50%, #ffffff 50%);
   }
   .image-container img {
-    width: 100%;
-    max-width: 100%;
+    width: 700px;
+    max-width: 50%;
     margin: 0;
     display: block;
+  }
+  .logos img {
+    height: 48px;
+    max-width: 140px;
+  }
+  footer {
+    bottom: 0;
   }
 }
