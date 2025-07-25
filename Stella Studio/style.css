@@ -4,20 +4,25 @@ body {
   display: flex;
   flex-direction: column;
   font-family: "Inter", "Segoe UI", sans-serif;
+  overflow: hidden;
 }
 header {
   height: 80px;
   padding: 16px;
+  width: 60%;
   box-sizing: border-box;
-  margin-bottom: 30px;
+  margin: 0 auto;
 }
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 70%;
+  width: 100%;
   height: 100%;
-  margin: 0 auto;
+}
+.header-container img {
+  height: 100px;
+  width: auto;
 }
 .main-nav {
   flex: 1;
@@ -30,31 +35,25 @@ header {
   text-decoration: none;
   font-size: 1.1rem;
   font-weight: 300;
-  padding: 4px 12px;
+  padding: 4px 0px;
   transition: color 0.2s;
 }
 .main-nav a:first-child {
   color: #222;
   font-weight: bold;
 }
-.main-nav a:hover {
-  color: #00bcd4;
-}
 .menu-btn {
   background: none;
   border: none;
   cursor: pointer;
   margin-left: 32px;
-  padding: 0;
+  padding: 10px;
   display: flex;
   align-items: center;
+  border: 1px solid #222;
 }
 .menu-btn span {
   font-size: 2rem;
-}
-img {
-  max-width: 140px;
-  height: auto;
 }
 .profile-img {
   border-radius: 50%;
@@ -63,20 +62,9 @@ img {
   object-fit: cover;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
-.image-content img {
-  margin-top: 40px;
-  width: 100%;
-  height: 400px;
-  max-width: 85%;
-  display: block;
-  object-fit: cover;
-}
 main {
-  flex: 1 0 auto;
-  min-height: 500px;
-  box-sizing: border-box;
-  display: flex;
-  flex-direction: column;
+  width: 60%;
+  margin: 0 auto;
 }
 .white-section,
 .black-section {
@@ -88,13 +76,14 @@ main {
   display: flex;
   flex-direction: column;
   margin-top: 40px;
+  padding-bottom: 20px;
 }
 .white-section h1 {
   font-size: 4.5rem;
   font-weight: 400;
   line-height: 1;
   margin: 32px 0 0 0;
-  padding-right: 5em;
+  padding-right: 2em;
 }
 .black-section {
   position: relative;
@@ -146,6 +135,7 @@ main {
   display: flex;
   align-items: center;
   gap: 16px;
+  margin: 30px 0;
 }
 .profile-details {
   display: flex;
@@ -166,12 +156,21 @@ main {
 .image-content {
   flex: 1 1 80%;
   padding: 16px;
+  margin-top: 50px;
   position: absolute;
   top: 20%;
   bottom: -120px;
   left: 0;
   right: 0;
   z-index: 2;
+}
+.image-content img {
+  margin-top: 40px;
+  width: 100%;
+  height: 400px;
+  max-width: 85%;
+  display: block;
+  object-fit: cover;
 }
 .row {
   display: flex;
@@ -219,6 +218,13 @@ footer {
 span {
   font-size: 0.8em;
 }
+@media (max-width: 830px) {
+  .row {
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+}
 @media (max-width: 700px) {
   .image-content img,
   .main-nav,
@@ -226,20 +232,35 @@ span {
   footer {
     display: none;
   }
-  .header-container {
+  body {
+    overflow: visible;
+  ;
+  }
+  header,
+  main {
     width: 90%;
   }
-  .white-section h1 {
-    font-size: 2.53rem;
-    line-height: 1.2;
-    margin-bottom: 16px;
-    padding-right: 0;
+  .header-container {
+    margin: 0;
+    width: 100%;
   }
-  .row {
-    flex-direction: column;
-    gap: 12px;
-    margin-bottom: 10px;
-    align-items: stretch;
+  .header-container img {
+    height: 60px;
+  }
+  .white-section,
+  .black-section {
+    width: 90%;
+  }
+  .white-section {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .white-section h1 {
+    font-size: 3em;
+    line-height: 1.2;
+    margin: 0 0 16px 0;
+    padding-right: 0;
   }
   .buttons,
   .references {
@@ -248,37 +269,55 @@ span {
   .buttons {
     margin-bottom: 8px;
   }
-  .references {
-    margin-top: 0;
+  .black-section {
+    margin-top: 40px;
+    padding-bottom: 0;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
   }
-  .black-section .info .info-content {
-    flex: 1 1 100%;
+  .black-section::before {
+    height: 40vh;
+    bottom: 0;
+  }
+  .info-content {
     width: 100%;
-    padding: 16px 0;
+    padding: 0 0 20px 0;
   }
   .info-content h2 {
     margin: 0 0 10px 0;
+    font-size: 2em;
   }
   .info-content p {
-    font-size: 14px;
-  }
-  .btn-details {
-    width: 100%;
-    box-sizing: border-box;
-    text-align: center;
+    font-size: 0.7em;
+    margin-bottom: 2.5em;
   }
 }
-
-@media (min-width: 700px) {
+@media (min-width: 701px) and (max-width: 1024px) {
+  header,
+  main {
+    width: 80%;
+  }
+  .white-section,
+  .black-section {
+    width: 85%;
+  }
   .white-section h1 {
-    padding-right: 0;
+    font-size: 3em;
+    padding-right: 2em;
   }
-  .row{
-    margin-top: 40px;
-
+  .image-content img {
+    max-width: 90%;
+    height: 350px;
   }
-  .black-section{
-    margin-top: 40px;
+  .info-content h2 {
+    font-size: 2.5em;
   }
-
+  .image-content img,
+  .main-nav,
+  .profile,
+  footer{
+    display: none;
+  }
 }
