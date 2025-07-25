@@ -31,8 +31,9 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  padding: 0.5rem 0;
+  padding: 1rem 0 2rem 0;
   border-bottom: 2px dashed #bbb;
+  gap: 2rem;
 }
 .nav-superior .nyt-logo {
   display: block;
@@ -57,7 +58,7 @@ header {
   font-size: 12px;
 }
 .nav-superior .icon-search .material-symbols-outlined,
-.nav-superior .icon-notification .fa-regular {
+.nav-superior .icon-notification .material-symbols-outlined {
   color: #000;
 }
 .nav-inferior {
@@ -95,7 +96,6 @@ header {
   height: auto;
   background: #000;
   margin-left: auto;
-  
   padding: 2em;
 }
 main {
@@ -106,7 +106,7 @@ main {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 0 4em;
+  padding: 2em 4em 0 4em;
   margin-left: 0;
   color: grey;
 }
@@ -191,6 +191,9 @@ h1 {
 h3 {
   font-size: 30px;
 }
+.latest-news-title {
+  font-size: 25px;
+}
 p {
   font-size: 15px;
   color: grey;
@@ -202,6 +205,10 @@ a {
   border-bottom: 1px solid grey;
 }
 header a {
+  border-bottom: none;
+}
+footer a {
+  text-decoration: none;
   border-bottom: none;
 }
 .notices-one,
@@ -229,7 +236,7 @@ header a {
 .notices-three h4,
 .notices-three p {
   width: 100%;
-  margin: 0 0 0px 0;
+  margin: 10px 0 10px 0;
 }
 .notices-one img,
 .notices-two img,
@@ -286,11 +293,107 @@ footer {
   right: 0;
   bottom: 0;
   background: #fff;
-  padding: 2em 0;
+  padding: 0.5em 4em 0.5em 4em;
   text-align: center;
   z-index: 100;
 }
 .section-three,
 .nav-inferior {
   padding-right: 0;
+}
+footer .heading {
+  grid-template-columns: auto 1fr auto;
+  display: grid;
+  padding: 10px 0;
+  gap: 56px;
+}
+footer .heading .snapshot {
+  flex-direction: column;
+  display: flex;
+  align-items: flex-start;
+}
+footer .heading .snapshot span:first-child {
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+footer .heading .snapshot span,
+footer .heading .snapshot .hour {
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+footer .heading .breadcrumbs {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+}
+footer .heading button {
+  background-color: transparent;
+  text-transform: uppercase;
+  color: rgb(87, 87, 87);
+  align-items: center;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  border: none;
+  gap: 8px;
+}
+footer .heading button span {
+  font-weight: bold;
+  font-size: 15px;
+}
+footer .heading button .material-symbols-outlined {
+  font-size: 20px;
+  color: rgb(7, 7, 7);
+}
+footer .cards-container {
+  grid-template-columns: repeat(6, auto);
+  display: grid;
+  gap: 20px;
+}
+/* Footer card styles */
+footer .cards-container .card {
+  flex-direction: column;
+  font-size: 0.9rem;
+  color: white;
+  padding: 24px;
+  display: flex;
+  gap: 16px;
+}
+footer .cards-container .card .firm {
+  display: flex;
+  gap: 8px;
+}
+footer .cards-container .card .container {
+  grid-template-columns: 1fr auto;
+  display: grid;
+  gap: 16px;
+}
+footer .cards-container .card .container img {
+  object-fit: fill;
+  height: 50px;
+  width: 100%;
+}
+footer .cards-container .card .container .information {
+  flex-direction: column;
+  display: flex;
+  gap: 16px;
+}
+footer .cards-container .card .container .information .ratings,
+footer .cards-container .card .container .information .hour {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+.hour .material-symbols-outlined {
+  font-size: 1.1rem;
+}
+.red {
+  background-color: #cb495a;
+}
+.green {
+  background-color: #5b8c5c;
+}
+.black {
+  background-color: black;
 }

@@ -3,30 +3,23 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>The New York Times</title>
     <link rel="stylesheet" href="style.css" />
     <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=more_horiz"
-    />
-    <link
-      href="https://fonts.cdnfonts.com/css/english-towne"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
     />
   </head>
+
   <body>
     <header>
       <div class="nav-container">
         <nav class="nav-superior nav-grid">
           <a class="icon-search" href="#">
-            <i class="fa-solid fa-magnifying-glass"></i>
+            <span class="material-symbols-outlined">search</span>
           </a>
           <a class="icon-notification" href="#">
-            <i class="fa-regular fa-bell"></i>
+            <span class="material-symbols-outlined">notifications</span>
           </a>
           <img
             src="https://upload.wikimedia.org/wikipedia/commons/5/58/NewYorkTimes.svg"
@@ -95,7 +88,7 @@
           <a href="#">continue reading</a>
         </div>
         <div class="section-two">
-          <h3>Latest News</h3>
+          <h3 class="latest-news-title">Latest News</h3>
           <div class="notice-one">
             <span class="span">THE UPSHOT</span
             ><span class="date">May 19, 2020</span>
@@ -162,6 +155,140 @@
         </div>
       </div>
     </main>
-    <footer></footer>
+    <footer>
+      <section class="heading">
+        <div class="snapshot">
+          <span class="title">Market Snapshot</span>
+          <span class="hour">6:07 AM</span>
+        </div>
+        <div class="breadcrumbs">
+          <a href="#">Futures</a>
+          <a href="#">Americas</a>
+          <a href="#">Europe</a>
+          <a href="#">Asia</a>
+          <a href="#">Commodities</a>
+        </div>
+        <button>
+          Full Market Overview
+          <span class="material-symbols-outlined">chevron_right</span>
+        </button>
+      </section>
+      <section class="cards-container">
+        <div class="card red">
+          <div class="firm">
+            <span class="title">Dow Jones mini</span>
+            <span class="value">-40.00</span>
+          </div>
+          <div class="container">
+            <div class="information">
+              <div class="ratings">
+                <span>24394.00</span>
+                <span>-0.51%</span>
+              </div>
+              <div class="hour">
+                <span class="material-symbols-outlined"
+                  >nest_clock_farsight_analog</span
+                ><span>7:13 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card green">
+          <div class="firm">
+            <span class="title">Nikkei 225 Future</span>
+            <span class="value">+40.00</span>
+          </div>
+          <div class="container">
+            <div class="information">
+              <div class="ratings">
+                <span>20580.00</span>
+                <span>+0.19%</span>
+              </div>
+              <div class="hour">
+                <span class="material-symbols-outlined"
+                  >nest_clock_farsight_analog</span
+                ><span>7:17 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card green">
+          <div class="firm">
+            <span class="title">EUR-USD</span>
+            <span class="value">+0.00014</span>
+          </div>
+          <div class="container">
+            <div class="information">
+              <div class="ratings">
+                <span>1.0994</span>
+                <span>+0.13%</span>
+              </div>
+              <div class="hour">
+                <span class="material-symbols-outlined"
+                  >nest_clock_farsight_analog</span
+                ><span>7:39 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card red">
+          <div class="firm">
+            <span class="title">FTSE 100</span>
+            <span class="value">-28.85</span>
+          </div>
+          <div class="container">
+            <div class="information">
+              <div class="ratings">
+                <span>24394.00</span>
+                <span>-0.48%</span>
+              </div>
+              <div class="hour">
+                <span class="material-symbols-outlined"
+                  >nest_clock_farsight_analog</span
+                ><span>7:41 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card black">
+          <div class="firm">
+            <span class="title">S&P 500 Mini</span>
+            <span class="value">0.00</span>
+          </div>
+          <div class="container">
+            <div class="information">
+              <div class="ratings">
+                <span>2956.00</span>
+                <span>0%</span>
+              </div>
+              <div class="hour">
+                <span class="material-symbols-outlined"
+                  >nest_clock_farsight_analog</span
+                ><span>7:52 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card red">
+          <div class="firm">
+            <span class="title">WTI Crude</span>
+            <span class="value">-0.66</span>
+          </div>
+          <div class="container">
+            <div class="information">
+              <div class="ratings">
+                <span>34.10</span>
+                <span>-0.28%</span>
+              </div>
+              <div class="hour">
+                <span class="material-symbols-outlined"
+                  >nest_clock_farsight_analog</span
+                ><span>7:59 AM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </footer>
   </body>
 </html>
