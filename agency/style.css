@@ -204,16 +204,17 @@ figure {
 .footer-logo {
   height: 40px;
   width: auto;
-  max-width: 100px;
-  min-width: 60px;
+  max-width: 120px;
+  min-width: 100px;
   opacity: 0.5;
   filter: grayscale(1);
   transition: opacity 0.2s;
-  object-fit: contain;
-  object-position: center;
 }
 .footer-logo:hover {
   opacity: 0.8;
+}
+.footer-logo[alt="Uber"] {
+  height: 36px;
 }
 .cta-button {
   padding: 15px 40px;
