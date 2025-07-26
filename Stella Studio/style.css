@@ -9,7 +9,7 @@ body {
 header {
   height: 80px;
   padding: 16px;
-  width: 60%;
+  width: 50%;
   box-sizing: border-box;
   margin: 0 auto;
 }
@@ -21,7 +21,7 @@ header {
   height: 100%;
 }
 .header-container img {
-  height: 100px;
+  height: 70px;
   width: auto;
 }
 .main-nav {
@@ -69,7 +69,7 @@ main {
 .white-section,
 .black-section {
   flex: 1 1 0;
-  width: 70%;
+  width: 85%;
   margin: 0 auto;
 }
 .white-section {
@@ -82,13 +82,13 @@ main {
   font-size: 4.5rem;
   font-weight: 400;
   line-height: 1;
-  margin: 32px 0 0 0;
-  padding-right: 2em;
+  margin: 32px 190px 0 0;
 }
 .black-section {
   position: relative;
   color: #fff;
   padding: 16px;
+  margin-top: 2em;
 }
 .black-section::before {
   content: "";
@@ -115,11 +115,12 @@ main {
 }
 .info-content h2 {
   font-size: 3em;
-  margin: 0 0 30px 0;
+  font-weight: 400;
+  margin: 0 130px 30px 0;
 }
 .info-content p {
   margin-bottom: 35px;
-  font-size: 15px;
+  font-size: 12px;
   color: rgba(245, 245, 245, 0.747);
 }
 .profile {
@@ -167,8 +168,8 @@ main {
 .image-content img {
   margin-top: 40px;
   width: 100%;
-  height: 400px;
-  max-width: 85%;
+  height: 380px;
+  max-width: 80%;
   display: block;
   object-fit: cover;
 }
@@ -225,19 +226,11 @@ span {
     align-items: stretch;
   }
 }
-@media (max-width: 700px) {
-  .image-content img,
-  .main-nav,
-  .profile,
-  footer {
-    display: none;
-  }
+@media (max-width: 500px) and (min-height: 900px) {
   body {
     overflow: visible;
-  ;
   }
-  header,
-  main {
+  header {
     width: 90%;
   }
   .header-container {
@@ -245,13 +238,23 @@ span {
     width: 100%;
   }
   .header-container img {
-    height: 60px;
+    height: 40px;
   }
-  .white-section,
-  .black-section {
+  .menu-btn {
+    padding: 8px;
+    margin-left: 16px;
+  }
+  .menu-btn span {
+    font-size: 1.5rem;
+  }
+  .main-nav {
+    display: none;
+  }
+  main {
     width: 90%;
   }
   .white-section {
+    width: 90%;
     margin-top: 0;
     margin-bottom: 0;
     padding-bottom: 0;
@@ -259,17 +262,50 @@ span {
   .white-section h1 {
     font-size: 3em;
     line-height: 1.2;
-    margin: 0 0 16px 0;
-    padding-right: 0;
+    margin: 0;
   }
-  .buttons,
-  .references {
-    justify-content: center;
+  .row {
+    margin-top: 15px;
+    gap: 1em;
   }
   .buttons {
+    justify-content: center;
     margin-bottom: 8px;
+    width: 100%;
+  }
+  .btn {
+    flex: 1;
+    min-width: 120px;
+    padding: 12px 80px;
+    text-align: center;
+    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .btn a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: inherit;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+  }
+  .references {
+    justify-content: center;
+    width: 100%;
+    gap: 0.5em;
+  }
+  .references a {
+    flex: 1;
+    text-align: center;
+    padding: 8px 16px;
+    font-size: 0.8rem;
   }
   .black-section {
+    width: 90%;
     margin-top: 40px;
     padding-bottom: 0;
     flex: 1;
@@ -281,17 +317,36 @@ span {
     height: 40vh;
     bottom: 0;
   }
+  .profile {
+    display: none;
+  }
   .info-content {
     width: 100%;
-    padding: 0 0 20px 0;
+    padding: 0 0 20px;
+    margin-top: 20px;
   }
   .info-content h2 {
-    margin: 0 0 10px 0;
+    margin: 0 0 10px;
     font-size: 2em;
   }
   .info-content p {
-    font-size: 0.7em;
+    font-size: 0.8em;
     margin-bottom: 2.5em;
+  }
+  .info-content .btn {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 94px;
+    font-size: 0.8rem;
+  }
+  .image-content img {
+    display: none;
+  }
+  footer {
+    display: none;
   }
 }
 @media (min-width: 701px) and (max-width: 1024px) {
@@ -317,7 +372,12 @@ span {
   .image-content img,
   .main-nav,
   .profile,
-  footer{
+  footer {
+    display: none;
+  }
+}
+@media (max-width: 1475px) {
+  span {
     display: none;
   }
 }
