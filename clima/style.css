@@ -124,11 +124,9 @@ footer {
   border-radius: 16px;
   text-align: center;
 }
-
 .weather-icon {
   font-size: 9rem;
 }
-
 .weather-description {
   display: flex;
   flex-direction: column;
@@ -136,27 +134,23 @@ footer {
   gap: 0.5rem;
   color: white;
 }
-
 .weather-temperature {
   font-size: 7rem;
   font-weight: 700;
   color: white;
   line-height: 1;
 }
-
 .degree-symbol {
   font-size: 2.5rem;
   vertical-align: top;
   margin-left: 0.1rem;
 }
-
 .weather-state {
   font-size: 1.9rem;
   font-weight: 400;
   color: white;
   margin: 0rem 0;
 }
-
 .weather-day {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
@@ -171,7 +165,6 @@ footer {
   margin-bottom: 0.5rem;
   border-top: 0.5px solid #fff;
 }
-
 .condition {
   display: flex;
   flex-direction: column;
@@ -180,19 +173,16 @@ footer {
   text-align: center;
   flex: 1;
 }
-
 .condition .material-symbols-outlined {
   font-size: 1.5rem;
   margin-bottom: 0.25rem;
   color: white;
 }
-
 .condition-title {
   font-size: 1rem;
   font-weight: 600;
   color: white;
 }
-
 .condition-subtitle {
   font-size: 0.75rem;
   color: rgba(255, 255, 255, 0.8);
@@ -203,20 +193,17 @@ footer {
   padding: 1rem;
   height: 100%;
 }
-
 .today-heading {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 1rem;
 }
-
 .today-heading h2 {
   color: white;
   font-size: 1.1rem;
   font-weight: 600;
 }
-
 .today-heading a {
   color: rgba(255, 255, 255, 0.589);
   text-decoration: none;
@@ -225,13 +212,11 @@ footer {
   align-items: center;
   gap: 0.25rem;
 }
-
 .weather-today {
   display: flex;
   justify-content: space-around;
   gap: 1rem;
 }
-
 .weather-time {
   display: flex;
   flex-direction: column;
@@ -247,31 +232,25 @@ footer {
   transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
 }
-
 .weather-time:hover {
   background-color: #45b7d1;
   transform: translateY(-2px);
 }
-
 .weather-time:hover .material-symbols-outlined {
   color: #ffd700;
 }
-
 .weather-time:active {
   transform: translateY(0);
 }
-
 .time-temperature {
   font-size: 1.1rem;
   font-weight: 600;
   color: white;
 }
-
 .weather-time .material-symbols-outlined {
   font-size: 1.75rem;
   color: white;
 }
-
 .weather-time span:last-child {
   font-size: 0.85rem;
   color: rgba(255, 255, 255, 0.9);

@@ -1,128 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weater</title>
-    <link rel="stylesheet" href="style.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
-      rel="stylesheet"
-    />
-  </head>
-
-  <body>
-    <header class="card-header">
-      <span
-        class="material-symbols-outlined icon-interactive"
-        aria-label="Abrir menú"
-        role="button"
-        tabindex="0"
-        >menu</span
-      >
-      <div class="location">
-        <div class="location-title">
-          <span class="material-symbols-outlined"> location_on </span>
-          <span>Minsk</span>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weater</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+</head>
+<body>
+  <header>
+    <span class="material-symbols-outlined icon-interactive" aria-label="Abrir menú" role="button"
+      tabindex="0">menu</span>
+    <div class="location">
+      <div class="location-title">
+        <span class="material-symbols-outlined"> location_on </span>
+        <span>Minsk</span>
+      </div>
+      <div class="updating">
+        <span class="material-symbols-outlined updating-dot">fiber_manual_record</span>
+        <span>Updating</span>
+      </div>
+    </div>
+    <span class="material-symbols-outlined icon-interactive" aria-label="Más opciones" role="button"
+      tabindex="0">more_vert</span>
+  </header>
+  <main>
+    <section class="weather-current" role="main">
+      <h1 class="visually-hidden">Información meteorológica actual</h1>
+      <div class="weather-icon">⛈️</div>
+      <div class="weather-description">
+        <span class="weather-temperature">21<span class="degree-symbol">°</span></span>
+        <span class="weather-state">Thunderstorm</span>
+        <span class="weather-day">Monday, 17 May</span>
+      </div>
+    </section>
+    <section class="weather-info" aria-label="Condiciones meteorológicas detalladas">
+      <div class="condition">
+        <span class="material-symbols-outlined" aria-hidden="true">air</span>
+        <span class="condition-title">13 km/h</span>
+        <span class="condition-subtitle">Wind</span>
+      </div>
+      <div class="condition">
+        <span class="material-symbols-outlined" aria-hidden="true">humidity_low</span>
+        <span class="condition-title">24 %</span>
+        <span class="condition-subtitle">Humidity</span>
+      </div>
+      <div class="condition">
+        <span class="material-symbols-outlined" aria-hidden="true">rainy</span>
+        <span class="condition-title">87 %</span>
+        <span class="condition-subtitle">Chance of rain</span>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <section class="today" aria-label="Pronóstico por horas">
+      <div class="today-heading">
+        <h2>Today</h2>
+        <a href="week.html" aria-label="Ver pronóstico de 7 días">7 days
+          <span class="material-symbols-outlined" aria-hidden="true">
+            arrow_forward_ios
+          </span></a>
+      </div>
+      <div class="weather-today" role="list" aria-label="Pronóstico por horas de hoy">
+        <div class="weather-time" role="listitem">
+          <span class="time-temperature">23°</span>
+          <span class="material-symbols-outlined" aria-hidden="true">
+            rainy
+          </span>
+          <span>10:00</span>
         </div>
-        <div class="updating">
-          <span class="material-symbols-outlined updating-dot"
-            >fiber_manual_record</span
-          >
-          <span>Updating</span>
+        <div class="weather-time" role="listitem">
+          <span class="time-temperature">21°</span>
+          <span class="material-symbols-outlined" aria-hidden="true">
+            flash_on
+          </span>
+          <span>11:00</span>
+        </div>
+        <div class="weather-time" role="listitem">
+          <span class="time-temperature">22°</span>
+          <span class="material-symbols-outlined" aria-hidden="true">
+            rainy
+          </span>
+          <span>12:00</span>
+        </div>
+        <div class="weather-time" role="listitem">
+          <span class="time-temperature">19°</span>
+          <span class="material-symbols-outlined" aria-hidden="true">
+            air
+          </span>
+          <span>01:00</span>
         </div>
       </div>
-      <span
-        class="material-symbols-outlined icon-interactive"
-        aria-label="Más opciones"
-        role="button"
-        tabindex="0"
-        >more_vert</span
-      >
-    </header>
-    <main>
-      <section class="weather-current" role="main">
-        <h1 class="visually-hidden">Información meteorológica actual</h1>
-        <div class="weather-icon">⛈️</div>
-        <div class="weather-description">
-          <span class="weather-temperature"
-            >21<span class="degree-symbol">°</span></span
-          >
-          <span class="weather-state">Thunderstorm</span>
-          <span class="weather-day">Monday, 17 May</span>
-        </div>
-      </section>
-      <section
-        class="weather-info"
-        aria-label="Condiciones meteorológicas detalladas"
-      >
-        <div class="condition">
-          <span class="material-symbols-outlined" aria-hidden="true">air</span>
-          <span class="condition-title">13 km/h</span>
-          <span class="condition-subtitle">Wind</span>
-        </div>
-        <div class="condition">
-          <span class="material-symbols-outlined" aria-hidden="true"
-            >humidity_low</span
-          >
-          <span class="condition-title">24 %</span>
-          <span class="condition-subtitle">Humidity</span>
-        </div>
-        <div class="condition">
-          <span class="material-symbols-outlined" aria-hidden="true"
-            >rainy</span
-          >
-          <span class="condition-title">87 %</span>
-          <span class="condition-subtitle">Chance of rain</span>
-        </div>
-      </section>
-    </main>
-    <footer>
-      <section class="today" aria-label="Pronóstico por horas">
-        <div class="today-heading">
-          <h2>Today</h2>
-          <a href="week.html" aria-label="Ver pronóstico de 7 días"
-            >7 days
-            <span class="material-symbols-outlined" aria-hidden="true">
-              arrow_forward_ios
-            </span></a
-          >
-        </div>
-        <div
-          class="weather-today"
-          role="list"
-          aria-label="Pronóstico por horas de hoy"
-        >
-          <div class="weather-time" role="listitem">
-            <span class="time-temperature">23°</span>
-            <span class="material-symbols-outlined" aria-hidden="true">
-              rainy
-            </span>
-            <span>10:00</span>
-          </div>
-          <div class="weather-time" role="listitem">
-            <span class="time-temperature">21°</span>
-            <span class="material-symbols-outlined" aria-hidden="true">
-              flash_on
-            </span>
-            <span>11:00</span>
-          </div>
-          <div class="weather-time" role="listitem">
-            <span class="time-temperature">22°</span>
-            <span class="material-symbols-outlined" aria-hidden="true">
-              rainy
-            </span>
-            <span>12:00</span>
-          </div>
-          <div class="weather-time" role="listitem">
-            <span class="time-temperature">19°</span>
-            <span class="material-symbols-outlined" aria-hidden="true">
-              air
-            </span>
-            <span>01:00</span>
-          </div>
-        </div>
-      </section>
-    </footer>
-  </body>
+    </section>
+  </footer>
+</body>
 </html>
