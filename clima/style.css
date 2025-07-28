@@ -14,60 +14,63 @@ body {
   margin: 0 auto;
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
 }
-header {
+header,
+main {
   background-color: #45b7d1;
+  margin: 0.5em 0.5em -1px 0.5em;
+}
+header {
   padding: 1rem;
-  min-height: 80px;
-  max-height: 80px;
+  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
-  margin-top: 0.5em;
-  margin-bottom: -1px;
+  color: #fff;
   border-radius: 50px 50px 0 0;
 }
-.location {
+.location,
+.location-title,
+.updating,
+.weather-description,
+.condition,
+.weather-time,
+.today-heading {
   display: flex;
-  flex-direction: column;
   align-items: center;
   gap: 0.25rem;
 }
-.location-title {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-  font-size: 1rem;
-  font-weight: 500;
+.location,
+.weather-description,
+.condition,
+.weather-time {
+  flex-direction: column;
 }
 .updating {
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
   font-size: 0.75rem;
   padding: 0.25rem 0.5rem;
   border-radius: 22px;
-  border: 1px solid #fff;
+  border: 1px solid #ffffff73;
+}
+/* Todos estos tienen color: #fff */
+.weather-description,
+.weather-temperature,
+.weather-state,
+.condition-title,
+.time-temperature {
+  color: #fff;
 }
 .updating-dot {
-  font-size: 0.5rem !important;
+  font-size: 0.5rem;
 }
 .icon-interactive {
   cursor: pointer;
   padding: 0.5rem;
   border-radius: 50%;
   user-select: none;
-  color: white;
-}
-header .material-symbols-outlined {
-  color: white;
-  font-size: 1rem;
+  color: #fff;
 }
 .icon-interactive:first-child {
-  border: 2px solid white;
-  border-radius: 50%;
+  border: 2px solid #fff;
 }
 .icon-interactive:last-child:hover {
   background-color: rgba(255, 255, 255, 0.2);
@@ -81,25 +84,40 @@ header .material-symbols-outlined {
   outline: 2px solid rgba(255, 255, 255, 0.8);
   outline-offset: 2px;
 }
+header .material-symbols-outlined {
+  color: #fff;
+  font-size: 1rem;
+}
 main {
-  background-color: #45b7d1;
   flex: 1;
   padding: 0 1rem;
   display: flex;
   flex-direction: column;
-  gap: 0rem;
+  gap: 0;
   max-height: calc(100vh - 280px);
   overflow-y: auto;
   justify-content: space-between;
   border-radius: 0 0 50px 50px;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
   margin-bottom: 0.5em;
+  margin-top: -1px;
+  position: relative;
+  z-index: 0;
+}
+
+main::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 36px;
+  background: linear-gradient(180deg, rgba(69, 183, 209, 0) 0%, #0f172a 100%);
 }
 footer {
   padding: 1rem;
   min-height: 200px;
-  color: white;
+  color: #fff;
 }
 .visually-hidden {
   position: absolute;
@@ -112,15 +130,14 @@ footer {
   white-space: nowrap;
   border: 0;
 }
-/* Estilos para secciones */
 .weather-current {
   flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 0 0;
-  padding: 0 1rem 0rem 1rem;
+  margin: 0;
+  padding: 0 1rem 0;
   border-radius: 16px;
   text-align: center;
 }
@@ -128,16 +145,11 @@ footer {
   font-size: 9rem;
 }
 .weather-description {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 0.5rem;
-  color: white;
 }
 .weather-temperature {
   font-size: 7rem;
   font-weight: 700;
-  color: white;
   line-height: 1;
 }
 .degree-symbol {
@@ -148,8 +160,7 @@ footer {
 .weather-state {
   font-size: 1.9rem;
   font-weight: 400;
-  color: white;
-  margin: 0rem 0;
+  margin: 0;
 }
 .weather-day {
   font-size: 1rem;
@@ -163,12 +174,9 @@ footer {
   padding: 1rem;
   margin-top: auto;
   margin-bottom: 0.5rem;
-  border-top: 0.5px solid #fff;
+  border-top: 0.5px solid #ffffff73;
 }
 .condition {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 0.25rem;
   text-align: center;
   flex: 1;
@@ -176,12 +184,11 @@ footer {
 .condition .material-symbols-outlined {
   font-size: 1.5rem;
   margin-bottom: 0.25rem;
-  color: white;
+  color: #fff;
 }
 .condition-title {
   font-size: 1rem;
   font-weight: 600;
-  color: white;
 }
 .condition-subtitle {
   font-size: 0.75rem;
@@ -194,13 +201,11 @@ footer {
   height: 100%;
 }
 .today-heading {
-  display: flex;
   justify-content: space-between;
-  align-items: center;
   margin-bottom: 1rem;
 }
 .today-heading h2 {
-  color: white;
+  color: #fff;
   font-size: 1.1rem;
   font-weight: 600;
 }
@@ -218,9 +223,6 @@ footer {
   gap: 1rem;
 }
 .weather-time {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   gap: 0.5rem;
   text-align: center;
   flex: 1;
@@ -229,7 +231,6 @@ footer {
   border: 1px solid #fff;
   min-height: 80px;
   justify-content: center;
-  transition: background-color 0.3s ease, transform 0.2s ease;
   cursor: pointer;
 }
 .weather-time:hover {
@@ -245,11 +246,10 @@ footer {
 .time-temperature {
   font-size: 1.1rem;
   font-weight: 600;
-  color: white;
 }
 .weather-time .material-symbols-outlined {
   font-size: 1.75rem;
-  color: white;
+  color: #fff;
 }
 .weather-time span:last-child {
   font-size: 0.85rem;
