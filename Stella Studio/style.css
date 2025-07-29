@@ -116,11 +116,11 @@ main {
 .info-content h2 {
   font-size: 3em;
   font-weight: 400;
-  margin: 0 130px 30px 0;
+  margin: 0 100px 30px 0;
 }
 .info-content p {
   margin-bottom: 35px;
-  font-size: 12px;
+  font-size: 13px;
   color: rgba(245, 245, 245, 0.747);
 }
 .profile {
@@ -298,6 +298,12 @@ span {
   }
   .btn-details {
     width: 100%;
+    
+  }
+}
+@media (min-width: 500px) {
+  .btn-details {
+    width: 180px;
   }
 }
 @media (min-width: 600px) and (max-width: 880px) {
@@ -352,6 +358,8 @@ span {
   .btn {
     padding: 11px 32px;
   }
+  
+
 }
 @media (min-width: 1115px) and (max-width: 1310px) {
   .main-nav a span {
@@ -375,12 +383,15 @@ span {
   }
   .white-section h1 {
     font-size: 4.2rem;
-    margin: 30px 150px 0 0;
+    margin: 30px 10px 0 0;
     line-height: 0.9;
   }
   .info-content h2 {
     font-size: 2.2em;
-    margin: 0 100px 35px 0;
+    margin: 0 30px 15px 0;
+  }
+  .info-content p {
+    font-size: 14px;
   }
   .row a {
     font-size: 0.8rem;
