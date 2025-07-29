@@ -44,8 +44,6 @@ header {
   place-items: center;
 }
 .back-icon {
-  border: 1px solid #fff;
-  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -74,7 +72,7 @@ header {
   gap: 0.5rem;
 }
 .location-title span {
-  font-size: 1.7rem;
+  font-size: 1.2rem;
 }
 main {
   flex: 1;
@@ -92,7 +90,7 @@ main {
 .weather-main-row,
 .weather-description {
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
 }
 .weather-description {
   flex-direction: column;
@@ -116,7 +114,7 @@ main {
   color: #dddddd94;
 }
 .weather-min {
-  font-size: 1.2rem;
+  font-size: 1.9rem;
 }
 .weather-day {
   margin-top: -0.2rem;
