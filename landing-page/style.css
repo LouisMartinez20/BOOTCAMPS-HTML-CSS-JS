@@ -128,14 +128,15 @@ main {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to bottom, #111 48%, #ffffff 52%);
+  background: linear-gradient(to bottom, #111 48%, #111 48%, #ffffff 48%, #ffffff 52%);
   padding-top: 20px;
   margin-top: -1px;
+
 }
 .image-container img {
   max-width: 85%;
-  height: auto;
   border-radius: 18px;
+  height: auto;
   display: block;
 }
 footer {
@@ -177,7 +178,6 @@ footer {
   object-fit: contain;
   object-position: center;
   background: transparent;
-  border-radius: 8px;
   padding: 6px;
   box-sizing: border-box;
 }
@@ -281,12 +281,14 @@ footer {
     overflow: hidden;
   }
   .image-container img {
-    width: 900px;
+    width: auto;
     max-width: 70%;
     max-height: 40vh;
     margin: 0;
     display: block;
     object-fit: contain;
+    border-radius: 18px;
+
   }
   .logos img {
     width: 120px;
