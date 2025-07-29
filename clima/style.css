@@ -14,19 +14,31 @@ body {
   margin: 0 auto;
   background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
 }
-header,
-main {
+.top-section {
   background-color: #45b7d1;
-  margin: 0.5em 0.5em -1px 0.5em;
+  margin: 0.5em 0.5em 0.5px 0.5em;
+  border-radius: 50px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+  background: linear-gradient(
+    to bottom, 
+    #45b7d1 0%,     
+    #45b7d1 70%,    
+    rgba(69, 183, 209, 0.5) 100%  
+  );
 }
 header {
-  padding: 1rem;
-  height: 80px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: #fff;
-  border-radius: 50px 50px 0 0;
+}
+main {
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
+  position: relative;
 }
 .location,
 .location-title,
@@ -51,7 +63,6 @@ header {
   border-radius: 22px;
   border: 1px solid #ffffff73;
 }
-/* Todos estos tienen color: #fff */
 .weather-description,
 .weather-temperature,
 .weather-state,
@@ -88,32 +99,6 @@ header .material-symbols-outlined {
   color: #fff;
   font-size: 1rem;
 }
-main {
-  flex: 1;
-  padding: 0 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0;
-  max-height: calc(100vh - 280px);
-  overflow-y: auto;
-  justify-content: space-between;
-  border-radius: 0 0 50px 50px;
-  margin-bottom: 0.5em;
-  margin-top: -1px;
-  position: relative;
-  z-index: 0;
-}
-
-main::after {
-  content: "";
-  display: block;
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 100%;
-  height: 36px;
-  background: linear-gradient(180deg, rgba(69, 183, 209, 0) 0%, #0f172a 100%);
-}
 footer {
   padding: 1rem;
   min-height: 200px;
@@ -124,7 +109,7 @@ footer {
   width: 1px;
   height: 1px;
   padding: 0;
-  margin: -1px;
+  
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -156,6 +141,7 @@ footer {
   font-size: 2.5rem;
   vertical-align: top;
   margin-left: 0.1rem;
+  color: #ffffff67;
 }
 .weather-state {
   font-size: 1.9rem;
@@ -166,6 +152,7 @@ footer {
   font-size: 1rem;
   color: rgba(255, 255, 255, 0.8);
   font-weight: 400;
+  margin-bottom: 20px;
 }
 .weather-info {
   display: flex;
