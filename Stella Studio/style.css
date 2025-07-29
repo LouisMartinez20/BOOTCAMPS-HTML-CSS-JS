@@ -11,7 +11,6 @@ body {
   font-family: "Inter", "Segoe UI", sans-serif;
   overflow: hidden;
 }
-
 header {
   height: 80px;
   padding: 16px;
@@ -87,7 +86,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 60px;
+  margin: 60px 0;
 }
 .buttons,
 .references {
@@ -127,7 +126,6 @@ main {
   position: relative;
   left: 50%;
   margin-left: -50vw;
-
 }
 .black-section ::before {
   background-color: #1c2438;
@@ -137,7 +135,7 @@ main {
   grid-template-columns: minmax(2rem, 1fr) auto auto minmax(2rem, 1fr);
   grid-template-rows: auto 2rem;
   padding: 2rem 0 0 0;
-  max-width: 1920px;
+  max-width: auto ;
   gap: 0;
 }
 .black-space {
@@ -201,8 +199,7 @@ main {
   margin-right: 40px;
 }
 .info-container p {
-  padding-bottom: 1em;
-  padding-top: 0.2rem;
+  padding:2em 0;
  
 }
 button {
@@ -222,7 +219,7 @@ button {
 .btn-details:hover {
   background-color: #e7ebec;
 }
-@media screen and (max-width: 768px) {
+@media (max-width: 600px) {
   body {
     overflow-y: auto;
   }
@@ -254,25 +251,26 @@ button {
   }
   .white-section h1 {
     font-size: 2.9rem;
-    margin: 16px 30px;
+    margin: 10px 30px;
     text-align: left;
   }
-  .black-section h2{
+  .black-section h2 {
     margin-right: 40px;
     font-size: 2em;
     font-weight: 400;
     margin-bottom: 10px;
     padding: 0.5em;
   }
-  .black-section p{
+  .black-section p {
     padding: 1em;
-  font-size: 15px;
-  margin-bottom: 20px;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #ffffff67;
   }
   .row {
     flex-direction: column;
     gap: 50px;
-    margin-top: 30px;
+    margin: 10px 0;
     align-items: center;
   }
   .buttons,
@@ -316,28 +314,62 @@ button {
   }
 }
 @media (min-width: 601px) and (max-width: 880px) {
-  .row {
-    flex-direction: column;
-    gap: 20px;
-    align-items: center;
+    .grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+    padding: 2rem 0;
+  }
+  
+  header {
+    width: 85%;
+    padding: 10px;
+  }
+  .header-container img {
+    height: 55px;
+  }
+  .main-nav {
+    display: flex;
   }
   .main-nav a span {
     display: none;
   }
-  .profile {
-    grid-column: 2/4;
+  .menu-btn {
+    display: none;
+  }
+  main, .white-section {
+    width: 85%;
+  }
+  .white-section h1 {
+    font-size: 3rem;
+    margin: 20px 40px 0 0;
+  }
+  .row {
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 30px;
+    justify-content: center;
   }
   .info-container {
     grid-column: 1/-1;
     grid-row: 3;
     padding: 2rem 1rem;
   }
-  .btn-details{
+  .btn-details {
     width: 140px;
     justify-content: center;
   }
+  .profile-container,
+  .profile img,
+  .first,
+  .second,
+  .sixth,
+  .seventh,
+  .eighth {
+    display: none;
+  }
 }
-@media (min-width: 769px) and (max-width: 1124px) {
+@media (min-width: 881px) and (max-width: 1124px) {
   header {
     width: 70%;
     padding: 12px;
@@ -374,22 +406,29 @@ button {
     padding: 0 2rem 2rem 2rem;
   }
   .profile-container,
-  img,
+  .profile img,
   .second,
   .eighth,
-  .sixth{
+  .sixth {
     display: none;
   }
 }
-@media (min-width: 1125px) and (max-width: 1310px) {
+@media (min-width: 1125px) {
   .main-nav a span {
     display: none;
   }
   .info-container {
     max-width: 500px;
   }
+  .white-section h1 {
+    font-size: 3.5rem;
+    margin: 24px 40px 0 0;
+  }
+  .row a {
+    font-size: 0.8em;
+  }
 }
-@media (min-width: 1311px) and (max-width: 1700px) {
+@media (min-width: 1311px) {
   header {
     width: 55%;
     padding: 20px;
@@ -412,14 +451,9 @@ button {
     font-size: 1rem;
   }
 }
-@media screen and (max-width: 1368px) and (max-height: 844px) {
+@media (max-width: 1368px) and (max-height: 844px) {
   body {
     overflow-y: auto;
     min-height: auto;
-  }
-}
-@media (min-width: 1124px) and (max-width: 1244px) {
-  .row a{
-    font-size: 0.8em;
   }
 }
