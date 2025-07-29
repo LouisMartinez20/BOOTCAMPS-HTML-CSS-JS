@@ -1,0 +1,331 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #ffffff;
+}
+.header {
+  background: #111;
+  color: #fff;
+  padding: 1.5rem 0;
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+.icon-left,
+.icon-right {
+  display: flex;
+  align-items: center;
+}
+.material-icons {
+  color: #fff;
+  font-size: 28px;
+  user-select: none;
+}
+.material-icons.settings {
+  color: #2051f5;
+}
+nav,
+#sign-up {
+  display: none;
+}
+main {
+  padding: 5rem 2rem 3.5rem 2rem;
+  background: #111;
+}
+.content {
+  max-width: 480px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  
+}
+.content-group-one .intro-text {
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  color: #888;
+  margin-bottom: 0.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+.content-group-one h1 {
+  font-size: 2rem;
+  font-weight: 400;
+  margin: 0;
+  color: #fff;
+  line-height: 1.2;
+}
+.content-group-two .description {
+  font-size: 1rem;
+  color: #888;
+  margin-bottom: 1.5rem;
+}
+.buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  max-width: 320px;
+}
+.buttons .button.one,
+.buttons .button.two {
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  text-align: center;
+  white-space: nowrap;
+}
+.buttons .button.one {
+  flex: 1.5;
+  background: #2051f5;
+  color: #fff;
+}
+.buttons .button.one .material-icons {
+  font-size: 1.1rem;
+}
+.buttons .button.one:hover {
+  background: #163bb8;
+}
+.buttons .button.two {
+  flex: 1;
+  background: #3d3d3d;
+  color: #ffffff;
+}
+.buttons .button.two:hover {
+  background: #ffffff;
+  color:#111 ;
+}
+.plus-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  margin-left: 8px;
+  background: #ffffff;
+  color: #000000;
+  border-radius: 50%;
+  font-size: 1.3rem;
+  font-weight: bold;
+  box-shadow: 0 2px 8px #2051f522;
+  border: 2px solid #fff;
+}
+.image-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(to bottom, #111 48%, #111 48%, #ffffff 48%, #ffffff 52%);
+  padding-top: 20px;
+  margin-top: -1px;
+
+}
+.image-container img {
+  max-width: 85%;
+  border-radius: 18px;
+  height: auto;
+  display: block;
+}
+footer {
+  background: #fff;
+  padding: 2rem 0 1.5rem 0;
+  left: 0;
+  right: 0;
+  width: 100vw;
+  z-index: 100;
+}
+.brands {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+}
+.brands img {
+  filter: grayscale(1);
+  opacity: 0.7;
+}
+.brands p {
+  color: #000000;
+  font-size: 1.2rem;
+  padding: 0 1rem 0 1rem;
+}
+.logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2.5rem;
+  row-gap: 0.5rem;
+  flex-wrap: wrap;
+}
+.logos img {
+  width: 80px;
+  height: 40px;
+  filter: grayscale(1);
+  opacity: 0.7;
+  transition: opacity 0.2s;
+  object-fit: contain;
+  object-position: center;
+  background: transparent;
+  padding: 6px;
+  box-sizing: border-box;
+}
+.logos img:hover {
+  opacity: 1;
+}
+.logo-container.Squarespace img {
+  width: 120px;
+  height: 60px;
+}
+@media (min-width: 900px) {
+  .header-container {
+    gap: 1.5rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: center;
+    max-width: 950px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  main {
+    padding: 100px 0 50px 0;
+    min-height: 10vh;
+  }
+  .icon-left {
+    display: flex;
+    justify-content: flex-start;
+  }
+  nav {
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  nav a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+  }
+  nav a:hover {
+    text-decoration: underline;
+  }
+  .badge {
+    background: #ff6b6b;
+    color: #fff;
+    border-radius: 12px;
+    font-size: 0.7em;
+    padding: 3px 8px;
+    margin-left: 4px;
+    vertical-align: middle;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 16px;
+    line-height: 1;
+  }
+  #sign-up {
+    display: inline-block;
+    background: #2051f5;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 0.5rem 1.2rem;
+    font-size: 1rem;
+    cursor: pointer;
+    margin-left: 1rem;
+  }
+  #sign-up:hover {
+    background: #e73370;
+  }
+  .icon-right {
+    display: none;
+  }
+  .content {
+    flex-direction: row;
+    gap: 8rem;
+    max-width: 800px;
+  }
+  .content-group-one,
+  .content-group-two {
+    flex: 1 1 0;
+    min-width: 0;
+  }
+  .content-group-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .content-group-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .image-container {
+    width: 100vw;
+    margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    min-height: 15vh;
+    max-height: 45vh;
+    padding: 1rem 0;
+    overflow: hidden;
+  }
+  .image-container img {
+    width: auto;
+    max-width: 70%;
+    max-height: 40vh;
+    margin: 0;
+    display: block;
+    object-fit: contain;
+    border-radius: 18px;
+
+  }
+  .logos img {
+    width: 120px;
+    height: 60px;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+  .logo-container.Squarespace img {
+    width: 140px;
+    height: 60px;
+  }
+  footer {
+    bottom: 0;
+    background-color: #ffffff;
+    padding-bottom: 4em;
+  }
+}
+@media (min-width: 900px) and (max-height: 799px) {
+  main {
+    padding: 60px 0 80px 0;
+  }
+  .image-container {
+    max-height: 20vh;
+    padding: 0.5rem 0;
+  }
+  .image-container img {
+    max-height: 18vh;
+  }
+  .content {
+    gap: 4rem;
+  }
+  .logos img {
+    width: 100px;
+    height: 50px;
+  }
+  .logo-container.Squarespace img {
+    width: 120px;
+    height: 50px;
+  }
+}
