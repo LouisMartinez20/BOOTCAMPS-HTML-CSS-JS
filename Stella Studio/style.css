@@ -109,6 +109,8 @@ main {
 }
 .btn-secondary {
   background-color: #bebcbc;
+  text-decoration: none;
+  color: #000000;
 }
 .references a {
   color: #888;
@@ -219,7 +221,7 @@ button {
 .btn-details:hover {
   background-color: #e7ebec;
 }
-@media (max-width: 600px) {
+@media (max-width: 650px) {
   body {
     overflow-y: auto;
   }
@@ -313,7 +315,7 @@ button {
     justify-content: center;
   }
 }
-@media (min-width: 601px) and (max-width: 880px) {
+@media (min-width: 651px) and (max-width: 880px) {
     .grid-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -328,44 +330,43 @@ button {
   .header-container img {
     height: 55px;
   }
-  .main-nav {
-    display: flex;
+  main {
+    width: 80%;
   }
-  .main-nav a span {
-    display: none;
+    .row {
+    flex-direction: column;
+    gap: 50px;
+    margin: 10px 0;
+    align-items: center;
   }
-  .menu-btn {
-    display: none;
-  }
-  main, .white-section {
-    width: 85%;
+  .white-section {
+    width: 90%;
   }
   .white-section h1 {
     font-size: 3rem;
-    margin: 20px 40px 0 0;
+    margin: 24px 100px 0 0;
+  }
+  .black-section h2 {
+    font-size: 2rem;
   }
   .row {
-    flex-direction: row;
-    flex-wrap: wrap;
-    gap: 30px;
-    justify-content: center;
+    margin-top: 50px;
+  }
+  .btn {
+    padding: 11px 32px;
+  }
+  .profile img {
+    max-width: 280px;
   }
   .info-container {
-    grid-column: 1/-1;
-    grid-row: 3;
-    padding: 2rem 1rem;
+    padding: 0 2rem 2rem 2rem;
   }
-  .btn-details {
-    width: 140px;
-    justify-content: center;
+  .main-nav{
+    gap: 15px;
   }
-  .profile-container,
-  .profile img,
-  .first,
   .second,
-  .sixth,
-  .seventh,
-  .eighth {
+  .eighth,
+  .sixth {
     display: none;
   }
 }
@@ -405,8 +406,7 @@ button {
   .info-container {
     padding: 0 2rem 2rem 2rem;
   }
-  .profile-container,
-  .profile img,
+  
   .second,
   .eighth,
   .sixth {
