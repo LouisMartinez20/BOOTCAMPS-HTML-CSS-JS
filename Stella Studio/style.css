@@ -10,6 +10,7 @@ body {
   flex-direction: column;
   font-family: "Inter", "Segoe UI", sans-serif;
   overflow: hidden;
+  overflow-y: auto;
 }
 header {
   height: 80px;
@@ -33,7 +34,7 @@ header {
   flex: 1;
   display: flex;
   justify-content: center;
-  gap: 32px;
+  gap: 22px;
 }
 .main-nav a {
   color: #888;
@@ -41,7 +42,10 @@ header {
   font-size: 1.1rem;
   font-weight: 300;
   padding: 4px 0;
-  transition: color 0.2s;
+}
+.main-nav a span {
+  font-size: 0.8rem;
+  color: #888;
 }
 .main-nav a:first-child {
   color: #222;
@@ -58,43 +62,46 @@ header {
 .menu-btn span {
   font-size: 2rem;
 }
-.profile-img {
-  border-radius: 50%;
-  width: 56px;
-  height: 56px;
-  object-fit: cover;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
-}
-main {
-  width: 60%;
-  margin: 0 auto;
-}
 .white-section {
   flex: 1;
-  width: 75%;
-  margin: 40px auto 20px;
   display: flex;
   flex-direction: column;
 }
-.white-section h1 {
+.white-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  width: 50%;
+}
+.white-content h1 {
   font-size: 4.5rem;
   font-weight: 400;
   line-height: 1;
-  margin: 32px 100px 0 0;
+  margin: 32px 0 0 0;
 }
 .row {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  /* Esto mantiene el espacio máximo entre los elementos */
   margin: 60px 0;
+  gap: 5em;
+  width: 100%;
 }
-.buttons,
+.buttons {
+  margin-right: auto;
+  /* Fuerza los botones al inicio */
+  display: flex;
+  gap: 1em;
+  flex-direction: row;
+}
 .references {
+  margin-left: auto;
   display: flex;
   gap: 16px;
-}
-.buttons a {
-  text-decoration: none;
+  flex-direction: row;
 }
 .btn {
   border: none;
@@ -109,7 +116,6 @@ main {
 }
 .btn-secondary {
   background-color: #bebcbc;
-  text-decoration: none;
   color: #000000;
 }
 .references a {
@@ -124,20 +130,13 @@ main {
 .black-section {
   background-color: #1c2438;
   color: white;
-  width: 100vw;
-  position: relative;
-  left: 50%;
-  margin-left: -50vw;
-}
-.black-section ::before {
-  background-color: #1c2438;
 }
 .grid-container {
   display: grid;
   grid-template-columns: minmax(2rem, 1fr) auto auto minmax(2rem, 1fr);
   grid-template-rows: auto 2rem;
   padding: 2rem 0 0 0;
-  max-width: auto ;
+  max-width: auto;
   gap: 0;
 }
 .black-space {
@@ -158,34 +157,18 @@ main {
   grid-column: 2/3;
   grid-row: 1/3;
 }
-.info-container {
-  grid-column: 3/4;
-  grid-row: 1/2;
-  padding: 0 0rem 2rem 5rem;
-  min-width: 300px;
-  max-width: 550px;
-}
-.sixth {
-  grid-column: 3/4;
-  grid-row: 2/3;
-}
-.profile img {
-  box-shadow: 0px 5px 30px rgb(0, 0, 0, 0.3);
-  object-fit: cover;
-  max-width: 330px;
-  height: 90%;
-  width: auto;
-}
 .profile-container {
   padding-bottom: 24px;
   font-size: 0.9rem;
   display: flex;
   gap: 12px;
 }
-.profile-container img {
+.profile-image {
   border-radius: 50%;
-  height: 48px;
-  width: 48px;
+  width: 46px;
+  height: 46px;
+  object-fit: cover;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
 }
 .profile-info {
   flex-direction: column;
@@ -195,14 +178,28 @@ main {
 .profile-title {
   font-weight: bold;
 }
+.profile img:not(.profile-image) {
+  max-width: 330px;
+  height: 90%;
+  width: auto;
+}
+.info-container {
+  grid-column: 3/4;
+  grid-row: 1/2;
+  padding: 0 0rem 2rem 5rem;
+  min-width: 300px;
+  max-width: 550px;
+}
 .info-container h2 {
   font-size: 2.5rem;
   font-weight: 400;
-  margin-right: 40px;
 }
 .info-container p {
-  padding:2em 0;
- 
+  padding: 2em 0;
+}
+.sixth {
+  grid-column: 3/4;
+  grid-row: 2/3;
 }
 button {
   justify-content: center;
@@ -221,7 +218,7 @@ button {
 .btn-details:hover {
   background-color: #e7ebec;
 }
-@media (max-width: 650px) {
+@media (max-width: 689px) {
   body {
     overflow-y: auto;
   }
@@ -234,51 +231,43 @@ button {
   .header-container img {
     height: 50px;
   }
+  main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
   .main-nav {
     display: none;
   }
   .menu-btn {
-    margin-left: 16px;
     padding: 8px;
-  }
-  .menu-btn span {
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   main,
   .white-section {
-    width: 95%;
-  }
-  .white-section {
+    width: 100%;
     margin-top: 20px;
+  }
+  .white-content {
+    width: 100%;
+    text-align: center;
   }
   .white-section h1 {
     font-size: 2.9rem;
     margin: 10px 30px;
     text-align: left;
   }
-  .black-section h2 {
-    margin-right: 40px;
-    font-size: 2em;
-    font-weight: 400;
-    margin-bottom: 10px;
-    padding: 0.5em;
-  }
-  .black-section p {
-    padding: 1em;
-    font-size: 15px;
-    margin-bottom: 20px;
-    color: #ffffff67;
-  }
   .row {
     flex-direction: column;
     gap: 50px;
     margin: 10px 0;
     align-items: center;
+    margin: 3em 0;
   }
   .buttons,
   .references {
     justify-content: center;
-    flex-wrap: wrap;
+    margin: 0;
   }
   .references {
     gap: 32px;
@@ -287,6 +276,17 @@ button {
     padding: 12px 42px;
     font-size: 0.9rem;
     min-width: 140px;
+  }
+  .black-section h2 {
+    font-size: 2em;
+    font-weight: 400;
+    padding: 0.5em 3em 0.5em 0.5em;
+  }
+  .black-section p {
+    padding: 1em;
+    font-size: 15px;
+    margin-bottom: 20px;
+    color: #ffffff67;
   }
   .profile,
   .profile img {
@@ -315,145 +315,92 @@ button {
     justify-content: center;
   }
 }
-@media (min-width: 651px) and (max-width: 880px) {
-    .grid-container {
-    display: grid;
-    grid-template-columns: 1fr;
-    justify-items: center;
-    padding: 2rem 0;
+@media (min-width: 690px) and (max-width: 820px) {
+  body {
+    overflow-y: auto;
   }
-  
   header {
-    width: 85%;
-    padding: 10px;
-  }
-  .header-container img {
-    height: 55px;
-  }
-  main {
+    margin: 0 auto;
     width: 80%;
   }
-    .row {
-    flex-direction: column;
-    gap: 50px;
-    margin: 10px 0;
-    align-items: center;
+  .white-content {
+    width: 70%;
   }
-  .white-section {
-    width: 90%;
-  }
-  .white-section h1 {
+  .white-content h1 {
     font-size: 3rem;
-    margin: 24px 100px 0 0;
   }
   .black-section h2 {
     font-size: 2rem;
   }
-  .row {
-    margin-top: 50px;
-  }
-  .btn {
-    padding: 11px 32px;
-  }
-  .profile img {
-    max-width: 280px;
-  }
-  .info-container {
-    padding: 0 2rem 2rem 2rem;
-  }
-  .main-nav{
-    gap: 15px;
-  }
-  .second,
-  .eighth,
-  .sixth {
-    display: none;
-  }
-}
-@media (min-width: 881px) and (max-width: 1124px) {
-  header {
-    width: 70%;
-    padding: 12px;
-  }
-  .header-container img {
-    height: 60px;
-  }
-  .menu-btn {
-    padding: 8px;
-  }
-  .menu-btn span {
-    font-size: 1.8rem;
-  }
-  main {
-    width: 80%;
-  }
-  .white-section {
-    width: 90%;
-  }
-  .white-section h1 {
-    font-size: 3.5rem;
-    margin: 24px 100px 0 0;
+  .info-container p {
+    padding: 1.5rem 0;
   }
   .row {
-    margin-top: 50px;
+    flex-direction: column;
+    gap: 50px;
   }
-  .btn {
-    padding: 11px 32px;
+  .buttons {
+    margin: 0;
   }
-  .profile img {
-    max-width: 280px;
+  .references {
+    margin: 0;
   }
-  .info-container {
-    padding: 0 2rem 2rem 2rem;
-  }
-  
+  .first,
   .second,
-  .eighth,
-  .sixth {
+  .sixth,
+  .seventh,
+  .eighth {
     display: none;
   }
 }
-@media (min-width: 1125px) {
-  .main-nav a span {
-    display: none;
-  }
-  .info-container {
-    max-width: 500px;
-  }
-  .white-section h1 {
-    font-size: 3.5rem;
-    margin: 24px 40px 0 0;
-  }
-  .row a {
-    font-size: 0.8em;
-  }
-}
-@media (min-width: 1311px) {
-  header {
-    width: 55%;
-    padding: 20px;
-  }
-  .header-container img {
-    height: 75px;
-  }
-  main {
-    width: 55%;
-  }
-  .white-section {
-    width: 80%;
-  }
-  .white-section h1 {
-    font-size: 4.2rem;
-    margin: 30px 10px 0 0;
-    line-height: 0.9;
-  }
-  .row a {
-    font-size: 1rem;
-  }
-}
-@media (max-width: 1368px) and (max-height: 844px) {
+@media (min-width: 821px) and (max-width: 1014px) {
   body {
     overflow-y: auto;
-    min-height: auto;
+  }
+  header {
+    width: 80%;
+    margin: 0 auto;
+  }
+  .white-content {
+    width: 70%;
+  }
+  .white-content h1 {
+    font-size: 3.5rem;
+  }
+  .row {
+    gap: 0;
+  }
+}
+@media (min-width: 1015px) and (max-width: 1143px) {
+  body {
+    overflow-y: auto;
+  }
+  .white-content h1 {
+    font-size: 3.5rem;
+  }
+  .row {
+    gap: 0;
+  }
+  .references a {
+    font-size: 0.8rem;
+  }
+  .buttons {
+    font-size: 0.1rem;
+  }
+}
+@media (min-width: 1144px) and (max-width: 1307px) {
+  body {
+    overflow-y: auto;
+  }
+  .white-content h1 {
+    font-size: 4rem;
+  }
+  .row {
+    gap: 0;
+  }
+}
+@media (max-width: 1238px) and (min-width: 651px) {
+  .main-nav a span {
+    display: none;
   }
 }

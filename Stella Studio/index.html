@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Stella Studio - Creative design and branding agency">
     <title>Stella Studio</title>
     <link rel="stylesheet" href="style.css" />
     <link
@@ -13,33 +14,37 @@
   <body>
     <header>
       <div class="header-container">
-        <img src="./images/logo.webp" alt="Stella Studio Logo" />
-        <nav class="main-nav">
+        <img src="./images/logo.webp" alt="Stella Studio Logo" width="120" height="40">
+        <nav class="main-nav" aria-label="Main navigation">
           <a href="#">Home</a>
-          <a href="#">Services <span>&#9660;</span></a>
+          <a href="#">Services <span aria-hidden="true">&#9660;</span></a>
           <a href="#">Product</a>
           <a href="#">Design</a>
         </nav>
-        <button class="menu-btn">
+        <button class="menu-btn" aria-label="Open menu">
           <span class="material-symbols-outlined">menu</span>
         </button>
       </div>
     </header>
-    <main>
+    
+    <main >
       <section class="white-section">
-        <h1>Enabling brands to flow with change in order to grow &#128640;</h1>
-        <div class="row">
-          <div class="buttons">
-            <a href="#" class="btn btn-primary">Get Started</a>
-            <a href="#" class="btn btn-secondary">Get Quote</a>
-          </div>
-          <div class="references">
-            <a href="#">/ web design</a>
-            <a href="#">/ branding</a>
-            <a href="#">/ marketing</a>
+        <div class="white-content">
+          <h1>Enabling brands to flow with change in order to grow &#128640;</h1>
+          <div class="row">
+            <div class="buttons">
+              <button class="btn btn-primary">Get Started</button>
+              <button class="btn btn-secondary">Get Quote</button>
+            </div>
+            <div class="references">
+              <a href="#">/ web design</a>
+              <a href="#">/ branding</a>
+              <a href="#">/ marketing</a>
+            </div>
           </div>
         </div>
       </section>
+      
       <section class="black-section">
         <div class="grid-container">
           <div class="first black-space"></div>
@@ -48,23 +53,25 @@
             <div class="profile-container">
               <img
                 src="https://randomuser.me/api/portraits/men/32.jpg"
-                alt="Profile image"
-                class="profile-img"
+                alt="Portrait of Leonardo Garzón"
+                class="profile-image"
+                width="80"
+                height="80"
               />
               <div class="profile-info">
                 <p class="profile-title">Leonardo Garzón</p>
                 <p class="profile-subtitle">Founder</p>
               </div>
             </div>
-            <img src="./images/escaleras.webp" alt="escaleras" />
+            <img src="./images/escaleras.webp" alt="Abstract stairs representing growth" width="300" height="200">
           </div>
           <div class="info-container">
             <h2>We propel results-driven growth</h2>
             <p>
               At the start of every project, we customise a detailed project
               plan together with you to set expectations, ensure alignment, and
-              define key milestones and deliverables. Experience tell is the
-              best solutions are the one co-ideated with clients. We incorporate
+              define key milestones and deliverables. Experience tells us the
+              best solutions are the ones co-ideated with clients. We incorporate
               your ideas with our broad level of expertise to create memorable
               experiences for your brands & products.
             </p>
