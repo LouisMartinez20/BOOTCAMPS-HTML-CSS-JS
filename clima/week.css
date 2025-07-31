@@ -1,0 +1,178 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
+.top-section {
+  background-color: #45b7d1;
+  margin: 0.5em 0.5em 0.5px 0.5em;
+  border-radius: 50px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem 1rem 2rem 1rem;
+  background: linear-gradient(
+    to bottom, 
+    #45b7d1 0%,     
+    #45b7d1 70%,    
+    rgba(69, 183, 209, 0.5) 100%  
+  );
+}
+header {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.back-button {
+  grid-column: 1;
+  justify-self: center;
+  text-align: center;
+  margin-left: 1.9em;
+  place-items: center;
+}
+.back-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.5em;
+  height: 1.7em;
+  padding: 0.3em;
+}
+.location {
+  grid-column: 2;
+  justify-self: center;
+}
+.icon-button:last-child {
+  grid-column: 3;
+  justify-self: end;
+  margin-right: 1.5em;
+}
+.icon-button {
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+.location-title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.location-title span {
+  font-size: 1.2rem;
+}
+main {
+  flex: 1;
+  border-radius: 0 0 50px 50px;
+  position: relative;
+  
+}
+
+
+.weather-icon {
+  font-size: 6rem;
+  line-height: 1;
+  margin-right: 1rem;
+}
+.weather-main-row,
+.weather-description {
+  display: flex;
+  gap: 3rem;
+}
+.weather-description {
+  flex-direction: column;
+  gap: 0.2rem;
+}
+.weather-state {
+  font-size: 1em;
+  margin-bottom: -0.2rem;
+}
+.weather-temperature {
+  font-size: 3.5rem;
+  font-weight: bold;
+  line-height: 1;
+  margin: 0.1rem 0;
+}
+.weather-min,
+.condition-subtitle,
+.temp-min,
+.day-name,
+.weather-desc {
+  color: #dddddd94;
+}
+.weather-min {
+  font-size: 1.9rem;
+}
+.weather-day {
+  margin-top: -0.2rem;
+}
+.weather-state-main,
+.weather-state-sub {
+  font-size: 1rem;
+  display: inline;
+}
+.weather-info {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  border-top: 0.1px solid #dddddd5d;
+  margin-top: 30px;
+}
+.condition {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0.5rem;
+}
+.condition-title {
+  font-weight: bold;
+  margin: 0.3rem 0;
+}
+.condition-subtitle {
+  font-size: 0.8rem;
+}
+footer {
+  height: 60vh;
+  overflow-y: auto;
+  padding: 0.1rem;
+  margin: 1em 2em;
+}
+.week-column {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.day-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.2rem;
+  border-radius: 8px;
+}
+.day-name,
+.weather-desc {
+  font-weight: bold;
+}
+.temp-min {
+  font-weight: normal;
+}
+.temp-max {
+  color: #fff;
+}
+.weather-emoji {
+  font-size: 1.5rem;
+  margin-right: -3rem;
+}

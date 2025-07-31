@@ -1,0 +1,244 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  line-height: 1.6;
+  min-height: 100vh;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  max-width: 450px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%);
+}
+.top-section {
+  background-color: #45b7d1;
+  margin: 0.5em 0.5em 0.5px 0.5em;
+  border-radius: 50px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 1rem;
+  background: linear-gradient(
+    to bottom, 
+    #45b7d1 0%,     
+    #45b7d1 70%,    
+    rgba(69, 183, 209, 0.5) 100%  
+  );
+}
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+main {
+  max-height: calc(100vh - 280px);
+  overflow-y: auto;
+  position: relative;
+}
+.location,
+.location-title,
+.updating,
+.weather-description,
+.condition,
+.weather-time,
+.today-heading {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.location,
+.weather-description,
+.condition,
+.weather-time {
+  flex-direction: column;
+}
+.updating {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 22px;
+  border: 1px solid #ffffff73;
+}
+.weather-description,
+.weather-temperature,
+.weather-state,
+.condition-title,
+.time-temperature {
+  color: #fff;
+}
+.updating-dot {
+  font-size: 0.5rem;
+}
+.icon-interactive {
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 50%;
+  user-select: none;
+  color: #fff;
+}
+.icon-interactive:first-child {
+  border: 2px solid #fff;
+}
+.icon-interactive:last-child:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+}
+.icon-interactive:active {
+  transform: scale(0.95);
+  background-color: rgba(255, 255, 255, 0.3);
+}
+.icon-interactive:focus {
+  outline: 2px solid rgba(255, 255, 255, 0.8);
+  outline-offset: 2px;
+}
+header .material-symbols-outlined {
+  color: #fff;
+  font-size: 1rem;
+}
+footer {
+  padding: 1rem;
+  min-height: 200px;
+  color: #fff;
+}
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.weather-current {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0 1rem 0;
+  border-radius: 16px;
+  text-align: center;
+}
+.weather-icon {
+  font-size: 9rem;
+}
+.weather-description {
+  gap: 0.5rem;
+}
+.weather-temperature {
+  font-size: 7rem;
+  font-weight: 700;
+  line-height: 1;
+}
+.degree-symbol {
+  font-size: 2.5rem;
+  vertical-align: top;
+  margin-left: 0.1rem;
+  color: #ffffff67;
+}
+.weather-state {
+  font-size: 1.9rem;
+  font-weight: 400;
+  margin: 0;
+}
+.weather-day {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.weather-info {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+  border-top: 0.5px solid #ffffff73;
+}
+.condition {
+  gap: 0.25rem;
+  text-align: center;
+  flex: 1;
+}
+.condition .material-symbols-outlined {
+  font-size: 1.5rem;
+  margin-bottom: 0.25rem;
+  color: #fff;
+}
+.condition-title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.condition-subtitle {
+  font-size: 0.75rem;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 400;
+}
+.today {
+  border-radius: 16px;
+  padding: 1rem;
+  height: 100%;
+}
+.today-heading {
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.today-heading h2 {
+  color: #fff;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.today-heading a {
+  color: rgba(255, 255, 255, 0.589);
+  text-decoration: none;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.weather-today {
+  display: flex;
+  justify-content: space-around;
+  gap: 1rem;
+}
+.weather-time {
+  gap: 0.5rem;
+  text-align: center;
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 22px;
+  border: 1px solid #fff;
+  min-height: 80px;
+  justify-content: center;
+  cursor: pointer;
+}
+.weather-time:hover {
+  background-color: #45b7d1;
+  transform: translateY(-2px);
+}
+.weather-time:hover .material-symbols-outlined {
+  color: #ffd700;
+}
+.weather-time:active {
+  transform: translateY(0);
+}
+.time-temperature {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.weather-time .material-symbols-outlined {
+  font-size: 1.75rem;
+  color: #fff;
+}
+.weather-time span:last-child {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.9);
+}
