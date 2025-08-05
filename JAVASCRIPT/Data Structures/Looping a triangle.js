@@ -1,5 +1,4 @@
-for (let linea = "#"; linea.length <= 7; linea += "#") {
-  console.log(linea);
+for (let line = "#"; line.length <= 7; line += "#") { // Crea un bucle que comienza con una línea de un solo "#"
+  console.log(line);
 }
 
-// linea imprime "#" esto lo hace menos de 7 veces y en cada ves suma un #
