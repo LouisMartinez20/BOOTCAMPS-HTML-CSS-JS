@@ -1,9 +1,6 @@
-
 function arrayToList(arr) {
   return arr.reduceRight((rest, value) => ({ value, rest }), null);
 }
-
-
 function listToArray(list) {
   let result = [];
   while (list) {
@@ -12,20 +9,11 @@ function listToArray(list) {
   }
   return result;
 }
-
-
-const prepend = (value, list) => ({ value, rest: list });
-
-
+const prepend = (value, rest) => ({ value, rest });
 function nth(list, n) {
-  return !list ? undefined :
-         n === 0 ? list.value :
-         nth(list.rest, n - 1);
+  return !list ? undefined : n === 0 ? list.value : nth(list.rest, n - 1);
 }
-
-
-let lista = arrayToList([10, 20, 30]);
-console.log(lista);
-console.log(listToArray(lista));   // [10, 20, 30]
-console.log(prepend(5, lista));    // { value: 5, rest: {...} }
-console.log(nth(lista, 1));        // 20
+console.log(arrayToList([10, 20]));
+console.log(listToArray(arrayToList([10, 20, 30])));
+console.log(prepend(10, prepend(20, null)));
+console.log(nth(arrayToList([10, 20, 30]), 1));

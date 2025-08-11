@@ -1,20 +1,19 @@
-
 function reverseArray(arr) {
-  return arr.reduce((reversed, value) => [value, ...reversed], []);
+  let reversed = [];
+  for (let i = arr.length - 1; i >= 0; i--) {
+    reversed.push(arr[i]);
+  }
+  return reversed;
 }
-
-
 function reverseArrayInPlace(arr) {
-  arr.forEach((_, i) => {
-    if (i < arr.length / 2) {
-      [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length - 1 - i], arr[i]];
-    }
-  });
+  for (let i = 0; i < Math.floor(arr.length / 2); i++) {
+    [arr[i], arr[arr.length - 1 - i]] = [arr[arr.length - 1 - i], arr[i]];
+  }
   return arr;
 }
-
-// Ejemplo:
-console.log(reverseArray([1, 2, 3]));   
-let arr = [1, 2, 3, 4];
-reverseArrayInPlace(arr);
-console.log(arr);                      
+let myArray = ["A", "B", "C"];
+console.log(reverseArray(myArray)); 
+console.log(myArray);
+let arrayValue = [1, 2, 3, 4, 5];
+reverseArrayInPlace(arrayValue);
+console.log(arrayValue);
