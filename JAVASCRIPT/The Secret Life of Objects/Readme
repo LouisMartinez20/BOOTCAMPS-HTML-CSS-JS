@@ -1,0 +1,123 @@
+# Ejercicio: Clase Vec (Eloquent JavaScript - Capítulo 6)
+
+## 📖 Descripción
+
+La clase `Vec` permite:
+
+- Crear vectores con coordenadas `x` e `y`.
+- Sumar y restar vectores (métodos `plus` y `minus`).
+- Obtener la longitud (magnitud) de un vector mediante la propiedad `length`.
+
+## ⚙️ Explicación
+
+### Constructor
+
+Recibe dos parámetros (`x` e `y`) y los asigna como propiedades del vector.
+
+### plus(other)
+
+Recibe otro vector como parámetro.
+Devuelve un nuevo vector con las coordenadas sumadas.
+
+### minus(other)
+
+Recibe otro vector.
+Devuelve un nuevo vector con las coordenadas restadas.
+
+### get length
+
+Calcula la magnitud del vector usando la fórmula: `length = √(x² + y²)`
+
+# Ejercicio: Clase Group (Eloquent JavaScript - Capítulo 6)
+
+Este código implementa una clase `Group` que funciona como una colección de valores únicos, siguiendo el ejercicio del capítulo "Objetos" en el libro Eloquent JavaScript.
+
+## 📖 Descripción
+
+La clase `Group`:
+
+- Guarda valores únicos (sin duplicados).
+- Permite añadir, eliminar y verificar si un valor está presente.
+- Se puede crear a partir de cualquier objeto iterable (como arrays) con el método estático `from`.
+
+## ⚙️ Explicación
+
+### Propiedad interna `_members`
+
+- Es un arreglo que almacena los valores del grupo.
+- El guion bajo (`_`) es una convención para indicar que es privado (aunque en JavaScript no lo hace realmente privado).
+
+### `add(value)` y el `!this.has(value)`
+
+- `this.has(value)` devuelve `true` si el valor ya existe en el grupo.
+- El signo de exclamación (`!`) niega el resultado:
+  - Si `has(value)` es `false` → `!false` es `true` → el valor se añade.
+  - Si `has(value)` es `true` → `!true` es `false` → el valor **no** se añade.
+- Esto es lo que evita duplicados en el grupo.
+
+### `delete(value)` y el `!==`
+
+- `.filter()` recorre cada elemento (`member`) y mantiene solo aquellos que cumplan la condición `member !== value`.
+- `!==` significa "estrictamente diferente":
+  - Compara valor y tipo de dato.
+  - Ejemplo: `3 !== "3"` es `true` porque uno es número y el otro string.
+- No se usa `===` porque eso significaría "mantener los que son estrictamente iguales", y nosotros queremos lo contrario: quitar el que es igual y quedarnos con todos los demás.
+
+### `has(value)`
+
+- Devuelve `true` si el valor está en el grupo, `false` si no.
+- Utiliza el método `includes` de los arrays.
+
+### `static from(iterable)`
+
+- **Método estático:** se llama en la clase, no en una instancia.
+- Recibe cualquier objeto iterable (`array`, `string`, `set`, etc.).
+- Usa `add()` para garantizar que no haya duplicados al crear el grupo.
+  > **¿Qué significa "static"?**  
+  > Un método estático pertenece a la clase, no a las instancias creadas con ella. Se llama como `Group.from(...)`, no como `grupo.from(...)`.
+
+
+## 📝 Notas
+
+- El operador `!` en `if (!this.has(value))` significa “si NO tiene el valor”.
+- La convención `_members` ayuda a identificar que es para uso interno, pero no es realmente privado en JavaScript clásico.
+- El operador `!==` en `.filter()` es importante para eliminar el valor correcto y evitar errores de tipo.
+
+# Ejercicio: Clase Group iterable (Eloquent JavaScript - Capítulo 6)
+
+Este código amplía la clase `Group` para que sea **iterable**, es decir, que se pueda recorrer con bucles como `for...of`, tal como lo solicita el último ejercicio del capítulo "Objetos" en el libro Eloquent JavaScript.
+
+## 📖 Descripción
+
+La clase `Group`:
+
+- Almacena valores únicos (sin duplicados).
+- Permite añadir, eliminar y verificar si un valor existe.
+- Se puede crear a partir de cualquier iterable.
+- **Ahora también implementa el protocolo de iteración de JavaScript** gracias a la implementación de `[Symbol.iterator]`.
+
+## 📝 Código
+
+## ⚙️ Explicación
+
+### Métodos de colección (`add`, `delete`, `has`)
+
+- Funcionan igual que en el ejercicio anterior, manteniendo la regla de no duplicados gracias a `!this.has(value)`.
+- En el método `delete`, se usa `!==` para eliminar únicamente el valor estrictamente igual y mantener todos los demás.
+
+### Método especial `[Symbol.iterator]`
+
+- Este método convierte la clase en **iterable**.
+- Devuelve un **objeto iterador** que implementa el método `next()`:
+  - `value` → el elemento actual.
+  - `done` → indica si la iteración ha terminado (`true`) o no (`false`).
+- Usa `index` para ir recorriendo secuencialmente los elementos de `_members`.
+
+#### ¿Por qué `[Symbol.iterator]` y no otro nombre?
+
+- `Symbol.iterator` es una **clave especial** que JavaScript busca automáticamente cuando usas un bucle `for...of` o cuando intentas usar el operador de propagación (`...`).
+- Si no está implementado, la clase **no podrá usarse de forma nativa** con estas construcciones.
+
+### Uso en `for...of`
+
+Como la clase ahora es iterable, se puede recorrer directamente:
