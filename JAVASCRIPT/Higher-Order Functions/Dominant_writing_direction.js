@@ -1,37 +1,46 @@
+// Datos de ejemplo: scripts con nombre, rangos Unicode y dirección
 const SCRIPTS = [
   { name: "Latin", ranges: [[65, 91], [97, 123]], direction: "ltr" },
   { name: "Arabic", ranges: [[1536, 1792]], direction: "rtl" },
   { name: "Mongolian", ranges: [[6144, 6319]], direction: "ttb" }
 ];
-
-const characterScript = code => //convierte un código de carácter a su unicode
-  SCRIPTS.find(({ ranges }) =>
-    ranges.some(([from, to]) => code >= from && code < to)
-  );
-
-const countBy = (items, groupFn) => //cuenta elementos en un array agrupados por una función
-  items.reduce((counts, item) => {
-    const name = groupFn(item);
-    if (!name) return counts;
-
-    const found = counts.find(c => c.name === name);
-    found ? found.count++ : counts.push({ name, count: 1 });
-    return counts;
-  }, []);
-
-const dominantDirection = text => { //determina la dirección de escritura dominante en un texto
-  const directions = countBy([...text], char => {
-    const script = characterScript(char.codePointAt(0));
-    return script?.direction; 
-  });
-
-  if (!directions.length) return "ltr";
-
-  return directions.reduce((max, dir) =>
-    dir.count > max.count ? dir : max
-  ).name;
-};
-
-console.log(dominantDirection("Hello!"));            // "ltr"
-console.log(dominantDirection("Hey, مساء الخير"));  // "rtl"
-console.log(dominantDirection("ᠮᠣᠩᠭᠤᠯ"));        // "ttb"
+// Busca el script al que pertenece un código Unicode
+function characterScript(code) {
+  for (let script of SCRIPTS) {
+    if (script.ranges.some(function(range) {
+      var from = range[0];
+      var to = range[1];
+      return code >= from && code < to;
+    })) {
+      return script;
+    }
+  }
+  return null;
+}
+// Cuenta elementos agrupados por el resultado de groupName
+function countBy(items, groupName) {
+  let counts = [];
+  for (let item of items) {
+    let name = groupName(item);
+    let known = counts.find(c => c.name === name);
+    if (!known) {
+      counts.push({ name, count: 1 });
+    } else {
+      known.count++;
+    }
+  }
+  return counts;
+}
+// Determina la dirección dominante de escritura de un texto
+function dominantDirection(text) {
+  let counted = countBy(text, char => {
+    let script = characterScript(char.codePointAt(0));
+    return script ? script.direction : "none";
+    }).filter(function(item) { return item.name !== "none"; });
+  if (counted.length === 0) return "ltr"; // valor por defecto
+  return counted.reduce((a, b) => (a.count > b.count ? a : b)).name;
+}
+// Ejemplos de uso
+console.log(dominantDirection("Hello!"));                // → ltr
+console.log(dominantDirection("Hey, مساء الخير"));      // → rtl
+console.log(dominantDirection("ᠮᠣᠩᠭᠤᠯᠤ script test")); // → ttb
