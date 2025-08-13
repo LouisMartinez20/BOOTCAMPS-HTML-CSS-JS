@@ -11,7 +11,13 @@ function listToArray(list) {
 }
 const prepend = (value, rest) => ({ value, rest });
 function nth(list, n) {
-  return !list ? undefined : n === 0 ? list.value : nth(list.rest, n - 1);
+  if (!list) {
+    return undefined;
+  } else if (n === 0) {
+    return list.value;
+  } else {
+    return nth(list.rest, n - 1);
+  }
 }
 console.log(arrayToList([10, 20]));
 console.log(listToArray(arrayToList([10, 20, 30])));
