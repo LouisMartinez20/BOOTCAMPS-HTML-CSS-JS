@@ -1,23 +1,41 @@
-function arrayToList(arr) { // convierte un array en una lista enlazada
-  return arr.reduceRight((rest, value) => ({ value, rest }), null);
-}
-function listToArray(list) { // convierte una lista enlazada en un array
-  let result = [];
-  while (list) {
-    result.push(list.value);
-    list = list.rest;
+function arrayToList(array) {
+  let lista = null;
+  for (let i = array.length - 1; i >= 0; i--) {
+    
+    lista = {
+      value: array[i],
+      rest: lista
+    };
   }
-  return result;
+  return lista;
 }
-const prepend = (value, rest) => ({ value, rest }); // agrega un nuevo elemento al principio de la lista
-function nth(list, n) { // obtiene el n-ésimo elemento de una lista enlazada
-  if (!list) {
-    return undefined;
-  } else if (n === 0) {
-    return list.value;
-  } else {
-    return nth(list.rest, n - 1);
+function listToArray(lista) {
+  let array = [];
+  let nodoActual = lista;
+  while (nodoActual !== null) {
+    array.push(nodoActual.value);
+    nodoActual = nodoActual.rest;
   }
+  return array;
+}
+function prepend(valor, lista) {
+  return {
+    value: valor,
+    rest: lista
+  };
+}
+function nth(lista, posicion) {
+  let nodoActual = lista;
+  let contador = 0;
+  while (nodoActual !== null) {
+    if (contador === posicion) {
+      return nodoActual.value;
+    }
+    nodoActual = nodoActual.rest;
+    contador++;
+  }
+  
+  return undefined;
 }
 console.log(arrayToList([10, 20]));
 console.log(listToArray(arrayToList([10, 20, 30])));
