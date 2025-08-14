@@ -1,7 +1,7 @@
-function arrayToList(arr) {
+function arrayToList(arr) { // convierte un array en una lista enlazada
   return arr.reduceRight((rest, value) => ({ value, rest }), null);
 }
-function listToArray(list) {
+function listToArray(list) { // convierte una lista enlazada en un array
   let result = [];
   while (list) {
     result.push(list.value);
@@ -9,8 +9,8 @@ function listToArray(list) {
   }
   return result;
 }
-const prepend = (value, rest) => ({ value, rest });
-function nth(list, n) {
+const prepend = (value, rest) => ({ value, rest }); // agrega un nuevo elemento al principio de la lista
+function nth(list, n) { // obtiene el n-ésimo elemento de una lista enlazada
   if (!list) {
     return undefined;
   } else if (n === 0) {

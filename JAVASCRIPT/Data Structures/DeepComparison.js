@@ -1,4 +1,4 @@
-function deepEqual(a, b) {
+function deepEqual(a, b) { // compara dos valores, incluyendo objetos y arrays
   if (a === b) return true;
   if (a === null || typeof a !== "object" ||
       b === null || typeof b !== "object") return false;
