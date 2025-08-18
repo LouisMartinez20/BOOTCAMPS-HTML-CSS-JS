@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elements by Tag Name</title>
+</head>
+<body>
+    <h1>Encabezado con un elemento <span>span</span>.</h1>
+    <p>Un párrafo con <span>uno</span>, <span>dos</span> spans.</p>
+    <script>
+        function byTagName(node, tagName) {
+            let found = [];
+            tagName = tagName.toUpperCase();
+            function explore(node) {
+                for (let i = 0; i < node.childNodes.length; i++) {
+                    let child = node.childNodes[i];
+                    if (child.nodeType == document.ELEMENT_NODE) {
+                        if (child.nodeName == tagName) found.push(child);
+                        explore(child);
+                    }
+                }
+            }
+            explore(node);
+            return found;
+        }
+        console.log(byTagName(document.body, "h1").length);
+        // → 1
+        console.log(byTagName(document.body, "span").length);
+        // → 3
+        let para = document.querySelector("p");
+        console.log(byTagName(para, "span").length);
+        // → 2
+    </script>
+</body>
+</html>
