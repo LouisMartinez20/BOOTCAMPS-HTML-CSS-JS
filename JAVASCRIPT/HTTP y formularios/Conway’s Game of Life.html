@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conway's Game of Life</title>
+</head>
+<body>
+    <div id="grid"></div>
+    <button id="next">Next generation</button>
+    <button id="run">Run</button>
+    <script>
+        const GRID_WIDTH = 30, GRID_HEIGHT = 15;
+        const gridNode = document.querySelector("#grid");
+        const checkboxes = [];
+        for (let y = 0; y < GRID_HEIGHT; y++) {
+            for (let x = 0; x < GRID_WIDTH; x++) {
+                const box = document.createElement("input");
+                box.type = "checkbox";
+                gridNode.appendChild(box);
+                checkboxes.push(box);
+            }
+            gridNode.appendChild(document.createElement("br"));
+        }
+        function gridFromCheckboxes() {
+            return checkboxes.map(box => box.checked);
+        }
+        function checkboxesFromGrid(grid) {
+            grid.forEach((value, i) => {
+                checkboxes[i].checked = value;
+            });
+        }
+        function randomGrid() {
+            return Array.from({ length: GRID_WIDTH * GRID_HEIGHT },
+                () => Math.random() < 0.3);
+        }
+        checkboxesFromGrid(randomGrid());
+        function countNeighbors(grid, x, y) {
+            let count = 0;
+            for (let ny = Math.max(0, y - 1); ny <= Math.min(GRID_HEIGHT - 1, y + 1); ny++) {
+                for (let nx = Math.max(0, x - 1); nx <= Math.min(GRID_WIDTH - 1, x + 1); nx++) {
+                    if ((nx !== x || ny !== y) && grid[nx + ny * GRID_WIDTH]) {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+        function nextGeneration(grid) {
+            const newGrid = new Array(GRID_WIDTH * GRID_HEIGHT);
+            for (let y = 0; y < GRID_HEIGHT; y++) {
+                for (let x = 0; x < GRID_WIDTH; x++) {
+                    const neighbors = countNeighbors(grid, x, y);
+                    const index = x + y * GRID_WIDTH;
+                    if (neighbors < 2 || neighbors > 3) {
+                        newGrid[index] = false;
+                    } else if (neighbors === 2) {
+                        newGrid[index] = grid[index];
+                    } else {
+                        newGrid[index] = true;
+                    }
+                }
+            }
+            return newGrid;
+        }
+        function turn() {
+            checkboxesFromGrid(nextGeneration(gridFromCheckboxes()));
+        }
+        document.querySelector("#next").addEventListener("click", turn);
+        let running = null;
+        document.querySelector("#run").addEventListener("click", () => {
+            if (running) {
+                clearInterval(running);
+                running = null;
+            } else {
+                running = setInterval(turn, 400);
+            }
+        });
+    </script>
+</body>
+</html>
