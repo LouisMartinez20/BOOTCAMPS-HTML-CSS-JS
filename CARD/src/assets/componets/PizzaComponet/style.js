@@ -1,31 +1,33 @@
 // components/style.js
-import styled, { createGlobalStyle } from 'styled-components';
-
+import styled, { createGlobalStyle } from "styled-components";
+const colors = {
+  primary: "#5f5de5",
+  secondary: "#9b5de5",
+  text: "#666",
+  icon: "#a5a4a45e",
+  white: "#fff",
+};
 export const GlobalStyle = createGlobalStyle`
   body {
-    font-family: "Roboto", Arial, sans-serif;
-    background: #faeaea;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: start;
     height: 100vh;
+    background: #faeaea;
+    margin: auto;
   }
-
   h1 {
     font-size: 18px;
     margin: 0;
   }
-
   a {
     text-decoration: none;
-    color: #5f5de5; /* Morado */
+    color: #4586e7ff;
   }
-
   input[type="radio"] {
-    accent-color: #9b5de5; /* Morado */
+    accent-color: ${colors.secondary};
     margin-right: 8px;
   }
-
   .material-symbols-outlined {
     font-variation-settings:
       'FILL' 0,
@@ -34,30 +36,29 @@ export const GlobalStyle = createGlobalStyle`
       'opsz' 24;
   }
 `;
-
 export const Card = styled.div`
   display: flex;
-  background: #fff;
+  background: ${colors.white};
   border-radius: 20px;
   overflow: hidden;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-
+  max-width: 900px;
+  width: 100%;
+  margin: auto;
   img {
-    width: 45%;
+    flex: 1; 
     object-fit: cover;
+    min-width: 250px;
   }
-`;
-
+`
 export const IconsContainer = styled.div`
-  width: 5%;
+  flex: 0.2; /* ocupa poco espacio */
   display: flex;
   flex-direction: column;
-  justify-content: start;
   align-items: center;
   gap: 2rem;
   margin-top: 35px;
 `;
-
 export const Icon = styled.div`
   width: 40px;
   height: 40px;
@@ -65,40 +66,34 @@ export const Icon = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  color: #a5a4a45e;
+  color: ${colors.icon};
   font-size: 24px;
   cursor: pointer;
 `;
-
 export const Content = styled.div`
+  flex: 1; 
   padding: 30px;
-  width: 47%;
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  gap: 1.5rem; 
 `;
-
-export const Title = styled.div`
+export const Title = styled.h2`
   font-size: 20px;
   font-weight: bold;
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 `;
-
 export const Subtitle = styled.div`
   font-size: 14px;
-  margin-bottom: 60px;
   cursor: pointer;
+  color: ${colors.text};
 `;
-
 export const Info = styled.div`
   font-size: 14px;
-  color: #666;
-  margin-bottom: 60px;
+  color: ${colors.text};
 `;
-
 export const Option = styled.label`
-  margin: 10px 0;
-  font-size: 14px;
   display: flex;
   align-items: center;
+  font-size: 14px;
+  gap: 0.5rem;
 `;
