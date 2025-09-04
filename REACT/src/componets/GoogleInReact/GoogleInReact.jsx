@@ -1,48 +1,48 @@
 import React from "react";
-import *as S from "./style";
+import { GlobalStyle, Header, NavLinks, ProfileIcon, MenuIcon, Main, Logo, SearchContainer, SearchBox, IconSearch, SearchInput, IconCamera, Buttons, SearchBtn, Footer, FooterTop, FooterBottom, FooterLinks} from "./style"; 
 export const GoogleInReact = () => {
     return (
         <>
-        <S.GlobalStyle />
-            <S.Header>
-                <S.NavLinks>
+        <GlobalStyle />
+            <Header>
+                <NavLinks>
                     <a href="#">Gmail</a>
                     <a href="#">Imágenes</a>
-                    <S.MenuIcon tabIndex="0" aria-label="Aplicaciones de Google">
+                    <MenuIcon tabIndex="0" aria-label="Aplicaciones de Google">
                         {[...Array(9)].map((_, i) => (
                             <span key={i} className="dot" />
                         ))}
-                    </S.MenuIcon>
-                    <S.ProfileIcon tabIndex="0" aria-label="Perfil">
+                    </MenuIcon>
+                    <ProfileIcon tabIndex="0" aria-label="Perfil">
                         <img src="https://www.gravatar.com/avatar/?d=mp" alt="Perfil" />
-                    </S.ProfileIcon>
-                </S.NavLinks>
-            </S.Header>
-            <S.Main>
-                <S.Logo>
+                    </ProfileIcon>
+                </NavLinks>
+            </Header>
+            <Main>
+                <Logo>
                     <img
                         src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_272x92dp.png"
                         alt="Google Logo"
                     />
-                </S.Logo>
-                <S.SearchContainer>
-                    <S.SearchBox>
-                        <S.IconSearch htmlFor="main-search" />
-                        <S.SearchInput id="main-search" aria-label="Buscar" />
-                        <S.IconCamera htmlFor="main-search" />
-                    </S.SearchBox>
-                    <S.Buttons>
-                        <S.SearchBtn>Buscar con Google</S.SearchBtn>
-                        <S.SearchBtn>Voy a tener suerte</S.SearchBtn>
-                    </S.Buttons>
-                </S.SearchContainer>
-            </S.Main>
-            <S.Footer>
-                <S.FooterTop>
+                </Logo>
+                <SearchContainer>
+                    <SearchBox>
+                        <IconSearch htmlFor="main-search" />
+                        <SearchInput id="main-search" aria-label="Buscar" />
+                        <IconCamera htmlFor="main-search" />
+                    </SearchBox>
+                    <Buttons>
+                        <SearchBtn>Buscar con Google</SearchBtn>
+                        <SearchBtn>Voy a tener suerte</SearchBtn>
+                    </Buttons>
+                </SearchContainer>
+            </Main>
+            <Footer>
+                <FooterTop>
                     <span>Colombia</span>
-                </S.FooterTop>
-                <S.FooterBottom>
-                    <S.FooterLinks>
+                </FooterTop>
+                <FooterBottom>
+                    <FooterLinks>
                         <a href="#">Sobre Google</a>
                         <a href="#">Publicidad</a>
                         <a href="#">Negocios</a>
@@ -50,9 +50,9 @@ export const GoogleInReact = () => {
                         <a href="#">Privacidad</a>
                         <a href="#">Condiciones</a>
                         <a href="#">Preferencias</a>
-                    </S.FooterLinks>
-                </S.FooterBottom>
-            </S.Footer>
+                    </FooterLinks>
+                </FooterBottom>
+            </Footer>
             </>
     );
 };
