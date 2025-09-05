@@ -8,7 +8,7 @@ export const SectionsContainer = styled.div`
   height: auto;
   min-height: 400px;
   gap: 3em;
-  padding: 0 4em 30px 4em;
+  padding: 0 4em 0px 4em;
 `;
 export const NoticesNavContainer = styled.div`
   display: flex;

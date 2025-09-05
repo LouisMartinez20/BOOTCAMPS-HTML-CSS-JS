@@ -1,7 +1,7 @@
 import styled from "styled-components";
 export const FooterContainer = styled.footer`
   border-top: 1px dashed #bbb;
-  padding: 0.5em 2em;
+  padding: 0.5em 4em;
   text-align: center;
   @media (max-width: 768px) {
     padding: 0.5em 1em;

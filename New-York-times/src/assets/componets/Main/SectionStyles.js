@@ -67,16 +67,19 @@ export const Notice = styled.div`
   .span {
     font-size: 0.8rem;
     font-weight: bold;
-    color: #888;
+    color: #ffffffff;
+    background-color: black;
     text-transform: uppercase;
     margin-right: 0.5rem;
+    padding: 10px;
+    
   }
   .date {
     font-size: 0.8rem;
     color: #888;
   }
   h3 {
-    font-size: 1.1rem;
+    font-size: 30px;
     margin: 0.5rem 0;
     line-height: 1.3;
   }
@@ -111,8 +114,7 @@ export const DotsContainer = styled.div`
 export const SectionThreeContainer = styled.div`
   flex: 1;
   min-width: 220px;
-  padding: 2em 4% 0 0;
-  padding-bottom: 4em;
+  
 `;
 export const TitleThree = styled.h3`
   font-size: 30px;

@@ -126,8 +126,8 @@ export const DotsIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 32px;
-  height: auto;
+  min-width: 50px;
+  height: 50px;
   background: #000;
   margin-left: auto;
   padding: 0.5em;
