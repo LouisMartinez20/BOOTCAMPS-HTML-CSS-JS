@@ -1,14 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import MarketCard from './MarketCard';
-
-const CardsContainer = styled.section`
-  grid-template-columns: repeat(6, auto);
-  display: grid;
-  gap: 20px;
-`;
-
-// Datos de las tarjetas de mercado
+import React from "react";
+import MarketCard from "./MarketCard";
+import { CardsContainer } from "./style";
 const marketData = [
   {
     title: "Dow Jones mini",
@@ -16,7 +8,7 @@ const marketData = [
     price: "24394.00",
     percentage: "-0.51%",
     time: "7:13 AM",
-    color: "red"
+    color: "red",
   },
   {
     title: "Nikkei 225 Future",
@@ -24,7 +16,7 @@ const marketData = [
     price: "20580.00",
     percentage: "+0.19%",
     time: "7:17 AM",
-    color: "green"
+    color: "green",
   },
   {
     title: "EUR-USD",
@@ -32,7 +24,7 @@ const marketData = [
     price: "1.0994",
     percentage: "+0.13%",
     time: "7:39 AM",
-    color: "green"
+    color: "green",
   },
   {
     title: "FTSE 100",
@@ -40,7 +32,7 @@ const marketData = [
     price: "24394.00",
     percentage: "-0.48%",
     time: "7:41 AM",
-    color: "red"
+    color: "red",
   },
   {
     title: "S&P 500 Mini",
@@ -48,7 +40,7 @@ const marketData = [
     price: "2956.00",
     percentage: "0%",
     time: "7:52 AM",
-    color: "black"
+    color: "black",
   },
   {
     title: "WTI Crude",
@@ -56,10 +48,9 @@ const marketData = [
     price: "34.10",
     percentage: "-0.28%",
     time: "7:59 AM",
-    color: "red"
-  }
+    color: "red",
+  },
 ];
-
 const MarketCards = () => {
   return (
     <CardsContainer className="cards-container">
@@ -77,5 +68,4 @@ const MarketCards = () => {
     </CardsContainer>
   );
 };
-
 export default MarketCards;

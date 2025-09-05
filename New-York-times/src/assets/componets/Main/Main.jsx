@@ -1,23 +1,9 @@
-import React from 'react';
-import styled from 'styled-components';
-import NoticesNav from './NoticesNav';
-import SectionOne from './SectionOne';
-import SectionTwo from './SectionTwo';
-import SectionThree from './SectionThree';
-
-const MainContainer = styled.main`
-  width: 100%;
-  height: auto;
-`;
-
-const SectionsContainer = styled.div`
-  display: flex;
-  height: auto;
-  min-height: 400px;
-  gap: 3em;
-  padding: 0 4em 30px 4em;
-`;
-
+import React from "react";
+import NoticesNav from "./NoticesNav";
+import SectionOne from "./SectionOne";
+import SectionTwo from "./SectionTwo";
+import SectionThree from "./SectionThree";
+import { MainContainer, SectionsContainer } from "./style";
 const Main = () => {
   return (
     <MainContainer>
@@ -30,5 +16,4 @@ const Main = () => {
     </MainContainer>
   );
 };
-
 export default Main;
