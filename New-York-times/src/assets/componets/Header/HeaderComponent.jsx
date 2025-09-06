@@ -63,8 +63,8 @@ const HeaderComponent = () => {
               <strong>Thursday</strong> <br /> May 21, 2020
             </DateParagraph>
             <NavList>
-              {navItems.map((item, index) => (
-                <NavItem key={item} $first={index === 0}>
+              {navItems.map((item) => (
+                <NavItem key={item} $first={item === "World"}>
                   <a href="#">{item}</a>
                 </NavItem>
               ))}

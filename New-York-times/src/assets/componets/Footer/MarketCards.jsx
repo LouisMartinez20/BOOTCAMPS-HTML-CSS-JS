@@ -53,19 +53,20 @@ const marketData = [
 ];
 const MarketCards = () => {
   return (
-    <CardsContainer className="cards-container">
-      {marketData.map((card, index) => (
-        <MarketCard
-          key={index}
-          title={card.title}
-          value={card.value}
-          price={card.price}
-          percentage={card.percentage}
-          time={card.time}
-          color={card.color}
-        />
-      ))}
-    </CardsContainer>
+<CardsContainer className="cards-container">
+  {marketData.map((card) => (
+    <MarketCard
+      key={card.title}
+      title={card.title}
+      value={card.value}
+      price={card.price}
+      percentage={card.percentage}
+      time={card.time}
+      color={card.color}
+    />
+  ))}
+</CardsContainer>
+
   );
 };
 export default MarketCards;
