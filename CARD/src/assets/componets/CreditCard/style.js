@@ -1,15 +1,18 @@
+// style.js
 import styled, { createGlobalStyle, css } from "styled-components";
 
+/* Global styles */
 export const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100%;
     margin: 0;
-    font-family: "Montserrat", sans-serif;
     background:#0d1430;
     color:#fff;
+  overflow-x: hidden; 
   }
 `;
 
+/* Layout containers */
 export const Stage = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -26,30 +29,27 @@ export const Grid = styled.div`
   gap: 48px;
   column-gap: 92px;
   justify-content: center;
-
 `;
 
-/* Variantes -------------------------------------------------- */
-
+/* Variants -*/
 const ghostCard = css`
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.15);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: none;
-  color: rgba(255,255,255,0.55);
+  color: rgba(255, 255, 255, 0.55);
   position: relative;
-  overflow:hidden;
+  overflow: hidden;
 
   &:before {
-    content:"";
-    position:absolute;
-    inset:0;
-    background:
-    opacity:.35;
-    pointer-events:none;
+    content: "";
+    position: absolute;
+    inset: 0;
+    opacity: 0.35;
+    pointer-events: none;
   }
 
   &:hover {
-    border-color: rgba(255,255,255,0.28);
+    border-color: rgba(255, 255, 255, 0.28);
   }
 `;
 
@@ -61,8 +61,7 @@ const primaryCard = css`
   color: #0b1830;
 `;
 
-/* Card ------------------------------------------------------- */
-
+/* Card */
 export const Card = styled.div`
   width: 400px;
   height: 250px;
@@ -75,8 +74,7 @@ export const Card = styled.div`
   ${(p) => (p.$variant === "ghost" ? ghostCard : primaryCard)};
 `;
 
-/* Chip ------------------------------------------------------- */
-
+/* Chip */
 export const Chip = styled.div`
   width: 58px;
   height: 40px;
@@ -85,11 +83,12 @@ export const Chip = styled.div`
   background: linear-gradient(140deg, #d4cca9, #b7ac85);
   position: relative;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
+
   ${(p) =>
     p.$variant === "ghost" &&
     css`
       background: transparent;
-      border: 1px solid rgba(255, 255, 255, 0.35);
+      border: 1px solid #ffffff;
       box-shadow: none;
 
       &:after,
@@ -101,8 +100,31 @@ export const Chip = styled.div`
         width: 70%;
         height: 40%;
         transform: translate(-50%, -50%);
-        border: 1px solid rgba(255, 255, 255, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.8);
         border-radius: 4px;
+      }
+      &:before {
+        width: 36%;
+        height: 70%;
+      }
+    `}
+
+  /* Replicar decorado también en primary */
+  ${(p) =>
+    p.$variant !== "ghost" &&
+    css`
+      &:after,
+      &:before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 70%;
+        height: 40%;
+        transform: translate(-50%, -50%);
+        border: 1px solid rgba(0, 0, 0, 0.18);
+        border-radius: 4px;
+        pointer-events: none;
       }
       &:before {
         width: 36%;
@@ -111,21 +133,19 @@ export const Chip = styled.div`
     `}
 `;
 
-/* Número ----------------------------------------------------- */
-
+/* Number */
 export const Number = styled.div`
-  font-family: "Space Mono", monospace;
+  font-family: "arial", monospace;
   font-size: 30px;
   letter-spacing: 3px;
   margin: 14px 0 10px;
   color: ${(p) =>
     p.$variant === "ghost" ? "rgba(255,255,255,0.6)" : "#0b1830"};
   text-align: center;
-  font-weight: 500;
+  font-weight: 400;
 `;
 
-/* Expiry / Fecha -------------------------------------------- */
-
+/* Expiry / Date */
 export const Expiry = styled.div`
   font-size: 12px;
   margin-bottom: 18px;
@@ -144,6 +164,9 @@ export const Date = styled.div`
     p.$variant === "ghost" ? "rgba(255,255,255,0.7)" : "#0b1830"};
 `;
 
+
+
+/* Info text */
 export const Info = styled.div`
   text-align: end;
   font-size: 11px;
@@ -153,8 +176,7 @@ export const Info = styled.div`
   color: ${(p) => (p.$variant === "ghost" ? "rgba(255,255,255,0.55)" : "#666")};
 `;
 
-/* Nombre ---------------------------------------------------- */
-
+/* Name */
 export const Name = styled.div`
   font-size: 16px;
   font-weight: 500;
@@ -163,8 +185,7 @@ export const Name = styled.div`
     p.$variant === "ghost" ? "rgba(255,255,255,0.62)" : "#0b1830"};
 `;
 
-/* Logo Mastercard ------------------------------------------- */
-
+/* Logo (Mastercard) */
 export const Logo = styled.div`
   position: absolute;
   bottom: 18px;
@@ -172,10 +193,12 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   mix-blend-mode: multiply;
+
   ${(p) =>
     p.$variant === "ghost" &&
     css`
-      opacity: 0.5;
+      opacity: 1;
+      mix-blend-mode: normal;
     `}
 `;
 
@@ -191,8 +214,6 @@ export const Circle = styled.div.withConfig({
     $variant === "ghost" &&
     css`
       background: transparent !important;
-      border: 1px solid rgba(255, 255, 255, 0.4);
+      border: 1px solid #ffffff;
     `}
 `;
-
-/* Patrón decorativo esquina (sólo primary) ------------------ */

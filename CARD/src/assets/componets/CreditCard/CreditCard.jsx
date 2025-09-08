@@ -9,6 +9,7 @@ import {
   Name,
   Logo,
   Circle,
+
 } from "./style";
 
 const CreditCard = ({
