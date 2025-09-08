@@ -29,8 +29,6 @@ const OfferSection = () => {
           />
           <Select aria-label="Currency" defaultValue="AUD">
             <option value="AUD">AUD</option>
-            <option value="USD">USD</option>
-            <option value="EUR">EUR</option>
           </Select>
           <Pill>+$49 shipping</Pill>
         </Field>

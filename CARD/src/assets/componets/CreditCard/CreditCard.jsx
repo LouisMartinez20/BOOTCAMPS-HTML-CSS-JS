@@ -9,7 +9,6 @@ import {
   Name,
   Logo,
   Circle,
-
 } from "./style";
 
 const CreditCard = ({
@@ -19,25 +18,23 @@ const CreditCard = ({
   name = "JOHN DOE",
 }) => {
   return (
-    <Card variant={variant}>
+    <Card $variant={variant}>
+      <Chip $variant={variant} />
 
-
-      <Chip variant={variant} />
-
-      <Number variant={variant}>{number}</Number>
+      <Number $variant={variant}>{number}</Number>
 
       <Expiry>
-        <Info variant={variant}>
+        <Info $variant={variant}>
           EXPIRES <br /> END
         </Info>
-        <Date variant={variant}>{expiry}</Date>
+        <Date $variant={variant}>{expiry}</Date>
       </Expiry>
 
-      <Name variant={variant}>{name}</Name>
+      <Name $variant={variant}>{name}</Name>
 
-      <Logo>
-        <Circle color="#ff3b3b" overlap />
-        <Circle color="#ff9c2b" />
+      <Logo $variant={variant}>
+        <Circle $variant={variant} color="#ff3b3b" overlap />
+        <Circle $variant={variant} color="#ff9c2b" />
       </Logo>
     </Card>
   );

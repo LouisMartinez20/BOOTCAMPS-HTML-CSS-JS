@@ -1,5 +1,6 @@
 import styled, { createGlobalStyle } from "styled-components";
-// Estilos globales
+
+// 🎨 Estilos globales
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -28,15 +29,17 @@ export const GlobalStyle = createGlobalStyle`
     color: #0f172a;
   }
 `;
-// Componentes individuales
+
+// 📦 Layout principal
 export const Modal = styled.div`
-  width: min(760px, 92vw);
+  width: min(560px, 92vw);
   background: #ffffff;
   border-radius: 20px;
   box-shadow: 0 20px 40px rgba(2, 6, 23, 0.12);
   padding: 28px;
   position: relative;
 `;
+
 export const CloseButton = styled.button`
   position: absolute;
   inset: 16px 16px auto auto;
@@ -48,17 +51,21 @@ export const CloseButton = styled.button`
   border: 1px solid #e5e7eb;
   background: #fff;
   cursor: pointer;
+
   svg {
     width: 18px;
     height: 18px;
   }
 `;
+
+// 🏷️ Encabezados
 export const Head = styled.div`
   display: grid;
   gap: 16px;
   align-items: center;
   margin-bottom: 18px;
 `;
+
 export const Tile = styled.div`
   width: 64px;
   height: 64px;
@@ -78,6 +85,7 @@ export const Tile = styled.div`
     linear-gradient(135deg, #4338ca, #8b5cf6);
   display: grid;
   place-items: center;
+
   svg {
     width: 30px;
     height: 30px;
@@ -85,16 +93,20 @@ export const Tile = styled.div`
     fill: white;
   }
 `;
+
 export const Title = styled.h1`
   font-size: 28px;
   line-height: 1.2;
   margin: 0 0 4px 0;
   font-weight: 700;
 `;
+
 export const Subtitle = styled.p`
   color: #64748b;
   font-size: 15px;
 `;
+
+// 📋 Items y contenido
 export const Item = styled.div`
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -103,10 +115,12 @@ export const Item = styled.div`
   border-radius: 14px;
   padding: 14px;
   margin: 18px 0 8px;
+
   @media (max-width: 560px) {
     grid-template-columns: auto 1fr;
   }
 `;
+
 export const Thumb = styled.div`
   width: 64px;
   height: 64px;
@@ -115,6 +129,7 @@ export const Thumb = styled.div`
   display: grid;
   place-items: center;
   border: 1px solid #e6e8ee;
+
   svg {
     width: 28px;
     height: 28px;
@@ -122,52 +137,64 @@ export const Thumb = styled.div`
     fill: #111827;
   }
 `;
+
 export const Info = styled.div`
   .name {
     font-weight: 600;
     font-size: 15px;
     line-height: 1.35;
-    margin-bottom: 6px;
+    border-right: 1px solid #e5e7eb;
   }
 `;
+
 export const ShipInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
   color: #64748b;
   font-size: 14px;
+  border-right: 1px solid #e5e7eb;
+
   a {
     color: #2563eb;
-    text-decoration: none;
+   
     &:hover {
       text-decoration: underline;
     }
   }
 `;
+
 export const RightColumn = styled.div`
   text-align: right;
+
   @media (max-width: 560px) {
     order: 3;
     text-align: left;
   }
 `;
+
 export const Price = styled.div`
   font-size: 22px;
   font-weight: 700;
+
   @media (max-width: 560px) {
     font-size: 20px;
   }
 `;
+
 export const Shipping = styled.div`
   color: #64748b;
   font-size: 14px;
   margin-top: 4px;
 `;
+
+// 🏷️ Labels y ofertas
 export const Label = styled.div`
   margin-top: 14px;
   font-weight: 600;
   font-size: 14px;
 `;
+
 export const Offer = styled.div`
   margin-top: 10px;
   display: grid;
@@ -175,6 +202,7 @@ export const Offer = styled.div`
   gap: 12px;
   align-items: center;
 `;
+
 export const Field = styled.div`
   display: flex;
   justify-content: space-between;
@@ -183,22 +211,27 @@ export const Field = styled.div`
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 10px 12px;
+
   .field-start {
     display: flex;
     align-items: center;
     gap: 6px;
   }
+
   .field-end {
     display: flex;
     align-items: center;
     gap: 8px;
   }
 `;
+
 export const Pill = styled.span`
   padding: 8px 12px;
   font-weight: 600;
   font-size: 14px;
   white-space: nowrap;
+  border-left: 1px solid #e5e7eb;
+
   &.offer-pill {
     margin-left: 8px;
     padding: 4px 12px;
@@ -208,15 +241,19 @@ export const Pill = styled.span`
     align-self: flex-end;
   }
 `;
+
 export const CurrencySymbol = styled.span`
   font-weight: 600;
   margin-right: 4px;
 `;
+
+// ⚡ Botones rápidos
 export const QuickButtons = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 14px;
 `;
+
 export const QuickButton = styled.span`
   border: 1px solid #e5e7eb;
   background: rgba(118, 171, 241, 0.39);
@@ -227,20 +264,19 @@ export const QuickButton = styled.span`
   font-size: 14px;
   cursor: default;
 `;
+
+// 📢 Banner de info
 export const Banner = styled.div`
   margin-top: 18px;
   padding: 14px;
   border-radius: 16px;
-  background: linear-gradient(
-    135deg,
-    rgba(99, 102, 241, 0.18),
-    rgba(167, 139, 250, 0.25)
-  );
+  background: linear-gradient(90deg, #ffffff 0%, #e9d5ff 80%);
   border: 1px solid rgba(99, 102, 241, 0.25);
   display: flex;
   align-items: flex-start;
   gap: 10px;
 `;
+
 export const Dot = styled.div`
   width: 8px;
   height: 8px;
@@ -249,20 +285,26 @@ export const Dot = styled.div`
   margin-top: 6px;
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
 `;
+
 export const BannerText = styled.p`
   margin: 0 10px;
   font-size: 18px;
   color: #121416ff;
+
   strong {
     font-weight: 700;
   }
 `;
+
 export const MutedText = styled.span`
   color: #64748b;
 `;
+
+// 🔧 Utilidades
 export const Spacer = styled.div`
   height: 4px;
 `;
+
 export const Input = styled.input`
   border: none;
   outline: none;
@@ -271,6 +313,7 @@ export const Input = styled.input`
   font-weight: 700;
   background: transparent;
 `;
+
 export const Select = styled.select`
   border: none;
   background: transparent;
