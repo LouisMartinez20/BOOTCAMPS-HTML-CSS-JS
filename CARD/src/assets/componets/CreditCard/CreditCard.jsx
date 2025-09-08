@@ -1,7 +1,5 @@
 import React from "react";
 import {
-  GlobalStyle,
-  Stage,
   Card,
   Chip,
   Number,
@@ -11,33 +9,37 @@ import {
   Name,
   Logo,
   Circle,
+
 } from "./style";
 
-const CreditCard = () => {
+const CreditCard = ({
+  variant = "primary",
+  number = "0000 0000 0000 0000",
+  expiry = "00/00",
+  name = "JOHN DOE",
+}) => {
   return (
-    <>
-      <GlobalStyle />
-      <Stage>
-        <Card>
-          <Chip />
-          <Number>2671 9860 8300 0202</Number>
+    <Card variant={variant}>
 
-          <Expiry>
-            <Info>
-              EXPIRES <br /> END
-            </Info>
-            <Date>11/22</Date>
-          </Expiry>
 
-          <Name>CLARK DOE</Name>
+      <Chip variant={variant} />
 
-          <Logo>
-            <Circle color="#ff3b3b" overlap />
-            <Circle color="#ff9c2bad" />
-          </Logo>
-        </Card>
-      </Stage>
-    </>
+      <Number variant={variant}>{number}</Number>
+
+      <Expiry>
+        <Info variant={variant}>
+          EXPIRES <br /> END
+        </Info>
+        <Date variant={variant}>{expiry}</Date>
+      </Expiry>
+
+      <Name variant={variant}>{name}</Name>
+
+      <Logo>
+        <Circle color="#ff3b3b" overlap />
+        <Circle color="#ff9c2b" />
+      </Logo>
+    </Card>
   );
 };
 

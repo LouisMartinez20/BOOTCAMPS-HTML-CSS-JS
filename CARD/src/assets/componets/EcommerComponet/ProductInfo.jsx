@@ -1,13 +1,15 @@
 // ProductInfo.jsx
-import React from 'react';
-import { Item, Thumb, Info, ShipInfo, RightColumn, Price, Shipping } from './style';
-
-const ProductInfo = ({ 
-  productName, 
-  shipFrom, 
-  price, 
-  shippingCost 
-}) => {
+import React from "react";
+import {
+  Item,
+  Thumb,
+  Info,
+  ShipInfo,
+  RightColumn,
+  Price,
+  Shipping,
+} from "./style";
+const ProductInfo = ({ productName, shipFrom, price, shippingCost }) => {
   return (
     <Item>
       <Thumb aria-hidden="true">
@@ -39,5 +41,4 @@ const ProductInfo = ({
     </Item>
   );
 };
-
 export default ProductInfo;

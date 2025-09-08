@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import styled, { createGlobalStyle } from "styled-components";
 // Estilos globales
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -48,7 +48,6 @@ export const CloseButton = styled.button`
   border: 1px solid #e5e7eb;
   background: #fff;
   cursor: pointer;
-  
   svg {
     width: 18px;
     height: 18px;
@@ -79,7 +78,6 @@ export const Tile = styled.div`
     linear-gradient(135deg, #4338ca, #8b5cf6);
   display: grid;
   place-items: center;
-  
   svg {
     width: 30px;
     height: 30px;
@@ -105,7 +103,6 @@ export const Item = styled.div`
   border-radius: 14px;
   padding: 14px;
   margin: 18px 0 8px;
-  
   @media (max-width: 560px) {
     grid-template-columns: auto 1fr;
   }
@@ -118,7 +115,6 @@ export const Thumb = styled.div`
   display: grid;
   place-items: center;
   border: 1px solid #e6e8ee;
-  
   svg {
     width: 28px;
     height: 28px;
@@ -140,11 +136,9 @@ export const ShipInfo = styled.div`
   gap: 8px;
   color: #64748b;
   font-size: 14px;
-  
   a {
     color: #2563eb;
     text-decoration: none;
-    
     &:hover {
       text-decoration: underline;
     }
@@ -152,7 +146,6 @@ export const ShipInfo = styled.div`
 `;
 export const RightColumn = styled.div`
   text-align: right;
-  
   @media (max-width: 560px) {
     order: 3;
     text-align: left;
@@ -161,7 +154,6 @@ export const RightColumn = styled.div`
 export const Price = styled.div`
   font-size: 22px;
   font-weight: 700;
-  
   @media (max-width: 560px) {
     font-size: 20px;
   }
@@ -184,46 +176,22 @@ export const Offer = styled.div`
   align-items: center;
 `;
 export const Field = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr;
+  display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 10px;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 10px 12px;
-  
-  select {
-    border: none;
-    background: transparent;
-    font-weight: 600;
-    font-size: 14px;
-    outline: none;
-    padding-right: 2px;
-  }
-  
-  input {
-    border: none;
-    outline: none;
-    font-size: 18px;
-    width: 100%;
-    font-weight: 700;
-  }
-  
-  &.offer-field {
+  .field-start {
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+  }
+  .field-end {
+    display: flex;
     align-items: center;
     gap: 8px;
-    justify-content: flex-start;
-    
-    input {
-      flex: 1 1 auto;
-      min-width: 80px;
-    }
-    
-    select {
-      margin-left: auto;
-    }
   }
 `;
 export const Pill = styled.span`
@@ -231,7 +199,6 @@ export const Pill = styled.span`
   font-weight: 600;
   font-size: 14px;
   white-space: nowrap;
-  
   &.offer-pill {
     margin-left: 8px;
     padding: 4px 12px;
@@ -283,10 +250,9 @@ export const Dot = styled.div`
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
 `;
 export const BannerText = styled.p`
-  margin: 0;
-  font-size: 14px;
-  color: #1f2937;
-  
+  margin: 0 10px;
+  font-size: 18px;
+  color: #121416ff;
   strong {
     font-weight: 700;
   }
@@ -297,7 +263,6 @@ export const MutedText = styled.span`
 export const Spacer = styled.div`
   height: 4px;
 `;
-// En tu archivo style.js
 export const Input = styled.input`
   border: none;
   outline: none;

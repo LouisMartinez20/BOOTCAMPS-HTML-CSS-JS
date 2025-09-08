@@ -1,7 +1,6 @@
 // ModalHeader.jsx
-import React from 'react';
-import { Head, Tile, Title, Subtitle } from './style';
-
+import React from "react";
+import { Head, Tile, Title, Subtitle } from "./style";
 const ModalHeader = ({ title, subtitle }) => {
   return (
     <Head>
@@ -17,5 +16,4 @@ const ModalHeader = ({ title, subtitle }) => {
     </Head>
   );
 };
-
 export default ModalHeader;
