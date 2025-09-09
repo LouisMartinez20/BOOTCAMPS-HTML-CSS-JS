@@ -1,30 +1,38 @@
-import React from "react";
 import {
   HeadingSection,
   SnapshotContainer,
+  SnapshotTitle,
+  SnapshotHour,
   Breadcrumbs,
+  BreadcrumbLink,
   FullOverviewButton,
-} from "./style";
-const FooterHeading = () => {
-  const breadcrumbs = ["Futures", "Americas", "Europe", "Asia", "Commodities"];
+  MaterialIcon,
+} from "./StyledFooterContainer";
+export const FooterHeading = (props) => {
+  const {
+    title = "Market Snapshot",
+    hour = "6:07 AM",
+    breadcrumbs = ["Futures", "Americas", "Europe", "Asia", "Commodities"],
+    overviewText = "Full Market Overview",
+    onOverviewClick,
+  } = props;
   return (
-    <HeadingSection className="heading">
-      <SnapshotContainer className="snapshot">
-        <span className="title">Market Snapshot</span>
-        <span className="hour">6:07 AM</span>
+    <HeadingSection>
+      <SnapshotContainer>
+        <SnapshotTitle>{title}</SnapshotTitle>
+        <SnapshotHour>{hour}</SnapshotHour>
       </SnapshotContainer>
-      <Breadcrumbs className="breadcrumbs">
+      <Breadcrumbs aria-label="Market sections">
         {breadcrumbs.map((item) => (
-          <a key={item} href="#">
+          <BreadcrumbLink key={item} href="#">
             {item}
-          </a>
+          </BreadcrumbLink>
         ))}
       </Breadcrumbs>
-      <FullOverviewButton>
-        Full Market Overview
-        <span className="material-symbols-outlined">chevron_right</span>
+      <FullOverviewButton type="button" onClick={onOverviewClick}>
+        {overviewText}
+        <MaterialIcon>chevron_right</MaterialIcon>
       </FullOverviewButton>
     </HeadingSection>
   );
 };
-export default FooterHeading;

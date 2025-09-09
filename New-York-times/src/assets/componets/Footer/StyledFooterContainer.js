@@ -28,47 +28,53 @@ export const SnapshotContainer = styled.div`
   flex-direction: column;
   align-items: flex-start;
   min-width: 0;
-  span:first-child {
-    text-transform: uppercase;
-    font-size: 1.1rem;
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: 100%;
-  }
-  span,
-  .hour {
-    font-size: 0.8rem;
-    font-weight: 600;
-    max-width: 100%;
-  }
   @media (max-width: 768px) {
     align-items: center;
   }
 `;
-export const Breadcrumbs = styled.div`
+export const SnapshotTitle = styled.span`
+  text-transform: uppercase;
+  font-size: 1.1rem;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
+`;
+export const SnapshotHour = styled.span`
+  font-size: 0.8rem;
+  font-weight: 600;
+  max-width: 100%;
+`;
+export const Breadcrumbs = styled.nav`
   display: flex;
   align-items: start;
   gap: 12px;
   flex-wrap: wrap;
   justify-content: start;
-  a {
-    text-decoration: none;
-    color: #333;
-    font-size: 0.9rem;
-    white-space: nowrap;
-    &:hover {
-      text-decoration: underline;
-      color: #567b95;
-    }
-  }
   @media (max-width: 480px) {
     gap: 8px;
-    a {
-      font-size: 0.8rem;
-    }
   }
+`;
+export const BreadcrumbLink = styled.a`
+  text-decoration: none;
+  color: #333;
+  font-size: 0.9rem;
+  white-space: nowrap;
+  &:hover {
+    text-decoration: underline;
+    color: #567b95;
+  }
+  @media (max-width: 480px) {
+    font-size: 0.8rem;
+  }
+`;
+export const MaterialIcon = styled.span.attrs({
+  className: "material-symbols-outlined",
+})`
+  font-size: ${(p) => p.$size || "18px"};
+  color: ${(p) => p.$color || "rgb(7, 7, 7)"};
+  line-height: 1;
 `;
 export const FullOverviewButton = styled.button`
   background-color: transparent;
@@ -81,14 +87,6 @@ export const FullOverviewButton = styled.button`
   border: none;
   gap: 8px;
   white-space: nowrap;
-  span {
-    font-weight: bold;
-    font-size: 14px;
-  }
-  .material-symbols-outlined {
-    font-size: 18px;
-    color: rgb(7, 7, 7);
-  }
   &:hover {
     opacity: 0.8;
   }
@@ -97,6 +95,11 @@ export const FullOverviewButton = styled.button`
     width: 100%;
   }
 `;
+const trendBg = {
+  up: "#5b8c5c",
+  down: "#cb495a",
+  neutral: "#000",
+};
 export const Card = styled.div`
   display: flex;
   flex-direction: column;
@@ -104,18 +107,7 @@ export const Card = styled.div`
   color: white;
   padding: 16px;
   gap: 12px;
-  background-color: ${(props) => {
-        switch (props.color) {
-            case "green":
-                return "#5b8c5c";
-            case "red":
-                return "#cb495a";
-            case "black":
-                return "#000";
-            default:
-                return "#ccc";
-        }
-    }};
+  background-color: ${(p) => trendBg[p.$trend] || "#ccc"};
   border-radius: 4px;
   min-width: 0;
 `;
@@ -124,19 +116,19 @@ export const Firm = styled.div`
   justify-content: space-between;
   align-items: center;
   gap: 8px;
-  .title {
-    font-weight: bold;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    word-break: break-word;
-    max-width: 100%;
-  }
-  .value {
-    font-weight: bold;
-    white-space: nowrap;
-    word-break: break-word;
-  }
+`;
+export const TitleText = styled.span`
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-word;
+  max-width: 100%;
+`;
+export const ValueText = styled.span`
+  font-weight: bold;
+  white-space: nowrap;
+  word-break: break-word;
 `;
 export const Container = styled.div`
   display: grid;
@@ -171,9 +163,6 @@ export const HourContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
-  .material-symbols-outlined {
-    font-size: 1rem;
-  }
 `;
 export const CardsContainer = styled.section`
   display: grid;

@@ -1,28 +1,4 @@
 import styled from "styled-components";
-export const GlobalStyles = styled.div`
-  body {
-    width: 100%;
-    overflow-x: hidden;
-    margin: 0;
-    font-family: Georgia, serif;
-    box-sizing: border-box;
-  }
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
-  }
-  p,
-  li {
-    font-family: Georgia, serif;
-  }
-  h1,
-  h2,
-  h3 {
-    font-family: "Cheltenham", "Times New Roman", serif;
-    font-weight: bold;
-  }
-`;
 export const HeaderContainer = styled.header`
   width: 100%;
   height: 8em;
@@ -64,9 +40,6 @@ export const NavLink = styled.a`
   align-items: center;
   box-sizing: border-box;
   white-space: nowrap;
-  &.button-subscribe {
-    border: 1px solid #ccc;
-  }
 `;
 export const SubscribeButton = styled(NavLink)`
   border: 1px solid #ccc;
@@ -77,8 +50,10 @@ export const NYTLogo = styled.img`
   max-width: 220px;
   height: auto;
 `;
-export const MaterialIcon = styled.span`
-  color: ${(props) => props.color || "#000"};
+export const MaterialIcon = styled.span.attrs({
+  className: "material-symbols-outlined",
+})`
+  color: ${(props) => props.$color || "#000"};
   font-size: 20px;
 `;
 export const DateParagraph = styled.p`
@@ -104,9 +79,9 @@ export const NavList = styled.ul`
 `;
 export const NavItem = styled.li`
   font-family: ${(props) =>
-        props.$first
-            ? '"Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif'
-            : "Georgia, serif"};
+    props.$first
+      ? '"Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif'
+      : "Georgia, serif"};
   font-weight: ${(props) => (props.$first ? "bold" : "normal")};
   white-space: nowrap;
   flex-shrink: 0;
@@ -119,7 +94,7 @@ export const NavItem = styled.li`
     }
   }
   @media (max-width: 768px) {
-    white-space: normal; 
+    white-space: normal;
   }
 `;
 export const DotsIcon = styled.div`
@@ -133,7 +108,7 @@ export const DotsIcon = styled.div`
   padding: 0.5em;
   border-radius: 3px;
   cursor: pointer;
-  flex-shrink: 0; 
+  flex-shrink: 0;
   &:hover {
     background: #333;
   }

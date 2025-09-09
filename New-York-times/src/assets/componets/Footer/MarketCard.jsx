@@ -1,29 +1,47 @@
-import React from "react";
 import {
   Card,
   Firm,
+  TitleText,
+  ValueText,
   Container,
   Information,
   Ratings,
   HourContainer,
-} from "./style";
-const MarketCard = ({ title, value, price, percentage, time, color }) => {
+  MaterialIcon,
+} from "./StyledFooterContainer";
+function getTrend({ percentage, value }) {
+  if (typeof percentage === "string" && percentage.trim() !== "") {
+    const n = parseFloat(percentage.replace("%", "").replace(",", "."));
+    if (Number.isFinite(n)) {
+      if (n > 0) return "up";
+      if (n < 0) return "down";
+      return "neutral";
+    }
+  }
+  if (typeof value === "string" && value.trim() !== "") {
+    const sign = value.trim()[0];
+    if (sign === "+") return "up";
+    if (sign === "-") return "down";
+  }
+  return "neutral";
+}
+export const MarketCard = (props) => {
+  const { title, value, price, percentage, time } = props;
+  const trend = getTrend({ percentage, value });
   return (
-    <Card className={`card ${color}`} color={color}>
-      <Firm className="firm">
-        <span className="title">{title}</span>
-        <span className="value">{value}</span>
+    <Card $trend={trend}>
+      <Firm>
+        <TitleText>{title}</TitleText>
+        <ValueText>{value}</ValueText>
       </Firm>
-      <Container className="container">
-        <Information className="information">
-          <Ratings className="ratings">
+      <Container>
+        <Information>
+          <Ratings>
             <span>{price}</span>
             <span>{percentage}</span>
           </Ratings>
-          <HourContainer className="hour">
-            <span className="material-symbols-outlined">
-              nest_clock_farsight_analog
-            </span>
+          <HourContainer>
+            <MaterialIcon $size="16px">nest_clock_farsight_analog</MaterialIcon>
             <span>{time}</span>
           </HourContainer>
         </Information>
@@ -31,4 +49,3 @@ const MarketCard = ({ title, value, price, percentage, time, color }) => {
     </Card>
   );
 };
-export default MarketCard;

@@ -1,38 +1,47 @@
-import React from "react";
 import {
   SectionTwoContainer,
   TitleTwo,
   Notice,
+  NoticeTag,
+  NoticeDate,
+  NoticeTitle,
   ContinueLinkTwo,
   DotsContainer,
-} from "./SectionStyles";
-const SectionTwo = () => {
+  Dot,
+} from "./StyledSectionStyles";
+export const SectionTwo = (props) => {
+  const {
+    title = "Latest News",
+    items = [],
+    continueText = "continue reading",
+    dotsActiveIndex = 0,
+    onDotClick,
+  } = props;
   return (
-    <SectionTwoContainer className="section-two">
-      <TitleTwo className="latest-news-title">Latest News</TitleTwo>
-      <Notice className="notice-one">
-        <span className="span">THE UPSHOT</span>
-        <span className="date">May 19, 2020</span>
-        <h3>
-          A Wave of Small Business Closures Is on the Way. Can Washington Stop
-          It?
-        </h3>
-        <ContinueLinkTwo href="#">continue reading</ContinueLinkTwo>
-      </Notice>
-      <Notice className="notice-two">
-        <span className="span">NEWS ANALYSIS</span>
-        <span className="date">May 19, 2020</span>
-        <h3>
-          Coronavirus Shut Down the 'Experience Economy'. Can It Come Back?
-        </h3>
-        <ContinueLinkTwo href="#">continue reading</ContinueLinkTwo>
-      </Notice>
-      <DotsContainer className="dots">
-        <button></button>
-        <button></button>
-        <button></button>
-      </DotsContainer>
+    <SectionTwoContainer>
+      <TitleTwo>{title}</TitleTwo>
+      {items.map((n) => (
+        <Notice key={n.id ?? n.title}>
+          {n.tag ? <NoticeTag>{n.tag}</NoticeTag> : null}
+          {n.date ? <NoticeDate>{n.date}</NoticeDate> : null}
+          <NoticeTitle>{n.title}</NoticeTitle>
+          <ContinueLinkTwo href={n.href ?? "#"}>{continueText}</ContinueLinkTwo>
+        </Notice>
+      ))}
+      {items.length > 1 ? (
+        <DotsContainer aria-label="pagination">
+          {items.map((_, idx) => (
+            <Dot
+              key={idx}
+              type="button"
+              aria-label={`Go to item ${idx + 1}`}
+              aria-current={idx === dotsActiveIndex ? "true" : "false"}
+              $active={idx === dotsActiveIndex}
+              onClick={onDotClick ? () => onDotClick(idx) : undefined}
+            />
+          ))}
+        </DotsContainer>
+      ) : null}
     </SectionTwoContainer>
   );
 };
-export default SectionTwo;

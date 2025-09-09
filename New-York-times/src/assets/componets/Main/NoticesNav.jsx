@@ -1,15 +1,21 @@
 import React from "react";
-import { NoticesNavContainer, NoticesRow, NoticesList } from "./style";
-const NoticesNav = () => {
-  const links = ["Tech", "Econ", "Media", "Money", "DealBook"];
+import { NoticesNavContainer, NoticesRow, NoticesList } from "./StyledMainContainer";
+export const NoticesNav = (props) => {
+  const {
+    title = "Business",
+    links = ["Tech", "Econ", "Media", "Money", "DealBook"],
+    buildHref, 
+    ariaLabel = "Business sections navigation",
+  } = props;
+  const hrefFor = (link) => (typeof buildHref === "function" ? buildHref(link) : "#");
   return (
-    <NoticesNavContainer className="notices-nav">
-      <NoticesRow className="notices-row notices-row-grid">
-        <h2>Business</h2>
-        <NoticesList className="notices-ul notices-ul-grid">
+    <NoticesNavContainer>
+      <NoticesRow aria-label={ariaLabel}>
+        <h2>{title}</h2>
+        <NoticesList>
           {links.map((link) => (
             <li key={link}>
-              <a href="#">{link}</a>
+              <a href={hrefFor(link)}>{link}</a>
             </li>
           ))}
         </NoticesList>
@@ -17,4 +23,3 @@ const NoticesNav = () => {
     </NoticesNavContainer>
   );
 };
-export default NoticesNav;
