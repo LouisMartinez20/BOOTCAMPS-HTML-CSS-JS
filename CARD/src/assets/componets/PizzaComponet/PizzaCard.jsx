@@ -1,5 +1,6 @@
-import React from "react";
 import {
+  GlobalStyle,
+  PageCenter,
   CardWrapper,
   ImagePane,
   MiddleNavigation,
@@ -10,17 +11,21 @@ import {
   TitleBlock,
   Title,
   Subline,
-  InfoSection,
-  SectionTitle,
-  InfoLines,
-  EditButton,
   ActionsMenu,
+  InfoSection,
   SectionHeader,
+  SectionTitle,
+  EditButton,
+  InfoLines,
+  Muted,
+  PhoneMuted,
   RadioGroup,
   DeliveryChoice,
-  Muted,
-  GlobalStyle,
-} from "./style";
+  RadioBullet,
+  ChoiceLabel,
+  NavIcon,
+  SmallIcon,
+} from "./StyledPizzaComponet";
 export function PizzaComponent({
   title = "Three Topping Pizza - Large",
   author = "Planet Pizza",
@@ -32,19 +37,19 @@ export function PizzaComponent({
   return (
     <>
       <GlobalStyle />
-      <div className="page-center">
+      <PageCenter>
         <CardWrapper role="region" aria-label="Pizza order details card">
           <ImagePane>
             <img src="/pizza.jpg" alt="Pizza" />
           </ImagePane>
           <MiddleNavigation aria-label="Secciones">
             <NavItems>
-              <NavItem $active>
-                <span className="material-symbols-outlined">info</span>
+              <NavItem $active aria-current="page">
+                <NavIcon aria-hidden="true">info</NavIcon>
                 <span>details</span>
               </NavItem>
               <NavItem>
-                <span className="material-symbols-outlined">receipt_long</span>
+                <NavIcon aria-hidden="true">receipt_long</NavIcon>
                 <span>receipt</span>
               </NavItem>
             </NavItems>
@@ -60,8 +65,8 @@ export function PizzaComponent({
                   </a>
                 </Subline>
               </TitleBlock>
-              <ActionsMenu aria-label="Más acciones">
-                <span className="material-symbols-outlined">more_vert</span>
+              <ActionsMenu type="button" aria-label="Más acciones">
+                <SmallIcon aria-hidden="true">more_vert</SmallIcon>
               </ActionsMenu>
             </TopRow>
             <InfoSection aria-labelledby="info-heading">
@@ -72,35 +77,42 @@ export function PizzaComponent({
                   onClick={onEditInfo}
                   aria-label="Editar información"
                 >
-                  <span className="material-symbols-outlined">edit</span>
+                  <SmallIcon aria-hidden="true">edit</SmallIcon>
                 </EditButton>
               </SectionHeader>
               <InfoLines>
                 <div>{address}</div>
                 <div>
                   {contactName}
-                  <Muted style={{ marginLeft: 10 }}>{phone}</Muted>
+                  <PhoneMuted>{phone}</PhoneMuted>
                 </div>
               </InfoLines>
             </InfoSection>
             <InfoSection aria-labelledby="method-heading">
-              <SectionHeader></SectionHeader>
-              <RadioGroup>
-                <DeliveryChoice checked>
-                  <span className="radio" />
-                  <span>Pickup (Turn-Around: 30 Minutes)</span>
+              <SectionHeader>
+                <SectionTitle id="method-heading">Method</SectionTitle>
+              </SectionHeader>
+              <RadioGroup role="radiogroup" aria-label="Delivery method">
+                <DeliveryChoice
+                  role="radio"
+                  aria-checked="true"
+                  $checked
+                  tabIndex={0}
+                >
+                  <RadioBullet aria-hidden="true" />
+                  <ChoiceLabel>Pickup (Turn-Around: 30 Minutes)</ChoiceLabel>
                 </DeliveryChoice>
-                <DeliveryChoice>
-                  <span className="radio" />
-                  <span>
-                    <Muted>Delivery $5.00(Turn-Around 1 Hour)</Muted>
-                  </span>
+                <DeliveryChoice role="radio" aria-checked="false" tabIndex={-1}>
+                  <RadioBullet aria-hidden="true" />
+                  <ChoiceLabel>
+                    <Muted>Delivery $5.00 (Turn-Around 1 Hour)</Muted>
+                  </ChoiceLabel>
                 </DeliveryChoice>
               </RadioGroup>
             </InfoSection>
           </ContentPane>
         </CardWrapper>
-      </div>
+      </PageCenter>
     </>
   );
 }

@@ -1,15 +1,18 @@
-// ProductInfo.jsx
-import React from "react";
 import {
   Item,
   Thumb,
   Info,
+  ProductName,
   ShipInfo,
   RightColumn,
   Price,
   Shipping,
-} from "./style";
-const ProductInfo = ({ productName, shipFrom, price, shippingCost }) => {
+} from "./StylesdEcommerComponent";
+export const ProductInfo = (props) => {
+  const productName = props.productName ?? "";
+  const shipFrom = props.shipFrom ?? "";
+  const price = props.price ?? "";
+  const shippingCost = props.shippingCost ?? "";
   return (
     <Item>
       <Thumb aria-hidden="true">
@@ -18,7 +21,7 @@ const ProductInfo = ({ productName, shipFrom, price, shippingCost }) => {
         </svg>
       </Thumb>
       <Info>
-        <div className="name">{productName}</div>
+        <ProductName>{productName}</ProductName>
         <ShipInfo>
           <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
             <path
@@ -41,4 +44,3 @@ const ProductInfo = ({ productName, shipFrom, price, shippingCost }) => {
     </Item>
   );
 };
-export default ProductInfo;

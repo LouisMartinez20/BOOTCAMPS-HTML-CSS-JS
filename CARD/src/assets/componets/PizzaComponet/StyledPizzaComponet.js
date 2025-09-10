@@ -1,19 +1,17 @@
 import styled, { css, createGlobalStyle } from "styled-components";
-
 export const GlobalStyle = createGlobalStyle`
   body {
-    background-color: #FBE9E7; 
-  }
-  .page-center {
-    min-height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 24px;
+    background-color: #FBE9E7;
+    margin: 0;
   }
 `;
-
-/* ========= CARD LAYOUT ========= */
+export const PageCenter = styled.div`
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+`;
 export const CardWrapper = styled.div`
   position: relative;
   width: 100%;
@@ -27,14 +25,12 @@ export const CardWrapper = styled.div`
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0 auto;
 `;
-
 export const ImagePane = styled.div`
   width: 300px;
   min-height: 340px;
   position: relative;
   background: #ddd;
   flex-shrink: 0;
-
   img {
     object-fit: cover;
     width: 100%;
@@ -42,7 +38,6 @@ export const ImagePane = styled.div`
     display: block;
   }
 `;
-
 export const MiddleNavigation = styled.nav`
   width: 90px;
   background: #fff;
@@ -53,7 +48,6 @@ export const MiddleNavigation = styled.nav`
   flex-direction: column;
   align-items: stretch;
 `;
-
 export const ContentPane = styled.div`
   flex: 1;
   padding: 40px 48px 44px;
@@ -63,8 +57,31 @@ export const ContentPane = styled.div`
   align-items: center;
   text-align: center;
 `;
-
-/* ========= NAVIGATION ========= */
+const baseIcon = css`
+  font-family: "Material Symbols Outlined";
+  font-weight: normal;
+  font-style: normal;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: normal;
+  text-transform: none;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-feature-settings: "liga";
+  -webkit-font-smoothing: antialiased;
+  line-height: 1;
+`;
+export const NavIcon = styled.span`
+  ${baseIcon};
+  font-size: 26px;
+  color: inherit;
+`;
+export const SmallIcon = styled.span`
+  ${baseIcon};
+  font-size: 20px;
+  color: inherit;
+`;
 export const NavItems = styled.ul`
   list-style: none;
   margin: 0;
@@ -73,7 +90,6 @@ export const NavItems = styled.ul`
   flex-direction: column;
   gap: 14px;
 `;
-
 export const NavItem = styled.li`
   position: relative;
   cursor: default;
@@ -87,22 +103,14 @@ export const NavItem = styled.li`
   letter-spacing: 0.4px;
   font-weight: 500;
   user-select: none;
-
-  .material-symbols-outlined {
-    font-size: 26px;
-    line-height: 1;
-  }
-
   ${({ $active }) =>
     $active &&
     css`
       color: #6f7680;
       font-weight: 600;
-
-      .material-symbols-outlined {
+      ${NavIcon} {
         color: #ffa400;
       }
-
       &:after {
         content: "";
         position: absolute;
@@ -115,15 +123,12 @@ export const NavItem = styled.li`
       }
     `}
 `;
-
-/* ========= TOP ROW ========= */
 export const TopRow = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
 `;
-
 export const TitleBlock = styled.div`
   display: flex;
   flex-direction: column;
@@ -132,7 +137,6 @@ export const TitleBlock = styled.div`
   margin-right: auto;
   text-align: left;
 `;
-
 export const Title = styled.h2`
   margin: 0;
   font-size: 20px;
@@ -141,22 +145,18 @@ export const Title = styled.h2`
   line-height: 1.15;
   letter-spacing: 0.2px;
 `;
-
 export const Subline = styled.div`
   font-size: 12.5px;
   color: #6f7680;
-
   a {
     color: blue;
     text-decoration: none;
     font-weight: 500;
-
     &:hover {
       text-decoration: underline;
     }
   }
 `;
-
 export const ActionsMenu = styled.button`
   all: unset;
   cursor: pointer;
@@ -167,19 +167,11 @@ export const ActionsMenu = styled.button`
   align-items: center;
   justify-content: center;
   transition: background 0.2s, color 0.2s;
-
   &:hover {
     background: #f4f5f8;
     color: #2b2f33;
   }
-
-  .material-symbols-outlined {
-    font-size: 20px;
-    line-height: 1;
-  }
 `;
-
-/* ========= INFO SECTIONS ========= */
 export const InfoSection = styled.section`
   display: flex;
   flex-direction: column;
@@ -187,7 +179,6 @@ export const InfoSection = styled.section`
   width: 100%;
   align-items: start;
 `;
-
 export const SectionHeader = styled.div`
   display: flex;
   align-items: center;
@@ -195,7 +186,6 @@ export const SectionHeader = styled.div`
   width: 100%;
   max-width: 480px;
 `;
-
 export const SectionTitle = styled.div`
   font-size: 12px;
   font-weight: 600;
@@ -203,7 +193,6 @@ export const SectionTitle = styled.div`
   text-transform: uppercase;
   color: #6f7680;
 `;
-
 export const InfoLines = styled.div`
   display: flex;
   flex-direction: column;
@@ -214,12 +203,7 @@ export const InfoLines = styled.div`
   color: #6f7680;
   max-width: 480px;
   text-align: left;
-
-  span.muted {
-    color: #a2a9b3;
-  }
 `;
-
 export const EditButton = styled.button`
   all: unset;
   cursor: pointer;
@@ -229,23 +213,35 @@ export const EditButton = styled.button`
   display: inline-flex;
   align-items: center;
   justify-content: center;
-
   &:hover {
     background: #f4f5f8;
     color: #6f7680;
   }
-
-  .material-symbols-outlined {
-    font-size: 20px;
-    line-height: 1;
-  }
 `;
-
 export const Muted = styled.span`
   color: #a2a9b3;
 `;
-
-/* ========= DELIVERY OPTIONS ========= */
+export const PhoneMuted = styled(Muted)`
+  margin-left: 10px;
+`;
+export const RadioBullet = styled.span`
+  width: 16px;
+  height: 16px;
+  border: 2px solid #e6e8ec;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1px;
+  background: #fff;
+  flex-shrink: 0;
+  position: relative;
+`;
+export const ChoiceLabel = styled.span`
+  display: inline-block;
+  color: inherit;
+  line-height: 1.35;
+`;
 export const RadioGroup = styled.div`
   display: flex;
   flex-direction: column;
@@ -254,7 +250,6 @@ export const RadioGroup = styled.div`
   width: 100%;
   max-width: 480px;
 `;
-
 export const DeliveryChoice = styled.div`
   display: flex;
   align-items: flex-start;
@@ -265,31 +260,24 @@ export const DeliveryChoice = styled.div`
   line-height: 1.3;
   user-select: none;
   text-align: left;
-
-  .radio {
-    width: 16px;
-    height: 16px;
-    border: 2px solid #e6e8ec;
-    border-radius: 50%;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 1px;
-    background: #fff;
-  }
-
-  ${({ checked }) =>
-    checked &&
+  outline: none;
+  cursor: default;
+  ${({ $checked }) =>
+    $checked &&
     css`
-      .radio {
+      ${RadioBullet} {
         border-color: #8b5cf6;
       }
-      .radio:after {
+      ${RadioBullet}::after {
         content: "";
         width: 16px;
         height: 16px;
         background: #8b5cf6;
         border-radius: 50%;
+        display: block;
       }
     `}
+  &:focus-visible ${RadioBullet} {
+    box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.35);
+  }
 `;

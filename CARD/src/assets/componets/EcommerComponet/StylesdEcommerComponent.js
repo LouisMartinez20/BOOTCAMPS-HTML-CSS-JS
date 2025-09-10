@@ -1,6 +1,4 @@
 import styled, { createGlobalStyle } from "styled-components";
-
-// 🎨 Estilos globales
 export const GlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
@@ -29,9 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     color: #0f172a;
   }
 `;
-
-// 📦 Layout principal
-export const Modal = styled.div`
+export const Modal = styled.section`
   width: min(560px, 92vw);
   background: #ffffff;
   border-radius: 20px;
@@ -39,7 +35,6 @@ export const Modal = styled.div`
   padding: 28px;
   position: relative;
 `;
-
 export const CloseButton = styled.button`
   position: absolute;
   inset: 16px 16px auto auto;
@@ -51,21 +46,25 @@ export const CloseButton = styled.button`
   border: 1px solid #e5e7eb;
   background: #fff;
   cursor: pointer;
-
+  transition: background 0.15s;
+  &:hover {
+    background: #f1f5f9;
+  }
+  &:focus-visible {
+    outline: 2px solid #6366f1;
+    outline-offset: 2px;
+  }
   svg {
     width: 18px;
     height: 18px;
   }
 `;
-
-// 🏷️ Encabezados
-export const Head = styled.div`
+export const Head = styled.header`
   display: grid;
   gap: 16px;
   align-items: center;
   margin-bottom: 18px;
 `;
-
 export const Tile = styled.div`
   width: 64px;
   height: 64px;
@@ -85,7 +84,6 @@ export const Tile = styled.div`
     linear-gradient(135deg, #4338ca, #8b5cf6);
   display: grid;
   place-items: center;
-
   svg {
     width: 30px;
     height: 30px;
@@ -93,20 +91,17 @@ export const Tile = styled.div`
     fill: white;
   }
 `;
-
 export const Title = styled.h1`
   font-size: 28px;
   line-height: 1.2;
   margin: 0 0 4px 0;
   font-weight: 700;
 `;
-
 export const Subtitle = styled.p`
   color: #64748b;
   font-size: 15px;
+  margin: 0;
 `;
-
-// 📋 Items y contenido
 export const Item = styled.div`
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -115,12 +110,10 @@ export const Item = styled.div`
   border-radius: 14px;
   padding: 14px;
   margin: 18px 0 8px;
-
   @media (max-width: 560px) {
     grid-template-columns: auto 1fr;
   }
 `;
-
 export const Thumb = styled.div`
   width: 64px;
   height: 64px;
@@ -129,7 +122,6 @@ export const Thumb = styled.div`
   display: grid;
   place-items: center;
   border: 1px solid #e6e8ee;
-
   svg {
     width: 28px;
     height: 28px;
@@ -137,16 +129,22 @@ export const Thumb = styled.div`
     fill: #111827;
   }
 `;
-
 export const Info = styled.div`
-  .name {
-    font-weight: 600;
-    font-size: 15px;
-    line-height: 1.35;
-    border-right: 1px solid #e5e7eb;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`;
+export const ProductName = styled.div`
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 1.35;
+  border-right: 1px solid #e5e7eb;
+  padding-right: 12px;
+  @media (max-width: 560px) {
+    border-right: none;
+    padding-right: 0;
   }
 `;
-
 export const ShipInfo = styled.div`
   display: flex;
   align-items: center;
@@ -154,107 +152,109 @@ export const ShipInfo = styled.div`
   color: #64748b;
   font-size: 14px;
   border-right: 1px solid #e5e7eb;
-
+  padding-right: 12px;
+  @media (max-width: 560px) {
+    border-right: none;
+    padding-right: 0;
+  }
   a {
     color: #2563eb;
-   
-    &:hover {
-      text-decoration: underline;
-    }
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  svg {
+    flex-shrink: 0;
   }
 `;
-
 export const RightColumn = styled.div`
   text-align: right;
-
   @media (max-width: 560px) {
     order: 3;
     text-align: left;
   }
 `;
-
 export const Price = styled.div`
   font-size: 22px;
   font-weight: 700;
-
   @media (max-width: 560px) {
     font-size: 20px;
   }
 `;
-
 export const Shipping = styled.div`
   color: #64748b;
   font-size: 14px;
   margin-top: 4px;
 `;
-
-// 🏷️ Labels y ofertas
 export const Label = styled.div`
   margin-top: 14px;
   font-weight: 600;
   font-size: 14px;
 `;
-
 export const Offer = styled.div`
   margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 12px;
   align-items: center;
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
 `;
-
 export const Field = styled.div`
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 10px;
+  gap: 12px;
   border: 1px solid #e5e7eb;
   border-radius: 12px;
   padding: 10px 12px;
-
-  .field-start {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-  }
-
-  .field-end {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-  }
+  flex-wrap: wrap;
 `;
-
+export const FieldStart = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  flex: 1;
+  min-width: 160px;
+`;
+export const FieldEnd = styled.div`
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+`;
 export const Pill = styled.span`
   padding: 8px 12px;
   font-weight: 600;
   font-size: 14px;
   white-space: nowrap;
   border-left: 1px solid #e5e7eb;
-
-  &.offer-pill {
-    margin-left: 8px;
-    padding: 4px 12px;
-    font-size: 0.95em;
-    font-weight: 500;
-    color: #333;
-    align-self: flex-end;
-  }
 `;
-
+export const OfferPill = styled(Pill)`
+  margin-left: 8px;
+  padding: 4px 12px;
+  font-size: 0.95em;
+  font-weight: 500;
+  color: #333;
+  align-self: flex-end;
+  border-left: 0;
+  background: #f1f5f9;
+  border-radius: 8px;
+`;
 export const CurrencySymbol = styled.span`
   font-weight: 600;
   margin-right: 4px;
+  font-size: 18px;
 `;
-
-// ⚡ Botones rápidos
 export const QuickButtons = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 14px;
+  flex-wrap: wrap;
 `;
-
-export const QuickButton = styled.span`
+export const QuickButton = styled.button`
   border: 1px solid #e5e7eb;
   background: rgba(118, 171, 241, 0.39);
   color: rgb(18, 51, 238);
@@ -262,10 +262,16 @@ export const QuickButton = styled.span`
   border-radius: 10px;
   font-weight: 600;
   font-size: 14px;
-  cursor: default;
+  cursor: pointer;
+  transition: background 0.15s;
+  &:hover {
+    background: rgba(118, 171, 241, 0.55);
+  }
+  &:focus-visible {
+    outline: 2px solid #2563eb;
+    outline-offset: 2px;
+  }
 `;
-
-// 📢 Banner de info
 export const Banner = styled.div`
   margin-top: 18px;
   padding: 14px;
@@ -276,7 +282,6 @@ export const Banner = styled.div`
   align-items: flex-start;
   gap: 10px;
 `;
-
 export const Dot = styled.div`
   width: 8px;
   height: 8px;
@@ -284,27 +289,19 @@ export const Dot = styled.div`
   background: #6366f1;
   margin-top: 6px;
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
+  flex-shrink: 0;
 `;
-
 export const BannerText = styled.p`
-  margin: 0 10px;
+  margin: 0 10px 0 0;
   font-size: 18px;
   color: #121416ff;
-
   strong {
     font-weight: 700;
   }
 `;
-
 export const MutedText = styled.span`
   color: #64748b;
 `;
-
-// 🔧 Utilidades
-export const Spacer = styled.div`
-  height: 4px;
-`;
-
 export const Input = styled.input`
   border: none;
   outline: none;
@@ -312,8 +309,12 @@ export const Input = styled.input`
   width: 100%;
   font-weight: 700;
   background: transparent;
+  color: #0f172a;
+  &::placeholder {
+    color: #94a3b8;
+    font-weight: 500;
+  }
 `;
-
 export const Select = styled.select`
   border: none;
   background: transparent;
@@ -321,4 +322,9 @@ export const Select = styled.select`
   font-size: 14px;
   outline: none;
   padding-right: 2px;
+  color: #0f172a;
+  cursor: pointer;
+`;
+export const Spacer = styled.div`
+  height: 4px;
 `;

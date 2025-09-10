@@ -1,9 +1,7 @@
-import React from 'react'
-import CreditCard from "./CreditCard";
-import { GlobalStyle, Stage, Grid } from "./style";
+import { CreditCard } from "./CreditCard";
+import { GlobalStyle, Stage, Grid } from "./StyledCreditCardComponet";
 export const CreditCardRender = () => {
   const items = Array.from({ length: 9 });
-
   return (
     <>
       <GlobalStyle />
@@ -20,8 +18,6 @@ export const CreditCardRender = () => {
           ))}
         </Grid>
       </Stage>
-
-
     </>
   );
 };export default CreditCardRender;

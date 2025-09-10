@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Card,
   Chip,
@@ -9,10 +8,8 @@ import {
   Name,
   Logo,
   Circle,
-
-} from "./style";
-
-const CreditCard = ({
+} from "./StyledCreditCardComponet";
+export const CreditCard = ({
   variant = "primary",
   number = "0000 0000 0000 0000",
   expiry = "00/00",
@@ -21,18 +18,14 @@ const CreditCard = ({
   return (
     <Card $variant={variant}>
       <Chip $variant={variant} />
-
       <Number $variant={variant}>{number}</Number>
-
       <Expiry>
         <Info $variant={variant}>
           EXPIRES <br /> END
         </Info>
         <Date $variant={variant}>{expiry}</Date>
       </Expiry>
-
       <Name $variant={variant}>{name}</Name>
-
       <Logo $variant={variant}>
         <Circle $variant={variant} color="#ff3b3b" overlap />
         <Circle $variant={variant} color="#ff9c2b" />
@@ -40,5 +33,3 @@ const CreditCard = ({
     </Card>
   );
 };
-
-export default CreditCard;

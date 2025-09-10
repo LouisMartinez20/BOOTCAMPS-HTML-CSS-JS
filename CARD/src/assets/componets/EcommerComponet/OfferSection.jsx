@@ -1,42 +1,51 @@
-// OfferSection.jsx
-import React from "react";
 import {
   Label,
   Offer,
   Field,
+  FieldStart,
+  FieldEnd,
   CurrencySymbol,
   Input,
   Select,
   Pill,
+  OfferPill,
   QuickButtons,
   QuickButton,
   Banner,
   Dot,
   BannerText,
-} from "./style";
-const OfferSection = () => {
+} from "./StylesdEcommerComponent";
+export const OfferSection = (props) => {
+  const amount = props.amount ?? "4800.00";
+  const currency = props.currency ?? "AUD";
+  const shipping = props.shipping ?? "49";
   return (
     <>
       <Label>Your Offer</Label>
       <Offer>
         <Field role="group" aria-label="Your offer">
-          <CurrencySymbol>$</CurrencySymbol>
-          <Input
-            type="text"
-            inputMode="decimal"
-            defaultValue="4800.00"
-            aria-label="Amount"
-          />
-          <Select aria-label="Currency" defaultValue="AUD">
-            <option value="AUD">AUD</option>
-          </Select>
-          <Pill>+$49 shipping</Pill>
+          <FieldStart>
+            <CurrencySymbol aria-hidden="true">$</CurrencySymbol>
+            <Input
+              type="text"
+              inputMode="decimal"
+              defaultValue={amount}
+              aria-label="Amount"
+            />
+          </FieldStart>
+          <FieldEnd>
+            <Select aria-label="Currency" defaultValue={currency}>
+              <option value="AUD">AUD</option>
+            </Select>
+            <Pill>+${shipping} shipping</Pill>
+            <OfferPill>Offer</OfferPill>
+          </FieldEnd>
         </Field>
       </Offer>
-      <QuickButtons>
-        <QuickButton>5% Off</QuickButton>
-        <QuickButton>10% Off</QuickButton>
-        <QuickButton>15% Off</QuickButton>
+      <QuickButtons aria-label="Suggested discounts">
+        <QuickButton type="button">5% Off</QuickButton>
+        <QuickButton type="button">10% Off</QuickButton>
+        <QuickButton type="button">15% Off</QuickButton>
       </QuickButtons>
       <Banner role="status" aria-live="polite">
         <Dot aria-hidden="true" />
@@ -48,4 +57,3 @@ const OfferSection = () => {
     </>
   );
 };
-export default OfferSection;

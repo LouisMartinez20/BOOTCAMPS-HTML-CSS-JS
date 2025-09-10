@@ -1,7 +1,4 @@
-// style.js
 import styled, { createGlobalStyle, css } from "styled-components";
-
-/* Global styles */
 export const GlobalStyle = createGlobalStyle`
   html, body {
     height: 100%;
@@ -11,8 +8,6 @@ export const GlobalStyle = createGlobalStyle`
   overflow-x: hidden; 
   }
 `;
-
-/* Layout containers */
 export const Stage = styled.div`
   width: 100%;
   min-height: 100vh;
@@ -22,7 +17,6 @@ export const Stage = styled.div`
   padding: 40px clamp(20px, 4vw, 80px);
   overflow-x: hidden;
 `;
-
 export const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 400px);
@@ -30,8 +24,6 @@ export const Grid = styled.div`
   column-gap: 92px;
   justify-content: center;
 `;
-
-/* Variants -*/
 const ghostCard = css`
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.15);
@@ -39,7 +31,6 @@ const ghostCard = css`
   color: rgba(255, 255, 255, 0.55);
   position: relative;
   overflow: hidden;
-
   &:before {
     content: "";
     position: absolute;
@@ -47,12 +38,10 @@ const ghostCard = css`
     opacity: 0.35;
     pointer-events: none;
   }
-
   &:hover {
     border-color: rgba(255, 255, 255, 0.28);
   }
 `;
-
 const primaryCard = css`
   background: #ffffff;
   border-radius: 14px;
@@ -60,8 +49,6 @@ const primaryCard = css`
   box-shadow: 0 28px 50px rgba(2, 8, 28, 0.65);
   color: #0b1830;
 `;
-
-/* Card */
 export const Card = styled.div`
   width: 400px;
   height: 250px;
@@ -73,8 +60,6 @@ export const Card = styled.div`
   transition: 0.4s ease;
   ${(p) => (p.$variant === "ghost" ? ghostCard : primaryCard)};
 `;
-
-/* Chip */
 export const Chip = styled.div`
   width: 58px;
   height: 40px;
@@ -83,14 +68,12 @@ export const Chip = styled.div`
   background: linear-gradient(140deg, #d4cca9, #b7ac85);
   position: relative;
   box-shadow: inset 0 0 0 1px rgba(0, 0, 0, 0.25);
-
   ${(p) =>
     p.$variant === "ghost" &&
     css`
       background: transparent;
       border: 1px solid #ffffff;
       box-shadow: none;
-
       &:after,
       &:before {
         content: "";
@@ -108,8 +91,6 @@ export const Chip = styled.div`
         height: 70%;
       }
     `}
-
-  /* Replicar decorado también en primary */
   ${(p) =>
     p.$variant !== "ghost" &&
     css`
@@ -132,8 +113,6 @@ export const Chip = styled.div`
       }
     `}
 `;
-
-/* Number */
 export const Number = styled.div`
   font-family: "arial", monospace;
   font-size: 30px;
@@ -144,8 +123,6 @@ export const Number = styled.div`
   text-align: center;
   font-weight: 400;
 `;
-
-/* Expiry / Date */
 export const Expiry = styled.div`
   font-size: 12px;
   margin-bottom: 18px;
@@ -155,7 +132,6 @@ export const Expiry = styled.div`
   justify-content: center;
   gap: 26px;
 `;
-
 export const Date = styled.div`
   font-size: 24px;
   font-family: "Space Mono", monospace;
@@ -163,10 +139,6 @@ export const Date = styled.div`
   color: ${(p) =>
     p.$variant === "ghost" ? "rgba(255,255,255,0.7)" : "#0b1830"};
 `;
-
-
-
-/* Info text */
 export const Info = styled.div`
   text-align: end;
   font-size: 11px;
@@ -175,8 +147,6 @@ export const Info = styled.div`
   font-weight: 600;
   color: ${(p) => (p.$variant === "ghost" ? "rgba(255,255,255,0.55)" : "#666")};
 `;
-
-/* Name */
 export const Name = styled.div`
   font-size: 16px;
   font-weight: 500;
@@ -184,8 +154,6 @@ export const Name = styled.div`
   color: ${(p) =>
     p.$variant === "ghost" ? "rgba(255,255,255,0.62)" : "#0b1830"};
 `;
-
-/* Logo (Mastercard) */
 export const Logo = styled.div`
   position: absolute;
   bottom: 18px;
@@ -193,7 +161,6 @@ export const Logo = styled.div`
   display: flex;
   align-items: center;
   mix-blend-mode: multiply;
-
   ${(p) =>
     p.$variant === "ghost" &&
     css`
@@ -201,7 +168,6 @@ export const Logo = styled.div`
       mix-blend-mode: normal;
     `}
 `;
-
 export const Circle = styled.div.withConfig({
   shouldForwardProp: (prop) => !["overlap", "color", "$variant"].includes(prop),
 })`

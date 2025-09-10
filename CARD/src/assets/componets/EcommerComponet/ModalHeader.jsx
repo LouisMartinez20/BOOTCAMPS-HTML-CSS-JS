@@ -1,7 +1,7 @@
-// ModalHeader.jsx
-import React from "react";
-import { Head, Tile, Title, Subtitle } from "./style";
-const ModalHeader = ({ title, subtitle }) => {
+import { Head, Tile, Title, Subtitle } from "./StylesdEcommerComponent";
+export const ModalHeader = (props) => {
+  const title = props.title ?? "Untitled";
+  const subtitle = props.subtitle ?? "";
   return (
     <Head>
       <Tile aria-hidden="true">
@@ -16,4 +16,3 @@ const ModalHeader = ({ title, subtitle }) => {
     </Head>
   );
 };
-export default ModalHeader;
