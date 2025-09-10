@@ -59,7 +59,6 @@ export const SectionTwoContainer = styled.div`
 export const TitleTwo = styled.h3`
   font-size: 25px;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #e2e2e2;
   padding-bottom: 0.5rem;
 `;
 export const Notice = styled.div`
@@ -116,14 +115,12 @@ export const SectionThreeContainer = styled.div`
 export const TitleThree = styled.h3`
   font-size: 30px;
   margin-bottom: 1.5rem;
-  border-bottom: 1px solid #e2e2e2;
   padding-bottom: 0.5rem;
 `;
 export const NoticeThree = styled.div`
   display: flex;
   width: 100%;
   gap: 0;
-  padding-bottom: 20px;
   justify-content: space-between;
   img {
     width: 32%;
@@ -144,7 +141,7 @@ export const NoticeText = styled.div`
   flex-direction: column;
   h4 {
     width: 100%;
-    margin: 10px 0 10px 0;
+    margin: 10px 0 0 0;
     font-size: 1rem;
     line-height: 1.3;
   }

@@ -67,7 +67,7 @@ export const DateParagraph = styled.p`
 export const NavList = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  gap: 2.4rem;
+  gap: 2.9rem;
   list-style: none;
   flex: 1;
   margin: 0;
@@ -101,8 +101,8 @@ export const DotsIcon = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  min-width: 50px;
-  height: 50px;
+  min-width: 70px;
+  height: 70px;
   background: #000;
   margin-left: auto;
   padding: 0.5em;

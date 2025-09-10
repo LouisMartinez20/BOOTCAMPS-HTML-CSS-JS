@@ -49,7 +49,7 @@ export const SnapshotHour = styled.span`
 export const Breadcrumbs = styled.nav`
   display: flex;
   align-items: start;
-  gap: 12px;
+  gap: 22px;
   flex-wrap: wrap;
   justify-content: start;
   @media (max-width: 480px) {
