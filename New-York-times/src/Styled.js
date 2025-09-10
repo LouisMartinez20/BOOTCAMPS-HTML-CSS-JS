@@ -28,7 +28,7 @@ export const GlobalStyles = createGlobalStyle`
   }
 `;
 
-export const AppContainer = styled.div`
+export const StyledAppContainer = styled.div`
   width: 100%;
   overflow-x: hidden;
 `;

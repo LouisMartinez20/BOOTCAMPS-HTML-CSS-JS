@@ -1,5 +1,5 @@
 import styled from "styled-components";
-export const FooterContainer = styled.footer`
+export const StyledFooterContainer = styled.footer`
   border-top: 1px dashed #bbb;
   padding: 0.5em 4em;
   text-align: center;
@@ -7,7 +7,7 @@ export const FooterContainer = styled.footer`
     padding: 0.5em 1em;
   }
 `;
-export const HeadingSection = styled.section`
+export const StyledHeadingSection = styled.section`
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 24px;
@@ -23,7 +23,7 @@ export const HeadingSection = styled.section`
     text-align: center;
   }
 `;
-export const SnapshotContainer = styled.div`
+export const StyledSnapshotContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -32,7 +32,7 @@ export const SnapshotContainer = styled.div`
     align-items: center;
   }
 `;
-export const SnapshotTitle = styled.span`
+export const StyledSnapshotTitle = styled.span`
   text-transform: uppercase;
   font-size: 1.1rem;
   font-weight: bold;
@@ -41,12 +41,12 @@ export const SnapshotTitle = styled.span`
   text-overflow: ellipsis;
   max-width: 100%;
 `;
-export const SnapshotHour = styled.span`
+export const StyledSnapshotHour = styled.span`
   font-size: 0.8rem;
   font-weight: 600;
   max-width: 100%;
 `;
-export const Breadcrumbs = styled.nav`
+export const StyledBreadcrumbs = styled.nav`
   display: flex;
   align-items: start;
   gap: 22px;
@@ -56,7 +56,7 @@ export const Breadcrumbs = styled.nav`
     gap: 8px;
   }
 `;
-export const BreadcrumbLink = styled.a`
+export const StyledBreadcrumbLink = styled.a`
   text-decoration: none;
   color: #333;
   font-size: 0.9rem;
@@ -69,14 +69,14 @@ export const BreadcrumbLink = styled.a`
     font-size: 0.8rem;
   }
 `;
-export const MaterialIcon = styled.span.attrs({
+export const StyledMaterialIcon = styled.span.attrs({
   className: "material-symbols-outlined",
 })`
   font-size: ${(p) => p.$size || "18px"};
   color: ${(p) => p.$color || "rgb(7, 7, 7)"};
   line-height: 1;
 `;
-export const FullOverviewButton = styled.button`
+export const StyledFullOverviewButton = styled.button`
   background-color: transparent;
   text-transform: uppercase;
   color: rgb(87, 87, 87);
@@ -95,12 +95,12 @@ export const FullOverviewButton = styled.button`
     width: 100%;
   }
 `;
-const trendBg = {
+export const trendBg = {
   up: "#5b8c5c",
   down: "#cb495a",
   neutral: "#000",
 };
-export const Card = styled.div`
+export const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
   font-size: 0.9rem;
@@ -111,13 +111,13 @@ export const Card = styled.div`
   border-radius: 4px;
   min-width: 0;
 `;
-export const Firm = styled.div`
+export const StyledFirm = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 8px;
 `;
-export const TitleText = styled.span`
+export const StyledTitleText = styled.span`
   font-weight: bold;
   white-space: nowrap;
   overflow: hidden;
@@ -125,12 +125,12 @@ export const TitleText = styled.span`
   word-break: break-word;
   max-width: 100%;
 `;
-export const ValueText = styled.span`
+export const StyledValueText = styled.span`
   font-weight: bold;
   white-space: nowrap;
   word-break: break-word;
 `;
-export const Container = styled.div`
+export const StyledContainer = styled.div`
   display: grid;
   grid-template-columns: 1fr auto;
   gap: 16px;
@@ -139,13 +139,13 @@ export const Container = styled.div`
     grid-template-columns: 1fr;
   }
 `;
-export const Information = styled.div`
+export const StyledInformation = styled.div`
   display: flex;
   flex-direction: column;
   gap: 12px;
   min-width: 0;
 `;
-export const Ratings = styled.div`
+export const StyledRatings = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -159,12 +159,12 @@ export const Ratings = styled.div`
     font-weight: 500;
   }
 `;
-export const HourContainer = styled.div`
+export const StyledHourContainer = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
 `;
-export const CardsContainer = styled.section`
+export const StyledCardsContainer = styled.section`
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 16px;

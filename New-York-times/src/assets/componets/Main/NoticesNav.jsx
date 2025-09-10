@@ -1,25 +1,28 @@
-import React from "react";
-import { NoticesNavContainer, NoticesRow, NoticesList } from "./StyledMainContainer";
-export const NoticesNav = (props) => {
-  const {
-    title = "Business",
-    links = ["Tech", "Econ", "Media", "Money", "DealBook"],
-    buildHref, 
-    ariaLabel = "Business sections navigation",
-  } = props;
-  const hrefFor = (link) => (typeof buildHref === "function" ? buildHref(link) : "#");
+import {
+  StyledNoticesNavContainer,
+  StyledNoticesRow,
+  StyledNoticesList,
+} from "./styles";
+export const NoticesNav = ({
+  title = "Business",
+  links = ["Tech", "Econ", "Media", "Money", "DealBook"],
+  buildHref,
+  ariaLabel = "Business sections navigation",
+}) => {
+  const hrefFor = (link) =>
+    typeof buildHref === "function" ? buildHref(link) : "#";
   return (
-    <NoticesNavContainer>
-      <NoticesRow aria-label={ariaLabel}>
+    <StyledNoticesNavContainer>
+      <StyledNoticesRow aria-label={ariaLabel}>
         <h2>{title}</h2>
-        <NoticesList>
+        <StyledNoticesList>
           {links.map((link) => (
             <li key={link}>
               <a href={hrefFor(link)}>{link}</a>
             </li>
           ))}
-        </NoticesList>
-      </NoticesRow>
-    </NoticesNavContainer>
+        </StyledNoticesList>
+      </StyledNoticesRow>
+    </StyledNoticesNavContainer>
   );
 };

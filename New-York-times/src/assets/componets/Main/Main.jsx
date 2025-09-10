@@ -1,8 +1,10 @@
-import React from "react";
 import { SectionOne } from "./SectionOne";
 import { SectionTwo } from "./SectionTwo";
 import { SectionThree } from "./SectionThree";
-import { MainContainer, SectionsContainer } from "./StyledMainContainer";
+import {
+  StyledMainContainer,
+  StyledSectionsContainer,
+} from "./styles";
 import { NoticesNav } from "./NoticesNav";
 export const Main = () => {
   const mainArticle = {
@@ -59,22 +61,26 @@ export const Main = () => {
       subtitle: "The deal with Joe Rogan, a provocative podcast, with...",
       imageSrc:
         "https://i.dailymail.co.uk/1s/2020/05/20/19/28631300-0-image-a-18_1589997894255.jpg",
-      imageAlt: "notices-three-image",
+      imageAlt: "notice-three-image",
     },
   ];
   return (
-    <MainContainer>
+    <StyledMainContainer>
       <NoticesNav />
-      <SectionsContainer>
+      <StyledSectionsContainer>
         <SectionOne {...mainArticle} />
-        <SectionTwo title="Latest News" items={latestNewsItems} dotsActiveIndex={0} />
+        <SectionTwo
+          title="Latest News"
+            items={latestNewsItems}
+          dotsActiveIndex={0}
+        />
         <SectionThree
           title="Fast Forward"
           notices={fastForwardNotices}
           showAllHref="#"
           showAllText="Show All"
         />
-      </SectionsContainer>
-    </MainContainer>
+      </StyledSectionsContainer>
+    </StyledMainContainer>
   );
 };

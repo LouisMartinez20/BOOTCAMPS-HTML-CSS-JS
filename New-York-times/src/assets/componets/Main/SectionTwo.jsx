@@ -1,37 +1,42 @@
 import {
-  SectionTwoContainer,
-  TitleTwo,
-  Notice,
-  NoticeTag,
-  NoticeDate,
-  NoticeTitle,
-  ContinueLinkTwo,
-  DotsContainer,
-  Dot,
-} from "./StyledSectionStyles";
-export const SectionTwo = (props) => {
-  const {
-    title = "Latest News",
-    items = [],
-    continueText = "continue reading",
-    dotsActiveIndex = 0,
-    onDotClick,
-  } = props;
+  StyledSectionTwoContainer,
+  StyledTitleTwo,
+  StyledNotice,
+  StyledNoticeTag,
+  StyledNoticeDate,
+  StyledNoticeTitle,
+  StyledContinueLinkTwo,
+  StyledDotsContainer,
+  StyledDot,
+} from "./StylesSections";
+export const SectionTwo = ({
+  title = "Latest News",
+  items = [],
+  continueText = "continue reading",
+  dotsActiveIndex = 0,
+  onDotClick,
+  showDots = true,
+}) => {
   return (
-    <SectionTwoContainer>
-      <TitleTwo>{title}</TitleTwo>
-      {items.map((n) => (
-        <Notice key={n.id ?? n.title}>
-          {n.tag ? <NoticeTag>{n.tag}</NoticeTag> : null}
-          {n.date ? <NoticeDate>{n.date}</NoticeDate> : null}
-          <NoticeTitle>{n.title}</NoticeTitle>
-          <ContinueLinkTwo href={n.href ?? "#"}>{continueText}</ContinueLinkTwo>
-        </Notice>
-      ))}
-      {items.length > 1 ? (
-        <DotsContainer aria-label="pagination">
+    <StyledSectionTwoContainer>
+      <StyledTitleTwo>{title}</StyledTitleTwo>
+      {items.map((n, idx) => {
+        const key = n.id ?? n.title ?? idx;
+        return (
+          <StyledNotice key={key}>
+            {n.tag ? <StyledNoticeTag>{n.tag}</StyledNoticeTag> : null}
+            {n.date ? <StyledNoticeDate>{n.date}</StyledNoticeDate> : null}
+            <StyledNoticeTitle>{n.title}</StyledNoticeTitle>
+            <StyledContinueLinkTwo href={n.href ?? "#"}>
+              {continueText}
+            </StyledContinueLinkTwo>
+          </StyledNotice>
+        );
+      })}
+      {showDots && items.length > 1 ? (
+        <StyledDotsContainer aria-label="pagination">
           {items.map((_, idx) => (
-            <Dot
+            <StyledDot
               key={idx}
               type="button"
               aria-label={`Go to item ${idx + 1}`}
@@ -40,8 +45,8 @@ export const SectionTwo = (props) => {
               onClick={onDotClick ? () => onDotClick(idx) : undefined}
             />
           ))}
-        </DotsContainer>
+        </StyledDotsContainer>
       ) : null}
-    </SectionTwoContainer>
+    </StyledSectionTwoContainer>
   );
 };

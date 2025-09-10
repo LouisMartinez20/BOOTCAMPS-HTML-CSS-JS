@@ -1,6 +1,6 @@
 import { FooterHeading } from "./FooterHeading";
 import { MarketCards } from "./MarketCards";
-import { FooterContainer } from "./StyledFooterContainer";
+import { StyledFooterContainer } from "./styles";
 export const Footer = () => {
   const marketData = [
     {
@@ -53,9 +53,9 @@ export const Footer = () => {
     },
   ];
   return (
-    <FooterContainer>
+    <StyledFooterContainer>
       <FooterHeading />
       <MarketCards cards={marketData} />
-    </FooterContainer>
+    </StyledFooterContainer>
   );
 };

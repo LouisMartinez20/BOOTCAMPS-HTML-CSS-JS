@@ -1,35 +1,38 @@
 import {
-  SectionThreeContainer,
-  TitleThree,
-  NoticeThree,
-  NoticeText,
-  ShowAllLink,
-} from "./StyledSectionStyles";
-export const SectionThree = (props) => {
-  const {
-    title = "Fast Forward",
-    notices = [],
-    showAllHref = "#",
-    showAllText = "Show All",
-  } = props;
+  StyledSectionThreeContainer,
+  StyledTitleThree,
+  StyledNoticeThree,
+  StyledNoticeText,
+  StyledShowAllLink,
+} from "./StylesSections";
+export const SectionThree = ({
+  title = "Fast Forward",
+  notices = [],
+  showAllHref = "#",
+  showAllText = "Show All",
+}) => {
   return (
-    <SectionThreeContainer>
-      <TitleThree>{title}</TitleThree>
+    <StyledSectionThreeContainer>
+      <StyledTitleThree>{title}</StyledTitleThree>
       {notices.map((item, idx) => {
         const key = item.id ?? item.title ?? idx;
         return (
-          <NoticeThree key={key}>
-            <NoticeText>
+          <StyledNoticeThree key={key}>
+            <StyledNoticeText>
               <h4>{item.title}</h4>
               {item.subtitle ? <p>{item.subtitle}</p> : null}
-            </NoticeText>
+            </StyledNoticeText>
             {item.imageSrc ? (
-              <img src={item.imageSrc} alt={item.imageAlt || "notice-image"} />
+              <img
+                src={item.imageSrc}
+                alt={item.imageAlt || "notice-image"}
+                loading="lazy"
+              />
             ) : null}
-          </NoticeThree>
+          </StyledNoticeThree>
         );
       })}
-      <ShowAllLink href={showAllHref}>{showAllText}</ShowAllLink>
-    </SectionThreeContainer>
+      <StyledShowAllLink href={showAllHref}>{showAllText}</StyledShowAllLink>
+    </StyledSectionThreeContainer>
   );
 };

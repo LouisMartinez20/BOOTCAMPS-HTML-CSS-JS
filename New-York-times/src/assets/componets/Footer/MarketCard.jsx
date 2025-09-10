@@ -1,51 +1,57 @@
 import {
-  Card,
-  Firm,
-  TitleText,
-  ValueText,
-  Container,
-  Information,
-  Ratings,
-  HourContainer,
-  MaterialIcon,
-} from "./StyledFooterContainer";
+  StyledCard,
+  StyledFirm,
+  StyledTitleText,
+  StyledValueText,
+  StyledContainer,
+  StyledInformation,
+  StyledRatings,
+  StyledHourContainer,
+  StyledMaterialIcon,
+} from "./styles";
 function getTrend({ percentage, value }) {
-  if (typeof percentage === "string" && percentage.trim() !== "") {
-    const n = parseFloat(percentage.replace("%", "").replace(",", "."));
+  const clean = (str) =>
+    String(str)
+      .replace(",", ".")
+      .replace(/[^0-9+-.]/g, "")
+      .trim();
+  if (percentage != null && String(percentage).trim() !== "") {
+    const n = parseFloat(clean(percentage));
     if (Number.isFinite(n)) {
       if (n > 0) return "up";
       if (n < 0) return "down";
       return "neutral";
     }
   }
-  if (typeof value === "string" && value.trim() !== "") {
-    const sign = value.trim()[0];
-    if (sign === "+") return "up";
-    if (sign === "-") return "down";
+  if (value != null && String(value).trim() !== "") {
+    const v = clean(value);
+    if (v.startsWith("+")) return "up";
+    if (v.startsWith("-")) return "down";
   }
   return "neutral";
 }
-export const MarketCard = (props) => {
-  const { title, value, price, percentage, time } = props;
+export const MarketCard = ({ title, value, price, percentage, time }) => {
   const trend = getTrend({ percentage, value });
   return (
-    <Card $trend={trend}>
-      <Firm>
-        <TitleText>{title}</TitleText>
-        <ValueText>{value}</ValueText>
-      </Firm>
-      <Container>
-        <Information>
-          <Ratings>
+    <StyledCard $trend={trend}>
+      <StyledFirm>
+        <StyledTitleText title={title}>{title}</StyledTitleText>
+        <StyledValueText>{value}</StyledValueText>
+      </StyledFirm>
+      <StyledContainer>
+        <StyledInformation>
+          <StyledRatings>
             <span>{price}</span>
             <span>{percentage}</span>
-          </Ratings>
-          <HourContainer>
-            <MaterialIcon $size="16px">nest_clock_farsight_analog</MaterialIcon>
+          </StyledRatings>
+          <StyledHourContainer>
+            <StyledMaterialIcon $size="16px">
+              nest_clock_farsight_analog
+            </StyledMaterialIcon>
             <span>{time}</span>
-          </HourContainer>
-        </Information>
-      </Container>
-    </Card>
+          </StyledHourContainer>
+        </StyledInformation>
+      </StyledContainer>
+    </StyledCard>
   );
 };

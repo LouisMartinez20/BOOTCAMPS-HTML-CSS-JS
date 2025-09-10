@@ -1,38 +1,37 @@
 import {
-  HeadingSection,
-  SnapshotContainer,
-  SnapshotTitle,
-  SnapshotHour,
-  Breadcrumbs,
-  BreadcrumbLink,
-  FullOverviewButton,
-  MaterialIcon,
-} from "./StyledFooterContainer";
-export const FooterHeading = (props) => {
-  const {
-    title = "Market Snapshot",
-    hour = "6:07 AM",
-    breadcrumbs = ["Futures", "Americas", "Europe", "Asia", "Commodities"],
-    overviewText = "Full Market Overview",
-    onOverviewClick,
-  } = props;
+  StyledHeadingSection,
+  StyledSnapshotContainer,
+  StyledSnapshotTitle,
+  StyledSnapshotHour,
+  StyledBreadcrumbs,
+  StyledBreadcrumbLink,
+  StyledFullOverviewButton,
+  StyledMaterialIcon,
+} from "./styles";
+export const FooterHeading = ({
+  title = "Market Snapshot",
+  hour = "6:07 AM",
+  breadcrumbs = ["Futures", "Americas", "Europe", "Asia", "Commodities"],
+  overviewText = "Full Market Overview",
+  onOverviewClick,
+}) => {
   return (
-    <HeadingSection>
-      <SnapshotContainer>
-        <SnapshotTitle>{title}</SnapshotTitle>
-        <SnapshotHour>{hour}</SnapshotHour>
-      </SnapshotContainer>
-      <Breadcrumbs aria-label="Market sections">
+    <StyledHeadingSection>
+      <StyledSnapshotContainer>
+        <StyledSnapshotTitle>{title}</StyledSnapshotTitle>
+        <StyledSnapshotHour>{hour}</StyledSnapshotHour>
+      </StyledSnapshotContainer>
+      <StyledBreadcrumbs aria-label="Market sections">
         {breadcrumbs.map((item) => (
-          <BreadcrumbLink key={item} href="#">
+          <StyledBreadcrumbLink key={item} href="#">
             {item}
-          </BreadcrumbLink>
+          </StyledBreadcrumbLink>
         ))}
-      </Breadcrumbs>
-      <FullOverviewButton type="button" onClick={onOverviewClick}>
+      </StyledBreadcrumbs>
+      <StyledFullOverviewButton type="button" onClick={onOverviewClick}>
         {overviewText}
-        <MaterialIcon>chevron_right</MaterialIcon>
-      </FullOverviewButton>
-    </HeadingSection>
+        <StyledMaterialIcon>chevron_right</StyledMaterialIcon>
+      </StyledFullOverviewButton>
+    </StyledHeadingSection>
   );
 };

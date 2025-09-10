@@ -1,36 +1,39 @@
 import {
-  SectionContainer,
-  SectionHeader,
-  ImageContainer,
-  Tag,
-  DateText,
-  Title,
-  Description,
-  ContinueLink,
-} from "./StyledSectionStyles";
-export const SectionOne = (props) => {
-  const {
-    imageSrc,
-    imageAlt = "section-one-image",
-    tag,
-    date,
-    title,
-    description,
-    linkHref = "#",
-    linkText = "continue reading",
-  } = props;
+  StyledSectionContainer,
+  StyledSectionHeader,
+  StyledImageContainer,
+  StyledTag,
+  StyledDateText,
+  StyledTitle,
+  StyledDescription,
+  StyledContinueLink,
+} from "./StylesSections";
+export const SectionOne = ({
+  imageSrc,
+  imageAlt = "section-one-image",
+  tag,
+  date,
+  title,
+  description,
+  linkHref = "#",
+  linkText = "continue reading",
+}) => {
   return (
-    <SectionContainer>
-      <SectionHeader>
-        <ImageContainer>
-          {imageSrc ? <img src={imageSrc} alt={imageAlt} /> : null}
-        </ImageContainer>
-        {tag ? <Tag>{tag}</Tag> : null}
-        {date ? <DateText>{date}</DateText> : null}
-      </SectionHeader>
-      {title ? <Title>{title}</Title> : null}
-      {description ? <Description>{description}</Description> : null}
-      {linkHref ? <ContinueLink href={linkHref}>{linkText}</ContinueLink> : null}
-    </SectionContainer>
+    <StyledSectionContainer>
+      <StyledSectionHeader>
+        <StyledImageContainer>
+          {imageSrc ? (
+            <img src={imageSrc} alt={imageAlt} loading="lazy" />
+          ) : null}
+        </StyledImageContainer>
+        {tag ? <StyledTag>{tag}</StyledTag> : null}
+        {date ? <StyledDateText>{date}</StyledDateText> : null}
+      </StyledSectionHeader>
+      {title ? <StyledTitle>{title}</StyledTitle> : null}
+      {description ? <StyledDescription>{description}</StyledDescription> : null}
+      {linkHref ? (
+        <StyledContinueLink href={linkHref}>{linkText}</StyledContinueLink>
+      ) : null}
+    </StyledSectionContainer>
   );
 };
