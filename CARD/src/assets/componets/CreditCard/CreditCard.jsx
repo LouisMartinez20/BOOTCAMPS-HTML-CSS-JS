@@ -1,13 +1,13 @@
 import {
-  Card,
-  Chip,
-  Number,
-  Expiry,
-  Date,
-  Info,
-  Name,
-  Logo,
-  Circle,
+  StyledCard,
+  StyledChip,
+  StyledNumber,
+  StyledExpiry,
+  StyledDate,
+  StyledInfo,
+  StyledName,
+  StyledLogo,
+  StyledCircle,
 } from "./StyledCreditCardComponet";
 export const CreditCard = ({
   variant = "primary",
@@ -16,20 +16,20 @@ export const CreditCard = ({
   name = "JOHN DOE",
 }) => {
   return (
-    <Card $variant={variant}>
-      <Chip $variant={variant} />
-      <Number $variant={variant}>{number}</Number>
-      <Expiry>
-        <Info $variant={variant}>
+    <StyledCard $variant={variant}>
+      <StyledChip $variant={variant} />
+      <StyledNumber $variant={variant}>{number}</StyledNumber>
+      <StyledExpiry>
+        <StyledInfo $variant={variant}>
           EXPIRES <br /> END
-        </Info>
-        <Date $variant={variant}>{expiry}</Date>
-      </Expiry>
-      <Name $variant={variant}>{name}</Name>
-      <Logo $variant={variant}>
-        <Circle $variant={variant} color="#ff3b3b" overlap />
-        <Circle $variant={variant} color="#ff9c2b" />
-      </Logo>
-    </Card>
+        </StyledInfo>
+        <StyledDate $variant={variant}>{expiry}</StyledDate>
+      </StyledExpiry>
+      <StyledName $variant={variant}>{name}</StyledName>
+      <StyledLogo $variant={variant}>
+        <StyledCircle $variant={variant} color="#ff3b3b" overlap />
+        <StyledCircle $variant={variant} color="#ff9c2b" />
+      </StyledLogo>
+    </StyledCard>
   );
 };

@@ -1,18 +1,23 @@
-import { Head, Tile, Title, Subtitle } from "./StylesdEcommerComponent";
+import {
+  StyledHead,
+  StyledTile,
+  StyledTitle,
+  StyledSubtitle,
+} from "./StylesdEcommerComponent";
 export const ModalHeader = (props) => {
   const title = props.title ?? "Untitled";
   const subtitle = props.subtitle ?? "";
   return (
-    <Head>
-      <Tile aria-hidden="true">
+    <StyledHead>
+      <StyledTile aria-hidden="true">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M16 11c1.66 0 2.99-1.57 2.99-3.5S17.66 4 16 4s-3 1.57-3 3.5S14.34 11 16 11zM8 11c1.66 0 3-1.57 3-3.5S9.66 4 8 4 5 5.57 5 7.5 6.34 11 8 11zm0 2c-2.33 0-7 1.17-7 3.5V19h14v-2.5C15 14.17 10.33 13 8 13zm8 0c-.29 0-.62.02-.97.05 1.16.84 1.97 1.97 1.97 3.45V19h6v-2.5c0-2.33-4.67-3.5-7-3.5z" />
         </svg>
-      </Tile>
+      </StyledTile>
       <div>
-        <Title id="title">{title}</Title>
-        <Subtitle>{subtitle}</Subtitle>
+        <StyledTitle id="title">{title}</StyledTitle>
+        <StyledSubtitle>{subtitle}</StyledSubtitle>
       </div>
-    </Head>
+    </StyledHead>
   );
 };

@@ -1,19 +1,19 @@
 import {
-  Label,
-  Offer,
-  Field,
-  FieldStart,
-  FieldEnd,
-  CurrencySymbol,
-  Input,
-  Select,
-  Pill,
-  OfferPill,
-  QuickButtons,
-  QuickButton,
-  Banner,
-  Dot,
-  BannerText,
+  StyledLabel,
+  StyledOffer,
+  StyledField,
+  StyledFieldStart,
+  StyledFieldEnd,
+  StyledCurrencySymbol,
+  StyledInput,
+  StyledSelect,
+  StyledPill,
+  StyledOfferPill,
+  StyledQuickButtons,
+  StyledQuickButton,
+  StyledBanner,
+  StyledDot,
+  StyledBannerText,
 } from "./StylesdEcommerComponent";
 export const OfferSection = (props) => {
   const amount = props.amount ?? "4800.00";
@@ -21,39 +21,39 @@ export const OfferSection = (props) => {
   const shipping = props.shipping ?? "49";
   return (
     <>
-      <Label>Your Offer</Label>
-      <Offer>
-        <Field role="group" aria-label="Your offer">
-          <FieldStart>
-            <CurrencySymbol aria-hidden="true">$</CurrencySymbol>
-            <Input
+      <StyledLabel>Your Offer</StyledLabel>
+      <StyledOffer>
+        <StyledField role="group" aria-label="Your offer">
+          <StyledFieldStart>
+            <StyledCurrencySymbol aria-hidden="true">$</StyledCurrencySymbol>
+            <StyledInput
               type="text"
               inputMode="decimal"
               defaultValue={amount}
               aria-label="Amount"
             />
-          </FieldStart>
-          <FieldEnd>
-            <Select aria-label="Currency" defaultValue={currency}>
+          </StyledFieldStart>
+          <StyledFieldEnd>
+            <StyledSelect aria-label="Currency" defaultValue={currency}>
               <option value="AUD">AUD</option>
-            </Select>
-            <Pill>+${shipping} shipping</Pill>
-            <OfferPill>Offer</OfferPill>
-          </FieldEnd>
-        </Field>
-      </Offer>
-      <QuickButtons aria-label="Suggested discounts">
-        <QuickButton type="button">5% Off</QuickButton>
-        <QuickButton type="button">10% Off</QuickButton>
-        <QuickButton type="button">15% Off</QuickButton>
-      </QuickButtons>
-      <Banner role="status" aria-live="polite">
-        <Dot aria-hidden="true" />
-        <BannerText>
+            </StyledSelect>
+            <StyledPill>+${shipping} shipping</StyledPill>
+            <StyledOfferPill>Offer</StyledOfferPill>
+          </StyledFieldEnd>
+        </StyledField>
+      </StyledOffer>
+      <StyledQuickButtons aria-label="Suggested discounts">
+        <StyledQuickButton type="button">5% Off</StyledQuickButton>
+        <StyledQuickButton type="button">10% Off</StyledQuickButton>
+        <StyledQuickButton type="button">15% Off</StyledQuickButton>
+      </StyledQuickButtons>
+      <StyledBanner role="status" aria-live="polite">
+        <StyledDot aria-hidden="true" />
+        <StyledBannerText>
           Transaction history shows that the offer amount you've entered is
           likely to be accepted!
-        </BannerText>
-      </Banner>
+        </StyledBannerText>
+      </StyledBanner>
     </>
   );
 };

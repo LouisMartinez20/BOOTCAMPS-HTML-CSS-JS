@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
-export const GlobalStyle = createGlobalStyle`
+export const StyledGlobalStyle = createGlobalStyle`
   * {
     box-sizing: border-box;
   }
@@ -27,7 +27,7 @@ export const GlobalStyle = createGlobalStyle`
     color: #0f172a;
   }
 `;
-export const Modal = styled.section`
+export const StyledModal = styled.section`
   width: min(560px, 92vw);
   background: #ffffff;
   border-radius: 20px;
@@ -35,7 +35,7 @@ export const Modal = styled.section`
   padding: 28px;
   position: relative;
 `;
-export const CloseButton = styled.button`
+export const StyledCloseButton = styled.button`
   position: absolute;
   inset: 16px 16px auto auto;
   width: 36px;
@@ -59,13 +59,13 @@ export const CloseButton = styled.button`
     height: 18px;
   }
 `;
-export const Head = styled.header`
+export const StyledHead = styled.header`
   display: grid;
   gap: 16px;
   align-items: center;
   margin-bottom: 18px;
 `;
-export const Tile = styled.div`
+export const StyledTile = styled.div`
   width: 64px;
   height: 64px;
   border-radius: 16px;
@@ -91,18 +91,18 @@ export const Tile = styled.div`
     fill: white;
   }
 `;
-export const Title = styled.h1`
+export const StyledTitle = styled.h1`
   font-size: 28px;
   line-height: 1.2;
   margin: 0 0 4px 0;
   font-weight: 700;
 `;
-export const Subtitle = styled.p`
+export const StyledSubtitle = styled.p`
   color: #64748b;
   font-size: 15px;
   margin: 0;
 `;
-export const Item = styled.div`
+export const StyledItem = styled.div`
   display: grid;
   grid-template-columns: auto 1fr auto;
   gap: 16px;
@@ -114,7 +114,7 @@ export const Item = styled.div`
     grid-template-columns: auto 1fr;
   }
 `;
-export const Thumb = styled.div`
+export const StyledThumb = styled.div`
   width: 64px;
   height: 64px;
   border-radius: 12px;
@@ -129,12 +129,12 @@ export const Thumb = styled.div`
     fill: #111827;
   }
 `;
-export const Info = styled.div`
+export const StyledInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
 `;
-export const ProductName = styled.div`
+export const StyledProductName = styled.div`
   font-weight: 600;
   font-size: 15px;
   line-height: 1.35;
@@ -145,7 +145,7 @@ export const ProductName = styled.div`
     padding-right: 0;
   }
 `;
-export const ShipInfo = styled.div`
+export const StyledShipInfo = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
@@ -168,31 +168,31 @@ export const ShipInfo = styled.div`
     flex-shrink: 0;
   }
 `;
-export const RightColumn = styled.div`
+export const StyledRightColumn = styled.div`
   text-align: right;
   @media (max-width: 560px) {
     order: 3;
     text-align: left;
   }
 `;
-export const Price = styled.div`
+export const StyledPrice = styled.div`
   font-size: 22px;
   font-weight: 700;
   @media (max-width: 560px) {
     font-size: 20px;
   }
 `;
-export const Shipping = styled.div`
+export const StyledShipping = styled.div`
   color: #64748b;
   font-size: 14px;
   margin-top: 4px;
 `;
-export const Label = styled.div`
+export const StyledLabel = styled.div`
   margin-top: 14px;
   font-weight: 600;
   font-size: 14px;
 `;
-export const Offer = styled.div`
+export const StyledOffer = styled.div`
   margin-top: 10px;
   display: grid;
   grid-template-columns: 1fr auto;
@@ -203,7 +203,7 @@ export const Offer = styled.div`
     gap: 16px;
   }
 `;
-export const Field = styled.div`
+export const StyledField = styled.div`
   display: flex;
   align-items: center;
   gap: 12px;
@@ -212,27 +212,27 @@ export const Field = styled.div`
   padding: 10px 12px;
   flex-wrap: wrap;
 `;
-export const FieldStart = styled.div`
+export const StyledFieldStart = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 6px;
   flex: 1;
   min-width: 160px;
 `;
-export const FieldEnd = styled.div`
+export const StyledFieldEnd = styled.div`
   display: inline-flex;
   align-items: center;
   gap: 8px;
   flex-shrink: 0;
 `;
-export const Pill = styled.span`
+export const StyledPill = styled.span`
   padding: 8px 12px;
   font-weight: 600;
   font-size: 14px;
   white-space: nowrap;
   border-left: 1px solid #e5e7eb;
 `;
-export const OfferPill = styled(Pill)`
+export const StyledOfferPill = styled(StyledPill)`
   margin-left: 8px;
   padding: 4px 12px;
   font-size: 0.95em;
@@ -243,18 +243,18 @@ export const OfferPill = styled(Pill)`
   background: #f1f5f9;
   border-radius: 8px;
 `;
-export const CurrencySymbol = styled.span`
+export const StyledCurrencySymbol = styled.span`
   font-weight: 600;
   margin-right: 4px;
   font-size: 18px;
 `;
-export const QuickButtons = styled.div`
+export const StyledQuickButtons = styled.div`
   display: flex;
   gap: 10px;
   margin-top: 14px;
   flex-wrap: wrap;
 `;
-export const QuickButton = styled.button`
+export const StyledQuickButton = styled.button`
   border: 1px solid #e5e7eb;
   background: rgba(118, 171, 241, 0.39);
   color: rgb(18, 51, 238);
@@ -272,7 +272,7 @@ export const QuickButton = styled.button`
     outline-offset: 2px;
   }
 `;
-export const Banner = styled.div`
+export const StyledBanner = styled.div`
   margin-top: 18px;
   padding: 14px;
   border-radius: 16px;
@@ -282,7 +282,7 @@ export const Banner = styled.div`
   align-items: flex-start;
   gap: 10px;
 `;
-export const Dot = styled.div`
+export const StyledDot = styled.div`
   width: 8px;
   height: 8px;
   border-radius: 50%;
@@ -291,7 +291,7 @@ export const Dot = styled.div`
   box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.18);
   flex-shrink: 0;
 `;
-export const BannerText = styled.p`
+export const StyledBannerText = styled.p`
   margin: 0 10px 0 0;
   font-size: 18px;
   color: #121416ff;
@@ -299,10 +299,10 @@ export const BannerText = styled.p`
     font-weight: 700;
   }
 `;
-export const MutedText = styled.span`
+export const StyledMutedText = styled.span`
   color: #64748b;
 `;
-export const Input = styled.input`
+export const StyledInput = styled.input`
   border: none;
   outline: none;
   font-size: 18px;
@@ -315,7 +315,7 @@ export const Input = styled.input`
     font-weight: 500;
   }
 `;
-export const Select = styled.select`
+export const StyledSelect = styled.select`
   border: none;
   background: transparent;
   font-weight: 600;
@@ -325,6 +325,6 @@ export const Select = styled.select`
   color: #0f172a;
   cursor: pointer;
 `;
-export const Spacer = styled.div`
+export const StyledSpacer = styled.div`
   height: 4px;
 `;

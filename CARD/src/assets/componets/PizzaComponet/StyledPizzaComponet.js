@@ -1,18 +1,19 @@
 import styled, { css, createGlobalStyle } from "styled-components";
-export const GlobalStyle = createGlobalStyle`
+// Global style (prefijado como StyledGlobalStyle para consistencia)
+export const StyledGlobalStyle = createGlobalStyle`
   body {
     background-color: #FBE9E7;
     margin: 0;
   }
 `;
-export const PageCenter = styled.div`
+export const StyledPageCenter = styled.div`
   min-height: 70vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 24px;
 `;
-export const CardWrapper = styled.div`
+export const StyledCardWrapper = styled.div`
   position: relative;
   width: 100%;
   max-width: 880px;
@@ -25,7 +26,7 @@ export const CardWrapper = styled.div`
   font-family: "Inter", system-ui, Avenir, Helvetica, Arial, sans-serif;
   margin: 0 auto;
 `;
-export const ImagePane = styled.div`
+export const StyledImagePane = styled.div`
   width: 300px;
   min-height: 340px;
   position: relative;
@@ -38,7 +39,7 @@ export const ImagePane = styled.div`
     display: block;
   }
 `;
-export const MiddleNavigation = styled.nav`
+export const StyledMiddleNavigation = styled.nav`
   width: 90px;
   background: #fff;
   border-right: 1px solid #e6e8ec;
@@ -48,7 +49,7 @@ export const MiddleNavigation = styled.nav`
   flex-direction: column;
   align-items: stretch;
 `;
-export const ContentPane = styled.div`
+export const StyledContentPane = styled.div`
   flex: 1;
   padding: 40px 48px 44px;
   display: flex;
@@ -72,17 +73,17 @@ const baseIcon = css`
   -webkit-font-smoothing: antialiased;
   line-height: 1;
 `;
-export const NavIcon = styled.span`
+export const StyledNavIcon = styled.span`
   ${baseIcon};
   font-size: 26px;
   color: inherit;
 `;
-export const SmallIcon = styled.span`
+export const StyledSmallIcon = styled.span`
   ${baseIcon};
   font-size: 20px;
   color: inherit;
 `;
-export const NavItems = styled.ul`
+export const StyledNavItems = styled.ul`
   list-style: none;
   margin: 0;
   padding: 48px 0 0;
@@ -90,7 +91,7 @@ export const NavItems = styled.ul`
   flex-direction: column;
   gap: 14px;
 `;
-export const NavItem = styled.li`
+export const StyledNavItem = styled.li`
   position: relative;
   cursor: default;
   display: flex;
@@ -108,7 +109,7 @@ export const NavItem = styled.li`
     css`
       color: #6f7680;
       font-weight: 600;
-      ${NavIcon} {
+      ${StyledNavIcon} {
         color: #ffa400;
       }
       &:after {
@@ -123,13 +124,13 @@ export const NavItem = styled.li`
       }
     `}
 `;
-export const TopRow = styled.div`
+export const StyledTopRow = styled.div`
   width: 100%;
   display: flex;
   justify-content: flex-end;
   align-items: flex-start;
 `;
-export const TitleBlock = styled.div`
+export const StyledTitleBlock = styled.div`
   display: flex;
   flex-direction: column;
   gap: 6px;
@@ -137,7 +138,7 @@ export const TitleBlock = styled.div`
   margin-right: auto;
   text-align: left;
 `;
-export const Title = styled.h2`
+export const StyledTitle = styled.h2`
   margin: 0;
   font-size: 20px;
   font-weight: 600;
@@ -145,7 +146,7 @@ export const Title = styled.h2`
   line-height: 1.15;
   letter-spacing: 0.2px;
 `;
-export const Subline = styled.div`
+export const StyledSubline = styled.div`
   font-size: 12.5px;
   color: #6f7680;
   a {
@@ -157,7 +158,7 @@ export const Subline = styled.div`
     }
   }
 `;
-export const ActionsMenu = styled.button`
+export const StyledActionsMenu = styled.button`
   all: unset;
   cursor: pointer;
   padding: 6px 8px;
@@ -172,28 +173,28 @@ export const ActionsMenu = styled.button`
     color: #2b2f33;
   }
 `;
-export const InfoSection = styled.section`
+export const StyledInfoSection = styled.section`
   display: flex;
   flex-direction: column;
   gap: 14px;
   width: 100%;
   align-items: start;
 `;
-export const SectionHeader = styled.div`
+export const StyledSectionHeader = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: 100%;
   max-width: 480px;
 `;
-export const SectionTitle = styled.div`
+export const StyledSectionTitle = styled.div`
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.5px;
   text-transform: uppercase;
   color: #6f7680;
 `;
-export const InfoLines = styled.div`
+export const StyledInfoLines = styled.div`
   display: flex;
   flex-direction: column;
   align-items: start;
@@ -204,7 +205,7 @@ export const InfoLines = styled.div`
   max-width: 480px;
   text-align: left;
 `;
-export const EditButton = styled.button`
+export const StyledEditButton = styled.button`
   all: unset;
   cursor: pointer;
   padding: 4px;
@@ -218,13 +219,13 @@ export const EditButton = styled.button`
     color: #6f7680;
   }
 `;
-export const Muted = styled.span`
+export const StyledMuted = styled.span`
   color: #a2a9b3;
 `;
-export const PhoneMuted = styled(Muted)`
+export const StyledPhoneMuted = styled(StyledMuted)`
   margin-left: 10px;
 `;
-export const RadioBullet = styled.span`
+export const StyledRadioBullet = styled.span`
   width: 16px;
   height: 16px;
   border: 2px solid #e6e8ec;
@@ -237,12 +238,12 @@ export const RadioBullet = styled.span`
   flex-shrink: 0;
   position: relative;
 `;
-export const ChoiceLabel = styled.span`
+export const StyledChoiceLabel = styled.span`
   display: inline-block;
   color: inherit;
   line-height: 1.35;
 `;
-export const RadioGroup = styled.div`
+export const StyledRadioGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 14px;
@@ -250,7 +251,7 @@ export const RadioGroup = styled.div`
   width: 100%;
   max-width: 480px;
 `;
-export const DeliveryChoice = styled.div`
+export const StyledDeliveryChoice = styled.div`
   display: flex;
   align-items: flex-start;
   gap: 10px;
@@ -265,10 +266,10 @@ export const DeliveryChoice = styled.div`
   ${({ $checked }) =>
     $checked &&
     css`
-      ${RadioBullet} {
+      ${StyledRadioBullet} {
         border-color: #8b5cf6;
       }
-      ${RadioBullet}::after {
+      ${StyledRadioBullet}::after {
         content: "";
         width: 16px;
         height: 16px;
@@ -277,7 +278,7 @@ export const DeliveryChoice = styled.div`
         display: block;
       }
     `}
-  &:focus-visible ${RadioBullet} {
+  &:focus-visible ${StyledRadioBullet} {
     box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.35);
   }
 `;

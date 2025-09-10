@@ -1,5 +1,5 @@
 import styled, { createGlobalStyle, css } from "styled-components";
-export const GlobalStyle = createGlobalStyle`
+export const StyledGlobalStyle = createGlobalStyle`
   html, body {
     height: 100%;
     margin: 0;
@@ -8,7 +8,7 @@ export const GlobalStyle = createGlobalStyle`
   overflow-x: hidden; 
   }
 `;
-export const Stage = styled.div`
+export const StyledStage = styled.div`
   width: 100%;
   min-height: 100vh;
   display: flex;
@@ -17,7 +17,7 @@ export const Stage = styled.div`
   padding: 40px clamp(20px, 4vw, 80px);
   overflow-x: hidden;
 `;
-export const Grid = styled.div`
+export const StyledGrid = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 400px);
   gap: 48px;
@@ -49,7 +49,7 @@ const primaryCard = css`
   box-shadow: 0 28px 50px rgba(2, 8, 28, 0.65);
   color: #0b1830;
 `;
-export const Card = styled.div`
+export const StyledCard = styled.div`
   width: 400px;
   height: 250px;
   border-radius: 14px;
@@ -60,7 +60,7 @@ export const Card = styled.div`
   transition: 0.4s ease;
   ${(p) => (p.$variant === "ghost" ? ghostCard : primaryCard)};
 `;
-export const Chip = styled.div`
+export const StyledChip = styled.div`
   width: 58px;
   height: 40px;
   border-radius: 6px;
@@ -113,7 +113,7 @@ export const Chip = styled.div`
       }
     `}
 `;
-export const Number = styled.div`
+export const StyledNumber = styled.div`
   font-family: "arial", monospace;
   font-size: 30px;
   letter-spacing: 3px;
@@ -123,7 +123,7 @@ export const Number = styled.div`
   text-align: center;
   font-weight: 400;
 `;
-export const Expiry = styled.div`
+export const StyledExpiry = styled.div`
   font-size: 12px;
   margin-bottom: 18px;
   text-align: center;
@@ -132,14 +132,14 @@ export const Expiry = styled.div`
   justify-content: center;
   gap: 26px;
 `;
-export const Date = styled.div`
+export const StyledDate = styled.div`
   font-size: 24px;
   font-family: "Space Mono", monospace;
   letter-spacing: 3px;
   color: ${(p) =>
     p.$variant === "ghost" ? "rgba(255,255,255,0.7)" : "#0b1830"};
 `;
-export const Info = styled.div`
+export const StyledInfo = styled.div`
   text-align: end;
   font-size: 11px;
   letter-spacing: 1px;
@@ -147,14 +147,14 @@ export const Info = styled.div`
   font-weight: 600;
   color: ${(p) => (p.$variant === "ghost" ? "rgba(255,255,255,0.55)" : "#666")};
 `;
-export const Name = styled.div`
+export const StyledName = styled.div`
   font-size: 16px;
   font-weight: 500;
   letter-spacing: 3px;
   color: ${(p) =>
     p.$variant === "ghost" ? "rgba(255,255,255,0.62)" : "#0b1830"};
 `;
-export const Logo = styled.div`
+export const StyledLogo = styled.div`
   position: absolute;
   bottom: 18px;
   right: 22px;
@@ -168,7 +168,7 @@ export const Logo = styled.div`
       mix-blend-mode: normal;
     `}
 `;
-export const Circle = styled.div.withConfig({
+export const StyledCircle = styled.div.withConfig({
   shouldForwardProp: (prop) => !["overlap", "color", "$variant"].includes(prop),
 })`
   width: 40px;

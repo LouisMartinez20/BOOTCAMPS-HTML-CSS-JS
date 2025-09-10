@@ -1,12 +1,12 @@
 import {
-  Item,
-  Thumb,
-  Info,
-  ProductName,
-  ShipInfo,
-  RightColumn,
-  Price,
-  Shipping,
+  StyledItem,
+  StyledThumb,
+  StyledInfo,
+  StyledProductName,
+  StyledShipInfo,
+  StyledRightColumn,
+  StyledPrice,
+  StyledShipping,
 } from "./StylesdEcommerComponent";
 export const ProductInfo = (props) => {
   const productName = props.productName ?? "";
@@ -14,15 +14,15 @@ export const ProductInfo = (props) => {
   const price = props.price ?? "";
   const shippingCost = props.shippingCost ?? "";
   return (
-    <Item>
-      <Thumb aria-hidden="true">
+    <StyledItem>
+      <StyledThumb aria-hidden="true">
         <svg viewBox="0 0 24 24" aria-hidden="true">
           <path d="M4 5h16a2 2 0 0 1 2 2v9H2V7a2 2 0 0 1 2-2zm-2 13h20v1a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1v-1z" />
         </svg>
-      </Thumb>
-      <Info>
-        <ProductName>{productName}</ProductName>
-        <ShipInfo>
+      </StyledThumb>
+      <StyledInfo>
+        <StyledProductName>{productName}</StyledProductName>
+        <StyledShipInfo>
           <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true">
             <path
               fill="currentColor"
@@ -35,12 +35,12 @@ export const ProductInfo = (props) => {
               {shipFrom}
             </a>
           </span>
-        </ShipInfo>
-      </Info>
-      <RightColumn>
-        <Price>{price}</Price>
-        <Shipping>+{shippingCost} Shipping</Shipping>
-      </RightColumn>
-    </Item>
+        </StyledShipInfo>
+      </StyledInfo>
+      <StyledRightColumn>
+        <StyledPrice>{price}</StyledPrice>
+        <StyledShipping>+{shippingCost} Shipping</StyledShipping>
+      </StyledRightColumn>
+    </StyledItem>
   );
 };

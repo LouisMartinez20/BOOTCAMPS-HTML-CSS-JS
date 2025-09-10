@@ -1,7 +1,7 @@
 import {
-  GlobalStyle,
-  Modal,
-  CloseButton,
+  StyledGlobalStyle,
+  StyledModal,
+  StyledCloseButton,
 } from "./StylesdEcommerComponent";
 import { ModalHeader } from "./ModalHeader";
 import { ProductInfo } from "./ProductInfo";
@@ -9,13 +9,13 @@ import { OfferSection } from "./OfferSection";
 export const EcommerceComponent = () => {
   return (
     <>
-      <GlobalStyle />
-      <Modal role="dialog" aria-labelledby="title" aria-modal="true">
-        <CloseButton aria-label="Close">
+      <StyledGlobalStyle />
+      <StyledModal role="dialog" aria-labelledby="title" aria-modal="true">
+        <StyledCloseButton aria-label="Close">
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M6.75 5.34 5.34 6.75 10.59 12l-5.25 5.25 1.41 1.41L12 13.41l5.25 5.25 1.41-1.41L13.41 12l5.25-5.25-1.41-1.41L12 10.59 6.75 5.34z" />
           </svg>
-        </CloseButton>
+        </StyledCloseButton>
         <ModalHeader
           title="Make an offer"
           subtitle="Submit your offer to the shop and wait for a response."
@@ -27,7 +27,7 @@ export const EcommerceComponent = () => {
           shippingCost="49"
         />
         <OfferSection />
-      </Modal>
+      </StyledModal>
     </>
   );
 };

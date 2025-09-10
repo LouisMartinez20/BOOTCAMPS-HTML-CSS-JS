@@ -1,12 +1,16 @@
 import { CreditCard } from "./CreditCard";
-import { GlobalStyle, Stage, Grid } from "./StyledCreditCardComponet";
+import {
+  StyledGlobalStyle,
+  StyledStage,
+  StyledGrid,
+} from "./StyledCreditCardComponet";
 export const CreditCardRender = () => {
   const items = Array.from({ length: 9 });
   return (
     <>
-      <GlobalStyle />
-      <Stage>
-        <Grid>
+      <StyledGlobalStyle />
+      <StyledStage>
+        <StyledGrid>
           {items.map((_, i) => (
             <CreditCard
               key={i}
@@ -16,8 +20,9 @@ export const CreditCardRender = () => {
               name="CLARK DOE"
             />
           ))}
-        </Grid>
-      </Stage>
+        </StyledGrid>
+      </StyledStage>
     </>
   );
-};export default CreditCardRender;
+};
+export default CreditCardRender;

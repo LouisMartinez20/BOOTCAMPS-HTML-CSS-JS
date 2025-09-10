@@ -1,30 +1,30 @@
 import {
-  GlobalStyle,
-  PageCenter,
-  CardWrapper,
-  ImagePane,
-  MiddleNavigation,
-  NavItems,
-  NavItem,
-  ContentPane,
-  TopRow,
-  TitleBlock,
-  Title,
-  Subline,
-  ActionsMenu,
-  InfoSection,
-  SectionHeader,
-  SectionTitle,
-  EditButton,
-  InfoLines,
-  Muted,
-  PhoneMuted,
-  RadioGroup,
-  DeliveryChoice,
-  RadioBullet,
-  ChoiceLabel,
-  NavIcon,
-  SmallIcon,
+  StyledGlobalStyle,
+  StyledPageCenter,
+  StyledCardWrapper,
+  StyledImagePane,
+  StyledMiddleNavigation,
+  StyledNavItems,
+  StyledNavItem,
+  StyledContentPane,
+  StyledTopRow,
+  StyledTitleBlock,
+  StyledTitle,
+  StyledSubline,
+  StyledActionsMenu,
+  StyledInfoSection,
+  StyledSectionHeader,
+  StyledSectionTitle,
+  StyledEditButton,
+  StyledInfoLines,
+  StyledMuted,
+  StyledPhoneMuted,
+  StyledRadioGroup,
+  StyledDeliveryChoice,
+  StyledRadioBullet,
+  StyledChoiceLabel,
+  StyledNavIcon,
+  StyledSmallIcon,
 } from "./StyledPizzaComponet";
 export function PizzaComponent({
   title = "Three Topping Pizza - Large",
@@ -36,83 +36,95 @@ export function PizzaComponent({
 }) {
   return (
     <>
-      <GlobalStyle />
-      <PageCenter>
-        <CardWrapper role="region" aria-label="Pizza order details card">
-          <ImagePane>
+      <StyledGlobalStyle />
+      <StyledPageCenter>
+        <StyledCardWrapper role="region" aria-label="Pizza order details card">
+          <StyledImagePane>
             <img src="/pizza.jpg" alt="Pizza" />
-          </ImagePane>
-          <MiddleNavigation aria-label="Secciones">
-            <NavItems>
-              <NavItem $active aria-current="page">
-                <NavIcon aria-hidden="true">info</NavIcon>
+          </StyledImagePane>
+          <StyledMiddleNavigation aria-label="Secciones">
+            <StyledNavItems>
+              <StyledNavItem $active aria-current="page">
+                <StyledNavIcon aria-hidden="true">info</StyledNavIcon>
                 <span>details</span>
-              </NavItem>
-              <NavItem>
-                <NavIcon aria-hidden="true">receipt_long</NavIcon>
+              </StyledNavItem>
+              <StyledNavItem>
+                <StyledNavIcon aria-hidden="true">receipt_long</StyledNavIcon>
                 <span>receipt</span>
-              </NavItem>
-            </NavItems>
-          </MiddleNavigation>
-          <ContentPane>
-            <TopRow>
-              <TitleBlock>
-                <Title>{title}</Title>
-                <Subline>
+              </StyledNavItem>
+            </StyledNavItems>
+          </StyledMiddleNavigation>
+          <StyledContentPane>
+            <StyledTopRow>
+              <StyledTitleBlock>
+                <StyledTitle>{title}</StyledTitle>
+                <StyledSubline>
                   By{" "}
                   <a href="#" target="_blank" rel="noreferrer">
                     {author}
                   </a>
-                </Subline>
-              </TitleBlock>
-              <ActionsMenu type="button" aria-label="Más acciones">
-                <SmallIcon aria-hidden="true">more_vert</SmallIcon>
-              </ActionsMenu>
-            </TopRow>
-            <InfoSection aria-labelledby="info-heading">
-              <SectionHeader>
-                <SectionTitle id="info-heading">Information</SectionTitle>
-                <EditButton
+                </StyledSubline>
+              </StyledTitleBlock>
+              <StyledActionsMenu type="button" aria-label="Más acciones">
+                <StyledSmallIcon aria-hidden="true">more_vert</StyledSmallIcon>
+              </StyledActionsMenu>
+            </StyledTopRow>
+            <StyledInfoSection aria-labelledby="info-heading">
+              <StyledSectionHeader>
+                <StyledSectionTitle id="info-heading">
+                  Information
+                </StyledSectionTitle>
+                <StyledEditButton
                   type="button"
                   onClick={onEditInfo}
                   aria-label="Editar información"
                 >
-                  <SmallIcon aria-hidden="true">edit</SmallIcon>
-                </EditButton>
-              </SectionHeader>
-              <InfoLines>
+                  <StyledSmallIcon aria-hidden="true">edit</StyledSmallIcon>
+                </StyledEditButton>
+              </StyledSectionHeader>
+              <StyledInfoLines>
                 <div>{address}</div>
                 <div>
                   {contactName}
-                  <PhoneMuted>{phone}</PhoneMuted>
+                  <StyledPhoneMuted>{phone}</StyledPhoneMuted>
                 </div>
-              </InfoLines>
-            </InfoSection>
-            <InfoSection aria-labelledby="method-heading">
-              <SectionHeader>
-                <SectionTitle id="method-heading">Method</SectionTitle>
-              </SectionHeader>
-              <RadioGroup role="radiogroup" aria-label="Delivery method">
-                <DeliveryChoice
+              </StyledInfoLines>
+            </StyledInfoSection>
+            <StyledInfoSection aria-labelledby="method-heading">
+              <StyledSectionHeader>
+                <StyledSectionTitle id="method-heading">
+                  Method
+                </StyledSectionTitle>
+              </StyledSectionHeader>
+              <StyledRadioGroup role="radiogroup" aria-label="Delivery method">
+                <StyledDeliveryChoice
                   role="radio"
                   aria-checked="true"
                   $checked
                   tabIndex={0}
                 >
-                  <RadioBullet aria-hidden="true" />
-                  <ChoiceLabel>Pickup (Turn-Around: 30 Minutes)</ChoiceLabel>
-                </DeliveryChoice>
-                <DeliveryChoice role="radio" aria-checked="false" tabIndex={-1}>
-                  <RadioBullet aria-hidden="true" />
-                  <ChoiceLabel>
-                    <Muted>Delivery $5.00 (Turn-Around 1 Hour)</Muted>
-                  </ChoiceLabel>
-                </DeliveryChoice>
-              </RadioGroup>
-            </InfoSection>
-          </ContentPane>
-        </CardWrapper>
-      </PageCenter>
+                  <StyledRadioBullet aria-hidden="true" />
+                  <StyledChoiceLabel>
+                    Pickup (Turn-Around: 30 Minutes)
+                  </StyledChoiceLabel>
+                </StyledDeliveryChoice>
+                <StyledDeliveryChoice
+                  role="radio"
+                  aria-checked="false"
+                  tabIndex={-1}
+                >
+                  <StyledRadioBullet aria-hidden="true" />
+                  <StyledChoiceLabel>
+                    <StyledMuted>
+                      Delivery $5.00 (Turn-Around 1 Hour)
+                    </StyledMuted>
+                  </StyledChoiceLabel>
+                </StyledDeliveryChoice>
+              </StyledRadioGroup>
+            </StyledInfoSection>
+          </StyledContentPane>
+        </StyledCardWrapper>
+      </StyledPageCenter>
     </>
   );
 }
