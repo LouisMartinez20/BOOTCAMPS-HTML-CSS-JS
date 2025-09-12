@@ -1,92 +1,58 @@
-import * as React from 'react';
+import * as React from "react";
 import {
   StyledMenuBlock,
   StyledMenuItem,
   StyledMenuItemIcon,
   StyledMenuItemLabel,
-  StyledMenuItemAction,
-  StyledToggleThumb,
-  StyledToggleVisual
-} from './Sidebar.style';
-export const SidebarMenu = function (props) {
-  let itemsLocal = [];
-  if (props.items) {
-    itemsLocal = props.items;
-  }
-  const MenuItemComp = props.MenuItemComponent ? props.MenuItemComponent : StyledMenuItem;
-  const ToggleVisualComp = props.ToggleVisualComponent ? props.ToggleVisualComponent : StyledToggleVisual;
-  const [internalActive, setInternalActive] = React.useState(
-    props.activeId ? props.activeId : null
-  );
-  const [internalLight, setInternalLight] = React.useState(
-    typeof props.lightModeEnabled === 'boolean' ? props.lightModeEnabled : false
-  );
-  React.useEffect(function () {
-    if (typeof props.lightModeEnabled === 'boolean') {
-      setInternalLight(props.lightModeEnabled);
-    }
-  }, [props.lightModeEnabled]);
-  function handleSelect(id) {
-    setInternalActive(id);
-    if (props.onSelect) {
-      props.onSelect(id);
-    }
-  }
-  function toggleLight() {
-    let next = !internalLight;
-    setInternalLight(next);
-    if (props.onToggleLightMode) {
-      props.onToggleLightMode(next);
-    }
-  }
-  if (!itemsLocal || itemsLocal.length === 0) {
-    return <StyledMenuBlock />;
-  }
+  StyledToggle,
+  StyledSlideToggle,
+  StyledSlider,
+} from "./Sidebar.style";
+const ITEMS = [
+  { id: "settings", label: "General Settings", icon: "/icons/settings.svg" },
+  { id: "notifications", label: "Notifications", icon: "/icons/bell.svg" },
+  { id: "privacy", label: "Privacy and Security", icon: "/icons/lock.svg" },
+  { id: "language", label: "Language", icon: "/icons/globe.svg" },
+  {
+    id: "dark-mode",
+    label: "Dark Mode",
+    icon: "/icons/moon.svg",
+    toggle: true,
+  },
+];
+export function SidebarMenu() {
+  const [darkOn, setDarkOn] = React.useState(false);
+  const normalItems = ITEMS.filter((item) => !item.toggle);
+  const darkModeItem = ITEMS.find((item) => item.toggle);
+  const toggleDarkMode = () => {
+    setDarkOn((prev) => !prev);
+  };
   return (
     <StyledMenuBlock>
-      {itemsLocal.map(function (item) {
-        let isToggle = item.type === 'toggle';
-        let isActive = internalActive === item.id && !isToggle;
-        let classNameValue =
-          (isActive ? 'is-active has-accent-bar ' : '') +
-          (isToggle ? 'is-toggle ' : '') +
-          (isToggle && internalLight ? 'is-on ' : '');
-        return (
-          <MenuItemComp
-            key={item.id}
-            type="button"
-            className={classNameValue}
-            onClick={function () {
-              if (isToggle) {
-                toggleLight();
-                return;
-              }
-              handleSelect(item.id);
-            }}
-            aria-pressed={isToggle ? (internalLight ? 'true' : 'false') : (isActive ? 'true' : 'false')}
-            aria-label={isToggle ? 'Light Mode' : undefined}
-          >
-            <StyledMenuItemIcon>
-              <img
-                src={item.icon}
-                alt=""
-                width="20"
-                height="20"
-                style={{ display: 'block' }}
-                data-sidebar-icon="true"
-              />
-            </StyledMenuItemIcon>
-            <StyledMenuItemLabel>{item.label}</StyledMenuItemLabel>
-            {isToggle ? (
-              <StyledMenuItemAction>
-                <ToggleVisualComp>
-                  <StyledToggleThumb />
-                </ToggleVisualComp>
-              </StyledMenuItemAction>
-            ) : null}
-          </MenuItemComp>
-        );
-      })}
+      {normalItems.map((item) => (
+        <StyledMenuItem key={item.id} type="button">
+          <StyledMenuItemIcon>
+            <img src={item.icon} data-sidebar-icon="true" />
+          </StyledMenuItemIcon>
+          <StyledMenuItemLabel>{item.label}</StyledMenuItemLabel>
+        </StyledMenuItem>
+      ))}
+      {darkModeItem && (
+        <StyledMenuItem key={darkModeItem.id} as="div">
+          <StyledMenuItemIcon>
+            <img src={darkModeItem.icon} data-sidebar-icon="true" />
+          </StyledMenuItemIcon>
+          <StyledMenuItemLabel>{darkModeItem.label}</StyledMenuItemLabel>
+          <StyledSlideToggle
+            role="switch"
+            aria-checked={darkOn}
+            data-on={darkOn}
+            onClick={toggleDarkMode}
+            tabIndex={0}>
+            <StyledSlider data-on={darkOn} />
+          </StyledSlideToggle>
+        </StyledMenuItem>
+      )}
     </StyledMenuBlock>
   );
-};
+}

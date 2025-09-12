@@ -1,4 +1,5 @@
 import styled from "styled-components";
+//Layout base del Sidebar
 export const StyledSidebarWrapper = styled.aside`
   display: flex;
   flex-direction: column;
@@ -38,15 +39,19 @@ export const StyledTopSection = styled.div`
 `;
 export const StyledSeparator = styled.div`
   height: 1px;
-  background: #252a31;
+  background: #565d68ff;
   margin: 16px 0;
 `;
 export const StyledMenuScroll = styled.div`
   flex: 1;
-  overflow-y: auto;
+  overflow-y: hidden;
   padding: 12px 8px;
   position: relative;
 `;
+export const StyledPromoCardWrapper = styled.div`
+  padding: 12px 8px;
+`;
+//Perfil de usuario
 export const StyledProfileBlock = styled.div`
   display: flex;
   flex-direction: column;
@@ -82,12 +87,6 @@ export const StyledAvatarImage = styled.img`
   object-fit: cover;
   display: block;
 `;
-export const StyledAvatarInitial = styled.span`
-  font-size: 28px;
-  font-weight: 600;
-  color: #ffffff;
-  letter-spacing: 0.5px;
-`;
 export const StyledAvatarOverlayButton = styled.button`
   position: absolute;
   bottom: 0;
@@ -95,26 +94,16 @@ export const StyledAvatarOverlayButton = styled.button`
   transform: translate(5%, 5%);
   width: 30px;
   height: 30px;
-  border-radius: 50%;
   border: 2px solid #ffffff;
+  border-radius: 50%;
   background: #ffffff;
   color: #181b21;
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: pointer;
+  cursor: default;
   padding: 0;
   outline: none;
-  transition: box-shadow 0.15s, transform 0.15s;
-  &:hover {
-    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.25);
-  }
-  &:active {
-    transform: translate(25%, 25%) scale(0.94);
-  }
-  &:focus-visible {
-    box-shadow: 0 0 0 3px rgba(109, 75, 255, 0.55);
-  }
 `;
 export const StyledName = styled.div`
   margin-top: 12px;
@@ -127,9 +116,10 @@ export const StyledRole = styled.div`
   margin-top: 4px;
   font-size: 12px;
   font-weight: 500;
-  color: #b0b7c3;
   letter-spacing: 0.2px;
+  color: #b0b7c3;
 `;
+//Info fields (teléfono, usuario, estado)
 export const StyledInfoFieldsBlock = styled.div`
   padding: 12px 16px 4px 16px;
   display: flex;
@@ -143,8 +133,8 @@ export const StyledInfoFieldRow = styled.div`
   align-items: flex-start;
   gap: 10px;
   margin-bottom: 14px;
-  line-height: 1.2;
   position: relative;
+  line-height: 1.2;
 `;
 export const StyledInfoFieldIconWrap = styled.div`
   width: 28px;
@@ -164,8 +154,8 @@ export const StyledInfoFieldTexts = styled.div`
 export const StyledInfoFieldValue = styled.div`
   font-size: 14px;
   font-weight: 600;
-  color: #ffffff;
   letter-spacing: 0.2px;
+  color: #ffffff;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -174,9 +164,10 @@ export const StyledInfoFieldLabel = styled.div`
   margin-top: 3px;
   font-size: 11px;
   font-weight: 500;
-  color: #b0b7c3;
   letter-spacing: 0.3px;
+  color: #b0b7c3;
 `;
+//Menú lateral
 export const StyledMenuBlock = styled.nav`
   display: flex;
   flex-direction: column;
@@ -184,6 +175,7 @@ export const StyledMenuBlock = styled.nav`
   justify-content: space-between;
   margin: 0 20px;
 `;
+
 export const StyledMenuItem = styled.button`
   width: 100%;
   display: flex;
@@ -191,45 +183,26 @@ export const StyledMenuItem = styled.button`
   gap: 12px;
   background: transparent;
   border: none;
-  color: #ffffff;
-  font-size: 13px;
-  font-weight: 500;
   padding: 8px 10px;
   border-radius: 8px;
-  line-height: 1.2;
-  text-align: left;
   position: relative;
   cursor: pointer;
-  transition: background 140ms ease;
-  &:hover {
-    background: #1f242c;
-  }
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 2px rgba(109, 75, 255, 0.45);
-  }
-  &.is-active {
-    background: #1f242c;
-  }
-  &.is-active.has-accent-bar::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 6px;
-    bottom: 6px;
-    width: 3px;
-    border-radius: 2px;
-    background: #6d4bff;
-  }
+  text-align: left;
+  font-size: 13px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.2;
 `;
+
 export const StyledMenuItemIcon = styled.span`
   display: inline-flex;
   width: 20px;
   height: 20px;
+  flex-shrink: 0;
   align-items: center;
   justify-content: center;
-  flex-shrink: 0;
 `;
+
 export const StyledMenuItemLabel = styled.span`
   flex: 1;
   min-width: 0;
@@ -237,49 +210,74 @@ export const StyledMenuItemLabel = styled.span`
   text-overflow: ellipsis;
   overflow: hidden;
 `;
-export const StyledMenuItemAction = styled.span`
+
+// Nuevos estilos para el slide toggle
+export const StyledSlideToggle = styled.button`
+  position: relative;
+  width: 60px;
+  height: 28px;
+  border: none;
+  border-radius: 28px;
+  background: ${({ "data-on": on }) => 
+    on ? "linear-gradient(90deg, #6d4bff, #8e53ff)" : "#FFFFFF"};
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
   display: inline-flex;
   align-items: center;
-  justify-content: flex-end;
-  flex-shrink: 0;
+  
 `;
-export const StyledToggleVisual = styled.span`
-  position: relative;
-  display: inline-block;
-  width: 44px;
-  height: 24px;
-  border-radius: 24px;
-  background: #fff;
-  border: 1px solid #30343b;
-  transition: background 140ms ease, border-color 140ms ease;
-  .is-on & {
-    background: #6d4bff;
-    border-color: #6d4bff;
-  }
-`;
-export const StyledToggleThumb = styled.span`
+
+export const StyledSlider = styled.span`
   position: absolute;
-  top: 2px;
-  left: 2px;
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
   border-radius: 50%;
-  background: #2a3037;
-  transition: transform 140ms ease;
-  transform: translateX(0);
-  .is-on & {
-    transform: translateX(20px);
+  background: #181b21;
+  transition: all 0.3s ease;
+  left: ${({ "data-on": on }) => (on ? "calc(100% - 24px)" : "3px")};
+  z-index: 2;
+`;
+
+
+
+
+// Mantén el toggle original por si acaso
+export const StyledToggle = styled.button`
+  position: relative;
+  width: 44px;
+  height: 22px;
+  border: 1px solid #2a3038;
+  border-radius: 22px;
+  background: ${({ "data-on": on }) =>
+    on ? "linear-gradient(90deg,#6d4bff,#8e53ff)" : "#ffffff"};
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+  flex-shrink: 0;
+  transition: background 0.25s;
+  display: inline-block;
+  
+  & .thumb {
+    position: absolute;
+    top: 2px;
+    left: ${({ "data-on": on }) => (on ? "22px" : "2px")};
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: #181b21;
+    transition: left 0.25s;
+    display: block;
   }
 `;
-export const StyledPromoCardWrapper = styled.div`
-  flex-shrink: 0;
-  padding: 0 16px 20px 16px;
-`;
+//   Tarjeta promocional
 export const StyledPromoBlock = styled.div`
   margin: 0;
-  padding: 18px 16px 18px 16px;
+  padding: 18px 16px;
   background: #10141c;
-  border: 1px solid #2a3038;
+  border: 1px solid #565d68ff;
   border-radius: 16px;
   display: flex;
   flex-direction: column;
@@ -287,77 +285,40 @@ export const StyledPromoBlock = styled.div`
   overflow: hidden;
   min-height: 160px;
   font-size: 13px;
-  &::before {
-    content: "";
-    position: absolute;
-    top: -40px;
-    left: -40px;
-    width: 180px;
-    height: 180px;
-    background: radial-gradient(
-      circle at center,
-      rgba(109, 75, 255, 0.35) 0%,
-      transparent 65%
-    );
-    opacity: 0.45;
-    pointer-events: none;
-  }
-  &::after {
-    content: "";
-    position: absolute;
-    bottom: -30px;
-    right: -60px;
-    width: 220px;
-    height: 220px;
-    background: radial-gradient(
-      circle at center,
-      rgba(160, 99, 255, 0.25) 0%,
-      transparent 70%
-    );
-    opacity: 0.4;
-    pointer-events: none;
-  }
 `;
 export const StyledPromoTitle = styled.div`
-  font-size: 20px;
+  font-size: 17px;
   font-weight: 600;
-  color: #ffffff;
   letter-spacing: 0.2px;
   margin-bottom: 6px;
+  color: #ffffff;
 `;
 export const StyledPromoHighlight = styled.span`
-  color: #00c27a;
   font-weight: 600;
+  color: #00c27a;
 `;
 export const StyledPromoDescription = styled.div`
-  font-size: 15px;
-  line-height: 1.45;
+  font-size: 13px;
   font-weight: 500;
-  color: #b0b7c3;
-  margin-bottom: 16px;
   letter-spacing: 0.2px;
+  line-height: 1.45;
+  margin-top: 4px;
+  margin-bottom: 16px;
+  color: #b0b7c3;
 `;
 export const StyledPromoButton = styled.button`
+  display: inline-flex;
+  align-items: end;
+  justify-content: center;
   background: linear-gradient(90deg, #6d4bff, #8e53ff);
   color: #ffffff;
   font-size: 17px;
   font-weight: 500;
+  line-height: 1;
   border: none;
   border-radius: 8px;
+  margin-top: 11px;
   padding: 10px 20px;
   cursor: pointer;
-  line-height: 1;
   box-shadow: 0 4px 10px -2px rgba(0, 0, 0, 0.4);
-  transition: filter 140ms ease, transform 140ms ease;
-  &:hover {
-    filter: brightness(1.07);
-  }
-  &:active {
-    transform: translateY(1px);
-    filter: brightness(0.92);
-  }
-  &:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px rgba(109, 75, 255, 0.45);
-  }
 `;
