@@ -95,11 +95,7 @@ export const StyledFullOverviewButton = styled.button`
     width: 100%;
   }
 `;
-export const trendBg = {
-  up: "#5b8c5c",
-  down: "#cb495a",
-  neutral: "#000",
-};
+/* Card coloreada por atributo data-trend */
 export const StyledCard = styled.div`
   display: flex;
   flex-direction: column;
@@ -107,9 +103,16 @@ export const StyledCard = styled.div`
   color: white;
   padding: 16px;
   gap: 12px;
-  background-color: ${(p) => trendBg[p.$trend] || "#ccc"};
+  background-color: #000; /* neutral por defecto */
   border-radius: 4px;
   min-width: 0;
+  transition: background-color 0.2s;
+  &[data-trend="up"] {
+    background-color: #5b8c5c;
+  }
+  &[data-trend="down"] {
+    background-color: #cb495a;
+  }
 `;
 export const StyledFirm = styled.div`
   display: flex;

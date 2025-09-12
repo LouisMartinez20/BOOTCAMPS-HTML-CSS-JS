@@ -10,30 +10,26 @@ import {
 } from "./StylesSections";
 export const SectionOne = ({
   imageSrc,
-  imageAlt = "section-one-image",
+  imageAlt,
   tag,
   date,
   title,
   description,
-  linkHref = "#",
-  linkText = "continue reading",
+  linkHref,
+  linkText,
 }) => {
   return (
     <StyledSectionContainer>
       <StyledSectionHeader>
         <StyledImageContainer>
-          {imageSrc ? (
-            <img src={imageSrc} alt={imageAlt} loading="lazy" />
-          ) : null}
+          <img src={imageSrc} alt={imageAlt} />
         </StyledImageContainer>
-        {tag ? <StyledTag>{tag}</StyledTag> : null}
-        {date ? <StyledDateText>{date}</StyledDateText> : null}
+        <StyledTag>{tag}</StyledTag>
+        <StyledDateText>{date}</StyledDateText>
       </StyledSectionHeader>
-      {title ? <StyledTitle>{title}</StyledTitle> : null}
-      {description ? <StyledDescription>{description}</StyledDescription> : null}
-      {linkHref ? (
-        <StyledContinueLink href={linkHref}>{linkText}</StyledContinueLink>
-      ) : null}
+      <StyledTitle>{title}</StyledTitle>
+      <StyledDescription>{description}</StyledDescription>
+      <StyledContinueLink href={linkHref}>{linkText}</StyledContinueLink>
     </StyledSectionContainer>
   );
 };

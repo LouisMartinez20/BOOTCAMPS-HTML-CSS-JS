@@ -63,6 +63,28 @@ export const StyledNoticesRow = styled.nav`
     }
   }
 `;
+export const StyledDotsContainer = styled.div`
+  display: flex;
+  gap: 12px;
+  margin-top: 2.9em;
+  margin-left: auto;
+  padding: 2em;
+  align-items: center;
+  justify-content: center;
+  /* Cada dot (usamos <i>) */
+  & > i {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: #777;
+    display: block;
+  }
+  /* Dot activo */
+  & > i[data-active="true"] {
+    background: #fff;
+    outline: 2px solid #000;
+  }
+`;
 export const StyledNoticesList = styled.ul`
   display: flex;
   gap: 3.5rem;

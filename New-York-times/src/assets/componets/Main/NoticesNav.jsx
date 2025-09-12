@@ -3,22 +3,16 @@ import {
   StyledNoticesRow,
   StyledNoticesList,
 } from "./styles";
-export const NoticesNav = ({
-  title = "Business",
-  links = ["Tech", "Econ", "Media", "Money", "DealBook"],
-  buildHref,
-  ariaLabel = "Business sections navigation",
-}) => {
-  const hrefFor = (link) =>
-    typeof buildHref === "function" ? buildHref(link) : "#";
+export const NoticesNav = () => {
+  const navItems = ["Tech", "Econ", "Media", "Money", "DealBook"];
   return (
     <StyledNoticesNavContainer>
-      <StyledNoticesRow aria-label={ariaLabel}>
-        <h2>{title}</h2>
+      <StyledNoticesRow aria-label="Business sections navigation">
+        <h2>Business</h2>
         <StyledNoticesList>
-          {links.map((link) => (
-            <li key={link}>
-              <a href={hrefFor(link)}>{link}</a>
+          {navItems.map((item) => (
+            <li key={item}>
+              <a href="#">{item}</a>
             </li>
           ))}
         </StyledNoticesList>

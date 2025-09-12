@@ -13,7 +13,7 @@ export const FooterHeading = ({
   hour = "6:07 AM",
   breadcrumbs = ["Futures", "Americas", "Europe", "Asia", "Commodities"],
   overviewText = "Full Market Overview",
-  onOverviewClick,
+  
 }) => {
   return (
     <StyledHeadingSection>
@@ -28,7 +28,7 @@ export const FooterHeading = ({
           </StyledBreadcrumbLink>
         ))}
       </StyledBreadcrumbs>
-      <StyledFullOverviewButton type="button" onClick={onOverviewClick}>
+      <StyledFullOverviewButton >
         {overviewText}
         <StyledMaterialIcon>chevron_right</StyledMaterialIcon>
       </StyledFullOverviewButton>

@@ -1,4 +1,3 @@
-import React from "react";
 import {
   StyledHeaderContainer,
   StyledNavContainer,
@@ -33,39 +32,35 @@ export const Header = () => {
     <StyledHeaderContainer>
       <StyledNavContainer>
         <StyledNavSuperior>
-          <StyledNavLink href="#" aria-label="Search">
-            <StyledMaterialIcon $size="22px">search</StyledMaterialIcon>
+          <StyledNavLink href="#" >
+            <StyledMaterialIcon >search</StyledMaterialIcon>
           </StyledNavLink>
-          <StyledNavLink href="#" aria-label="Notifications">
-            <StyledMaterialIcon $size="22px">notifications</StyledMaterialIcon>
+          <StyledNavLink href="#">
+            <StyledMaterialIcon >notifications</StyledMaterialIcon>
           </StyledNavLink>
             <StyledNYTLogo
               src="https://upload.wikimedia.org/wikipedia/commons/5/58/NewYorkTimes.svg"
               alt="The New York Times Logo"
-              loading="lazy"
             />
           <StyledNavLink href="#">SIGN IN</StyledNavLink>
           <StyledSubscribeButton href="#">SUBSCRIBE</StyledSubscribeButton>
         </StyledNavSuperior>
-        <StyledNavInferior aria-label="Primary sections">
-          <StyledDateParagraph aria-label="Current date">
+        <StyledNavInferior >
+          <StyledDateParagraph>
             <strong>Thursday</strong> <br /> May 21, 2020
           </StyledDateParagraph>
           <StyledNavList>
             {navItems.map((item) => (
               <StyledNavItem key={item} $first={item === "World"}>
-                <a href="#" aria-label={item}>
+                <a href="#" >
                   {item}
                 </a>
               </StyledNavItem>
             ))}
           </StyledNavList>
           <StyledDotsIcon
-            type="button"
-            aria-label="More sections"
-            title="More sections"
           >
-            <StyledMaterialIcon $color="#fff" $size="28px">
+            <StyledMaterialIcon style={{color: '#fff'}}>
               more_horiz
             </StyledMaterialIcon>
           </StyledDotsIcon>

@@ -9,46 +9,29 @@ import {
   StyledHourContainer,
   StyledMaterialIcon,
 } from "./styles";
-function getTrend({ percentage, value }) {
-  const clean = (str) =>
-    String(str)
-      .replace(",", ".")
-      .replace(/[^0-9+-.]/g, "")
-      .trim();
-  if (percentage != null && String(percentage).trim() !== "") {
-    const n = parseFloat(clean(percentage));
-    if (Number.isFinite(n)) {
-      if (n > 0) return "up";
-      if (n < 0) return "down";
-      return "neutral";
-    }
-  }
-  if (value != null && String(value).trim() !== "") {
-    const v = clean(value);
-    if (v.startsWith("+")) return "up";
-    if (v.startsWith("-")) return "down";
-  }
+function getTrendFromValue(value) {
+  const cleaned = value.toString().trim();
+  if (cleaned.startsWith("+")) return "up";
+  if (cleaned.startsWith("-")) return "down";
   return "neutral";
 }
-export const MarketCard = ({ title, value, price, percentage, time }) => {
-  const trend = getTrend({ percentage, value });
+export const MarketCard = (props) => {
+  const trend = getTrendFromValue(props.value);
   return (
-    <StyledCard $trend={trend}>
+    <StyledCard data-trend={trend}>
       <StyledFirm>
-        <StyledTitleText title={title}>{title}</StyledTitleText>
-        <StyledValueText>{value}</StyledValueText>
+        <StyledTitleText>{props.title}</StyledTitleText>
+        <StyledValueText>{props.value}</StyledValueText>
       </StyledFirm>
       <StyledContainer>
         <StyledInformation>
           <StyledRatings>
-            <span>{price}</span>
-            <span>{percentage}</span>
+            <span>{props.price}</span>
+            <span>{props.percentage}</span>
           </StyledRatings>
           <StyledHourContainer>
-            <StyledMaterialIcon $size="16px">
-              nest_clock_farsight_analog
-            </StyledMaterialIcon>
-            <span>{time}</span>
+            <StyledMaterialIcon>nest_clock_farsight_analog</StyledMaterialIcon>
+            <span>{props.time}</span>
           </StyledHourContainer>
         </StyledInformation>
       </StyledContainer>

@@ -91,8 +91,7 @@ export const StyledNYTLogo = styled.img`
 export const StyledMaterialIcon = styled.span.attrs({
   className: "material-symbols-outlined",
 })`
-  color: ${(props) => props.$color || "#000"};
-  font-size: ${(props) => props.$size || "20px"};
+  
   line-height: 1;
   display: inline-flex;
   align-items: center;
@@ -139,10 +138,6 @@ export const StyledNavList = styled.ul`
   }
 `;
 export const StyledNavItem = styled.li`
-  font-family: ${(props) =>
-    props.$first
-      ? '"Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif'
-      : "Georgia, serif"};
   font-weight: ${(props) => (props.$first ? "bold" : "normal")};
   white-space: nowrap;
   flex-shrink: 0;
