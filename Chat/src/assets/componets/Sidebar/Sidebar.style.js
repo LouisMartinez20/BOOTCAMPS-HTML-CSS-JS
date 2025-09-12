@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const StyledSidebarWrapper = styled.aside`
   display: flex;
   flex-direction: column;
-  height: 100%;
+  height: 100vh;
   width: 240px;
   background: #181b21;
   color: #ffffff;
@@ -175,7 +175,6 @@ export const StyledMenuBlock = styled.nav`
   justify-content: space-between;
   margin: 0 20px;
 `;
-
 export const StyledMenuItem = styled.button`
   width: 100%;
   display: flex;
@@ -193,7 +192,6 @@ export const StyledMenuItem = styled.button`
   color: #ffffff;
   line-height: 1.2;
 `;
-
 export const StyledMenuItemIcon = styled.span`
   display: inline-flex;
   width: 20px;
@@ -202,7 +200,6 @@ export const StyledMenuItemIcon = styled.span`
   align-items: center;
   justify-content: center;
 `;
-
 export const StyledMenuItemLabel = styled.span`
   flex: 1;
   min-width: 0;
@@ -210,7 +207,6 @@ export const StyledMenuItemLabel = styled.span`
   text-overflow: ellipsis;
   overflow: hidden;
 `;
-
 // Nuevos estilos para el slide toggle
 export const StyledSlideToggle = styled.button`
   position: relative;
@@ -229,7 +225,6 @@ export const StyledSlideToggle = styled.button`
   align-items: center;
   
 `;
-
 export const StyledSlider = styled.span`
   position: absolute;
   width: 17px;
@@ -240,10 +235,6 @@ export const StyledSlider = styled.span`
   left: ${({ "data-on": on }) => (on ? "calc(100% - 24px)" : "3px")};
   z-index: 2;
 `;
-
-
-
-
 // Mantén el toggle original por si acaso
 export const StyledToggle = styled.button`
   position: relative;

@@ -1,13 +1,33 @@
-import {Sidebar} from './assets/componets/Sidebar/Sidebar';
-import { GlobalStyles } from './style';
+// App.tsx
+import { Sidebar } from "./assets/componets/Sidebar/Sidebar";
+import { Nav } from "./assets/componets/Nav/Nav";
+import { GlobalStyles } from "./style";
+import { Chat } from "./assets/componets/Chat/Chat";
+import { Message } from "./assets/componets/Message/Message";
+import { Content } from "./assets/componets/Content/Content";
+import { 
+  AppLayout, 
+  MainColumn, 
+  Workspace, 
+  Panel 
+} from "./style";
 export const App = function () {
   return (
     <>
       <GlobalStyles />
-      <div style={{ display: 'flex', height: '100vh', background: '#1f242c' }}>
-        <Sidebar header="Chats" />
-        <div style={{ flex: 1, padding: 24, color: '#fff' }}>Área principal</div>
-      </div>
+      <AppLayout>
+        <Sidebar />
+        <MainColumn>
+          <Nav />
+          <Workspace>
+            <Panel>
+              <Content />
+              <Message />
+            </Panel>
+            <Chat />
+          </Workspace>
+        </MainColumn>
+      </AppLayout>
     </>
   );
 };
