@@ -32,24 +32,23 @@ export function PizzaComponent({
   address = "147 N Robertson Blvd, West Hollywood, CA 90048",
   contactName = "Amanda Torres",
   phone = "(949)123-4567",
-  onEditInfo,
 }) {
   return (
     <>
       <StyledGlobalStyle />
       <StyledPageCenter>
-        <StyledCardWrapper role="region" aria-label="Pizza order details card">
+        <StyledCardWrapper>
           <StyledImagePane>
             <img src="/pizza.jpg" alt="Pizza" />
           </StyledImagePane>
-          <StyledMiddleNavigation aria-label="Secciones">
+          <StyledMiddleNavigation>
             <StyledNavItems>
-              <StyledNavItem $active aria-current="page">
-                <StyledNavIcon aria-hidden="true">info</StyledNavIcon>
+              <StyledNavItem >
+                <StyledNavIcon>info</StyledNavIcon>
                 <span>details</span>
               </StyledNavItem>
               <StyledNavItem>
-                <StyledNavIcon aria-hidden="true">receipt_long</StyledNavIcon>
+                <StyledNavIcon>receipt_long</StyledNavIcon>
                 <span>receipt</span>
               </StyledNavItem>
             </StyledNavItems>
@@ -60,26 +59,20 @@ export function PizzaComponent({
                 <StyledTitle>{title}</StyledTitle>
                 <StyledSubline>
                   By{" "}
-                  <a href="#" target="_blank" rel="noreferrer">
+                  <a href="#" target="_blank" >
                     {author}
                   </a>
                 </StyledSubline>
               </StyledTitleBlock>
-              <StyledActionsMenu type="button" aria-label="Más acciones">
-                <StyledSmallIcon aria-hidden="true">more_vert</StyledSmallIcon>
+              <StyledActionsMenu >
+                <StyledSmallIcon>more_vert</StyledSmallIcon>
               </StyledActionsMenu>
             </StyledTopRow>
-            <StyledInfoSection aria-labelledby="info-heading">
+            <StyledInfoSection>
               <StyledSectionHeader>
-                <StyledSectionTitle id="info-heading">
-                  Information
-                </StyledSectionTitle>
-                <StyledEditButton
-                  type="button"
-                  onClick={onEditInfo}
-                  aria-label="Editar información"
-                >
-                  <StyledSmallIcon aria-hidden="true">edit</StyledSmallIcon>
+                <StyledSectionTitle>Information</StyledSectionTitle>
+                <StyledEditButton >
+                  <StyledSmallIcon>edit</StyledSmallIcon>
                 </StyledEditButton>
               </StyledSectionHeader>
               <StyledInfoLines>
@@ -90,30 +83,19 @@ export function PizzaComponent({
                 </div>
               </StyledInfoLines>
             </StyledInfoSection>
-            <StyledInfoSection aria-labelledby="method-heading">
+            <StyledInfoSection>
               <StyledSectionHeader>
-                <StyledSectionTitle id="method-heading">
-                  Method
-                </StyledSectionTitle>
+                <StyledSectionTitle>Method</StyledSectionTitle>
               </StyledSectionHeader>
-              <StyledRadioGroup role="radiogroup" aria-label="Delivery method">
-                <StyledDeliveryChoice
-                  role="radio"
-                  aria-checked="true"
-                  $checked
-                  tabIndex={0}
-                >
-                  <StyledRadioBullet aria-hidden="true" />
+              <StyledRadioGroup>
+                <StyledDeliveryChoice data-checked="true">
+                  <StyledRadioBullet />
                   <StyledChoiceLabel>
                     Pickup (Turn-Around: 30 Minutes)
                   </StyledChoiceLabel>
                 </StyledDeliveryChoice>
-                <StyledDeliveryChoice
-                  role="radio"
-                  aria-checked="false"
-                  tabIndex={-1}
-                >
-                  <StyledRadioBullet aria-hidden="true" />
+                <StyledDeliveryChoice data-disabled="true">
+                  <StyledRadioBullet />
                   <StyledChoiceLabel>
                     <StyledMuted>
                       Delivery $5.00 (Turn-Around 1 Hour)

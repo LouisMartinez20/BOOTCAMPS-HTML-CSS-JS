@@ -5,50 +5,44 @@ import {
   StyledFieldStart,
   StyledFieldEnd,
   StyledCurrencySymbol,
-  StyledInput,
+  StyledAmountValue,
   StyledSelect,
   StyledPill,
-  StyledOfferPill,
   StyledQuickButtons,
   StyledQuickButton,
   StyledBanner,
   StyledDot,
   StyledBannerText,
 } from "./StylesdEcommerComponent";
-export const OfferSection = (props) => {
-  const amount = props.amount ?? "4800.00";
-  const currency = props.currency ?? "AUD";
-  const shipping = props.shipping ?? "49";
+export const OfferSection = ({
+  amount = "4800.00",
+  currency = "AUD",
+  shipping = "49",
+}) => {
   return (
     <>
       <StyledLabel>Your Offer</StyledLabel>
       <StyledOffer>
-        <StyledField role="group" aria-label="Your offer">
+        <StyledField>
           <StyledFieldStart>
-            <StyledCurrencySymbol aria-hidden="true">$</StyledCurrencySymbol>
-            <StyledInput
-              type="text"
-              inputMode="decimal"
-              defaultValue={amount}
-              aria-label="Amount"
-            />
+            <StyledCurrencySymbol>$</StyledCurrencySymbol>
+            <StyledAmountValue>{amount}</StyledAmountValue>
           </StyledFieldStart>
           <StyledFieldEnd>
-            <StyledSelect aria-label="Currency" defaultValue={currency}>
+            <StyledSelect defaultValue={currency}>
               <option value="AUD">AUD</option>
             </StyledSelect>
             <StyledPill>+${shipping} shipping</StyledPill>
-            <StyledOfferPill>Offer</StyledOfferPill>
           </StyledFieldEnd>
         </StyledField>
       </StyledOffer>
-      <StyledQuickButtons aria-label="Suggested discounts">
-        <StyledQuickButton type="button">5% Off</StyledQuickButton>
-        <StyledQuickButton type="button">10% Off</StyledQuickButton>
-        <StyledQuickButton type="button">15% Off</StyledQuickButton>
+      <StyledQuickButtons>
+        <StyledQuickButton>5% Off</StyledQuickButton>
+        <StyledQuickButton>10% Off</StyledQuickButton>
+        <StyledQuickButton>15% Off</StyledQuickButton>
       </StyledQuickButtons>
-      <StyledBanner role="status" aria-live="polite">
-        <StyledDot aria-hidden="true" />
+      <StyledBanner>
+        <StyledDot />
         <StyledBannerText>
           Transaction history shows that the offer amount you've entered is
           likely to be accepted!
@@ -57,3 +51,4 @@ export const OfferSection = (props) => {
     </>
   );
 };
+export default OfferSection;
