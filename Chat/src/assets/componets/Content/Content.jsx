@@ -1,4 +1,4 @@
-import { StyledContentContainer } from './Content,style'
+import { StyledContentContainer } from './Content.style'
 export const Content = () => {
   return (
     <StyledContentContainer>

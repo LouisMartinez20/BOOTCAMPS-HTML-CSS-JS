@@ -7,24 +7,9 @@ import {
   StyledInfoFieldLabel,
 } from "./Sidebar.style";
 const INFO_ITEMS = [
-  {
-    id: "phone",
-    icon: "/icons/phone.svg",
-    value: "+62 845 2341283",
-    label: "Phone",
-  },
-  {
-    id: "username",
-    icon: "/icons/at-sign.svg",
-    value: "savannah",
-    label: "Username",
-  },
-  {
-    id: "status",
-    icon: "/icons/info.svg",
-    value: "Product Designer",
-    label: "Status",
-  },
+  {id: "phone",icon: "/icons/phone.svg",value: "+62 845 2341283",label: "Phone",},
+  {id: "username",icon: "/icons/at-sign.svg",value: "savannah",label: "Username",},
+  {id: "status",icon: "/icons/info.svg",value: "Product Designer",label: "Status",},
 ];
 export function SidebarInfoFields() {
   return (
@@ -36,7 +21,6 @@ export function SidebarInfoFields() {
               src={item.icon}
               width="18"
               height="18"
-              alt=""
               style={{ display: "block" }}
               data-sidebar-icon="true"
             />

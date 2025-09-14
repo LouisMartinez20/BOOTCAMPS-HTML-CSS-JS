@@ -13,12 +13,7 @@ const ITEMS = [
   { id: "notifications", label: "Notifications", icon: "/icons/bell.svg" },
   { id: "privacy", label: "Privacy and Security", icon: "/icons/lock.svg" },
   { id: "language", label: "Language", icon: "/icons/globe.svg" },
-  {
-    id: "dark-mode",
-    label: "Dark Mode",
-    icon: "/icons/moon.svg",
-    toggle: true,
-  },
+  { id: "dark-mode", label: "Dark Mode", icon: "/icons/moon.svg", toggle: true },
 ];
 export function SidebarMenu() {
   const [darkOn, setDarkOn] = React.useState(false);
