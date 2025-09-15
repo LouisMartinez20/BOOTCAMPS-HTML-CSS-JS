@@ -7,6 +7,6 @@ export const StyledContentContainer = styled.div`
   gap: 12px;
   min-height: 0; 
   overflow: auto; 
-  background: #1b2026;
+  background: #ffffffff;
   border-radius: 10px;
 `;

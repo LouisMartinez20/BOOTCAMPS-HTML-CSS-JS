@@ -6,18 +6,19 @@ import {
     StyledGroupText,
     StyledGroupName,
     StyledGroupDescription,
+    StyledGroupTitle,
 } from "./Chat.style";
 const GROUP_ICON = "/icons/user.svg";
 const groups = [
-    {background: "#7C5CFF",name: "Sans Shoters",description: "Please support, guys…",alt: "Grupo Sans Shoters",},
-    {background: "#EA4C89",name: "Dribbble Indo",description: "May I share the latest s…",alt: "Grupo Dribbble Indo",},
-    {background: "#8ED1FC",name: "UI Indonesia",description: "Your design looks real…",alt: "Grupo UI Indonesia",},
+    {background: "#7C5CFF",name: "Sans Shoters",description: "Please support, guys",alt: "Grupo Sans Shoters",},
+    {background: "#EA4C89",name: "Dribbble Indo",description: "May I share the latest s",alt: "Grupo Dribbble Indo",},
+    {background: "#8ED1FC",name: "UI Indonesia",description: "Your design looks real",alt: "Grupo UI Indonesia",},
     {background: "#FFD166",name: "Cana Denning",description: "…",alt: "Grupo Cana Denning",},
 ];
 export const GroupsInfo = () => {
     return (
         <StyledGroupsInfoContainer>
-            <h2>Groups</h2>
+            <StyledGroupTitle>Groups</StyledGroupTitle>
             {groups.map((g, idx) => (
                 <StyledGroupItem key={idx}>
                     <StyledGroupAvatar style={{ "--bg": g.background }}>

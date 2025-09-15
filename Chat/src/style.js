@@ -5,8 +5,8 @@ export const GlobalStyles = createGlobalStyle`
     margin: 0;
     min-height: 100vh;
     font-family: system-ui, sans-serif;
-    background: #0f1115;
-    color: #fff;
+    background: #ffffffff;
+    color: #000000ff;
   }
 `;
 export const AppLayout = styled.div`

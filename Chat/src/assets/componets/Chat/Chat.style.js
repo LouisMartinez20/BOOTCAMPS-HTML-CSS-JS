@@ -1,12 +1,12 @@
 import styled from "styled-components";
 export const StyledChatContainer = styled.div`
-  width: 260px;
+  width: 220px;
   min-height: 0;
   overflow: auto;
   display: flex;
   flex-direction: column;
-  gap: 8px;
-  padding: 14px;
+  gap: 18px;
+  padding: 0 14px 18px 14px;
   box-sizing: border-box;
   border-radius: 10px;
   background: #ffffffff;
@@ -14,13 +14,16 @@ export const StyledChatContainer = styled.div`
   font-size: 12px;
 `;
 // Chats
+export const StyledChatTitle = styled.h2`
+  font-size: 20px;
+`;
 export const StyledChatsInfoContainer = styled.div`
   flex: 6;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 20px 0;
-  padding: 20px 0 ;
+  gap: 4px;
+  
 `;
 export const StyledChatItem = styled.div`
   display: flex;
@@ -31,19 +34,19 @@ export const StyledChatItem = styled.div`
 `;
 export const StyledChatDot = styled.span`
   position: absolute;
-  right: -1px;
-  bottom: -1px;
-  width: 10px;
-  height: 10px;
+  right: -4px;
+  bottom: -4px;
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
-  background: #20e7b2;
+  background: #ee1338ff;
   border: 2px solid #ffffff;
   box-sizing: border-box;
   display: none; 
 `;
 export const StyledChatAvatar = styled.span`
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -66,17 +69,20 @@ export const StyledChatText = styled.div`
 `;
 export const StyledChatName = styled.div`
   font-weight: 600;
+  font-size: 16px;
 `;
 export const StyledChatDescription = styled.div`
   color: #555;
 `;
 // Groups  
+export const StyledGroupTitle = styled.h2`
+  font-size: 20px;
+`;
 export const StyledGroupsInfoContainer = styled.div`
   flex: 4;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  margin: 20px 0;
 `;
 export const StyledGroupItem = styled.div`
   display: flex;
@@ -86,8 +92,8 @@ export const StyledGroupItem = styled.div`
   border-radius: 8px;
 `;
 export const StyledGroupAvatar = styled.span`
-  width: 32px;
-  height: 32px;
+  width: 42px;
+  height: 42px;
   flex-shrink: 0;
   display: inline-flex;
   align-items: center;
@@ -107,6 +113,7 @@ export const StyledGroupText = styled.div`
 `;
 export const StyledGroupName = styled.div`
   font-weight: 600;
+  font-size: 16px;
 `;
 export const StyledGroupDescription = styled.div`
   color: #555;
