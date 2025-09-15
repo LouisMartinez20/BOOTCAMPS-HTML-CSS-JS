@@ -1,77 +1,46 @@
 import {
   StyledProfilesRow,
   StyledMiniProfileBlock,
-  StyledMiniAvatarRing1,
-  StyledMiniAvatarInner1,
-  StyledMiniStatusDot1,
-  StyledMiniAvatarRing2,
-  StyledMiniAvatarInner2,
-  StyledMiniStatusDot2,
-  StyledMiniAvatarRing3,
-  StyledMiniAvatarInner3,
-  StyledMiniStatusDot3,
-  StyledMiniAvatarRing4,
-  StyledMiniAvatarInner4,
-  StyledMiniAvatarRing5,
-  StyledMiniAvatarInner5,
-  StyledMiniAvatarRing6,
-  StyledMiniAvatarInner6,
-  StyledMiniAvatarImage
+  StyledMiniAvatarRing,
+  StyledMiniAvatarInner,
+  StyledMiniAvatarImage,
+  StyledMiniStatusDot,
 } from "./Nav.style";
-
 const USER_ICON = "/icons/user.svg";
-
-export const NavProfiles = () => (
-  <StyledProfilesRow>
-    <StyledMiniProfileBlock>
-      <StyledMiniAvatarRing1>
-        <StyledMiniAvatarInner1>
-            <StyledMiniAvatarImage src={USER_ICON} alt="Profile 1" />
-        </StyledMiniAvatarInner1>
-        <StyledMiniStatusDot1 />
-      </StyledMiniAvatarRing1>
-    </StyledMiniProfileBlock>
-
-    <StyledMiniProfileBlock>
-      <StyledMiniAvatarRing2>
-        <StyledMiniAvatarInner2>
-            <StyledMiniAvatarImage src={USER_ICON} alt="Profile 2" />
-        </StyledMiniAvatarInner2>
-        <StyledMiniStatusDot2 />
-      </StyledMiniAvatarRing2>
-    </StyledMiniProfileBlock>
-
-    <StyledMiniProfileBlock>
-      <StyledMiniAvatarRing3>
-        <StyledMiniAvatarInner3>
-            <StyledMiniAvatarImage src={USER_ICON} alt="Profile 3" />
-        </StyledMiniAvatarInner3>
-        <StyledMiniStatusDot3 />
-      </StyledMiniAvatarRing3>
-    </StyledMiniProfileBlock>
-
-    <StyledMiniProfileBlock>
-      <StyledMiniAvatarRing4>
-        <StyledMiniAvatarInner4>
-            <StyledMiniAvatarImage src={USER_ICON} alt="Profile 4" />
-        </StyledMiniAvatarInner4>
-      </StyledMiniAvatarRing4>
-    </StyledMiniProfileBlock>
-
-    <StyledMiniProfileBlock>
-      <StyledMiniAvatarRing5>
-        <StyledMiniAvatarInner5>
-            <StyledMiniAvatarImage src={USER_ICON} alt="Profile 5" />
-        </StyledMiniAvatarInner5>
-      </StyledMiniAvatarRing5>
-    </StyledMiniProfileBlock>
-
-    <StyledMiniProfileBlock>
-      <StyledMiniAvatarRing6>
-        <StyledMiniAvatarInner6>
-            <StyledMiniAvatarImage src={USER_ICON} alt="Profile 6" />
-        </StyledMiniAvatarInner6>
-      </StyledMiniAvatarRing6>
-    </StyledMiniProfileBlock>
-  </StyledProfilesRow>
-);
+const profiles = [
+  { alt: "Profile 1", ring: "#f4d27d", inner: "#f4d27d", dot: "#747474ff" },
+  {
+    alt: "Profile 2",
+    ring: "#f8f7beff",
+    inner: "#ffffff",
+    dot: "#20e7b2",
+    highlight: "#20e7b2",
+  },
+  { alt: "Profile 3", ring: "#c6bafc", inner: "#c6bafc", dot: "#727274ff" },
+  { alt: "Profile 4", ring: "#e1e3e7", inner: "#e1e3e7" },
+  { alt: "Profile 5", ring: "#f3a8b4", inner: "#f3a8b4" },
+  { alt: "Profile 6", ring: "#c6bafc", inner: "#c6bafc" },
+];
+export const NavProfiles = () => {
+  return (
+    <StyledProfilesRow>
+      {profiles.map((p, idx) => (
+        <StyledMiniProfileBlock key={idx}>
+          <StyledMiniAvatarRing
+            style={{
+              "--ring": p.ring,
+              "--highlight": p.highlight || "transparent",
+              "--dot": p.dot || "transparent",
+            }}
+            data-dot={String(!!p.dot)}
+          >
+            <StyledMiniAvatarInner style={{ "--inner": p.inner }}>
+              <StyledMiniAvatarImage src={USER_ICON} alt={p.alt} />
+            </StyledMiniAvatarInner>
+            <StyledMiniStatusDot aria-hidden={String(!p.dot)} />
+          </StyledMiniAvatarRing>
+        </StyledMiniProfileBlock>
+      ))}
+    </StyledProfilesRow>
+  );
+};

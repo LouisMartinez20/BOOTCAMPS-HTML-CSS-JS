@@ -69,36 +69,6 @@ export const StyledNewChatButton = styled.button`
   align-items: center;
   line-height: 1;
 `;
-const avatarSize = "54px";
-const innerSize = "100%";
-const dotSize = "18px";
-const baseRing = css`
-  width: ${avatarSize};
-  height: ${avatarSize};
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-`;
-const baseInner = css`
-  width: ${innerSize};
-  height: ${innerSize};
-  border-radius: 50%;
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const baseDot = css`
-  position: absolute;
-  bottom: -2px;
-  right: -2px;
-  width: ${dotSize};
-  height: ${dotSize};
-  border-radius: 50%;
-  display: block;
-`;
 export const StyledProfilesRow = styled.div`
   display: flex;
   align-items: center;
@@ -109,6 +79,8 @@ export const StyledMiniProfileBlock = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 54px;
+  height: 54px;
 `;
 export const StyledMiniAvatarImage = styled.img`
   width: 70%;
@@ -116,73 +88,38 @@ export const StyledMiniAvatarImage = styled.img`
   object-fit: contain;
   display: block;
 `;
-export const StyledMiniAvatarRing1 = styled.div`
-  ${baseRing};
-  background: #f4d27d;
-  box-shadow: 0 0 0 2px #ffffff;
-`;
-export const StyledMiniAvatarInner1 = styled.div`
-  ${baseInner};
-  background: #f4d27d;
-`;
-export const StyledMiniStatusDot1 = styled.span`
-  ${baseDot};
-  background: #747474ff;
-  border: 2px solid #ffffff;
-`;
-export const StyledMiniAvatarRing2 = styled.div`
-  ${baseRing};
-  background: #f8f7beff;
-  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px #20e7b2;
+export const StyledMiniStatusDot = styled.span`
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
-`;
-export const StyledMiniAvatarInner2 = styled.div`
-  ${baseInner};
-  background: #ffffff;
-`;
-export const StyledMiniStatusDot2 = styled.span`
-  ${baseDot};
-  background: #20e7b2;
   border: 2px solid #ffffff;
+  display: none;
+  background: var(--dot, transparent);
 `;
-export const StyledMiniAvatarRing3 = styled.div`
-  ${baseRing};
-  background: #c6bafc;
-  box-shadow: 0 0 0 2px #ffffff;
+export const StyledMiniAvatarRing = styled.div`
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  background: var(--ring, #eeeeee);
+  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px var(--highlight, transparent);
+  &[data-dot="true"] ${StyledMiniStatusDot} {
+    display: block;
+  }
 `;
-export const StyledMiniAvatarInner3 = styled.div`
-  ${baseInner};
-  background: #c6bafc;
-`;
-export const StyledMiniStatusDot3 = styled.span`
-  ${baseDot};
-  background: #727274ff;
-  border: 2px solid #ffffff;
-`;
-export const StyledMiniAvatarRing4 = styled.div`
-  ${baseRing};
-  background: #e1e3e7;
-  box-shadow: 0 0 0 2px #ffffff;
-`;
-export const StyledMiniAvatarInner4 = styled.div`
-  ${baseInner};
-  background: #e1e3e7;
-`;
-export const StyledMiniAvatarRing5 = styled.div`
-  ${baseRing};
-  background: #f3a8b4;
-  box-shadow: 0 0 0 2px #ffffff;
-`;
-export const StyledMiniAvatarInner5 = styled.div`
-  ${baseInner};
-  background: #f3a8b4;
-`;
-export const StyledMiniAvatarRing6 = styled.div`
-  ${baseRing};
-  background: #c6bafc;
-  box-shadow: 0 0 0 2px #ffffff;
-`;
-export const StyledMiniAvatarInner6 = styled.div`
-  ${baseInner};
-  background: #c6bafc;
+export const StyledMiniAvatarInner = styled.div`
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--inner, #ffffff);
 `;

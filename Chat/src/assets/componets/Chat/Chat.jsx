@@ -1,8 +1,11 @@
 import { StyledChatContainer } from "./Chat.style"
+import { ChatsInfo } from "./ChatsInfo"
+import { GroupsInfo } from "./GroupsInfo"
 export const Chat = () => {
   return (
     <StyledChatContainer>
-      <div>Chat</div>
-    </StyledChatContainer>    
+      <ChatsInfo />
+      <GroupsInfo />
+    </StyledChatContainer>
   )
 }
