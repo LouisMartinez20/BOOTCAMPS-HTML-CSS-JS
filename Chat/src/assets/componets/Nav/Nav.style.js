@@ -1,8 +1,7 @@
-import styled, { css } from "styled-components";
+import styled from "styled-components";
 export const StyledNavContainer = styled.div`
   min-height: 70px;
   background: #fff;
-  border-radius: 10px;
   padding: 14px 16px;
   display: flex;
   align-items: center;
@@ -21,7 +20,7 @@ export const StyledSearchWrapper = styled.label`
   display: flex;
   align-items: center;
   background: #f5f6f7;
-  color: #1e2227;
+  color: #000000; 
   padding: 0 10px;
   border-radius: 24px;
   height: 34px;
@@ -35,11 +34,12 @@ export const StyledSearchWrapper = styled.label`
     font-size: 14px;
     display: flex;
     align-items: center;
-    opacity: 0.6;
+    opacity: 0.8; 
     img {
       width: 14px;
       height: 14px;
       display: block;
+      filter: brightness(0); 
     }
   }
 `;
@@ -49,13 +49,17 @@ export const StyledSearchInput = styled.input`
   outline: none;
   background: transparent;
   font-size: 13px;
-  color: #1e2227;
+  color: #000000; 
   line-height: 1;
+  
+  &::placeholder {
+    color: #666666; 
+  }
 `;
 export const StyledNewChatButton = styled.button`
-  background: #fff;
+  background: #e0e0e0; 
   margin-left: auto;
-  color: #1e2227;
+  color: #000000; 
   border: none;
   border-radius: 30px;
   height: 42px;

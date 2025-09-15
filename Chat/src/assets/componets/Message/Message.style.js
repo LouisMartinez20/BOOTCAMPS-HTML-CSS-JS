@@ -7,7 +7,6 @@ export const StyledMessageContent = styled.div`
   margin-top: auto;
   min-height: 60px;
   background: #ffffffff;
-  border-radius: 10px;
 box-shadow: 0 -4px 6px rgba(86, 81, 112, 0.4);
 `
 export const StyledInputWrapper = styled.div`

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-//Layout base del Sidebar
 export const StyledSidebarWrapper = styled.aside`
   display: flex;
   flex-direction: column;
@@ -7,7 +6,6 @@ export const StyledSidebarWrapper = styled.aside`
   width: 240px;
   background: #181b21;
   color: #ffffff;
-  border-right: 1px solid #252a31;
   font-family: "Inter", system-ui, sans-serif;
   position: relative;
   overflow: hidden;

@@ -8,7 +8,6 @@ export const StyledChatContainer = styled.div`
   gap: 18px;
   padding: 0 14px 18px 14px;
   box-sizing: border-box;
-  border-radius: 10px;
   background: #ffffffff;
   color: #000000;
   font-size: 12px;
@@ -18,12 +17,11 @@ export const StyledChatTitle = styled.h2`
   font-size: 20px;
 `;
 export const StyledChatsInfoContainer = styled.div`
-  flex: 6;
+  flex: 5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 4px;
-  
+  gap: 4px;  
 `;
 export const StyledChatItem = styled.div`
   display: flex;
@@ -79,7 +77,7 @@ export const StyledGroupTitle = styled.h2`
   font-size: 20px;
 `;
 export const StyledGroupsInfoContainer = styled.div`
-  flex: 4;
+  flex: 5;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
