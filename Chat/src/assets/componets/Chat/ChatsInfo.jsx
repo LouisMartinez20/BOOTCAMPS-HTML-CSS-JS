@@ -1,4 +1,4 @@
-import React from "react";
+import { Link } from "react-router-dom";
 import {
   StyledChatsInfoContainer,
   StyledChatItem,
@@ -10,34 +10,31 @@ import {
   StyledChatDescription,
   StyledChatTitle,
 } from "./Chat.style";
+import { profiles } from "../../data/data";
 const USER_ICON = "/icons/user.svg";
-const profiles = [
-  { background: "#d38cfdff", name: "Jane Cooper", description: "Hello, don't forget to ", dot: true, alt: "Avatar de Jane Cooper" },
-  { background: "#FFD7A8", name: "Jenny Wilson", description: "Hi there, nice to me ", dot: false, alt: "Avatar de Jenny Wilson" },
-  { background: "#89f4fcff", name: "Bessie Cooper", description: "How are you, my friend ", dot: false, alt: "Avatar de Bessie Cooper" },
-  { background: "#929292ff", name: "Guy Hawkins", description: "Where are you right no ", dot: false, alt: "Avatar de Guy Hawkins" },
-  { background: "#81defaff", name: "Ralph Edwards", description: "Hello, I'm looking for y", dot: false, alt: "Avatar de Ralph Edwards" },
-];
 export const ChatsInfo = () => {
   return (
     <>
       <StyledChatTitle>Chats</StyledChatTitle>
       <StyledChatsInfoContainer>
         {profiles.map((p, idx) => (
-          <StyledChatItem key={idx}>
-            <StyledChatAvatar
-            style={{ "--bg": p.background }}
-            data-dot={String(p.dot)} >
-            <StyledChatAvatarImage src={USER_ICON} alt={p.alt} />
-            <StyledChatDot />
-          </StyledChatAvatar>
-          <StyledChatText>
-            <StyledChatName>{p.name}</StyledChatName>
-            <StyledChatDescription>{p.description}</StyledChatDescription>
-          </StyledChatText>
-        </StyledChatItem>
-      ))}
-    </StyledChatsInfoContainer>
+          <Link key={idx} to={`/chat/${p.id}`}>
+            <StyledChatItem>
+              <StyledChatAvatar
+                style={{ "--bg": p.background }}
+                data-dot={String(p.dot)}
+              >
+                <StyledChatAvatarImage src={USER_ICON} alt={p.alt} />
+                <StyledChatDot />
+              </StyledChatAvatar>
+              <StyledChatText>
+                <StyledChatName>{p.name}</StyledChatName>
+                <StyledChatDescription>{p.description}</StyledChatDescription>
+              </StyledChatText>
+            </StyledChatItem>
+          </Link>
+        ))}
+      </StyledChatsInfoContainer>
     </>
   );
 };
