@@ -3,7 +3,6 @@ import { Sidebar } from "./assets/componets/Sidebar/Sidebar";
 import { Nav } from "./assets/componets/Nav/Nav";
 import { GlobalStyles } from "./style";
 import { Chat } from "./assets/componets/Chat/Chat";
-import { Message } from "./assets/componets/Message/Message";
 import { Content } from "./assets/componets/Content/Content";
 import { 
   AppLayout, 
@@ -22,7 +21,6 @@ export const App = function () {
           <Workspace>
             <Panel>
               <Content />
-              <Message />
             </Panel>
             <Chat />
           </Workspace>

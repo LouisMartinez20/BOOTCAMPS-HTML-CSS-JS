@@ -77,3 +77,22 @@ export const StyledChatAvatarImage = styled.img`
   display: block;
   object-fit: contain;
 `
+
+
+export const StyledChatBody = styled.div`
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+`;
+
+export const StyledMessageBubble = styled.div`
+  align-self: flex-end;
+  background: #dcf8c6;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  max-width: 70%;
+  word-break: break-word;
+`;
