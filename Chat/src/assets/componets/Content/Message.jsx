@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useParams } from "react-router-dom";
 import { useMessages } from "../../context/MessagesContext";
 import {
@@ -9,7 +9,7 @@ import {
   StyledMicButton,
   StyledMicIcon,
   StyledSendIconWrapper,
-} from "./Message.style"; 
+} from "./Message.style";
 const paperclip = "/icons/paperclip.svg";
 const mic = "/icons/mic.svg";
 const send = "/icons/send.svg";
@@ -17,9 +17,8 @@ export const Message = () => {
   const [text, setText] = useState("");
   const { id, groupId } = useParams();
   const { addMessage } = useMessages();
+  // Hook local para generar el chatKey
   const chatKey = id ? `chat-${id}` : groupId ? `group-${groupId}` : null;
-  useEffect(() => {
-  }, [chatKey]);
   const handleSend = () => {
     if (!text.trim() || !chatKey) return;
     addMessage(chatKey, text);
