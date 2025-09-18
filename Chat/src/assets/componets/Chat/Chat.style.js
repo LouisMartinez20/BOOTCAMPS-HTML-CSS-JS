@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import styled from "styled-components";
 export const StyledChatContainer = styled.div`
   width: 220px;
@@ -12,9 +13,10 @@ export const StyledChatContainer = styled.div`
   color: #000000;
   font-size: 12px;
 `;
-// Chats
 export const StyledChatTitle = styled.h2`
   font-size: 20px;
+  cursor: pointer;
+  font-weight: 500;
 `;
 export const StyledChatsInfoContainer = styled.div`
   flex: 5;
@@ -22,6 +24,7 @@ export const StyledChatsInfoContainer = styled.div`
   flex-direction: column;
   justify-content: space-between;
   gap: 4px;  
+  background: #ffffffff;
 `;
 export const StyledChatItem = styled.div`
   display: flex;
@@ -29,6 +32,12 @@ export const StyledChatItem = styled.div`
   gap: 8px;
   padding: 8px 6px;
   border-radius: 8px;
+  &:hover {
+    background: #86dbfdff;
+    cursor: pointer;
+  }
+  
+
 `;
 export const StyledChatDot = styled.span`
   position: absolute;
@@ -38,7 +47,6 @@ export const StyledChatDot = styled.span`
   height: 20px;
   border-radius: 50%;
   background: #ee1338ff;
-  border: 2px solid #ffffff;
   box-sizing: border-box;
   display: none; 
 `;
@@ -51,30 +59,34 @@ export const StyledChatAvatar = styled.span`
   justify-content: center;
   position: relative;
   border-radius: 50%;
-  background: var(--bg, #eeeeee); 
+  background: ${({ $bg }) => $bg };
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
   &[data-dot="true"] ${StyledChatDot} {
     display: block;
   }
 `;
 export const StyledChatAvatarImage = styled.img`
-  width: 18px;
-  height: 18px;
+  width: 70%;
+  height: 70%;
   display: block;
   object-fit: contain;
 `;
 export const StyledChatText = styled.div`
   flex: 1;
+  text-decoration: none;
 `;
 export const StyledChatName = styled.div`
   font-weight: 600;
   font-size: 16px;
+  text-decoration: none;
 `;
 export const StyledChatDescription = styled.div`
-  color: #555;
+  color: #7575758a;
 `;
-// Groups  
 export const StyledGroupTitle = styled.h2`
   font-size: 20px;
+  font-weight: 500;
+  cursor: pointer;
 `;
 export const StyledGroupsInfoContainer = styled.div`
   flex: 5;
@@ -88,6 +100,10 @@ export const StyledGroupItem = styled.div`
   gap: 8px;
   padding: 8px 6px;
   border-radius: 8px;
+  &:hover {
+    background: #86dbfdff;
+    cursor: pointer;
+  }
 `;
 export const StyledGroupAvatar = styled.span`
   width: 42px;
@@ -98,11 +114,11 @@ export const StyledGroupAvatar = styled.span`
   justify-content: center;
   position: relative;
   border-radius: 50%;
-  background: var(--bg, #eeeeee); 
+  background: ${({ $bg }) => $bg};
 `;
 export const StyledGroupAvatarImage = styled.img`
-  width: 18px;
-  height: 18px;
+  width: 70%;
+  height: 70%;
   display: block;
   object-fit: contain;
 `;
@@ -115,4 +131,9 @@ export const StyledGroupName = styled.div`
 `;
 export const StyledGroupDescription = styled.div`
   color: #555;
+`;
+export const StyledChatLink = styled(Link)`
+  text-decoration: none;
+  color: inherit;
+  display: block;
 `;

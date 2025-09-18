@@ -17,7 +17,6 @@ export const Message = () => {
   const [text, setText] = useState("");
   const { id, groupId } = useParams();
   const { addMessage } = useMessages();
-  // Hook local para generar el chatKey
   const chatKey = id ? `chat-${id}` : groupId ? `group-${groupId}` : null;
   const handleSend = () => {
     if (!text.trim() || !chatKey) return;

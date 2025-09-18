@@ -9,13 +9,7 @@ import {
 const USER_ICON = "/icons/user.svg";
 const profiles = [
   { alt: "Profile 1", ring: "#f4d27d", inner: "#f4d27d", dot: "#747474ff" },
-  {
-    alt: "Profile 2",
-    ring: "#f8f7beff",
-    inner: "#ffffff",
-    dot: "#20e7b2",
-    highlight: "#20e7b2",
-  },
+  { alt: "Profile 2", ring: "#20e7b2", inner: "#ffffff", dot: "#20e7b2" },
   { alt: "Profile 3", ring: "#c6bafc", inner: "#c6bafc", dot: "#727274ff" },
   { alt: "Profile 4", ring: "#e1e3e7", inner: "#e1e3e7" },
   { alt: "Profile 5", ring: "#f3a8b4", inner: "#f3a8b4" },
@@ -27,17 +21,13 @@ export const NavProfiles = () => {
       {profiles.map((p, idx) => (
         <StyledMiniProfileBlock key={idx}>
           <StyledMiniAvatarRing
+            data-dot={!!p.dot}
             style={{
-              "--ring": p.ring,
-              "--highlight": p.highlight || "transparent",
-              "--dot": p.dot || "transparent",
-            }}
-            data-dot={String(!!p.dot)}
-          >
-            <StyledMiniAvatarInner style={{ "--inner": p.inner }}>
+              background: p.ring,}}>
+            <StyledMiniAvatarInner style={{ background: p.inner }}>
               <StyledMiniAvatarImage src={USER_ICON} alt={p.alt} />
             </StyledMiniAvatarInner>
-            <StyledMiniStatusDot aria-hidden={String(!p.dot)} />
+            <StyledMiniStatusDot style={{ background: p.dot || "transparent" }} />
           </StyledMiniAvatarRing>
         </StyledMiniProfileBlock>
       ))}

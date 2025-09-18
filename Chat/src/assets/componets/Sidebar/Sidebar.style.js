@@ -143,6 +143,13 @@ export const StyledInfoFieldIconWrap = styled.div`
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
+
+  img {
+    width: 18px;
+    height: 18px;
+    display: block;
+    filter: brightness(0) invert(1);
+  }
 `;
 export const StyledInfoFieldTexts = styled.div`
   display: flex;
@@ -197,6 +204,7 @@ export const StyledMenuItemIcon = styled.span`
   flex-shrink: 0;
   align-items: center;
   justify-content: center;
+  filter: brightness(0) invert(1);
 `;
 export const StyledMenuItemLabel = styled.span`
   flex: 1;

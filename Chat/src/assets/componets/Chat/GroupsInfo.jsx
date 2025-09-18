@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom"; // ← Agregar esta importación
 import {
     StyledGroupsInfoContainer,
     StyledGroupItem,
@@ -8,6 +7,7 @@ import {
     StyledGroupName,
     StyledGroupDescription,
     StyledGroupTitle,
+    StyledChatLink
 } from "./Chat.style";
 import { groups } from "../../data/data";
 const GROUP_ICON = "/icons/user.svg";
@@ -16,9 +16,9 @@ export const GroupsInfo = () => {
     <StyledGroupsInfoContainer>
       <StyledGroupTitle>Groups</StyledGroupTitle>
       {groups.map((g) => (
-        <Link key={g.groupid} to={`/group/${g.groupid}`}>
+        <StyledChatLink key={g.groupid} to={`/group/${g.groupid}`}>
           <StyledGroupItem>
-            <StyledGroupAvatar style={{ "--bg": g.background }}>
+            <StyledGroupAvatar $bg={g.background}>
               <StyledGroupAvatarImage src={GROUP_ICON} />
             </StyledGroupAvatar>
             <StyledGroupText>
@@ -26,7 +26,7 @@ export const GroupsInfo = () => {
               <StyledGroupDescription>{g.description}</StyledGroupDescription>
             </StyledGroupText>
           </StyledGroupItem>
-        </Link>
+        </StyledChatLink>
       ))}
     </StyledGroupsInfoContainer>
   );

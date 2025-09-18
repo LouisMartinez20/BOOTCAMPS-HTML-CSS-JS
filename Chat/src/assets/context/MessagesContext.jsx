@@ -1,20 +1,21 @@
-import { createContext, useContext, useState } from "react";
-const MessagesContext = createContext();
-export const MessagesProvider = ({ children }) => {
+import { createContext, useContext, useState, useCallback } from "react";
+const MessagesContext = createContext(null);
+export function MessagesProvider({ children }) {
     const [messages, setMessages] = useState({});
-    const addMessage = (key, text) =>
+    const addMessage = useCallback((chatId, text) => {
         setMessages((prev) => ({
             ...prev,
-            [key]: [...(prev[key] || []), text],
+            [chatId]: [...(prev[chatId] || []), text],
         }));
+    }, []);
+    const value = { messages, addMessage };
     return (
-        <MessagesContext.Provider value={{ messages, addMessage }}>
+        <MessagesContext.Provider value={value}>
             {children}
         </MessagesContext.Provider>
     );
-};
-export const useMessages = () => {
+}
+export function useMessages() {
     const context = useContext(MessagesContext);
-    if (!context) throw new Error("useMessages debe usarse dentro de MessagesProvider");
     return context;
-};
+}

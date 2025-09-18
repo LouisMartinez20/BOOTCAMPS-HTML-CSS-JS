@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import {
   StyledChatsInfoContainer,
   StyledChatItem,
@@ -9,6 +8,7 @@ import {
   StyledChatName,
   StyledChatDescription,
   StyledChatTitle,
+  StyledChatLink
 } from "./Chat.style";
 import { profiles } from "../../data/data";
 const USER_ICON = "/icons/user.svg";
@@ -18,12 +18,10 @@ export const ChatsInfo = () => {
       <StyledChatTitle>Chats</StyledChatTitle>
       <StyledChatsInfoContainer>
         {profiles.map((p, idx) => (
-          <Link key={idx} to={`/chat/${p.id}`}>
+          <StyledChatLink key={idx} to={`/chat/${p.id}`}>
             <StyledChatItem>
-              <StyledChatAvatar
-                style={{ "--bg": p.background }}
-                data-dot={String(p.dot)}
-              >
+              <StyledChatAvatar $bg={p.background}
+                data-dot={(p.dot)}>
                 <StyledChatAvatarImage src={USER_ICON} alt={p.alt} />
                 <StyledChatDot />
               </StyledChatAvatar>
@@ -32,7 +30,7 @@ export const ChatsInfo = () => {
                 <StyledChatDescription>{p.description}</StyledChatDescription>
               </StyledChatText>
             </StyledChatItem>
-          </Link>
+          </StyledChatLink>
         ))}
       </StyledChatsInfoContainer>
     </>

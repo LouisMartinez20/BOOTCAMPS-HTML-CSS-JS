@@ -25,9 +25,9 @@ export function SidebarMenu() {
   return (
     <StyledMenuBlock>
       {normalItems.map((item) => (
-        <StyledMenuItem key={item.id} type="button">
+        <StyledMenuItem key={item.id} >
           <StyledMenuItemIcon>
-            <img src={item.icon} data-sidebar-icon="true" />
+            <img src={item.icon}  />
           </StyledMenuItemIcon>
           <StyledMenuItemLabel>{item.label}</StyledMenuItemLabel>
         </StyledMenuItem>
@@ -35,15 +35,14 @@ export function SidebarMenu() {
       {darkModeItem && (
         <StyledMenuItem key={darkModeItem.id} as="div">
           <StyledMenuItemIcon>
-            <img src={darkModeItem.icon} data-sidebar-icon="true" />
+            <img src={darkModeItem.icon}  />
           </StyledMenuItemIcon>
           <StyledMenuItemLabel>{darkModeItem.label}</StyledMenuItemLabel>
           <StyledSlideToggle
-            role="switch"
             aria-checked={darkOn}
             data-on={darkOn}
             onClick={toggleDarkMode}
-            tabIndex={0}>
+            >
             <StyledSlider data-on={darkOn} />
           </StyledSlideToggle>
         </StyledMenuItem>

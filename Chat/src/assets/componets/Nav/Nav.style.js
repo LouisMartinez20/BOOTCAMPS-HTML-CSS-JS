@@ -40,6 +40,7 @@ export const StyledSearchWrapper = styled.label`
       height: 14px;
       display: block;
       filter: brightness(0); 
+      cursor: pointer;
     }
   }
 `;
@@ -49,7 +50,7 @@ export const StyledSearchInput = styled.input`
   outline: none;
   background: transparent;
   font-size: 13px;
-  color: #000000; 
+  color: #6d6c6cff; 
   line-height: 1;
   
   &::placeholder {
@@ -57,7 +58,7 @@ export const StyledSearchInput = styled.input`
   }
 `;
 export const StyledNewChatButton = styled.button`
-  background: #e0e0e0; 
+  background: #e0e0e03f; 
   margin-left: auto;
   color: #000000; 
   border: none;
@@ -68,7 +69,6 @@ export const StyledNewChatButton = styled.button`
   font-size: 14px;
   font-weight: 600;
   cursor: pointer;
-  font-family: inherit;
   display: flex;
   align-items: center;
   line-height: 1;
@@ -85,6 +85,7 @@ export const StyledMiniProfileBlock = styled.div`
   justify-content: center;
   width: 54px;
   height: 54px;
+  cursor: pointer;
 `;
 export const StyledMiniAvatarImage = styled.img`
   width: 70%;
@@ -94,8 +95,8 @@ export const StyledMiniAvatarImage = styled.img`
 `;
 export const StyledMiniStatusDot = styled.span`
   position: absolute;
-  bottom: -2px;
-  right: -2px;
+  bottom: -4px;
+  right: -4px;
   width: 18px;
   height: 18px;
   border-radius: 50%;
@@ -104,26 +105,23 @@ export const StyledMiniStatusDot = styled.span`
   background: var(--dot, transparent);
 `;
 export const StyledMiniAvatarRing = styled.div`
-  width: 54px;
-  height: 54px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
   display: flex;
   align-items: center;
+  border 1px solid;
   justify-content: center;
   position: relative;
-  background: var(--ring, #eeeeee);
-  box-shadow: 0 0 0 2px #ffffff, 0 0 0 5px var(--highlight, transparent);
-  &[data-dot="true"] ${StyledMiniStatusDot} {
+  & > span {
     display: block;
   }
 `;
 export const StyledMiniAvatarInner = styled.div`
-  width: 100%;
-  height: 100%;
+  width: 42px;
+  height: 42px;
   border-radius: 50%;
-  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: var(--inner, #ffffff);
 `;

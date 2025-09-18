@@ -16,7 +16,7 @@ export function SidebarPromoCard() {
         <StyledPromoDescription>
           Experience enhanced features and improved accessibility.
         </StyledPromoDescription>
-        <StyledPromoButton type="button">
+        <StyledPromoButton>
           Buy Now
         </StyledPromoButton>
       </StyledPromoBlock>

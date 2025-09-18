@@ -17,13 +17,7 @@ export function SidebarInfoFields() {
       {INFO_ITEMS.map((item) => (
         <StyledInfoFieldRow key={item.id}>
           <StyledInfoFieldIconWrap>
-            <img
-              src={item.icon}
-              width="18"
-              height="18"
-              style={{ display: "block" }}
-              data-sidebar-icon="true"
-            />
+            <img src={item.icon} />
           </StyledInfoFieldIconWrap>
             <StyledInfoFieldTexts>
               <StyledInfoFieldValue title={item.value}>

@@ -7,7 +7,7 @@ export const StyledMessageContent = styled.div`
   margin-top: auto;
   min-height: 60px;
   background: #ffffffff;
-box-shadow: 0 -4px 6px rgba(86, 81, 112, 0.4);
+box-shadow: 0 -4px 6px rgba(86, 81, 112, 0.15);
 `
 export const StyledInputWrapper = styled.div`
   position: relative;
@@ -18,7 +18,7 @@ export const StyledInputWrapper = styled.div`
   background: #f3f3f5;
   border: 1px solid #eeeeef;
   border-radius: 28px;
-  padding: 0 44px; /* espacio para clip a la izq y avión a la der */
+  padding: 0 44px;
   color: #2b2b2b;
 `
 export const StyledPaperclipIcon = styled.img`
@@ -26,10 +26,9 @@ export const StyledPaperclipIcon = styled.img`
   left: 12px;
   width: 20px;
   height: 20px;
-  opacity: 0.75;
-  pointer-events: none;
+  cursor: pointer;
 `
-export const StyledTextInput = styled.input.attrs({ type: 'text' })`
+export const StyledTextInput = styled.input`
   flex: 1 1 auto;
   width: 100%;
   height: 100%;
@@ -44,8 +43,8 @@ export const StyledSendIconWrapper = styled.img`
   right: 14px;
   width: 28px;
   height: 28px;
-  pointer-events: none;
   padding-left: 20px;
+  cursor: pointer;
 `
 export const StyledMicButton = styled.button`
   flex: 0 0 auto;
@@ -64,4 +63,5 @@ export const StyledMicIcon = styled.img`
   width: 38px;
   height: 38px;
   filter: brightness(0) invert(1);
+  cursor: pointer;
 `
